@@ -1,0 +1,9 @@
+[submodule "nvim"]
+	path = nvim
+	url = git@github.com:murphil/nvim.git
+[submodule "nvim-coc"]
+	path = nvim-coc
+	url = git@github.com:murphil/nvim-coc.git
+[submodule ".zshrc.d"]
+	path = .zshrc.d
+	url = git@github.com:murphil/.zshrc.d.git
