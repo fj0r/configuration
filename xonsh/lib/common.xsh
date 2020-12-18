@@ -1,0 +1,14 @@
+$PATH.append(f'{$HOME}/.local/bin')
+$LD_LIBRARY_PATH = [f'{$HOME}/.local/lib', f'{$HOME}/miniconda3/lib', '']
+
+$XONSH_SHOW_TRACEBACK = True
+$AUTO_CD = True
+$CASE_SENSITIVE_COMPLETIONS = False
+$COMPLETIONS_CONFIRM = True
+$UPDATE_OS_ENVIRON = True
+
+$XONSH_SHOW_TRACEBACK = True
+$XONSH_STORE_STDOUT = True
+$XONSH_HISTORY_MATCH_ANYWHERE = True
+$XONSH_AUTOPAIR = True
+

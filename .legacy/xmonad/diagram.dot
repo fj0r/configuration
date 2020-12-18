@@ -1,0 +1,139 @@
+digraph xmonad {
+    xmonad [
+	label="xmonad"
+	shape=box
+	style=filled
+	fillcolor=lightblue
+
+    ];
+
+    topics [
+	shape=record
+	label="topicDSL | topicMachine | topics"
+	fillcolor=lightblue
+	style=filled
+	];
+
+    topicdescriptor [
+	shape=box
+	fillcolor=gold
+	style=filled
+    ]
+
+    subgraph works {
+
+
+    workspaces [
+		fillcolor=lightblue
+		style=filled
+		]
+
+		sources [
+			 fillcolor=lightblue
+			 style=filled
+			 ]
+		hardware [
+			  fillcolor=lightblue
+			  style=filled
+			  ]
+		sanoma [
+			fillcolor=lightblue
+			style=filled
+			]
+
+}
+    tmuxd [
+	shape=box
+	fillcolor=orange
+	style=filled
+    ]
+
+    tmuxc [
+	style=filled
+	shape=record
+	label="master |{session1 |{ session2 }| session3}"
+	fillcolor=orange
+    ]
+
+
+
+    subgraph hig {
+
+	xmonad -> topics
+	topics -> xmonad
+	topics -> topicdescriptor
+	xmonad -> workspaces
+	workspaces -> sources
+	workspaces -> hardware
+	workspaces -> sanoma
+
+	topicdescriptor  -> {
+	    sources
+	    hardware
+	    sanoma
+	    } [style=dotted;
+	       ]
+    }
+
+    subgraph urxvtp {
+
+	    urxvtd [
+		style=filled
+		shape=box
+		fillcolor=cyan
+	    ]
+
+	subgraph urxvtdp {
+	    rank=sink
+	    style=filled;
+	    shape=box;
+	    color=gray;
+
+
+
+	    urxvtc [
+		style=filled
+		shape=record
+		fillcolor=cyan
+		label="urxvtc|{client1|client2|client3}"
+	    ]
+	    urxvtd -> {
+		urxvtc
+		}[style=dotted;
+		  fontsize=10
+		  minlen=2
+		  ]
+	}
+
+	subgraph tmuxp {
+
+	    tmuxd -> tmuxc [
+			 fontsize=10]
+
+
+	    urxvtc -> tmuxc
+	    urxvtc -> tmuxc
+	    urxvtc -> tmuxc
+	    sources -> urxvtc
+	    hardware -> urxvtc
+	    sanoma -> urxvtc
+	    applications [
+		style=filled;
+
+		shape=box;
+
+	    ]
+
+
+	}
+
+    }
+
+
+    tmuxc -> applications [style=dotted]
+    tmuxc -> applications [style=dotted]
+    tmuxc -> applications [style=dotted]
+
+
+
+}

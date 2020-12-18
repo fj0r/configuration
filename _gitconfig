@@ -1,0 +1,31 @@
+[user]
+	name = nash
+	email = nash@iffy.me
+	signingkey = 35677C0A7C8D6E4F96989682B98A2A1264077273
+[core]
+  editor = vim
+  quotepath = false
+[alias]
+  s       = status
+  c       = checkout
+  ci      = commit
+  ca      = commit -a
+  caa     = commit -a --amend
+  n       = checkout -b
+  b       = branch
+  bd      = branch -D
+  pl      = pull
+  ps      = push
+  l       = log
+  lp      = log -p
+  ly      = log --since=yesterday
+  lt      = log --since=today
+  lm      = log --since=midnight
+  m       = merge
+  r       = rebase -i --autosquash
+  d       = diff
+  dc      = diff --cached
+  a       = add .
+  unstage = reset HEAD --
+  rhh     = reset --hard HEAD
+  last    = log -1 HEAD

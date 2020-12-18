@@ -1,0 +1,26 @@
+/* code console ... */
+.platform-linux .monospace,
+.platform-linux .source-code,
+.platform-mac .monospace,
+.platform-mac .source-code,
+.platform-windows .monospace,
+.platform-windows .source-code {
+    font-family: SansCode-Light, monospace !important;
+    text-shadow: 0.05em 0.05em 0.2em #333333 !important;
+    line-height: 150% !important;
+}
+
+/* common */
+.platform-linux, .platform-mac, .platform-windows {
+    font-family: SansCode-Light, monospace !important;
+    line-height: 120% !important;
+}
+
+.tree-outline-disclosure *, /* tree */
+.elements-disclosure .source-code, /* dom */
+.styles-section.matched-styles.monospace *, /* style */
+.object-popover-content *, /* mouse hover on debugger */
+.tabbed-pane-header-contents /* tabbed-pane */{
+    font-family: SansCode-Light, monospace !important;
+    line-height: 110% !important;
+}

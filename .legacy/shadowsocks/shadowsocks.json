@@ -1,0 +1,6 @@
+{
+    "server_port":8388,
+    "password":"qwert123",
+    "timeout":60,
+    "cache_enctable": true
+}

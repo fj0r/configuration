@@ -1,0 +1,21 @@
+version: '3.7'
+
+services:
+  app:
+    build:
+      context: ..
+      dockerfile: .devcontainer/Dockerfile
+    container_name: {{project}}
+    privileged: true
+    command: sleep infinity
+    volumes:
+      - ..:/{{workdir}}
+      - ~/.gitconfig:/home/{{user}}/.gitconfig
+      - ~/.ssh:/home/{{user}}/.ssh
+      - ~/.vscode-server:/home/{{user}}/.vscode-server
+      - ~/.zshrc:/home/{{user}}/.zshrc
+      - ~/pub/Configuration/.zshrc.d:/home/{{user}}/.zshrc.d
+      - ~/pub/Configuration:/home/{{user}}/pub/Configuration
+      #- ~/.cargo/registry:/opt/cargo/registry
+    #ports:
+    #  - 8090:8086

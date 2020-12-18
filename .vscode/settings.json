@@ -1,0 +1,23 @@
+{
+    "cSpell.words": [
+        "ZSHRCD",
+        "esac",
+        "fpath",
+        "greadlink",
+        "readlink",
+        "uname"
+    ],
+    "peacock.color": "#557c9b",
+    "workbench.colorCustomizations": {
+        "editorGroup.border": "#7295b1",
+        "panel.border": "#7295b1",
+        "sideBar.border": "#7295b1",
+        "tab.activeBorder": "#7295b1",
+        "titleBar.activeBackground": "#557c9b",
+        "titleBar.activeForeground": "#e7e7e7",
+        "titleBar.inactiveBackground": "#557c9b99",
+        "titleBar.inactiveForeground": "#e7e7e799"
+    },
+    "peacock.remoteColor": "#557c9b"
+
+}

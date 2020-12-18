@@ -1,0 +1,86 @@
+[
+	{
+		"name": "Configuration",
+		"rootPath": "$home/pub/Configuration",
+		"paths": [],
+		"group": "",
+		"enabled": true
+	},
+	{
+		"name": "jupyterLab",
+		"rootPath": "$home/pub/Platform/jupyterLab",
+		"paths": [],
+		"group": "",
+		"enabled": true
+	},
+	{
+		"name": "arangodb",
+		"rootPath": "$home/arangodb",
+		"paths": [],
+		"group": "",
+		"enabled": true
+	},
+	{
+		"name": "working-schedule",
+		"rootPath": "$home/world/working-schedule",
+		"paths": [],
+		"group": "",
+		"enabled": true
+	},
+	{
+		"name": "gitea",
+		"rootPath": "$home/pub/Platform/gitea",
+		"paths": [],
+		"group": "",
+		"enabled": true
+	},
+	{
+		"name": "spring-boot-helloworld",
+		"rootPath": "$home/downloads/spring-boot-helloworld",
+		"paths": [],
+		"group": "",
+		"enabled": true
+	},
+	{
+		"name": "postgresql",
+		"rootPath": "$home/pub/Platform/postgresql",
+		"paths": [],
+		"group": "",
+		"enabled": true
+	},
+	{
+		"name": "kong",
+		"rootPath": "$home/pub/Platform/kong",
+		"paths": [],
+		"group": "",
+		"enabled": true
+	},
+	{
+		"name": "imtrack3",
+		"rootPath": "$home/world/imtrack3",
+		"paths": [],
+		"group": "",
+		"enabled": true
+	},
+	{
+		"name": "VueComponents",
+		"rootPath": "$home/world/VueComponents",
+		"paths": [],
+		"group": "",
+		"enabled": true
+	},
+	{
+		"name": "monitor",
+		"rootPath": "$home/pub/Platform/monitor",
+		"paths": [],
+		"group": "",
+		"enabled": true
+	},
+	{
+		"name": "pulsar",
+		"rootPath": "$home/pub/Platform/pulsar",
+		"paths": [],
+		"group": "",
+		"enabled": true
+	}
+]

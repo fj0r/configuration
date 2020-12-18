@@ -1,0 +1,5 @@
+[[ -f ~/.xprofile ]] && source ~/.xprofile
+
+exec awesome
+
+#[[ -f ~/.xstartup.zsh ]] && source ~/.xstartup.zsh

@@ -1,0 +1,18 @@
+Host iffy.me
+    #HostName iffy.me
+    HostName localhost
+    Port 22
+    IdentityFile ~/.ssh/id_ed25519
+
+Host g.eng
+    HostName git.d
+    Port 22
+    IdentityFile ~/.ssh/nash
+
+Host git.d
+    IdentityFile ~/.ssh/nash
+
+Host github-nash
+  HostName github.com
+  User git
+  IdentityFile ~/.ssh/nash.github

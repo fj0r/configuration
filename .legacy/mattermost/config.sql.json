@@ -1,0 +1,6 @@
+{
+    "SqlSettings": {
+        "DriverName": "postgres",
+        "DataSource": "postgres://mmuser:mmuser@localhost:5432/mattermost?sslmode=disable&connect_timeout=10"
+    }
+}

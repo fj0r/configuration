@@ -1,0 +1,20 @@
+Config { font = "xft:Hasklig Medium:style=Medium,size=8" --"-*-profont-*-*-*-*-10-*-*-*-*-*-*-*"
+        , bgColor = "black"
+        , fgColor = "grey"
+        , position = TopSize L 90 25
+        , lowerOnStart = True
+        , commands = [ Run Network "enp3s0" ["-L","100","-H","1000","--normal","red","--high","green", "-p", "3", "-t","<rx>/<tx>KB"] 10
+                     , Run Cpu ["-L","10","-H","50","--normal","green","--high","red", "-p", "1", "-t","C: <total>%"] 10
+                     , Run Memory ["-L","60","-H","90","--normal","green","--high","red", "-p", "1", "-t","M: <usedratio>%"] 10
+                     , Run Swap ["-p", "1", "-t","S: <usedratio>%"] 10
+                     , Run StdinReader
+                     , Run PipeReader "/dev/shm/lrcfifo" "lrc"
+                     , Run Com "uname" ["-s","-r"] "" 36000
+                     , Run Date "%Y-%m-%d <%w> %H:%M:%S" "date" 10
+                     -- , Run Weather "ZGSDLY" ["-t","<tempC>C","-L","18","-H","25","--normal","green","--high","red","--low","lightblue"] 36000
+                     -- , Run Volume "default" "Master" ["-t", "<volume>% <status>"] 10
+                     ]
+        , sepChar = "%"
+        , alignSep = "}{"
+        , template = "%StdinReader% }{ %enp3s0% | %cpu% | %memory% | %swap% | <fc=#ee9a00>%date%</fc>"
+}

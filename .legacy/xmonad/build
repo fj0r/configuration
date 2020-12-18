@@ -1,0 +1,7 @@
+#!/bin/bash -ue
+
+EXEC_NAME="$HOME/.local/bin/xmonad"
+OUTPUT="$1"
+stack install >$HOME/.xmonad/build.log  2>&1 
+cp -vuf  $EXEC_NAME $OUTPUT  >> $HOME/.xmonad/build.log 2>&1 
+

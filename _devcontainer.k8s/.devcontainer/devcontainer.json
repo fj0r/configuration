@@ -1,0 +1,53 @@
+// For format details, see https://aka.ms/vscode-remote/devcontainer.json or this file's README at:
+// https://github.com/microsoft/vscode-dev-containers/tree/v0.106.0/containers/javascript-node-12
+{
+	"name": "Node.js 12",
+	"dockerFile": "Dockerfile",
+
+	// Set *default* container specific settings.json values on container create.
+	"settings": {
+		"terminal.integrated.shell.linux": "/bin/zsh"
+	},
+
+	"workspaceMount": ["source=${localWorkspaceFolder},target=/app,type=bind,consistency=cached"],
+	"workspaceFolder": "/app",
+
+	"mounts": [
+		"source=vscode-server,target=/home/dev/.vscode-server,consistency=cached",
+		"source=${env:HOME}/.gitconfig,target=/home/dev/.gitconfig,type=bind,consistency=cached",
+		"source=${env:HOME}/.ssh,target=/home/dev/.ssh,type=bind,consistency=cached",
+		"source=${localWorkspaceFolder}/.devcontainer/rbac,target=/kube/config,type=bind,consistency=cached",
+
+		"source=${env:HOME}/.zshrc,target=/home/dev/.zshrc,type=bind,consistency=cached",
+		"source=${env:HOME}/.ext.zsh,target=/home/dev/.ext.zsh,type=bind,consistency=cached",
+		"source=${env:HOME}/pub/Configuration/.zshrc.d,target=/home/dev/.zshrc.d,type=bind,consistency=cached",
+		"source=${env:HOME}/pub/Configuration/.k.zsh,target=/home/dev/.k.zsh,type=bind,consistency=cached",
+		"source=${env:HOME}/pub/Configuration/.kube-ps1.zsh,target=/home/dev/.kube-ps1.zsh,type=bind,consistency=cached",
+		"source=${env:HOME}/pub/Configuration/.kubectl.zsh,target=/home/dev/.kubectl.zsh,type=bind,consistency=cached"
+	],
+	"remoteEnv": {
+		"MY_REMOTE_VARIABLE": "some-other-value-here",
+	},
+
+	"runArgs": [
+		"--cap-add=NET_ADMIN",
+		"--cap-add=NET_BIND_SERVICE",
+		"--cap-add=SYS_PTRACE",
+        "--security-opt",
+        "seccomp=unconfined"
+	],
+
+	// Add the IDs of extensions you want installed when the container is created.
+	"extensions": [
+
+	]
+
+	// Use 'forwardPorts' to make a list of ports inside the container available locally.
+	// "forwardPorts": [],
+
+	// Use 'postCreateCommand' to run commands after the container is created.
+	// "postCreateCommand": "yarn install",
+
+	// Uncomment to connect as a non-root user. See https://aka.ms/vscode-remote/containers/non-root.
+	// "remoteUser": "node"
+}

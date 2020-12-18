@@ -1,0 +1,97 @@
+swap :
+    telepresence \
+        --swap-deployment web-frontend \
+        --container-to-host 3000
+
+server := "https://nuc:6443"
+cluster:= "dev"
+k8s account namespace="test" role="telepresence":
+    #!/bin/bash
+    cat <<EOF | kubectl apply -f -
+    apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRole
+    metadata:
+      name: {{role}}
+    rules:
+    - apiGroups: [""]
+      resources: ["services"]
+      verbs: ["list", "create", "delete"]
+    - apiGroups: ["", "extensions", "apps"]
+      resources: ["deployments"]
+      verbs: ["list", "create", "get", "update", "delete"]
+    - apiGroups: ["", "extensions", "apps"]
+      resources: ["deployments/rollback", "deployments/scale", "replicasets/scale"]
+      verbs: ["get", "update", "patch"]
+    - apiGroups: ["", "extensions"]
+      resources: ["replicasets"]
+      verbs: ["list", "get", "update", "delete"]
+    - apiGroups: [""]
+      resources: ["pods"]
+      verbs: ["list", "get"]
+    - apiGroups: [""]
+      resources: ["pods/log"]
+      verbs: ["get"]
+    - apiGroups: [""]
+      resources: ["pods/portforward"]
+      verbs: ["create"]
+    - apiGroups: [""]
+      resources: ["pods/exec"]
+      verbs: ["create"]
+    - apiGroups: [""]
+      resources: ["namespaces"]
+      verbs: ["list", "get"]
+    - apiGroups: [""]
+      resources: ["secrets"]
+      verbs: ["list", "get", "update"]
+    - apiGroups: [""]
+      resources: ["configmaps"]
+      verbs: ["list", "get", "update"]
+    ---
+    kind: ServiceAccount
+    apiVersion: v1
+    metadata:
+        name: {{account}}
+        namespace: default
+    ---
+    apiVersion: rbac.authorization.k8s.io/v1
+    kind: RoleBinding
+    metadata:
+      name: {{role}}--{{account}}
+      namespace: {{namespace}}
+    roleRef:
+      apiGroup: ""
+      kind: ClusterRole
+      name: {{role}}
+    subjects:
+    - kind: ServiceAccount
+      name: {{account}}
+      namespace: default
+    EOF
+
+    # the name of the secret containing the service account token goes here
+    name=$(kubectl get serviceaccounts -n default {{account}} -o jsonpath='{.secrets[0].name}')
+
+    ca=$(kubectl get secret/$name -n default -o jsonpath='{.data.ca\.crt}')
+    token=$(kubectl get secret/$name -n default -o jsonpath='{.data.token}' | base64 --decode)
+    namespace=$(kubectl get secret/$name -n default -o jsonpath='{.data.namespace}' | base64 --decode)
+
+    echo "
+    apiVersion: v1
+    kind: Config
+    clusters:
+    - name: {{cluster}}
+      cluster:
+        certificate-authority-data: ${ca}
+        server: {{server}}
+    contexts:
+    - name: default-context
+      context:
+        cluster: {{cluster}}
+        namespace: {{namespace}}
+        user: {{account}}
+    current-context: default-context
+    users:
+    - name: {{account}}
+      user:
+        token: ${token}
+    "
