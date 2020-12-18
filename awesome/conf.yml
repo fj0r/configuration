@@ -1,0 +1,70 @@
+autorun:
+  #- ibus-daemon --xim
+  #- xscreensaver -no-splash
+  #- gnome-session
+
+monitor:
+  partitions:
+    - /
+    - /home
+    - /media/nash/ExFat
+
+tags:
+  - name: main
+    layout: tile
+  - name: test
+    layout: tile.bottom
+  - name: dev
+    layout: centerwork
+    apps:
+      - class: Firefox
+        screen: 1
+      - class: Chromium
+        floating: true
+  - name: 3d
+    layout: centerwork
+  - name: docker
+  - name: conf
+  - name: sync
+  - name: remote
+  - name: x
+    layout: centerwork
+
+theme:
+  gap: 2
+  urgent_color: 'dde175'
+  border:
+    width: 2
+    focus: "588133"
+  wallpaper: /wallpapers
+  powerline_taglist: false
+
+editor: vim
+terminal: urxvt
+#quake: terminator
+
+# inspect with xprop
+floating:
+  instance:
+    - DTA # Firefox addon DownThemAll.
+    - copyq # Includes session name in class.
+    - pinentry
+  class:
+    - Zeal
+    - VirtualBox Machine
+    - Arandr
+    - Blueman-manager
+    - Gpick
+    - Kruler
+    - MessageWin
+    - Sxiv
+    - Tor Browser
+    - Wpa_gui
+    - veromix
+    - xtightvncviewer
+  name:
+    - Event Tester
+  role:
+    - AlarmWindow
+    - ConfigManager
+    - pop-up

@@ -1,0 +1,334 @@
+{
+    "client": {
+        "local": 1,
+        "type": 11,
+        "version": "1.10.0"
+    },
+    "data": [
+        {
+            "name": "Node.js",
+            "uri": "https://nodejs.org/en/download/current/",
+            "config": "{\"selections\":[{\"frames\":[{\"index\":0,\"excludes\":[],\"includes\":[{\"type\":\"xpath\",\"expr\":\"//div[@id='main']/div[@class='container']/article//p[@class='color-lightgray']\"}]}],\"dynamic\":false,\"delay\":0}],\"ignoreEmptyText\":true,\"includeStyle\":false,\"dataAttr\":\"text\"}",
+            "tags": [
+                "platform"
+            ],
+            "content_type": 2,
+            "state": 40,
+            "schedule": "{\"type\":\"INTERVAL\",\"params\":{\"interval\":4675}}",
+            "ts": "2018-06-25T00:33:33.000Z"
+        },
+        {
+            "name": "Anaconda",
+            "uri": "https://www.anaconda.com/download/#linux",
+            "config": "{\"selections\":[{\"frames\":[{\"index\":0,\"excludes\":[],\"includes\":[{\"type\":\"xpath\",\"expr\":\"//section[@id='hero-title']/div[contains(@class,'container')]/div[contains(@class,'row')]/div[contains(@class,'text-center')]/div[contains(@class,'row')]/h4[contains(@class,'unmarg')]/span[contains(@class,'text-bold')]\"}]}],\"dynamic\":false,\"delay\":0}],\"ignoreEmptyText\":true,\"includeStyle\":false,\"dataAttr\":\"text\"}",
+            "tags": [
+                "platform"
+            ],
+            "content_type": 2,
+            "state": 40,
+            "schedule": "{\"type\":\"INTERVAL\",\"params\":{\"interval\":4447}}",
+            "ts": "2018-06-25T00:36:06.000Z"
+        },
+        {
+            "name": "PostgreSQL",
+            "uri": "https://www.postgresql.org/",
+            "config": "{\"selections\":[{\"frames\":[{\"index\":0,\"excludes\":[],\"includes\":[{\"type\":\"xpath\",\"expr\":\"(//div[@class='container-fluid']/div[contains(@class,'row')]/div[contains(@class,'col')])[2]\"}]}],\"dynamic\":false,\"delay\":0}],\"ignoreEmptyText\":true,\"includeStyle\":false,\"dataAttr\":\"text\"}",
+            "tags": [
+                "platform",
+                "database"
+            ],
+            "content_type": 2,
+            "state": 40,
+            "schedule": "{\"type\":\"INTERVAL\",\"params\":{\"interval\":4447}}",
+            "ts": "2018-06-25T00:37:49.000Z"
+        },
+        {
+            "name": "Rust 程序设计语言",
+            "uri": "https://www.rust-lang.org/zh-CN/index.html",
+            "config": "{\"selections\":[{\"frames\":[{\"index\":0,\"excludes\":[],\"includes\":[{\"type\":\"xpath\",\"expr\":\"//body[@class='container']/div[contains(@class,'row')]//a[@class='release-button']\"}]}],\"dynamic\":false,\"delay\":0}],\"ignoreEmptyText\":true,\"includeStyle\":false,\"dataAttr\":\"text\"}",
+            "tags": [
+                "platform"
+            ],
+            "content_type": 2,
+            "state": 40,
+            "schedule": "{\"type\":\"INTERVAL\",\"params\":{\"interval\":4675}}",
+            "ts": "2018-06-25T00:38:48.000Z"
+        },
+        {
+            "name": "Haskell Platform",
+            "uri": "https://www.haskell.org/platform/mac.html",
+            "config": "{\"selections\":[{\"frames\":[{\"index\":0,\"excludes\":[],\"includes\":[{\"type\":\"xpath\",\"expr\":\"(//div[@id='osx-none']/p)[1]\"},{\"type\":\"xpath\",\"expr\":\"(//div[@id='osx-none']/ol[@class='install-steps']//div[@class='step-body']/div[@class='download-hash']/ul[@class='hashes']/li)[2]\"}]}],\"dynamic\":true,\"delay\":0}],\"ignoreEmptyText\":true,\"includeStyle\":false,\"dataAttr\":\"text\"}",
+            "tags": [
+                "platform"
+            ],
+            "content_type": 2,
+            "state": 40,
+            "schedule": "{\"type\":\"INTERVAL\",\"params\":{\"interval\":4675}}",
+            "ts": "2018-06-25T00:40:10.000Z"
+        },
+        {
+            "name": "图书-图灵社区",
+            "uri": "http://www.ituring.com.cn/book?tab=book&sort=new",
+            "config": "{\"selections\":[{\"frames\":[{\"index\":0,\"excludes\":[],\"includes\":[{\"type\":\"css\",\"expr\":\"#tab-book > div.col-md-9.col-sm-9.main > div.g-main > div > ul > li > div.book-info > h4 > a\"}]}],\"dynamic\":false,\"delay\":0}],\"ignoreEmptyText\":true,\"includeStyle\":false,\"dataAttr\":\"text\"}",
+            "tags": [
+                "book"
+            ],
+            "content_type": 2,
+            "state": 40,
+            "schedule": "{\"type\":\"INTERVAL\",\"params\":{\"interval\":3828}}",
+            "ts": "2018-06-25T00:41:17.000Z"
+        },
+        {
+            "name": "异步社区－图书列表",
+            "uri": "https://www.epubit.com/book/screen?flagBookType=2",
+            "config": "{\"selections\":[{\"frames\":[{\"index\":0,\"excludes\":[],\"includes\":[{\"type\":\"css\",\"expr\":\"#screen > div:nth-child(2) > div.ivu-row > div.pull-left.ivu-col.ivu-col-span-xs-24.ivu-col-span-md-19.ivu-col-md-offset-1 > div.screen-List > div.ivu-row > div> div > div.col-gray-9.font-14.line-clamp-2.mt-20.h-40 > a > span\"}]}],\"dynamic\":true,\"delay\":0}],\"ignoreEmptyText\":true,\"includeStyle\":false,\"dataAttr\":\"text\"}",
+            "tags": [
+                "book"
+            ],
+            "content_type": 2,
+            "state": 40,
+            "schedule": "{\"type\":\"INTERVAL\",\"params\":{\"interval\":4230}}",
+            "ts": "2018-06-25T00:42:26.000Z"
+        },
+        {
+            "name": "Stackage",
+            "uri": "https://www.stackage.org/",
+            "config": "{\"selections\":[{\"frames\":[{\"index\":0,\"excludes\":[],\"includes\":[{\"type\":\"css\",\"expr\":\"#main > div.container > div > div:nth-child(3) > div:nth-child(1) > ul > li\"},{\"type\":\"xpath\",\"expr\":\"(//div[@id='main']/div[@class='container']/div[@class='container']/div[@class='row']/div[@class='span6']/ul[@class='snapshots']/li//a)[1]\"}]}],\"dynamic\":false,\"delay\":0}],\"ignoreEmptyText\":true,\"includeStyle\":false,\"dataAttr\":\"text\"}",
+            "tags": [
+                "platform"
+            ],
+            "content_type": 2,
+            "state": 40,
+            "schedule": "{\"type\":\"INTERVAL\",\"params\":{\"interval\":3828}}",
+            "ts": "2018-06-25T00:43:20.000Z"
+        },
+        {
+            "name": "jaiminpan/pg_jieba · GitHub",
+            "uri": "https://github.com/jaiminpan/pg_jieba/commits/master",
+            "config": "{\"selections\":[{\"frames\":[{\"index\":0,\"excludes\":[],\"includes\":[{\"type\":\"css\",\"expr\":\".commit-title.h5.mb-1.text-gray-dark\"}]}],\"dynamic\":false,\"delay\":0}],\"ignoreEmptyText\":true,\"includeStyle\":false,\"dataAttr\":\"text\"}",
+            "tags": [
+                "database"
+            ],
+            "content_type": 2,
+            "state": 40,
+            "schedule": "{\"type\":\"INTERVAL\",\"params\":{\"interval\":4915}}",
+            "ts": "2018-06-25T01:58:42.000Z"
+        },
+        {
+            "name": "bitnine-oss/agensgraph · GitHub",
+            "uri": "https://github.com/bitnine-oss/agensgraph/commits/master",
+            "config": "{\"selections\":[{\"frames\":[{\"index\":0,\"excludes\":[],\"includes\":[{\"type\":\"css\",\"expr\":\".commit-title.h5.mb-1.text-gray-dark\"}]}],\"dynamic\":false,\"delay\":0}],\"ignoreEmptyText\":true,\"includeStyle\":false,\"dataAttr\":\"text\"}",
+            "tags": [
+                "database"
+            ],
+            "content_type": 2,
+            "state": 40,
+            "schedule": "{\"type\":\"INTERVAL\",\"params\":{\"interval\":4675}}",
+            "ts": "2018-06-25T02:06:55.000Z"
+        },
+        {
+            "name": "pipelinedb/pipelinedb · GitHub",
+            "uri": "https://github.com/pipelinedb/pipelinedb/commits/master",
+            "config": "{\"selections\":[{\"frames\":[{\"index\":0,\"excludes\":[],\"includes\":[{\"type\":\"css\",\"expr\":\".commit-title.h5.mb-1.text-gray-dark\"}]}],\"dynamic\":false,\"delay\":0}],\"ignoreEmptyText\":true,\"includeStyle\":false,\"dataAttr\":\"text\"}",
+            "tags": [
+                "database"
+            ],
+            "content_type": 2,
+            "state": 40,
+            "schedule": "{\"type\":\"INTERVAL\",\"params\":{\"interval\":4675}}",
+            "ts": "2018-06-25T02:08:09.000Z"
+        },
+        {
+            "name": "一个64位操作系统的设计与实现-图书-图灵社区",
+            "uri": "http://www.ituring.com.cn/book/2450",
+            "config": "{\"selections\":[{\"frames\":[{\"index\":0,\"excludes\":[],\"includes\":[{\"type\":\"xpath\",\"expr\":\"//div[@class='container']/div[contains(@class,'row')]/div[contains(@class,'side')]/div[@class='book-approaches']\"}]}],\"dynamic\":false,\"delay\":0}],\"ignoreEmptyText\":true,\"includeStyle\":false,\"dataAttr\":\"text\"}",
+            "tags": [
+                "book"
+            ],
+            "content_type": 2,
+            "state": 40,
+            "schedule": "{\"type\":\"INTERVAL\",\"params\":{\"interval\":4915}}",
+            "ts": "2018-06-25T03:09:59.000Z"
+        },
+        {
+            "name": "现代编译原理：C语言描述（修订版）-图书-图灵社区",
+            "uri": "http://www.ituring.com.cn/book/1984",
+            "config": "{\"selections\":[{\"frames\":[{\"index\":0,\"excludes\":[],\"includes\":[{\"type\":\"xpath\",\"expr\":\"//div[@class='container']/div[contains(@class,'row')]/div[contains(@class,'side')]/div[@class='book-approaches']\"}]}],\"dynamic\":false,\"delay\":0}],\"ignoreEmptyText\":true,\"includeStyle\":false,\"dataAttr\":\"text\"}",
+            "tags": [
+                "book"
+            ],
+            "content_type": 2,
+            "state": 40,
+            "schedule": "{\"type\":\"INTERVAL\",\"params\":{\"interval\":4675}}",
+            "ts": "2018-06-25T03:10:41.000Z"
+        },
+        {
+            "name": "SaltTiger",
+            "uri": "https://salttiger.com",
+            "config": "{\"uri\":\"https://salttiger.com/feed/\"}",
+            "tags": [
+                "book"
+            ],
+            "content_type": 5,
+            "state": 40,
+            "schedule": "{\"type\":\"INTERVAL\",\"params\":{\"interval\":1808}}",
+            "ts": "2018-06-25T06:08:07.000Z"
+        },
+        {
+            "name": "Redis",
+            "uri": "https://redis.io/download",
+            "config": "{\"selections\":[{\"frames\":[{\"index\":0,\"excludes\":[],\"includes\":[{\"type\":\"xpath\",\"expr\":\"//div[contains(@class,'site-wrapper')]/div[@class='site-content']/div[@class='text']/ul\"}]}],\"dynamic\":true,\"delay\":0}],\"ignoreEmptyText\":true,\"includeStyle\":false,\"dataAttr\":\"text\"}",
+            "tags": [
+                "platform",
+                "middleware"
+            ],
+            "content_type": 2,
+            "state": 40,
+            "schedule": "{\"type\":\"INTERVAL\",\"params\":{\"interval\":109098}}",
+            "ts": "2018-06-26T01:45:33.000Z"
+        },
+        {
+            "name": "Installations - KongHQ",
+            "uri": "https://konghq.com/installations/",
+            "config": "{\"selections\":[{\"frames\":[{\"index\":0,\"excludes\":[],\"includes\":[{\"type\":\"xpath\",\"expr\":\"//body[contains(@class,'page')]/main[@class='kong-main']/section[@class='container']/div[@class='row']/div[contains(@class,'mb-2x')]/div[contains(@class,'card')]/div[contains(@class,'card-block')]/a[contains(@class,'btn')]\"}]}],\"dynamic\":true,\"delay\":0}],\"ignoreEmptyText\":true,\"includeStyle\":false,\"dataAttr\":\"text\"}",
+            "tags": [
+                "platform",
+                "middleware"
+            ],
+            "content_type": 2,
+            "state": 40,
+            "schedule": "{\"type\":\"INTERVAL\",\"params\":{\"interval\":109098}}",
+            "ts": "2018-08-16T16:04:01.000Z"
+        },
+        {
+            "name": "Snapshots | Vivaldi Browser",
+            "uri": "https://vivaldi.com/blog/snapshots/",
+            "config": "{\"selections\":[{\"frames\":[{\"index\":0,\"excludes\":[],\"includes\":[{\"type\":\"xpath\",\"expr\":\"(//main[@id='main']/section[contains(@class,'wide')]/div[contains(@class,'row')])[1]\"}]}],\"dynamic\":true,\"delay\":0}],\"ignoreEmptyText\":true,\"includeStyle\":false,\"dataAttr\":\"text\"}",
+            "tags": [
+                "app"
+            ],
+            "content_type": 2,
+            "state": 40,
+            "schedule": "{\"type\":\"INTERVAL\",\"params\":{\"interval\":4675}}",
+            "ts": "2018-08-24T07:52:35.000Z"
+        },
+        {
+            "name": "Python深度学习-图书-图灵社区",
+            "uri": "http://www.ituring.com.cn/book/2599",
+            "config": "{\"selections\":[{\"frames\":[{\"index\":0,\"excludes\":[],\"includes\":[{\"type\":\"xpath\",\"expr\":\"//div[@class='container']/div[contains(@class,'row')]/div[contains(@class,'side')]/div[@class='book-approaches']\"}]}],\"dynamic\":true,\"delay\":0}],\"ignoreEmptyText\":true,\"includeStyle\":false,\"dataAttr\":\"text\"}",
+            "tags": [
+                "book"
+            ],
+            "content_type": 2,
+            "state": 40,
+            "schedule": "{\"type\":\"INTERVAL\",\"params\":{\"interval\":4675}}",
+            "ts": "2018-08-29T01:50:10.000Z"
+        },
+        {
+            "name": "gitea",
+            "uri": "https://blog.gitea.io/",
+            "config": "{\"selections\":[{\"frames\":[{\"index\":0,\"excludes\":[],\"includes\":[{\"type\":\"xpath\",\"expr\":\"//section[@class='section']\"}]}],\"dynamic\":true,\"delay\":0}],\"ignoreEmptyText\":true,\"includeStyle\":false,\"dataAttr\":\"text\"}",
+            "tags": [
+                "platform"
+            ],
+            "content_type": 2,
+            "state": 40,
+            "schedule": "{\"type\":\"INTERVAL\",\"params\":{\"interval\":98716}}",
+            "ts": "2018-09-03T02:18:41.000Z"
+        },
+        {
+            "name": " JuliaCN/JuliaZH.jl · GitHub",
+            "uri": "https://github.com/JuliaCN/JuliaZH.jl/releases",
+            "config": "{\"selections\":[{\"frames\":[{\"index\":0,\"excludes\":[],\"includes\":[{\"type\":\"xpath\",\"expr\":\"(//body[contains(@class,'logged-out')]/div[@role='main']/div//div[contains(@class,'container-lg')]/div)[1]\"}]}],\"dynamic\":true,\"delay\":0}],\"ignoreEmptyText\":true,\"includeStyle\":false,\"dataAttr\":\"text\"}",
+            "tags": [],
+            "content_type": 2,
+            "state": 40,
+            "schedule": "{\"type\":\"INTERVAL\",\"params\":{\"interval\":109098}}",
+            "ts": "2018-09-04T04:01:56.000Z"
+        },
+        {
+            "name": "cleanmymac_爱情守望者",
+            "uri": "https://www.waitsun.com/?s=cleanmymac",
+            "config": "{\"includeStyle\":true,\"selections\":[{\"frames\":[{\"index\":0,\"excludes\":[],\"includes\":[{\"expr\":\"/html\",\"type\":\"xpath\"}]}],\"dynamic\":true,\"delay\":0}],\"ignoreEmptyText\":true,\"dataAttr\":\"text\"}",
+            "tags": [
+                "app"
+            ],
+            "content_type": 2,
+            "state": 40,
+            "schedule": "{\"type\":\"INTERVAL\",\"params\":{\"interval\":8103}}",
+            "ts": "2018-09-22T03:41:49.000Z"
+        },
+        {
+            "name": "Apache Pulsar ·",
+            "uri": "http://pulsar.apache.org/download/",
+            "config": "{\"includeStyle\":true,\"selections\":[{\"frames\":[{\"index\":0,\"excludes\":[],\"includes\":[{\"expr\":\"/html\",\"type\":\"xpath\"}]}],\"dynamic\":true,\"delay\":0}],\"ignoreEmptyText\":true,\"dataAttr\":\"text\"}",
+            "tags": [
+                "middleware"
+            ],
+            "content_type": 2,
+            "state": 40,
+            "schedule": "{\"type\":\"INTERVAL\",\"params\":{\"interval\":109098}}",
+            "ts": "2018-09-22T03:42:43.000Z"
+        },
+        {
+            "name": "Mattermost Private Cloud Messaging",
+            "uri": "https://mattermost.com/download/",
+            "config": "{\"includeStyle\":true,\"selections\":[{\"frames\":[{\"index\":0,\"excludes\":[],\"includes\":[{\"expr\":\"/html\",\"type\":\"xpath\"}]}],\"dynamic\":true,\"delay\":0}],\"ignoreEmptyText\":true,\"dataAttr\":\"text\"}",
+            "tags": [
+                "middleware"
+            ],
+            "content_type": 2,
+            "state": 40,
+            "schedule": "{\"type\":\"INTERVAL\",\"params\":{\"interval\":109098}}",
+            "ts": "2018-09-22T03:43:35.000Z"
+        },
+        {
+            "name": "postgres-cn/pgdoc-cn · GitHub",
+            "uri": "https://github.com/postgres-cn/pgdoc-cn/releases",
+            "config": "{\"includeStyle\":true,\"selections\":[{\"frames\":[{\"index\":0,\"excludes\":[],\"includes\":[{\"expr\":\"/html\",\"type\":\"xpath\"}]}],\"dynamic\":true,\"delay\":0}],\"ignoreEmptyText\":true,\"dataAttr\":\"text\"}",
+            "tags": [
+                "database"
+            ],
+            "content_type": 2,
+            "state": 40,
+            "schedule": "{\"type\":\"INTERVAL\",\"params\":{\"interval\":109098}}",
+            "ts": "2018-09-22T03:44:29.000Z"
+        },
+        {
+            "name": "pdf expert_爱情守望者",
+            "uri": "https://www.waitsun.com/?s=pdf+expert",
+            "config": "{\"includeStyle\":true,\"selections\":[{\"frames\":[{\"index\":0,\"excludes\":[],\"includes\":[{\"expr\":\"/html\",\"type\":\"xpath\"}]}],\"dynamic\":true,\"delay\":0}],\"ignoreEmptyText\":true,\"dataAttr\":\"text\"}",
+            "tags": [
+                "app"
+            ],
+            "content_type": 2,
+            "state": 40,
+            "schedule": "{\"type\":\"INTERVAL\",\"params\":{\"interval\":5710}}",
+            "ts": "2018-09-22T08:08:28.000Z"
+        },
+        {
+            "name": "crossover_爱情守望者",
+            "uri": "https://www.waitsun.com/?s=crossover",
+            "config": "{\"includeStyle\":true,\"selections\":[{\"frames\":[{\"index\":0,\"excludes\":[],\"includes\":[{\"expr\":\"/html\",\"type\":\"xpath\"}]}],\"dynamic\":true,\"delay\":0}],\"ignoreEmptyText\":true,\"dataAttr\":\"text\"}",
+            "tags": [
+                "app"
+            ],
+            "content_type": 2,
+            "state": 40,
+            "schedule": "{\"type\":\"INTERVAL\",\"params\":{\"interval\":5710}}",
+            "ts": "2018-09-22T08:13:48.000Z"
+        },
+        {
+            "name": "betterzip_爱情守望者",
+            "uri": "https://www.waitsun.com/?s=betterzip",
+            "config": "{\"includeStyle\":true,\"selections\":[{\"frames\":[{\"index\":0,\"excludes\":[],\"includes\":[{\"expr\":\"/html\",\"type\":\"xpath\"}]}],\"dynamic\":true,\"delay\":0}],\"ignoreEmptyText\":true,\"dataAttr\":\"text\"}",
+            "tags": [
+                "app"
+            ],
+            "content_type": 2,
+            "state": 40,
+            "schedule": "{\"type\":\"INTERVAL\",\"params\":{\"interval\":5710}}",
+            "ts": "2018-09-22T08:14:23.000Z"
+        }
+    ]
+}

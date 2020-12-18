@@ -1,0 +1,92 @@
+// For format details, see https://aka.ms/vscode-remote/devcontainer.json or the definition README at
+// https://github.com/microsoft/vscode-dev-containers/tree/master/containers/docker-in-docker
+{
+    "name": "Docker in Docker",
+    //"dockerFile": "Dockerfile",
+    "image": "dev",
+    //"dockerComposeFile": "docker-compose.yml",
+    //"service":  "app",
+    //"shutdownAction": "stopCompose",
+	"runArgs": [
+		// Uncomment the next line to use a non-root user. On Linux, this will prevent
+		// new files getting created as root, but you may need to update the USER_UID
+		// and USER_GID in .devcontainer/Dockerfile to match your user if not 1000.
+		"-u", "1000",
+
+		// Uncomment the next line if you will use a ptrace-based debugger like C++, Go, and Rust.
+		// "--cap-add=SYS_PTRACE", "--security-opt", "seccomp=unconfined",
+
+        "-v", "${localWorkspaceFolder}:/app",
+        "-v", "vscode-server:/home/dev/.vscode-server",
+        "-v", "${env:HOME}/.gitconfig:/home/dev/.gitconfig",
+        "-v", "${env:HOME}/.ssh:/home/dev/.ssh",
+        "-v", "${env:HOME}/.zshrc:/home/dev/.zshrc",
+        "-v", "${env:HOME}/pub/Configuration/.zshrc.d:/home/dev/.zshrc.d",
+
+        "-v", "/var/run/docker.sock:/var/run/docker.sock",
+        "--cap-add=SYS_PTRACE",
+        "--security-opt",
+        "seccomp=unconfined"
+	],
+
+	// Use 'settings' to set *default* container specific settings.json values on container create.
+	// You can edit these settings after create using File > Preferences > Settings > Remote.
+	"settings": {
+		"terminal.integrated.shell.linux": "/bin/zsh",
+	    "remote.extensionKind": {
+			"ms-azuretools.vscode-docker": "workspace"
+		}
+	},
+
+	// Uncomment the next line if you want to publish any ports.
+	// "appPort": [],
+
+	// Uncomment the next line to run commands after the container is created.
+	// "postCreateCommand": "docker --version",
+
+	// Add the IDs of extensions you want installed when the container is created in the array below.
+	"extensions": ["wwm.better-align",
+        "bungcip.better-toml",
+        "alefragnani.Bookmarks",
+        "coenraads.bracket-pair-colorizer-2",
+        "vadimcn.vscode-lldb",
+        "be5invis.vscode-custom-css",
+        "ms-azuretools.vscode-docker",
+        "codezombiech.gitignore",
+        "eamodio.gitlens",
+        "ms-vscode.go",
+        "phoityne.phoityne-vscode",
+        "justusadam.language-haskell",
+        "ndmitchell.haskell-ghcid",
+        "zjhmale.idris",
+        "tuxtina.json2yaml",
+        "wmaurer.vscode-jumpy",
+        "skellock.just",
+        "ms-kubernetes-tools.vscode-kubernetes-tools",
+        "sysoev.language-stylus",
+        "eg2.vscode-npm-script",
+        "ryu1kn.partial-diff",
+        "christian-kohler.path-intellisense",
+        "ckolkman.vscode-postgres",
+        "ms-python.python",
+        "dongli.python-preview",
+        "mutantdino.resourcemonitor",
+        "humao.rest-client",
+        "rust-lang.rust",
+        "hdevalke.rust-test-lens",
+        "dramforever.vscode-ghc-simple",
+        "Gruntfuggly.todo-tree",
+        "octref.vetur",
+        "VisualStudioExptTeam.vscodeintellicode",
+        "ddot.vscode-ast",
+        "andyyaldoo.vscode-json",
+        "dariofuzinato.vue-peek",
+        "dotjoshjohnson.xml",
+        "redhat.vscode-yaml",
+        "LouisWT.regexp-preview",
+        "formulahendry.auto-close-tag",
+        "amandeepmittal.pug",
+        "streetsidesoftware.code-spell-checker",
+		"ms-azuretools.vscode-docker"
+	]
+}

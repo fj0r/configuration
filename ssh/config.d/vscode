@@ -1,0 +1,30 @@
+Host websocat
+    User root
+    IdentitiesOnly yes
+    StrictHostKeyChecking no
+    UserKnownHostsFile /dev/null
+    ProxyCommand websocat -bE - ws://localhost:8090/websocat
+    IdentityFile ~/pub/Platform/docker.io/php-container/id_ed25519
+
+Host tjsa_files
+    HostName 101.201.238.124
+    Port 12122
+    IdentityFile ~/.ssh/tjsa_files
+    IdentitiesOnly yes
+    User root
+
+Host app
+    HostName localhost
+    User root
+    Port 9022
+    IdentitiesOnly yes
+    StrictHostKeyChecking no
+    UserKnownHostsFile /dev/null
+    IdentityFile ~/world/rescue-pets/id_ed25519
+
+Host eainger
+    HostName 39.96.87.188
+    Port 22
+    IdentityFile ~/.ssh/eng2
+    IdentitiesOnly yes
+    User root

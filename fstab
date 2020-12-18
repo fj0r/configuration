@@ -1,0 +1,6 @@
+/dev/vdb           /mnt/vdb              xfs     defaults,noatime,discard   0   2
+/mnt/vdb/swap      swap                  swap    defaults                   0   2
+/home/.docker      /var/lib/docker       none    defaults,bind              0   0
+/mnt/vdb/home      /home                 none    defaults,bind              0   0
+/mnt/vdb/opt       /opt                  none    defaults,bind              0   0
+tmpfs              /tmp                  tmpfs   defaults,noatime,mode=1777 0   0
