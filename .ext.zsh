@@ -87,6 +87,21 @@ function deploy-to-server {
     cmd+="> /dev/null"
     echo $cmd
     eval $cmd
+
+    local cmd="cat $HOME/nvim-linux64.tar.gz "
+    for i in $*
+        cmd+="| tee >(ssh $i \"tar -zxf - -C \\\$HOME/.local --strip-components=1\")"
+    cmd+="> /dev/null"
+    echo $cmd
+    eval $cmd
+
+
+    local cmd="cat $HOME/node-v14.15.3-linux-x64.tar.xz"
+    for i in $*
+        cmd+="| tee >(ssh $i \"tar -Jxf - -C \\\$HOME/.local --strip-components=1\")"
+    cmd+="> /dev/null"
+    echo $cmd
+    eval $cmd
 }
 compdef deploy-to-server=ssh
 
