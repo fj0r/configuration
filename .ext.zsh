@@ -17,27 +17,41 @@ if (( $+commands[octosql])); then
     }
 fi
 
-function archive-cfg1 {
-    pushd $CFG
-    _exclude_coc=$(find nvim/coc-data -mindepth 1 -maxdepth 1 ! -wholename nvim/coc-data/extensions)
-    _exclude_coc_s=$(find nvim/coc-data/extensions -mindepth 1 -maxdepth 1 ! -wholename nvim/coc-data/extensions/node_modules)
-    _exclude_coc_exts=$(find nvim/coc-data/extensions/node_modules -mindepth 1 -maxdepth 1 -type d  $(printf "! -wholename nvim/coc-data/extensions/node_modules/%s " $(cat nvim/coc-core-extensions)))
-    popd
+function archive-cfg-coc {
+    local d=$(date +"%Y%m%d%H%M%S")
+    local tmp="/tmp/cfg/$d/home"
+    mkdir -p $tmp
+    cp $CFG/_zshrc $tmp/.zshrc
+    cp -r $CFG/.zshrc.d $tmp/.zshrc.d
+    cp $CFG/.ext.zsh $tmp/
+    mkdir -p $tmp/.config
+    cp $CFG/_tmux.conf $tmp/.tmux.conf
+    mkdir -p $tmp/.local/bin
+    cp /usr/local/bin/{just,watchexec,yq,rg} $tmp/.local/bin
+    #tar hzcvf - --transform "s|^$d\(.*\)|\1|" -C /tmp/cfg $d
     # cp -r $CFG/nvim $tmp/.config/
+    pushd $CFG
+    _exclude_coc=$(find nvim-coc/coc-data -mindepth 1 -maxdepth 1 ! -wholename nvim-coc/coc-data/extensions)
+    _exclude_coc_s=$(find nvim-coc/coc-data/extensions -mindepth 1 -maxdepth 1 ! -wholename nvim-coc/coc-data/extensions/node_modules)
+    _exclude_coc_exts=$(find nvim-coc/coc-data/extensions/node_modules -mindepth 1 -maxdepth 1 -type d  $(printf "! -wholename nvim-coc/coc-data/extensions/node_modules/coc-%s " $(cat nvim-coc/coc-core-extensions)))
+    popd
     tar \
             --exclude-from=<(echo "$_exclude_coc") \
             --exclude-from=<(echo "$_exclude_coc_s") \
             --exclude-from=<(echo "$_exclude_coc_exts") \
             --exclude='*/.git*' \
             --exclude='*/__pycache__*' \
+            --exclude='*/nvim-luapad/gifs*' \
+            --exclude='*/plugged/ultisnips/doc/*' \
+            --exclude='*/plugged/vimspector/gadgets/*' \
             --exclude='plugged/LeaderF/autoload/leaderf/fuzzyMatch_C/build' \
-            -cf - -C $CFG nvim | tar -xf - -C $tmp/.config
-    cp $tmp/.config/nvim/coc-core-package.json $tmp/.config/nvim/coc-data/extensions/package.json
-    rm -f $tmp/.config/nvim/.netrwhist
+            -cf - -C $CFG nvim-coc | tar -xf - -C $tmp/.config
+    rm -f $tmp/.config/nvim-coc/.netrwhist
+    mv $tmp/.config/nvim-coc $tmp/.config/nvim
     pushd $tmp/..
     tar -zcvf cfg.tgz home
-    rm -f $HOME/pub/cfg.tgz
-    mv cfg.tgz $HOME/pub
+    rm -f $HOME/pub/cfg-coc.tgz
+    mv cfg.tgz $HOME/pub/cfg-coc.tgz
     popd
     rm -rf /tmp/cfg
     echo "restore: cat $HOME/pub/cfg.tgz | tar -C ~ -zxvf - --strip-component=1"
