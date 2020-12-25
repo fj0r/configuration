@@ -32,8 +32,11 @@ function archive-cfg-coc {
     # cp -r $CFG/nvim $tmp/.config/
     pushd $CFG
     _exclude_coc=$(find nvim-coc/coc-data -mindepth 1 -maxdepth 1 ! -wholename nvim-coc/coc-data/extensions)
-    _exclude_coc_s=$(find nvim-coc/coc-data/extensions -mindepth 1 -maxdepth 1 ! -wholename nvim-coc/coc-data/extensions/node_modules)
+    _exclude_coc_s=$(find nvim-coc/coc-data/extensions -mindepth 1 -maxdepth 1 ! -wholename nvim-coc/coc-data/extensions/node_modules ! -wholename nvim-coc/coc-data/extensions/package.json)
     _exclude_coc_exts=$(find nvim-coc/coc-data/extensions/node_modules -mindepth 1 -maxdepth 1 -type d  $(printf "! -wholename nvim-coc/coc-data/extensions/node_modules/coc-%s " $(cat nvim-coc/coc-core-extensions)))
+    lst1=$(jq -nR '[inputs|select(length>0)]|map("coc-"+.)' nvim-coc/coc-core-extensions)
+    lst2=$(cat nvim-coc/coc-data/extensions/package.json | jq '.dependencies|keys' | jq ". - $lst1")
+    pkglist=$(cat nvim-coc/coc-data/extensions/package.json| jq "del(.dependencies${lst2})")
     popd
     tar \
             --exclude-from=<(echo "$_exclude_coc") \
@@ -48,6 +51,7 @@ function archive-cfg-coc {
             -cf - -C $CFG nvim-coc | tar -xf - -C $tmp/.config
     rm -f $tmp/.config/nvim-coc/.netrwhist
     mv $tmp/.config/nvim-coc $tmp/.config/nvim
+    echo $pkglist > $tmp/.config/nvim/coc-data/extensions/package.json
     pushd $tmp/..
     tar -zcvf cfg.tgz home
     rm -f $HOME/pub/cfg-coc.tgz
