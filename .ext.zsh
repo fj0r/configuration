@@ -99,7 +99,7 @@ function deploy-to-server {
     #rsync -av -e ssh $CFG/.kubectl.zsh $1:~/.kubectl.zsh
     #rsync -av -e ssh $CFG/_tmux.conf $1:~/.tmux.conf
     #rsync -av --delete -e ssh $CFG/.fzf/ $1:~/.fzf
-    local cmd="cat $HOME/pub/cfg.tgz "
+    local cmd="cat $HOME/pub/cfg-coc.tgz "
     for i in $*
         cmd+="| tee >(ssh $i \"tar zxf - --strip-component=1; chown \\\$(id -u):\\\$(id -g) -R ~/{.zshrc,.zshrc.d}\") "
     cmd+="> /dev/null"
