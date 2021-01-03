@@ -62,6 +62,14 @@ wsl --unregister Ubuntu-20.04
 [user]
 default=nash
 ```
+## How to Shrink a WSL2 Virtual Disk
+```ps
+wsl --list --verbose
+wsl --terminate ubuntu
+diskpart.exe
+  select vdisk file="D:\data\ubuntu\ext4.vhdx"
+  compact vdisk
+```
 
 ## How to attach other vhdx files to WSL2?
 ```bash
