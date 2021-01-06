@@ -138,6 +138,14 @@ Host safeman.cc
     Port 22
     User root
 
+Host ty
+    #HostName 140.246.117.6
+    HostName safeman.cc
+    IdentityFile ~/.ssh/ty.pem
+    IdentitiesOnly yes
+    Port 22
+    User root
+
 Host alalaba
     HostName 39.97.113.120
     IdentityFile ~/.ssh/alalaba.com
