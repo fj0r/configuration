@@ -32,7 +32,7 @@ function archive-cfg-coc {
     # cp -r $CFG/nvim $tmp/.config/
     pushd $CFG
     _exclude_coc=$(find nvim-coc/coc-data -mindepth 1 -maxdepth 1 ! -wholename nvim-coc/coc-data/extensions)
-    _exclude_coc_s=$(find nvim-coc/coc-data/extensions -mindepth 1 -maxdepth 1 ! -wholename nvim-coc/coc-data/extensions/node_modules ! -wholename nvim-coc/coc-data/extensions/package.json)
+    _exclude_coc_s=$(find nvim-coc/coc-data/extensions -mindepth 1 -maxdepth 1 ! -wholename nvim-coc/coc-data/extensions/node_modules ! -wholename nvim-coc/coc-data/extensions/package.json ! -wholename nvim-coc/coc-data/extensions/coc-lua-data)
     _exclude_coc_exts=$(find nvim-coc/coc-data/extensions/node_modules -mindepth 1 -maxdepth 1 -type d  $(printf "! -wholename nvim-coc/coc-data/extensions/node_modules/coc-%s " $(cat nvim-coc/coc-core-extensions)))
     lst1=$(jq -nR '[inputs|select(length>0)]|map("coc-"+.)' nvim-coc/coc-core-extensions)
     lst2=$(cat nvim-coc/coc-data/extensions/package.json | jq '.dependencies|keys' | jq ". - $lst1")
