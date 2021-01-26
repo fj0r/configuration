@@ -114,7 +114,7 @@ function deploy-to-server {
     eval $cmd
 
 
-    local cmd="cat $HOME/node-v14.15.3-linux-x64.tar.xz"
+    local cmd="cat $HOME/node-v14.15.4-linux-x64.tar.xz"
     for i in $*
         cmd+="| tee >(ssh $i \"tar -Jxf - -C \\\$HOME/.local --strip-components=1\")"
     cmd+="> /dev/null"
