@@ -43,3 +43,5 @@ alias y="ipython3"
 
 alias ytd="youtube-dl --proxy http://localhost:1081"
 alias ytdm="ytd -x --audio-quality 0 "
+
+export PATH=/home/nash/.tiup/bin:$PATH
