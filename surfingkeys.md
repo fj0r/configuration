@@ -6,3 +6,25 @@ addSearchAliasX('u', '谷歌', 'https://www.google.ca/search?q=', 's', 'https://
 });
 settings.defaultSearchEngine = 'u';
 ```
+
+当打开标签页的数量超过设定值时，使用搜索栏来查找标签页。
+```
+settings.tabsThreshold = 80;
+```
+
+是否在搜索栏下面自动选择第一个匹配的结果。
+```
+settings.focusFirstCandidate = true;
+```
+
+搜索栏下面每页显示多少条结果。
+```
+settings.omnibarMaxResults = 15;
+```
+
+
+```
+mapkey('<Ctrl-t>', 'Choose a tab with omnibar', function() {
+	    Front.openOmnibar({type: "Tabs"});
+});
+```
