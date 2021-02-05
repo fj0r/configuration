@@ -69,6 +69,8 @@ wsl --terminate ubuntu
 diskpart.exe
   select vdisk file="D:\data\ubuntu\ext4.vhdx"
   compact vdisk
+  select vdisk file="C:\Users\nash\AppData\Local\Docker\wsl\data\ext4.vhdx"
+  compact vdisk
 ```
 
 ## How to attach other vhdx files to WSL2?
