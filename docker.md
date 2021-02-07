@@ -1,3 +1,9 @@
+###
+```
+# jq '.detachKeys="ctrl-z,z"' $HOME/.docker/config.json > config.tmp && mv -f config.tmp $HOME/.docker/config.json
+ssh <host> "jq '.detachKeys=\"ctrl-z,z\"' \$HOME/.docker/config.json > config.tmp && mv -f config.tmp \$HOME/.docker/config.json"
+```
+
 ### 宿主机 ssh
 ```bash
 RUN set -ex && up=`ip route | awk 'NR==1 {print $3}'` \
