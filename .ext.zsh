@@ -100,23 +100,24 @@ function deploy-to-server {
     #rsync -av -e ssh $CFG/_tmux.conf $1:~/.tmux.conf
     #rsync -av --delete -e ssh $CFG/.fzf/ $1:~/.fzf
     local cmd="cat $HOME/pub/cfg-coc.tgz "
+    local sshcmd="ssh"
     for i in $*
-        cmd+="| tee >(ssh $i \"tar zxf - --strip-component=1; chown \\\$(id -u):\\\$(id -g) -R ~/{.zshrc,.zshrc.d}\") "
+        cmd+="| tee >($sshcmd $i \"tar zxf - --strip-component=1; chown \\\$(id -u):\\\$(id -g) -R ~/{.zshrc,.zshrc.d}\") "
     cmd+="> /dev/null"
     echo $cmd
     eval $cmd
 
     local cmd="cat $HOME/nvim-linux64.tar.gz "
     for i in $*
-        cmd+="| tee >(ssh $i \"tar -zxf - -C \\\$HOME/.local --strip-components=1\")"
+        cmd+="| tee >($sshcmd $i \"tar -zxf - -C \\\$HOME/.local --strip-components=1\")"
     cmd+="> /dev/null"
     echo $cmd
     eval $cmd
 
 
-    local cmd="cat $HOME/node-v14.15.4-linux-x64.tar.xz"
+    local cmd="cat $HOME/node-v*-linux-x64.tar.xz"
     for i in $*
-        cmd+="| tee >(ssh $i \"tar -Jxf - -C \\\$HOME/.local --strip-components=1\")"
+        cmd+="| tee >($sshcmd $i \"tar -Jxf - -C \\\$HOME/.local --strip-components=1\")"
     cmd+="> /dev/null"
     echo $cmd
     eval $cmd
