@@ -1,5 +1,5 @@
 export NVIM_PRESET=full
-export VIM_N_DUAL_ESC=0
+export VIM_DUAL_ESC=0
 
 # docker save xxx | r='docker load'; parallel-ssh a b c
 
