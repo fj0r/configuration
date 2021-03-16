@@ -19,12 +19,12 @@ Host iffy
     IdentitiesOnly yes
     Port 28620
 
-Host wh
-	HostName 66.42.40.187
+Host tx
+	HostName 121.5.208.159
     Port 22
-    IdentityFile ~/.ssh/id_ed25519
+    IdentityFile ~/.ssh/tx
     IdentitiesOnly yes
-    User root
+    User ubuntu
 
 ##endregion }}}
 
