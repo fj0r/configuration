@@ -1,0 +1,56 @@
+Host thomas
+    HostName 49.235.149.244
+    Port 22
+    IdentityFile ~/.ssh/id_ed25519
+    IdentitiesOnly yes
+    User ubuntu
+
+Host eng
+    HostName 172.178.1.204
+    Port 2222
+    IdentityFile ~/.ssh/eng.pem
+    IdentitiesOnly yes
+    User xmh
+
+Host eng-37
+    HostName 172.178.1.37
+    Port 22
+    IdentityFile ~/.ssh/eng.pem
+    IdentitiesOnly yes
+    User eng
+
+Host eng-dev
+    HostName 172.178.1.58
+    Port 22
+    IdentityFile ~/.ssh/eng.pem
+    IdentitiesOnly yes
+    User eng
+
+Host eng-backup
+    HostName 172.178.1.79
+    Port 22
+    IdentityFile ~/.ssh/backup
+    IdentitiesOnly yes
+    User ad
+
+Host safeman.cc
+    HostName 156.67.217.216
+    IdentityFile ~/.ssh/safeman.cc.pem
+    IdentitiesOnly yes
+    Port 22
+    User root
+
+Host ty
+    #HostName 140.246.117.6
+    HostName safeman.cc
+    IdentityFile ~/.ssh/ty.pem
+    IdentitiesOnly yes
+    Port 22
+    User root
+
+Host alalaba
+    HostName 39.97.113.120
+    IdentityFile ~/.ssh/alalaba.com
+    IdentitiesOnly yes
+    User root
+
