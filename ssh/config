@@ -55,6 +55,13 @@ Host dev
     IdentitiesOnly yes
     User ad
 
+Host bi
+    HostName 192.168.0.102
+    Port 22
+    IdentityFile ~/.ssh/bi
+    IdentitiesOnly yes
+    User ad
+
 Host dev5
     HostName 120.224.237.162
     Port 2222

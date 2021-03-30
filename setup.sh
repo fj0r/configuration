@@ -43,11 +43,14 @@ chrome-gnome-shell
 # 更改默认 shell
 chsh -s /bin/zsh
 # 添加用户到组
-usermod -a -G docker user
+gpasswd -a user docker
+#usermod -a -G docker user
 chmod -R go-w *
 # sudo 免密码
 sed -i 's/^.*\(%sudo.*\)ALL$/\1NOPASSWD: ALL/g' /etc/sudoers
 #echo '%sudo ALL=(ALL) NOPASSWD: ALL' >> /etc/sudoers
+
+sudo passwd -l root
 
 # Server
 # sshd disable password login
