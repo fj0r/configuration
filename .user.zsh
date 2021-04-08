@@ -51,8 +51,6 @@ hash -d plt="$HOME/pub/Platform"
 
 source /home/nash/k8s/istio-*/tools/_istioctl
 
-alias y="ipython3"
-
 
 [ -f "${GHCUP_INSTALL_BASE_PREFIX:=$HOME}/.ghcup/env" ] && source "${GHCUP_INSTALL_BASE_PREFIX:=$HOME}/.ghcup/env"
 
