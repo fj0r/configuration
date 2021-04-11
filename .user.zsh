@@ -188,3 +188,4 @@ if (( $+commands[octosql])); then
         octosql $@
     }
 fi
+
