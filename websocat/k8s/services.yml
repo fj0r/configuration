@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: websocat
+  namespace: frp
+spec:
+  ports:
+    - protocol: TCP
+      port: 9999
+      targetPort: 9999
+---
+apiVersion: v1
+kind: Endpoints
+metadata:
+  name: websocat
+  namespace: frp
+subsets:
+  - addresses:
+      - ip: 172.17.156.138
+    ports:
+      - port: 9999
