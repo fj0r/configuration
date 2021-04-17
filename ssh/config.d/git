@@ -12,7 +12,7 @@ Host g.eng
 Host git.d
     IdentityFile ~/.ssh/nash
 
-Host github-nash
+Host github-fjord
   HostName github.com
   User git
-  IdentityFile ~/.ssh/nash.github
+  IdentityFile ~/.ssh/id_ed25519
