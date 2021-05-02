@@ -12,7 +12,7 @@ else
 fi
 
 alias vv='nvim -u $CFG/nvim/init.vim'
-alias vn='nvim -u $CFG/nvim/init.vim'
+alias nv='nvim -u $CFG/nvim/init.vim'
 alias vl='nvim -u $CFG/nvim-lua-example/init.lua'
 installNeovim () {
     curl -sSL https://github.com/neovim/neovim/releases/download/${NVIM_VERSION:-nightly}/nvim-linux64.tar.gz \
