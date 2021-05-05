@@ -8,10 +8,10 @@ export PATH=/opt/nu:$PATH
 if [ -n "$VIMRUNTIME" ]; then
     alias v=drop
 else
-    alias v='nvim -u $CFG/nvim-coc/init.vim'
+    alias v='nvim -u $CFG/nvim/init.vim'
 fi
 
-alias vv='nvim -u $CFG/nvim/init.vim'
+alias vv='nvim -u $CFG/nvim-coc/init.vim'
 alias nv='nvim -u $CFG/nvim/init.vim'
 alias vl='nvim -u $CFG/nvim-lua-example/init.lua'
 installNeovim () {
@@ -145,7 +145,7 @@ function deploy-to-server {
     #rsync -av -e ssh $CFG/.kubectl.zsh $1:~/.kubectl.zsh
     #rsync -av -e ssh $CFG/_tmux.conf $1:~/.tmux.conf
     #rsync -av --delete -e ssh $CFG/.fzf/ $1:~/.fzf
-    local cmd="cat $HOME/pub/cfg-coc.tgz "
+    local cmd="cat $HOME/pub/cfg.tgz "
     local sshcmd="ssh"
     for i in $*
         cmd+="| tee >($sshcmd $i \"tar zxf - --strip-component=1; chown \\\$(id -u):\\\$(id -g) -R ~/{.zshrc,.zshrc.d}\") "
