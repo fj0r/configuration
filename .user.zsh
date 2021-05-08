@@ -11,6 +11,7 @@ else
     alias v='nvim -u $CFG/nvim/init.vim'
 fi
 
+alias lg='lazygit'
 alias vv='nvim -u $CFG/nvim-coc/init.vim'
 alias nv='nvim -u $CFG/nvim/init.vim'
 alias vl='nvim -u $CFG/nvim-lua-example/init.lua'
