@@ -55,5 +55,6 @@ sudo passwd -l root
 # Server
 # sshd disable password login
 sed -i 's/#\(PasswordAuthentication\).*$/\1 no/g' /etc/ssh/sshd_config
+echo "Match Address 10.0.0.0/8,172.178.0.0/16,192.168.0.0/16\n    PasswordAuthentication yes" >> /etc/ssh/sshd_config
 # 修改运行级别 (服务器模式)
 systemctl set-default multi-user.target
