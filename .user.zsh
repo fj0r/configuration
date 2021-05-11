@@ -149,7 +149,7 @@ function deploy-to-server {
     local cmd="cat $HOME/pub/cfg.tgz "
     local sshcmd="ssh"
     for i in $*
-        cmd+="| tee >($sshcmd $i \"tar zxf - --strip-component=1; chown \\\$(id -u):\\\$(id -g) -R ~/{.zshrc,.zshrc.d}\") "
+        cmd+="| tee >($sshcmd $i \"rm -rf ~/.config/nvim; tar zxf - --strip-component=1; chown \\\$(id -u):\\\$(id -g) -R ~/{.zshrc,.zshrc.d}\") "
     cmd+="> /dev/null"
     echo $cmd
     eval $cmd
@@ -157,14 +157,6 @@ function deploy-to-server {
     local cmd="cat $HOME/nvim-linux64.tar.gz "
     for i in $*
         cmd+="| tee >($sshcmd $i \"tar -zxf - -C \\\$HOME/.local --strip-components=1\")"
-    cmd+="> /dev/null"
-    echo $cmd
-    eval $cmd
-
-
-    local cmd="cat $HOME/node-v*-linux-x64.tar.xz"
-    for i in $*
-        cmd+="| tee >($sshcmd $i \"tar -Jxf - -C \\\$HOME/.local --strip-components=1\")"
     cmd+="> /dev/null"
     echo $cmd
     eval $cmd
