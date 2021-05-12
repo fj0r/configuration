@@ -55,6 +55,13 @@ Host dev
     IdentitiesOnly yes
     User ad
 
+Host nvidia
+    HostName 172.178.5.12
+    Port 22
+    IdentityFile ~/.ssh/nvidia
+    IdentitiesOnly yes
+    User eainger
+
 Host bi
     HostName 172.178.0.221
     Port 22
