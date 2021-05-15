@@ -5,16 +5,9 @@ export VIM_DUAL_ESC=0
 
 export PATH=/opt/nu:$PATH
 
-if [ -n "$VIMRUNTIME" ]; then
-    alias v=drop
-else
-    alias v='nvim -u $CFG/nvim/init.vim'
-fi
-
 alias lg='lazygit'
-alias vv='nvim -u $CFG/nvim-coc/init.vim'
+alias vv='nvim -u $CFG/nvim-lua/init.vim'
 alias nv='nvim -u $CFG/nvim/init.vim'
-alias vl='nvim -u $CFG/nvim-lua-example/init.lua'
 installNeovim () {
     curl -sSL https://github.com/neovim/neovim/releases/download/${NVIM_VERSION:-nightly}/nvim-linux64.tar.gz \
       |sudo tar zxf - -C /usr/local --strip-components=1
