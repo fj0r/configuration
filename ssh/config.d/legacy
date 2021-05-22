@@ -34,7 +34,8 @@ Host eng-backup
     User ad
 
 Host safeman.cc
-    HostName 156.67.217.216
+    #HostName 156.67.217.216
+    HostName safeman.cc
     IdentityFile ~/.ssh/safeman.cc.pem
     IdentitiesOnly yes
     Port 22
