@@ -1,5 +1,6 @@
 export NVIM_PRESET=full
 export VIM_DUAL_ESC=0
+export KUBERNETES_SCHEMA_URL=file://$HOME/world/v1.21.1-standalone-strict/all.json
 
 # docker save xxx | r='docker load'; parallel-ssh a b c
 
