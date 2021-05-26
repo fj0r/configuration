@@ -86,7 +86,7 @@ Host eainger2
 Host xmh
     HostName 47.94.200.70
     #IdentityFile ~/.ssh/xmh
-    IdentityFile ~/.ssh/eng2
+    IdentityFile ~/.ssh/xinminghui
     IdentitiesOnly yes
     Port 22
     User root
@@ -97,6 +97,7 @@ Host xmh-es
   User root
 
 Host xmh-cdc
+  ProxyCommand ssh -q dev5 nc %h %p
   HostName 39.106.43.103
   IdentityFile ~/.ssh/cdc
   User root
