@@ -4,7 +4,7 @@ export KUBERNETES_SCHEMA_URL=file://$HOME/world/v1.21.1-standalone-strict/all.js
 
 # docker save xxx | r='docker load'; parallel-ssh a b c
 
-export PATH=/opt/nu:$PATH
+export PATH=/opt/nushell:$PATH
 
 alias lg='lazygit'
 alias vv='nvim -u $CFG/nvim-lua/init.vim'
