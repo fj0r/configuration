@@ -1,5 +1,3 @@
-export NVIM_PRESET=core
-
 if [[ ! "$PATH" == */opt/bin* && -d /opt/bin ]]; then
     export PATH=/opt/bin:$PATH
 fi

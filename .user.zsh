@@ -176,3 +176,4 @@ if (( $+commands[octosql])); then
     }
 fi
 
+unset DISPLAY
