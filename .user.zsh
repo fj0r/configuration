@@ -2,6 +2,11 @@ export NVIM_PRESET=full
 export VIM_DUAL_ESC=0
 export KUBERNETES_SCHEMA_URL=file://$HOME/world/v1.21.1-standalone-strict/all.json
 
+if [ -n "$WSL_DISTRO_NAME" ]; then
+  #export DISPLAY=${route}:0.0
+  #export WSLHOME=$(wslpath $(wslvar USERPROFILE))
+fi
+
 # docker save xxx | r='docker load'; parallel-ssh a b c
 
 export PATH=/opt/nushell:$PATH
@@ -176,4 +181,3 @@ if (( $+commands[octosql])); then
     }
 fi
 
-unset DISPLAY
