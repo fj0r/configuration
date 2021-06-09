@@ -96,6 +96,11 @@ Host xmh-es
   IdentityFile ~/.ssh/xmh-es-server.pem
   User root
 
+Host wg1
+  HostName 10.6.6.1
+  IdentityFile ~/.ssh/xmh-es-server.pem
+  User root
+
 Host xmh-cdc
   #ProxyCommand ssh -q dev5 nc %h %p
   HostName 39.106.43.103
