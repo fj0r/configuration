@@ -20,7 +20,7 @@ Host iffy
     Port 28620
 
 Host tx
-	HostName 121.5.208.159
+    HostName 121.5.208.159
     Port 22
     IdentityFile ~/.ssh/tx
     IdentitiesOnly yes
@@ -97,13 +97,19 @@ Host xmh-es
   User root
 
 Host wg1
-  HostName 10.6.6.1
+  HostName 10.6.6.9
   IdentityFile ~/.ssh/xmh-es-server.pem
   User root
 
 Host xmh-cdc
   #ProxyCommand ssh -q dev5 nc %h %p
   HostName 39.106.43.103
+  IdentityFile ~/.ssh/cdc
+  User root
+
+Host wg0
+  #ProxyCommand ssh -q dev5 nc %h %p
+  HostName 10.6.6.1
   IdentityFile ~/.ssh/cdc
   User root
 

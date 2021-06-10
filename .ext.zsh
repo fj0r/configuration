@@ -4,6 +4,7 @@ fi
 
 # sources $CFG/.fzf/init.zsh
 
+sources $CFG/.wg.zsh
 sources $CFG/.user.zsh
 sources $HOME/.test.zsh
 sources $CFG/.mutagen-alias
