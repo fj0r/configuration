@@ -1,22 +1,22 @@
 watch:
-	systemctl enable wg-watch.service wg-watch.path --now
+    systemctl enable wg-watch.service wg-watch.path --now
 
 setup:
-	systemctl enable wg-quick@wg0
-	systemctl start wg-quick@wg0
+    systemctl enable wg-quick@wg0
+    systemctl start wg-quick@wg0
 
 relay:
-	# on relay server
-	echo "net.ipv4.ip_forward = 1" >> /etc/sysctl.conf
-	echo "net.ipv4.conf.all.proxy_arp = 1" >> /etc/sysctl.conf
-	sysctl -p /etc/sysctl.conf
+    # on relay server
+    echo "net.ipv4.ip_forward = 1" >> /etc/sysctl.conf
+    echo "net.ipv4.conf.all.proxy_arp = 1" >> /etc/sysctl.conf
+    sysctl -p /etc/sysctl.conf
 
 config:
-	docker run -d -v $PWD/data:/data -p 18080:8080 -e "WG_CONF_DIR=/data" vx3r/wg-gen-web:latest
+    docker run -d -v $PWD/data:/data -p 18080:8080 -e "WG_CONF_DIR=/data" vx3r/wg-gen-web:latest
 
 update-srv:
-	scp data/wg0.conf wg0:/etc/wireguard/wg0.conf
-	ssh wg0 'bash -c "wg syncconf wg0 <(wg-quick strip wg0)"'
+    scp data/wg0.conf wg0:/etc/wireguard/wg0.conf
+    ssh wg0 'bash -c "wg syncconf wg0 <(wg-quick strip wg0)"'
 
 dns:
     docker run -d \

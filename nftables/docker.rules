@@ -1,0 +1,20 @@
+# sudo nft delete table inet docker && sudo nft -f docker.rules
+# curl -s baidu.com && docker exec freport curl -s xinminghui.com && docker exec freport curl -s baidu.com
+#
+table inet docker {
+    chain forward {
+        type filter hook forward priority 0; policy accept;
+        oifname "docker0" ip daddr 172.178.0.0/16 accept
+        oifname "docker0" ip saddr 172.178.0.0/16 accept
+        oifname "docker0" ip daddr 10.6.0.0/16 accept
+        oifname "docker0" ip saddr 10.6.0.0/16 accept
+        oifname "docker0" ip daddr 39.106.43.103 accept
+        oifname "docker0" ip saddr 39.106.43.103 accept
+        oifname "docker0" ip daddr 47.94.200.70 accept
+        oifname "docker0" ip saddr 47.94.200.70 accept
+        oifname "docker0" tcp dport {3306,8885,38888,38889} accept
+        oifname "docker0" udp sport {53} accept
+        oifname "docker0" udp dport {53} accept
+        oifname "docker0" drop
+    }
+}

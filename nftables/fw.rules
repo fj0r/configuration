@@ -1,0 +1,48 @@
+# sudo nft delete table inet filter
+# sudo nft -f fw.rules
+#
+table inet filter {
+    chain output {
+		type filter hook output priority 0; policy drop;
+		# drop invalid connections
+		ct state invalid drop
+
+		# accept traffic originating from us
+		ct state established,related accept
+
+		# accept any localhost traffic
+		oif {lo,wg0,docker0,br-cdab0b845dde,br-343188f0a586} accept
+		# accept ICMP
+		ip protocol icmp accept
+		ip6 nexthdr icmpv6 accept
+
+		# accept DNS lookup
+		udp sport 53 accept
+		udp dport 53 accept
+		# allow common
+		tcp sport {ssh,2222} accept
+		# allow frp
+		tcp sport 7700 accept
+		tcp dport 7700 accept
+		# allow finereport
+		tcp dport {8885,38888,38889} accept
+		# allow ssh,http
+		# tcp dport {ssh,http,https} accept
+
+        # cdc server
+        ip saddr 39.106.43.103 accept
+        ip daddr 39.106.43.103 accept
+
+        # xmh shop
+        ip saddr 47.94.200.70 accept
+        ip daddr 47.94.200.70 accept
+
+        ip saddr 10.6.0.0/16 accept
+        ip daddr 10.6.0.0/16 accept
+        # lan
+        ip daddr 172.178.0.0/16 accept
+
+        # docker
+        ip daddr { 52.200.137.137, 52.204.250.5, 34.194.52.218 } accept
+    }
+}
