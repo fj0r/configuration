@@ -1,0 +1,30 @@
+template IN A d {
+    answer "{{ .Name }} IN A 10.6.6.2"
+    fallthrough
+}
+
+template IN A y {
+    answer "{{ .Name }} IN A 127.0.0.1"
+    fallthrough
+}
+
+template IN A bi {
+    answer "{{ .Name }} IN A 10.6.6.3"
+    fallthrough
+}
+
+template IN A nv {
+    answer "{{ .Name }} IN A 10.6.6.10"
+    fallthrough
+}
+
+template IN A es {
+    answer "{{ .Name }} IN A 10.6.6.9"
+    fallthrough
+}
+
+template IN A x {
+    answer "{{ .Name }} IN A 10.6.6.4"
+    fallthrough
+}
+

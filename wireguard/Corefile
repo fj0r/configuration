@@ -1,0 +1,14 @@
+. {
+  import zones/*
+
+  forward . 8.8.8.8 {
+    policy sequential
+    prefer_udp
+    expire 10s
+  }
+
+  cache 120
+  reload 6s
+  log . "{local}:{port} - {>id} '{type} {class} {name} {proto} {size} {>do} {>bufsize}' {rcode} {>rflags} {rsize} {duration}"
+  errors
+}

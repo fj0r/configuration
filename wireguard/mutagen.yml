@@ -1,0 +1,22 @@
+sync:
+  defaults:
+    flushOnCreate: true
+    ignore:
+      vcs: true
+    permissions:
+      defaultFileMode: 644
+      defaultDirectoryMode: 755
+  wg-xmh:
+    alpha: "."
+    beta: "xmh-cdc:wg-xmh"
+    ignore:
+      paths:
+        - mutagen.yml.lock
+        - .idea
+        - .vscode
+        - .git
+        - .dockerignore
+        - .devcontainer
+        - vendor/*
+        - id_ed25519
+        - att/front_cache
