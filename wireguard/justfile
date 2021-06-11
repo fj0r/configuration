@@ -1,5 +1,5 @@
 watch:
-	systemctl enable wg-gen-web.service wg-gen-web.path --now
+	systemctl enable wg-watch.service wg-watch.path --now
 
 setup:
 	systemctl enable wg-quick@wg0
@@ -13,4 +13,17 @@ relay:
 
 config:
 	docker run -d -v $PWD/data:/data -p 18080:8080 -e "WG_CONF_DIR=/data" vx3r/wg-gen-web:latest
+
+update-srv:
+	scp data/wg0.conf wg0:/etc/wireguard/wg0.conf
+	ssh wg0 'bash -c "wg syncconf wg0 <(wg-quick strip wg0)"'
+
+dns:
+    docker run -d \
+        --restart=always \
+        --name wg-coredns \
+        -v $PWD/Corefile:/Corefile \
+        -v $PWD/zones:/zones \
+        -p 10.6.6.1:53:53 -p 10.6.6.1:53:53/udp \
+        coredns/coredns:1.8.4
 
