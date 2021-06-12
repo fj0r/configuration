@@ -174,10 +174,3 @@ compdef upload-docker-images
 
 export PATH=/home/nash/.tiup/bin:$PATH
 
-if (( $+commands[octosql])); then
-    function q {
-        export OCTOSQL_CONFIG=$(find . -name '*octo*y*ml')
-        octosql $@
-    }
-fi
-
