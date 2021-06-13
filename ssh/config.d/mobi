@@ -1,5 +1,6 @@
 Host redmi
-    HostName 192.168.199.138
+    HostName 10.6.6.14
+    #HostName 192.168.99.137
     User u0_a280
     Port 8022
     IdentityFile ~/.ssh/id_ed25519

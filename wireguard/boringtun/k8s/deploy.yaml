@@ -1,0 +1,65 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: boringtun
+  labels:
+    app: boringtun
+spec:
+  revisionHistoryLimit: 1
+  replicas: 1
+  selector:
+    matchLabels:
+      app: boringtun
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: boringtun
+        version: "2020012400"
+    spec:
+      shareProcessNamespace: true
+      containers:
+      - image: fj0rd/v2:wg
+        name: data
+        securityContext:
+          #privileged: true
+          capabilities:
+            add:
+              - NET_ADMIN
+        command: ["/bin/bash"]
+        #env:
+        #  - name: INTERFACE_NAME
+        #    value: wg0
+        #  - name: WG_SUDO
+        #    value: "1"
+        #  - name: WG_QUICK_USERSPACE_IMPLEMENTATION
+        #    value: "/app/boringtun"
+        args: ["-c", "wg-quick up wg0 && sleep infinity"]
+        volumeMounts:
+        - name: config
+          mountPath: /etc/wireguard/
+        - mountPath: /dev/net/tun
+          name: dev-net-tun
+        - mountPath: /var/run/
+          name: run
+        ports:
+        - containerPort: 8080
+        resources:
+          limits:
+            cpu: 2
+            memory: 512Mi
+            ephemeral-storage: 64Mi
+          requests:
+            cpu: 500m
+            memory: 256Mi
+            ephemeral-storage: 16Mi
+      volumes:
+      - name: config
+        configMap:
+          name: boringtun
+      - name: dev-net-tun
+        hostPath:
+          path: /dev/net/tun
+      - name: run
+        emptyDir: {}

@@ -1,3 +1,10 @@
+docker pf="test":
+    docker run --rm -d --name boringtun-{{pf}} \
+        --cap-add=NET_ADMIN \
+        --device=/dev/net/tun \
+        -v $PWD/data/{{pf}}.conf:/etc/wireguard/wg0.conf \
+        fj0rd/0x:wg bash -c 'wg-quick up wg0 && sleep infinity'
+
 watch:
     systemctl enable wg-watch.service wg-watch.path --now
 
