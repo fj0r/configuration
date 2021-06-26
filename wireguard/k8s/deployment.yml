@@ -22,6 +22,9 @@ spec:
         securityContext:
           capabilities:
             add: ["NET_ADMIN", "SYS_MODULE"]
+        env:
+          - name: _1234
+            value: service.ns:80
         volumeMounts:
         - name: config
           mountPath: /etc/wireguard
