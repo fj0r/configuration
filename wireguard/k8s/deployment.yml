@@ -20,9 +20,8 @@ spec:
         image: fj0rd/0x:wg
         imagePullPolicy: IfNotPresent
         securityContext:
-          privileged: true
           capabilities:
-            add: ["NET_ADMIN"]
+            add: ["NET_ADMIN", "SYS_MODULE"]
         volumeMounts:
         - name: config
           mountPath: /etc/wireguard
