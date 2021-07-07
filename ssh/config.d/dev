@@ -1,11 +1,11 @@
-Host dev1
+Host dev2
     HostName 172.178.1.204
     Port 22
     IdentityFile ~/.ssh/dev
     IdentitiesOnly yes
     User ad
 
-Host dev2
+Host dev1
     HostName 172.178.1.37
     Port 22
     IdentityFile ~/.ssh/dev

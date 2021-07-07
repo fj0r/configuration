@@ -15,8 +15,12 @@ alias lg='lazygit'
 alias vv='nvim -u $CFG/nvim-lua/init.vim'
 alias nv='nvim -u $CFG/nvim/init.vim'
 installNeovim () {
-    curl -sSL https://github.com/neovim/neovim/releases/download/${NVIM_VERSION:-nightly}/nvim-linux64.tar.gz \
-      |sudo tar zxf - -C /usr/local --strip-components=1
+    if [ -z "$1" ]; then
+        cat ~/nvim-linux64.tar.gz | sudo tar zxf - -C /usr/local --strip-components=1
+    else
+        curl -# -SL https://github.com/neovim/neovim/releases/download/${NVIM_VERSION:-nightly}/nvim-linux64.tar.gz \
+          |sudo tar zxf - -C /usr/local --strip-components=1
+    fi
 }
 
 function parallel-ssh {
@@ -155,7 +159,7 @@ function deploy-to-server {
 
     local cmd="cat $HOME/nvim-linux64.tar.gz "
     for i in $*
-        cmd+="| tee >($sshcmd $i \"tar -zxf - -C \\\$HOME/.local --strip-components=1\")"
+        cmd+="| tee >($sshcmd $i \"sudo tar -zxf - -C /usr/local --strip-components=1\")"
     cmd+="> /dev/null"
     echo $cmd
     eval $cmd
