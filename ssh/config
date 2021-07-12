@@ -31,12 +31,12 @@ Host tx
 ### dev.server {{{
 ##region
 Host nuc
-    #HostName 172.178.5.21
-    HostName 10.6.6.4
+    HostName 172.178.5.21
+    #HostName 10.6.6.4
     Port 2222
-    IdentityFile ~/.ssh/id_ed25519
+    IdentityFile ~/.ssh/nuc
     IdentitiesOnly yes
-    User nash
+    User fjord
 
 ##endregion }}}
 
