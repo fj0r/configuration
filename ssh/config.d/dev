@@ -13,7 +13,8 @@ Host dev1
     User ad
 
 Host dev0
-    HostName 172.178.1.58
+    #HostName 172.178.1.58
+    HostName 10.6.6.12
     Port 22
     IdentityFile ~/.ssh/dev
     IdentitiesOnly yes
