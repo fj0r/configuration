@@ -142,6 +142,32 @@ function archive-cfg {
     echo "restore: cat $HOME/pub/cfg.tgz | tar -C ~ -zxvf - --strip-component=1"
 }
 
+function archive-nvim-cfg {
+    local d=$(date +"%Y%m%d%H%M%S")
+    local tmp="/tmp/cfg/$d"
+    mkdir -p $tmp
+    tar \
+            --exclude='*/__pycache__*' \
+            --exclude='*/nvim-luapad/gifs*' \
+            --exclude='*/plugged/ultisnips/doc/*' \
+            --exclude='*/plugged/vimspector/gadgets/*' \
+            --exclude='plugged/LeaderF/autoload/leaderf/fuzzyMatch_C/build' \
+            -cf - -C $CFG nvim | tar -xf - -C $tmp/
+    rm -f $tmp/nvim/.netrwhist
+    pushd $tmp
+    for i in nvim `sh -c 'ls -d nvim/pack/packer/start/*/'` `sh -c 'ls -d nvim/pack/packer/opt/*/'`; do
+        pushd $i
+        echo ----------------------
+        pwd
+        git reflog expire --all --expire=now && git gc --prune=now --aggressive
+        popd
+    done
+    tar -zcf nvim-cfg.tar.gz nvim
+    rm -f $HOME/pub/nvim-cfg.tar.gz
+    mv nvim-cfg.tar.gz $HOME/pub
+    popd
+    rm -rf $tmp
+}
 function deploy-to-server {
     #rsync -av -e ssh $rc $1:~/.zshrc
     #rsync -av --delete -e ssh $CFG/.zshrc.d/ $1:~/.zshrc.d
