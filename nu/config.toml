@@ -1,0 +1,6 @@
+startup = [
+    'def nuver [] {version | pivot key value}',
+    'alias ll = ls -l',
+    #'ls $"($nu.config-path | path dirname)/*.nu" | each { nu $it.name }'
+]
+table_mode = "light" # basic, compact, compact_double, light, thin, with_love, rounded, reinforced, heavy, none, other
