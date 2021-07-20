@@ -152,6 +152,7 @@ function archive-nvim-cfg {
             --exclude='*/plugged/ultisnips/doc/*' \
             --exclude='*/plugged/vimspector/gadgets/*' \
             --exclude='plugged/LeaderF/autoload/leaderf/fuzzyMatch_C/build' \
+            --exclude='*/plugged/vimspector/gadgets/*' \
             -cf - -C $CFG nvim | tar -xf - -C $tmp/
     rm -f $tmp/nvim/.netrwhist
     pushd $tmp
@@ -162,7 +163,11 @@ function archive-nvim-cfg {
         git reflog expire --all --expire=now && git gc --prune=now --aggressive
         popd
     done
-    tar -zcf nvim-cfg.tar.gz nvim
+    tar \
+        --exclude='pack/packer/start/plenary.nvim/.git' \
+        --exclude='pack/packer/start/*/.git' \
+        --exclude='pack/packer/opt/*/.git' \
+        -zcf nvim-cfg.tar.gz nvim
     rm -f $HOME/pub/nvim-cfg.tar.gz
     mv nvim-cfg.tar.gz $HOME/pub
     popd
