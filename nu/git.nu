@@ -69,7 +69,9 @@ alias gk = \gitk --all --branches
 alias gke = \gitk --all $(git log -g --pretty=%h)
 
 alias gl = git pull
-alias glg = git log --stat
+def glg [] {
+    git log --pretty=%h»¦«%aN»¦«%s»¦«%aD | lines | split column "»¦«" sha1 committer desc merged_at | first 20
+}
 alias glgp = git log --stat -p
 alias glgg = git log --graph
 alias glgga = git log --graph --decorate --all

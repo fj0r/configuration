@@ -44,7 +44,8 @@ Host nuc
 ##region
 Host dev
     #HostName 120.224.237.162
-    HostName 10.6.6.2
+    HostName 172.178.5.16
+    #HostName 10.6.6.2
     Port 2222
     IdentityFile ~/.ssh/id_ed25519
     IdentitiesOnly yes
@@ -89,8 +90,8 @@ Host xmh-es
 
 Host wg0
   #ProxyCommand ssh -q dev5 nc %h %p
-  #HostName 39.106.43.103
-  HostName 10.6.6.1
+  HostName 39.106.43.103
+  #HostName 10.6.6.1
   IdentityFile ~/.ssh/cdc
   User root
 
