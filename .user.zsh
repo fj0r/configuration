@@ -165,9 +165,9 @@ function archive-nvim-cfg {
         popd
     done
     tar \
-        --exclude='pack/packer/start/plenary.nvim/.git' \
         --exclude='pack/packer/start/*/.git' \
         --exclude='pack/packer/opt/*/.git' \
+        --exclude='.git' \
         -zcf nvim-cfg.tar.gz nvim
     rm -f $HOME/pub/nvim-cfg.tar.gz
     mv nvim-cfg.tar.gz $HOME/pub
