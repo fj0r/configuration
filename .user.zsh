@@ -3,6 +3,11 @@ export VIM_DUAL_ESC=0
 export KUBERNETES_SCHEMA_URL=file://$HOME/world/v1.21.1-standalone-strict/all.json
 export PATH=/opt/ghc/bin:$PATH
 
+if (( $+commands[zoxide] )); then
+    eval "$(zoxide init zsh)"
+    alias cd=z
+fi
+
 if [ -n "$WSL_DISTRO_NAME" ]; then
   #export DISPLAY=${route}:0.0
   #export WSLHOME=$(wslpath $(wslvar USERPROFILE))
@@ -10,7 +15,7 @@ fi
 
 # docker save xxx | r='docker load'; parallel-ssh a b c
 
-export PATH=/opt/nushell:$PATH
+export PATH=/opt/nu:$PATH
 
 alias lg='lazygit'
 alias vv='nvim -u $CFG/nvim-lua/init.vim'
