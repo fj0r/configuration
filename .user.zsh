@@ -1,7 +1,7 @@
 export NVIM_PRESET=full
 export VIM_DUAL_ESC=0
 export KUBERNETES_SCHEMA_URL=file://$HOME/world/v1.21.1-standalone-strict/all.json
-export PATH=/opt/ghc/bin:$PATH
+export PATH=/opt/julia/bin:/opt/ghc/bin:$PATH
 
 if (( $+commands[zoxide] )); then
     eval "$(zoxide init zsh)"
@@ -127,7 +127,7 @@ function archive-cfg {
     mkdir -p $tmp/.config
     cp $CFG/_tmux.conf $tmp/.tmux.conf
     mkdir -p $tmp/.local/bin
-    cp /usr/local/bin/{just,watchexec,yq,rg} $tmp/.local/bin
+    cp /usr/local/bin/{just,watchexec,yq,rg,fd,dust,btm,xh} $tmp/.local/bin
     #tar hzcvf - --transform "s|^$d\(.*\)|\1|" -C /tmp/cfg $d
     # cp -r $CFG/nvim $tmp/.config/
     tar \

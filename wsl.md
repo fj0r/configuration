@@ -1,3 +1,10 @@
+```
+# %LOCALAPPDATA%\Docker\wsl\data
+cd C:\Users\<user>\AppData\Local\Docker\wsl\data
+wsl --shutdown
+Optimize-VHD -Path .\ext4.vhdx -Mode Full
+```
+
 ## work with gui
 Windows(宿主机)安装 VcXsrv
 
