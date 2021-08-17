@@ -90,8 +90,8 @@ Host xmh-es
 
 Host wg0
   #ProxyCommand ssh -q dev5 nc %h %p
-  HostName 39.106.43.103
-  #HostName 10.6.6.1
+  #HostName 39.106.43.103
+  HostName 10.6.6.1
   IdentityFile ~/.ssh/cdc
   User root
 
