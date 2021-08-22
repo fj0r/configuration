@@ -1,7 +1,8 @@
 export NVIM_PRESET=full
+export NVIM_THEME=gruvbox-dark-medium
 export VIM_DUAL_ESC=0
 export KUBERNETES_SCHEMA_URL=file://$HOME/world/v1.21.1-standalone-strict/all.json
-export PATH=/opt/julia/bin:/opt/ghc/bin:$PATH
+export PATH=/opt/helix:/opt/julia/bin:/opt/ghc/bin:$PATH
 
 if (( $+commands[zoxide] )); then
     eval "$(zoxide init zsh)"
@@ -194,9 +195,9 @@ function deploy-to-server {
     echo $cmd
     eval $cmd
 
-    local cmd="cat $HOME/nvim-linux64.tar.gz "
+    local cmd="cat $HOME/helix-*-x86_64-linux.tar.xz "
     for i in $*
-        cmd+="| tee >($sshcmd $i \"sudo tar -zxf - -C /usr/local --strip-components=1\")"
+        cmd+="| tee >($sshcmd $i \"sudo mkdir -p /opt/helix; sudo tar -Jxf - -C /opt/helix --strip-components=1; sudo ln -sf /opt/helix/hx /usr/local/bin\")"
     cmd+="> /dev/null"
     echo $cmd
     eval $cmd
