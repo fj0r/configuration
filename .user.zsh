@@ -2,7 +2,7 @@ export NVIM_PRESET=full
 export NVIM_THEME=gruvbox-dark-medium
 export VIM_DUAL_ESC=0
 export KUBERNETES_SCHEMA_URL=file://$HOME/world/v1.21.1-standalone-strict/all.json
-export PATH=/opt/helix:/opt/julia/bin:/opt/ghc/bin:$PATH
+export PATH=/opt/kak-lsp:/opt/helix:/opt/julia/bin:/opt/ghc/bin:$PATH
 
 if (( $+commands[zoxide] )); then
     eval "$(zoxide init zsh)"
