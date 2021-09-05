@@ -19,7 +19,7 @@ fi
 export PATH=/opt/nu:$PATH
 
 alias lg='lazygit'
-alias vv='nvim -u $CFG/nvim-lua/init.vim'
+alias kk='/usr/bin/kak'
 alias nv='nvim -u $CFG/nvim/init.vim'
 installNeovim () {
     if [ -z "$1" ]; then

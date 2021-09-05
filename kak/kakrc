@@ -1,0 +1,18 @@
+set global ui_options ncurses_assistant=none
+set global indentwidth 4
+set global tabstop 4
+colorscheme gruvbox
+
+hook global InsertCompletionShow .* %{
+    try %{
+        execute-keys -draft 'h<a-K>\h<ret>'
+        map window insert <tab> <c-n>
+        map window insert <s-tab> <c-p>
+        hook -once -always window InsertCompletionHide .* %{
+            map window insert <tab> <tab>
+            map window insert <s-tab> <s-tab>
+        }
+    }
+}
+
+#add-highlighter window/ number-lines
