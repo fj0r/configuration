@@ -15,4 +15,9 @@ hook global InsertCompletionShow .* %{
     }
 }
 
+eval %sh{kak-lsp --kakoune -s $kak_session}  # Not needed if you load it with plug.kak.
+hook global WinSetOption filetype=(rust|python|go|javascript|typescript|c|cpp) %{
+    lsp-enable-window
+}
+
 #add-highlighter window/ number-lines
