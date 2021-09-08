@@ -97,10 +97,10 @@ Host wg0
 
 Host xmh_be
     HostName 101.200.63.124
-    IdentityFile ~/.ssh/eng2ecdsa
+    IdentityFile ~/.ssh/xinminghui
     IdentitiesOnly yes
     Port 22
-    User 6976
+    User root
 
 Host tjsa
     HostName 101.201.238.124
