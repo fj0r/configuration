@@ -49,3 +49,9 @@ Host alalaba
     IdentitiesOnly yes
     User root
 
+Host php-container
+    HostName localhost
+    Port 1223
+    User root
+    IdentityFile ~/.ssh/php-container
+    IdentitiesOnly yes
