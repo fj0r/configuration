@@ -110,3 +110,10 @@ Host tjsa
     User root
 
 ##endregion }}}
+
+Host node-saas-shanneng-backend
+    Hostname localhost
+    Port 1223
+    User root
+    IdentityFile ~/.ssh/node-dev
+    IdentitiesOnly yes
