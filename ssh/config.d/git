@@ -12,7 +12,13 @@ Host g.eng
 Host git.d
     IdentityFile ~/.ssh/nash
 
+Host github.com
+  HostName github.com
+  User git
+  ProxyCommand nc -v -x 127.0.0.1:7891 %h %p
+
 Host github-fjord
   HostName github.com
   User git
-  IdentityFile ~/.ssh/id_ed25519
+  IdentityFile ~/.ssh/github
+  ProxyCommand nc -v -x 127.0.0.1:7891 %h %p

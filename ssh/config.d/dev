@@ -1,3 +1,10 @@
+Host 172211
+    HostName localhost
+    Port 1234
+    IdentityFile /home/nash/world/nginx-nchan/id_ed25519
+    IdentitiesOnly yes
+    User root
+
 Host dev2
     HostName 172.178.1.204
     Port 22
@@ -13,8 +20,8 @@ Host dev1
     User ad
 
 Host dev0
-    #HostName 172.178.1.58
-    HostName 10.6.6.12
+    HostName 172.178.1.58
+    #HostName 10.6.6.12
     Port 22
     IdentityFile ~/.ssh/dev
     IdentitiesOnly yes
