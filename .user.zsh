@@ -60,7 +60,7 @@ function efav {
 hash -d tut="$HOME/pub/Tutorial"
 hash -d plt="$HOME/pub/Platform"
 
-source /home/nash/k8s/istio-*/tools/_istioctl
+#source /home/nash/k8s/istio-*/tools/_istioctl
 
 
 [ -f "${GHCUP_INSTALL_BASE_PREFIX:=$HOME}/.ghcup/env" ] && source "${GHCUP_INSTALL_BASE_PREFIX:=$HOME}/.ghcup/env"
