@@ -5,6 +5,13 @@ Host 172211
     IdentitiesOnly yes
     User root
 
+Host devx
+    HostName 172.178.5.16
+    Port 22
+    IdentityFile ~/.ssh/devx
+    IdentitiesOnly yes
+    User root
+
 Host dev2
     HostName 172.178.1.204
     Port 22

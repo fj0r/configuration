@@ -16,26 +16,26 @@
     "editor.find.autoFindInSelection": "multiline",
     "editor.scrollBeyondLastLine": false,
     "editor.lineNumbers": "off",
-    "terminal.integrated.lineHeight": 1.2,
-    "terminal.integrated.fontSize": 12,
-    "terminal.explorerKind": "external",
-    "terminal.integrated.rendererType": "experimentalWebgl",
-    "terminal.integrated.shell.linux": "/bin/zsh",
-    "terminal.integrated.automationShell.linux": "/bin/bash",
-    "terminal.integrated.allowChords": false,
-    "terminal.integrated.commandsToSkipShell": [
-        // Send quick open's keybinding to the shell
-        //"-workbench.action.quickOpen",
-        //"-workbench.action.terminal.focusFindWidget"
-    ],
+    "diffEditor.ignoreTrimWhitespace": false,
+    "git.autofetch": true,
+    "git.confirmSync": false,
+    "git.enableSmartCommit": true,
+    "workbench.startupEditor": "none",
+    "workbench.sideBar.location": "left",
+    "workbench.activityBar.visible": true,
+    "workbench.editor.closeEmptyGroups": true,
+    "workbench.iconTheme": null,
+    "workbench.tree.renderIndentGuides": "always",
+    "workbench.colorTheme": "Solarized Light",
+    "workbench.editorAssociations": {
+        "*.ipynb": "jupyter.notebook.ipynb"
+    },
     "explorer.confirmDragAndDrop": false,
     "explorer.incrementalNaming": "smart",
-    "rest-client.fontSize": 12,
-    "rest-client.previewResponseInUntitledDocument": true,
+    "explorer.confirmDelete": false,
     "window.title": "${dirty}${folderName}://${activeEditorMedium}",
     "window.zoomLevel": 0,
-    "window.menuBarVisibility": "default",
-    "window.titleBarStyle": "custom",
+    "window.menuBarVisibility": "classic",
     "breadcrumbs.symbolPath": "on",
     "breadcrumbs.filePath": "on",
     "breadcrumbs.enabled": true,
@@ -43,41 +43,62 @@
     "debug.showInStatusBar": "always",
     "debug.inlineValues": false,
     "search.showLineNumbers": true,
-    "workbench.editor.showTabs": true,
-    "workbench.statusBar.visible": true,
-    "workbench.sideBar.location": "left",
-    "workbench.activityBar.visible": true,
-    "workbench.editor.closeEmptyGroups": true,
-    "workbench.iconTheme": null,
-    "workbench.tree.renderIndentGuides": "always",
-    "workbench.colorTheme": "Github Light Theme - Gray",
-    "typescript.tsserver.log": "verbose",
-    "explorer.confirmDelete": false,
-    "git.enableSmartCommit": true,
-    "extensions.ignoreRecommendations": true,
-    "files.associations": {
-        "Dockerfile-*": "dockerfile",
-        "docker-compose.*.yml": "yaml"
+    "terminal.integrated.lineHeight": 1.2,
+    "terminal.integrated.fontSize": 12,
+    "terminal.explorerKind": "external",
+    "terminal.integrated.automationShell.linux": "/bin/bash",
+    "terminal.integrated.allowChords": false,
+    "terminal.integrated.inheritEnv": false,
+    "terminal.integrated.commandsToSkipShell": [
+        // Send quick open's keybinding to the shell
+        //"-workbench.action.quickOpen",
+        //"-workbench.action.terminal.focusFindWidget"
+    ],
+    "terminal.integrated.profiles.linux": {
+        "zsh": {
+            "path": "zsh"
+        },
+        "bash": {
+            "path": "bash",
+            "icon": "terminal-bash"
+        },
+        "fish": {
+            "path": "fish"
+        },
+        "tmux": {
+            "path": "tmux",
+            "icon": "terminal-tmux"
+        },
+        "pwsh": {
+            "path": "pwsh",
+            "icon": "terminal-powershell"
+        }
     },
-    "javascript.updateImportsOnFileMove.enabled": "always",
-    "python.jediEnabled": false,
-    "emmet.syntaxProfiles": {
-        "vue-html": "html",
-        "vue": "html"
+    "terminal.integrated.profiles.windows": {
+        "WSL": {
+            "path": [
+                "${env:windir}\\System32\\wsl.exe"
+            ],
+            "args": [],
+            "icon": "terminal-cmd"
+        },
+        "PowerShell": {
+            "source": "PowerShell",
+            "icon": "terminal-powershell"
+        },
+        "Command Prompt": {
+            "path": [
+                "${env:windir}\\Sysnative\\cmd.exe",
+                "${env:windir}\\System32\\cmd.exe"
+            ],
+            "args": [],
+            "icon": "terminal-cmd"
+        },
+        "Git Bash": {
+            "source": "Git Bash"
+        }
     },
-    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
-    "diffEditor.ignoreTrimWhitespace": false,
-    "[javascript]": {
-        "editor.defaultFormatter": "vscode.typescript-language-features"
-    },
-    "[json]": {
-        "editor.defaultFormatter": "vscode.json-language-features"
-    },
-    "[jsonc]": {
-        "editor.defaultFormatter": "vscode.json-language-features"
-    },
-    "remote.SSH.allowLocalServerDownload": true,
-    "remote.SSH.showLoginTerminal":false,
+    "remote.SSH.showLoginTerminal": false,
     "remote.containers.defaultExtensions": [
         "mutantdino.resourcemonitor"
     ],
@@ -87,79 +108,72 @@
     "remote.extensionKind": {
         "ms-azuretools.vscode-docker": "workspace"
     },
-    "git.autofetch": true,
-    "workbench.startupEditor": "none",
-    "git.confirmSync": false,
-    "peacock.favoriteColors": [
+    "vim.easymotion": true,
+    "vim.useSystemClipboard": true,
+    "vim.leader": "\\",
+    "vim.normalModeKeyBindingsNonRecursive": [
         {
-            "name": "Angular Red",
-            "value": "#b52e31"
+            "before": ["L"],
+            "after": ["$"]
         },
         {
-            "name": "Auth0 Orange",
-            "value": "#eb5424"
+            "before": ["H"],
+            "after": ["^"]
         },
         {
-            "name": "Azure Blue",
-            "value": "#007fff"
+            "before": ["<space>", "<space>"],
+            "after": ["<leader>", "<leader>", "<leader>", "j"]
         },
         {
-            "name": "C# Purple",
-            "value": "#68217A"
-        },
-        {
-            "name": "Gatsby Purple",
-            "value": "#639"
-        },
-        {
-            "name": "Go Cyan",
-            "value": "#5dc9e2"
-        },
-        {
-            "name": "Java Blue-Gray",
-            "value": "#557c9b"
-        },
-        {
-            "name": "JavaScript Yellow",
-            "value": "#f9e64f"
-        },
-        {
-            "name": "Mandalorian Blue",
-            "value": "#1857a4"
-        },
-        {
-            "name": "Node Green",
-            "value": "#215732"
-        },
-        {
-            "name": "React Blue",
-            "value": "#00b3e6"
-        },
-        {
-            "name": "Something Different",
-            "value": "#832561"
-        },
-        {
-            "name": "Vue Green",
-            "value": "#42b883"
+            "before": ["<space>", "s"],
+            "after": ["<leader>", "<leader>", "s"]
         }
     ],
-    "peacock.surpriseMeFromFavoritesOnly": true,
-    "peacock.affectTitleBar": true,
-    "peacock.affectStatusBar": false,
-    "peacock.affectTabActiveBorder": true,
-    "peacock.affectActivityBar": false,
-    "peacock.affectAccentBorders": true,
+    "rest-client.fontSize": 12,
+    "rest-client.previewResponseInUntitledDocument": true,
+    "typescript.tsserver.log": "verbose",
+    "extensions.ignoreRecommendations": true,
+    "files.associations": {
+        "Dockerfile-*": "dockerfile",
+        "docker-compose.*.yml": "yaml"
+    },
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "emmet.syntaxProfiles": {
+        "vue-html": "html",
+        "vue": "html"
+    },
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "[javascript]": {
+        "editor.defaultFormatter": "vscode.typescript-language-features"
+    },
+    "[json]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "[jsonc]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "[vue]": {
+        "editor.defaultFormatter": "yoyo930021.vuter"
+    },
     "python.languageServer": "Pylance",
-    "python.analysis.typeCheckingMode": "strict",
+    "todo-tree.tree.showScanModeButton": false,
+    "tabulous.activeTabColor": "orange",
+    "redhat.telemetry.enabled": true,
     "rust-client.engine": "rust-analyzer",
+    "rust.rust-analyzer.releaseTag": "stable",
     "vs-kubernetes": {
         "vs-kubernetes.outputFormat": "yaml",
-        "vs-kubernetes.kubeconfig": "",
+        "vs-kubernetes.kubeconfig": "/home/nash/.kube/dev0/config",
         "disable-linters": [
             "resource-limits"
         ],
-        "imageBuildTool": "Docker"
+        "imageBuildTool": "Docker",
+        "vs-kubernetes.knownKubeconfigs": [
+            "c:\\Users\\nash\\.kube\\nuc_config",
+            "c:\\Users\\nash\\.kube\\config",
+            "c:\\Users\\nash\\.kube\\eainger2_admin_config",
+            "/home/nash/.kube/dev0/config"
+        ]
     },
     "cSpell.userWords": [
         "Autowired",
@@ -256,5 +270,4 @@
         "webhook",
         "webp"
     ],
-    "todo-tree.tree.showScanModeButton": false
 }
