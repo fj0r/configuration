@@ -29,17 +29,6 @@ Host tx
 ##endregion }}}
 
 ### dev.server {{{
-##region
-Host nuc
-    #HostName 172.178.5.21
-    HostName 10.6.6.4
-    Port 2222
-    IdentityFile ~/.ssh/nuc
-    IdentitiesOnly yes
-    User fjord
-
-##endregion }}}
-
 ### server {{{
 ##region
 Host dev
@@ -120,7 +109,8 @@ Host node-saas-shanneng-backend
     IdentitiesOnly yes
 
 Host pi
-    Hostname 39.97.113.120
+    #Hostname 39.97.113.120
+    Hostname 10.19.0.1
     Port 2233
     User root
     IdentityFile ~/.ssh/id_ed25519

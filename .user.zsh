@@ -127,6 +127,8 @@ function archive-cfg {
     cp $CFG/.ext.zsh $tmp/
     mkdir -p $tmp/.config
     cp $CFG/_tmux.conf $tmp/.tmux.conf
+    mkdir -p $tmp/.config/helix
+    cp $CFG/helix/* $tmp/.config/helix
     mkdir -p $tmp/.local/bin
     cp /usr/local/bin/{just,watchexec,yq,rg,fd,dust,btm,xh} $tmp/.local/bin
     #tar hzcvf - --transform "s|^$d\(.*\)|\1|" -C /tmp/cfg $d
