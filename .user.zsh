@@ -1,3 +1,5 @@
+export http_proxy=http://localhost:7890
+export https_proxy=http://localhost:7890
 export NVIM_PRESET=full
 export NVIM_THEME=gruvbox-dark-medium
 export VIM_DUAL_ESC=0
