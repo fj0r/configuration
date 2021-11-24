@@ -5,6 +5,8 @@
     "editor.fontSize": 12,
     "editor.fontWeight": "300",
     "editor.fontLigatures": true,
+    "editor.guides.bracketPairs": true,
+    "editor.guides.bracketPairsHorizontal": true,
     "editor.renderWhitespace": "selection",
     "editor.minimap.enabled": false,
     "editor.minimap.renderCharacters": false,
@@ -34,7 +36,6 @@
     "explorer.incrementalNaming": "smart",
     "explorer.confirmDelete": false,
     "window.title": "${dirty}${folderName}://${activeEditorMedium}",
-    "window.zoomLevel": 0,
     "window.menuBarVisibility": "classic",
     "breadcrumbs.symbolPath": "on",
     "breadcrumbs.filePath": "on",
@@ -269,5 +270,5 @@
         "vuepress",
         "webhook",
         "webp"
-    ],
+    ]
 }
