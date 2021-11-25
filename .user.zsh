@@ -45,15 +45,7 @@ compdef parallel-ssh=ssh
 
 export PATH=$HOME/anaconda3/bin:/opt/blender:$PATH
 
-export EMAIL_TOKEN=hzowrolckpfeeabb
-export EMAIL_SERVER=smtp.qq.com
-export EMAIL_ACCOUNT=nash@iffy.me
-export EMAIL_RECIPIENTS='
-aibric@163.com:王虎
-791816330@qq.com:刘斌
-nash@iffy.me:我
-'
-
+source ~/.email.token
 
 function efav {
     entf nash@iffy.me "⭐️$1" $2
