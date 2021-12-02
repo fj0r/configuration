@@ -1,9 +1,8 @@
 export http_proxy=http://localhost:7890
 export https_proxy=http://localhost:7890
 export NVIM_PRESET=full
-export NVIM_THEME=gruvbox-dark-medium
 export VIM_DUAL_ESC=0
-export KUBERNETES_SCHEMA_URL=file://$HOME/world/v1.21.1-standalone-strict/all.json
+export KUBERNETES_SCHEMA_URL=file://$HOME/world/kubernetes-json-schema/all.json
 export PATH=/opt/kak-lsp:/opt/helix:/opt/julia/bin:/opt/ghc/bin:$PATH
 
 if (( $+commands[zoxide] )); then
@@ -59,7 +58,7 @@ hash -d plt="$HOME/pub/Platform"
 
 [ -f "${GHCUP_INSTALL_BASE_PREFIX:=$HOME}/.ghcup/env" ] && source "${GHCUP_INSTALL_BASE_PREFIX:=$HOME}/.ghcup/env"
 
-alias ytd="youtube-dl --proxy http://localhost:1081"
+alias ytd="youtube-dl --proxy http://localhost:7890"
 alias ytdm="ytd -x --audio-quality 0 "
 
 function github_version {
@@ -183,16 +182,29 @@ function deploy-to-server {
     #rsync -av -e ssh $CFG/.kubectl.zsh $1:~/.kubectl.zsh
     #rsync -av -e ssh $CFG/_tmux.conf $1:~/.tmux.conf
     #rsync -av --delete -e ssh $CFG/.fzf/ $1:~/.fzf
+    echo "========= deploy config"
     local cmd="cat $HOME/pub/cfg.tgz "
     local sshcmd="ssh"
     for i in $*
+        echo "--------- to $i"
         cmd+="| tee >($sshcmd $i \"rm -rf ~/.config/nvim; tar zxf - --strip-component=1; chown \\\$(id -u):\\\$(id -g) -R ~/{.zshrc,.zshrc.d}\") "
     cmd+="> /dev/null"
     echo $cmd
     eval $cmd
 
+    echo "========= deploy neovim"
+    local cmd="cat $HOME/nvim-linux64.tar.gz "
+    for i in $*
+        echo "--------- to $i"
+        cmd+="| tee >($sshcmd $i \"tar zxf - -C /usr/local/ --strip-components=1\")"
+    cmd+="> /dev/null"
+    echo $cmd
+    eval $cmd
+
+    echo "========= deploy helix"
     local cmd="cat $HOME/helix-*-x86_64-linux.tar.xz "
     for i in $*
+        echo "--------- to $i"
         cmd+="| tee >($sshcmd $i \"sudo mkdir -p /opt/helix; sudo tar -Jxf - -C /opt/helix --strip-components=1; sudo ln -sf /opt/helix/hx /usr/local/bin\")"
     cmd+="> /dev/null"
     echo $cmd
@@ -212,3 +224,4 @@ compdef upload-docker-images
 
 export PATH=/home/nash/.tiup/bin:$PATH
 
+export CRICTL=docker
