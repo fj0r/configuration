@@ -1,0 +1,44 @@
+;; Basic system config
+(defcfg
+  fallthrough true
+  input (low-level-hook)
+  output (send-event-sink)
+)
+
+(defsrc
+  esc  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12
+  grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
+  tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
+  caps a    s    d    f    g    h    j    k    l    ;    '    ret
+  lsft z    x    c    v    b    n    m    ,    .    /    rsft up
+  lctl lmet lalt           spc            ralt rmet cmp  rctl left down rght
+)
+
+(defalias
+  lec (tap-next esc lctl)
+  rec (tap-next esc rctl)
+  lsp (tap-next \( lsft)
+  rsp (tap-next \) rsft)
+  lab (tap-hold 200 { lalt)
+  rab (tap-hold 200 } ralt)
+  lvn (layer-toggle numbers)
+  xtn (tap-hold 200 tab @lvn)
+)
+
+(deflayer qwert
+  esc  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12
+  grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
+  @xtn q    w    e    r    t    y    u    i    o    p    [    ]    \
+  @lec a    s    d    f    g    h    j    k    l    ;    '    ret
+  @lsp z    x    c    v    b    n    m    ,    .    /    @rsp up
+  caps lmet @lab           spc            @rab rmet cmp  @rec left down rght
+)
+
+(deflayer numbers
+  esc  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12
+  _    _    _    _    _    _    _    \(   \)   *    /    _    _    _
+  _    _    _    _    _    XX   _    7    8    9    -    _    _    _
+  _    _    _    _    _    XX   bspc 4    5    6    +    _    _
+  _    _    _    _    _    XX   _    1    2    3    ret  _    up
+  _    _    _              0              _    .    _    _    left down rght
+)

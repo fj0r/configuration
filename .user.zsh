@@ -154,7 +154,7 @@ function archive-nvim-cfg {
             --exclude='*/plugged/ultisnips/doc/*' \
             --exclude='*/plugged/vimspector/gadgets/*' \
             --exclude='plugged/LeaderF/autoload/leaderf/fuzzyMatch_C/build' \
-            --exclude='*/plugged/vimspector/gadgets/*' \
+            --exclude='pack/packer/*/nvim-tree.lua/.github/*' \
             -cf - -C $CFG nvim | tar -xf - -C $tmp/
     rm -f $tmp/nvim/.netrwhist
     pushd $tmp
