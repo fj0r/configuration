@@ -3,4 +3,4 @@
 	url = git@github.com:murphil/nvim.git
 [submodule ".zshrc.d"]
 	path = .zshrc.d
-	url = git@github.com:murphil/.zshrc.d.git
+	url = git@github.com:infra/.zshrc.d.git
