@@ -67,50 +67,6 @@ function github_version {
     curl -sSL -H $github_header $github_api/${1}/releases | jq -r '.[].tag_name'
 }
 
-function archive-cfg-coc {
-    local d=$(date +"%Y%m%d%H%M%S")
-    local tmp="/tmp/cfg/$d/home"
-    mkdir -p $tmp
-    cp $CFG/_zshrc $tmp/.zshrc
-    cp -r $CFG/.zshrc.d $tmp/.zshrc.d
-    cp $CFG/.ext.zsh $tmp/
-    mkdir -p $tmp/.config
-    cp $CFG/_tmux.conf $tmp/.tmux.conf
-    mkdir -p $tmp/.local/bin
-    cp /usr/local/bin/{just,watchexec,yq,rg} $tmp/.local/bin
-    #tar hzcvf - --transform "s|^$d\(.*\)|\1|" -C /tmp/cfg $d
-    # cp -r $CFG/nvim $tmp/.config/
-    pushd $CFG
-    _exclude_coc=$(find nvim-coc/coc-data -mindepth 1 -maxdepth 1 ! -wholename nvim-coc/coc-data/extensions)
-    _exclude_coc_s=$(find nvim-coc/coc-data/extensions -mindepth 1 -maxdepth 1 ! -wholename nvim-coc/coc-data/extensions/node_modules ! -wholename nvim-coc/coc-data/extensions/package.json ! -wholename nvim-coc/coc-data/extensions/coc-lua-data)
-    _exclude_coc_exts=$(find nvim-coc/coc-data/extensions/node_modules -mindepth 1 -maxdepth 1 -type d  $(printf "! -wholename nvim-coc/coc-data/extensions/node_modules/coc-%s " $(cat nvim-coc/coc-core-extensions)))
-    lst1=$(jq -nR '[inputs|select(length>0)]|map("coc-"+.)' nvim-coc/coc-core-extensions)
-    lst2=$(cat nvim-coc/coc-data/extensions/package.json | jq '.dependencies|keys' | jq ". - $lst1")
-    pkglist=$(cat nvim-coc/coc-data/extensions/package.json| jq "del(.dependencies${lst2})")
-    popd
-    tar \
-            --exclude-from=<(echo "$_exclude_coc") \
-            --exclude-from=<(echo "$_exclude_coc_s") \
-            --exclude-from=<(echo "$_exclude_coc_exts") \
-            --exclude='*/.git*' \
-            --exclude='*/__pycache__*' \
-            --exclude='*/nvim-luapad/gifs*' \
-            --exclude='*/plugged/ultisnips/doc/*' \
-            --exclude='*/plugged/vimspector/gadgets/*' \
-            --exclude='plugged/LeaderF/autoload/leaderf/fuzzyMatch_C/build' \
-            -cf - -C $CFG nvim-coc | tar -xf - -C $tmp/.config
-    rm -f $tmp/.config/nvim-coc/.netrwhist
-    mv $tmp/.config/nvim-coc $tmp/.config/nvim
-    echo $pkglist > $tmp/.config/nvim/coc-data/extensions/package.json
-    pushd $tmp/..
-    tar -zcvf cfg.tgz home
-    rm -f $HOME/pub/cfg-coc.tgz
-    mv cfg.tgz $HOME/pub/cfg-coc.tgz
-    popd
-    rm -rf /tmp/cfg
-    echo "restore: cat $HOME/pub/cfg.tgz | tar -C ~ -zxvf - --strip-component=1"
-}
-
 function archive-cfg {
     local d=$(date +"%Y%m%d%H%M%S")
     local tmp="/tmp/cfg/$d/home"
@@ -123,18 +79,18 @@ function archive-cfg {
     mkdir -p $tmp/.config/helix
     cp $CFG/helix/* $tmp/.config/helix
     mkdir -p $tmp/.local/bin
-    cp /usr/local/bin/{just,watchexec,yq,rg,fd,dust,btm,xh} $tmp/.local/bin
+    cp /usr/local/bin/{just,watchexec,rq,yq,rg,fd,sd,dust,btm,xh,dog} $tmp/.local/bin
     #tar hzcvf - --transform "s|^$d\(.*\)|\1|" -C /tmp/cfg $d
     # cp -r $CFG/nvim $tmp/.config/
-    tar \
-            --exclude='*/.git*' \
-            --exclude='*/__pycache__*' \
-            --exclude='*/nvim-luapad/gifs*' \
-            --exclude='*/plugged/ultisnips/doc/*' \
-            --exclude='*/plugged/vimspector/gadgets/*' \
-            --exclude='plugged/LeaderF/autoload/leaderf/fuzzyMatch_C/build' \
-            -cf - -C $CFG nvim | tar -xf - -C $tmp/.config
-    rm -f $tmp/.config/nvim/.netrwhist
+    #tar \
+    #        --exclude='*/.git*' \
+    #        --exclude='*/__pycache__*' \
+    #        --exclude='*/nvim-luapad/gifs*' \
+    #        --exclude='*/plugged/ultisnips/doc/*' \
+    #        --exclude='*/plugged/vimspector/gadgets/*' \
+    #        --exclude='plugged/LeaderF/autoload/leaderf/fuzzyMatch_C/build' \
+    #        -cf - -C $CFG nvim | tar -xf - -C $tmp/.config
+    #rm -f $tmp/.config/nvim/.netrwhist
     pushd $tmp/..
     tar -zcvf cfg.tgz home
     rm -f $HOME/pub/cfg.tgz
@@ -175,6 +131,7 @@ function archive-nvim-cfg {
     popd
     rm -rf $tmp
 }
+
 function deploy-to-server {
     #rsync -av -e ssh $rc $1:~/.zshrc
     #rsync -av --delete -e ssh $CFG/.zshrc.d/ $1:~/.zshrc.d
@@ -185,27 +142,40 @@ function deploy-to-server {
     echo "========= deploy config"
     local cmd="cat $HOME/pub/cfg.tgz "
     local sshcmd="ssh"
-    for i in $*
+    for i in $*; do
         echo "--------- to $i"
-        cmd+="| tee >($sshcmd $i \"rm -rf ~/.config/nvim; tar zxf - --strip-component=1; chown \\\$(id -u):\\\$(id -g) -R ~/{.zshrc,.zshrc.d}\") "
+        cmd+="| tee >($sshcmd $i \"tar zxf - --strip-component=1; chown \\\$(id -u):\\\$(id -g) -R ~/{.zshrc,.zshrc.d}\") "
+    done
     cmd+="> /dev/null"
     echo $cmd
     eval $cmd
 
     echo "========= deploy neovim"
     local cmd="cat $HOME/nvim-linux64.tar.gz "
-    for i in $*
+    for i in $*; do
         echo "--------- to $i"
         cmd+="| tee >($sshcmd $i \"tar zxf - -C /usr/local/ --strip-components=1\")"
+    done
+    cmd+="> /dev/null"
+    echo $cmd
+    eval $cmd
+
+    echo "========= config neovim"
+    local cmd="cat $HOME/put/nvim-cfg.tar.gz "
+    for i in $*; do
+        echo "--------- to $i"
+        cmd+="| tee >($sshcmd $i \"rm -rf ~/.config/nvim; tar zxf - -C ~/.config; chown \\\$(id -u):\\\$(id -g) -R ~/.config/nvim\")"
+    done
     cmd+="> /dev/null"
     echo $cmd
     eval $cmd
 
     echo "========= deploy helix"
     local cmd="cat $HOME/helix-*-x86_64-linux.tar.xz "
-    for i in $*
+    for i in $*; do
         echo "--------- to $i"
         cmd+="| tee >($sshcmd $i \"sudo mkdir -p /opt/helix; sudo tar -Jxf - -C /opt/helix --strip-components=1; sudo ln -sf /opt/helix/hx /usr/local/bin\")"
+    done
     cmd+="> /dev/null"
     echo $cmd
     eval $cmd
