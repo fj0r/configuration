@@ -144,7 +144,7 @@ function deploy-to-server {
     local sshcmd="ssh"
     for i in $*; do
         echo "--------- to $i"
-        cmd+="| tee >($sshcmd $i \"tar zxf - --strip-component=1; chown \\\$(id -u):\\\$(id -g) -R ~/{.zshrc,.zshrc.d}\") "
+        cmd+="| tee >($sshcmd $i \"tar zxf - --strip-component=1; sudo chown \\\$(id -u):\\\$(id -g) -R ~/{.zshrc,.zshrc.d}\") "
     done
     cmd+="> /dev/null"
     echo $cmd
@@ -154,17 +154,17 @@ function deploy-to-server {
     local cmd="cat $HOME/nvim-linux64.tar.gz "
     for i in $*; do
         echo "--------- to $i"
-        cmd+="| tee >($sshcmd $i \"tar zxf - -C /usr/local/ --strip-components=1\")"
+        cmd+="| tee >($sshcmd $i \"sudo tar zxf - -C /usr/local/ --strip-components=1\")"
     done
     cmd+="> /dev/null"
     echo $cmd
     eval $cmd
 
     echo "========= config neovim"
-    local cmd="cat $HOME/put/nvim-cfg.tar.gz "
+    local cmd="cat $HOME/pub/nvim-cfg.tar.gz "
     for i in $*; do
         echo "--------- to $i"
-        cmd+="| tee >($sshcmd $i \"rm -rf ~/.config/nvim; tar zxf - -C ~/.config; chown \\\$(id -u):\\\$(id -g) -R ~/.config/nvim\")"
+        cmd+="| tee >($sshcmd $i \"rm -rf ~/.config/nvim; tar zxf - -C ~/.config; sudo chown \\\$(id -u):\\\$(id -g) -R ~/.config/nvim\")"
     done
     cmd+="> /dev/null"
     echo $cmd
