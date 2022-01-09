@@ -5,6 +5,8 @@ export VIM_DUAL_ESC=0
 export KUBERNETES_SCHEMA_URL=file://$HOME/world/kubernetes-json-schema/all.json
 export PATH=/opt/kak-lsp:/opt/helix:/opt/julia/bin:/opt/ghc/bin:$PATH
 
+source /home/nash/.config/broot/launcher/bash/br
+
 if (( $+commands[zoxide] )); then
     eval "$(zoxide init zsh)"
     alias cd=z
