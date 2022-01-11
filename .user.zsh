@@ -7,6 +7,11 @@ export PATH=/opt/kak-lsp:/opt/helix:/opt/julia/bin:/opt/ghc/bin:$PATH
 
 source /home/nash/.config/broot/launcher/bash/br
 
+edit-rime () {
+    pushd /mnt/d/app/rime
+    nvim wubi86_fg.dict.yaml
+}
+
 if (( $+commands[zoxide] )); then
     eval "$(zoxide init zsh)"
     alias cd=z
