@@ -1,0 +1,12 @@
+Host shengquan
+    HostName 10.71.0.10
+    Port 22
+    User leoo
+    IdentityFile ~/.ssh/shengquan
+
+Host shengquan2
+    HostName 192.168.1.112
+    Port 22
+    User leoo
+    IdentityFile ~/.ssh/shengquan
+    ProxyJump shengquan

@@ -59,6 +59,8 @@ function efav {
 
 hash -d tut="$HOME/pub/Tutorial"
 hash -d plt="$HOME/pub/Platform"
+hash -d dk="$HOME/docker.io"
+hash -d k8s="$HOME/world/argo-ci"
 
 #source /home/nash/k8s/istio-*/tools/_istioctl
 
