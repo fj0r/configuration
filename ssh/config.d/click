@@ -1,0 +1,5 @@
+Host click2
+HostName 45.77.71.56
+Port 22
+User root
+IdentityFile ~/.ssh/alalaba.com
