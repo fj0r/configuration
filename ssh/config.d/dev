@@ -5,6 +5,12 @@ Host ctn
     IdentitiesOnly yes
     User root
 
+Host test
+    HostName localhost
+    Port 222
+    IdentitiesOnly yes
+    User root
+
 Host devx
     #HostName 10.20.0.5
     HostName 172.178.5.21
