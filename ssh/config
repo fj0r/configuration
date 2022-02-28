@@ -7,6 +7,8 @@ Host *
     ForwardAgent yes
 #    Controlmaster auto
 #    Controlpath ~/.ssh/+%r@%h:%p.sock
+#Host localhost*
+    StrictHostKeyChecking no
 
 Include config.d/*
 
