@@ -1,0 +1,10 @@
+[Unit]
+Description=Clash container
+
+[Service]
+Restart=always
+ExecStart=/usr/bin/podman start -a clash
+ExecStop=/usr/bin/podman stop -t 2 clash
+
+[Install]
+WantedBy=local.target

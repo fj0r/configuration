@@ -5,8 +5,6 @@ export VIM_DUAL_ESC=0
 export KUBERNETES_SCHEMA_URL=file://$HOME/world/kubernetes-json-schema/all.json
 export PATH=/opt/kak-lsp:/opt/helix:/opt/julia/bin:/opt/ghc/bin:$PATH
 
-source /home/nash/.config/broot/launcher/bash/br
-
 edit-rime () {
     pushd /mnt/d/app/rime
     nvim wubi86_fg.dict.yaml
@@ -50,7 +48,6 @@ compdef parallel-ssh=ssh
 
 export PATH=$HOME/anaconda3/bin:/opt/blender:$PATH
 
-source ~/.email.token
 
 function efav {
     entf nash@iffy.me "⭐️$1" $2
@@ -58,8 +55,8 @@ function efav {
 
 hash -d tut="$HOME/pub/Tutorial"
 hash -d plt="$HOME/pub/Platform"
-hash -d dk="$HOME/docker.io"
-hash -d k8s="$HOME/k8s"
+hash -d dk="$HOME/data/docker.io"
+hash -d k8s="$HOME/data/k8s"
 
 #source /home/nash/k8s/istio-*/tools/_istioctl
 
