@@ -1,0 +1,12 @@
+[Unit]
+Description=gitea database
+PartOf=gitea.service
+After=gitea.service
+
+[Service]
+Restart=always
+ExecStart=/usr/bin/podman start -a gitea-pg
+ExecStop=/usr/bin/podman stop -t 2 gitea-pg
+
+[Install]
+WantedBy=gitea.service

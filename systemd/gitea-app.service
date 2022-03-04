@@ -1,0 +1,12 @@
+[Unit]
+Description=gitea app
+PartOf=gitea.service
+After=gitea.service
+
+[Service]
+Restart=always
+ExecStart=/usr/bin/podman start -a gitea
+ExecStop=/usr/bin/podman stop -t 2 gitea
+
+[Install]
+WantedBy=gitea.service
