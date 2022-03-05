@@ -1,11 +1,28 @@
 pacman -Sy yay
-yay -S zsh vim tmux docker nodejs
-yay -S fcitx-im fcitx-configtool
-yay -S krusader akregator
+pacman -S fcitx5 fcitx5-rime fcitx5-material-color
+cat <<- EOF > ~/.config/fcitx5/conf
+Vertical Candidate List=False
+
+# 按屏幕 DPI 使用
+PerScreenDPI=False
+
+# Font (设置成你喜欢的字体)
+Font="Noto Sans Regular 14"
+
+Theme=Material-Color-Black
+EOF
+
 yay -S deepin-wine-tim
+yay -S zsh neovim tmux podman buildah skopeo
+yay -S krusader akregator
 yay -S blender freefilesync-bin vivaldi visual-studio-code-bin
-yay -S podman buildah
-sudo usermod -a -G docker nash
+
+sudo usermod -a -G podman agent
+sudo touch /etc/subuid
+sudo touch /etc/subgid
+sudo usermod --add-subuids 100000-150000 --add-subgids 100000-150000 agent
+podman system migrate
+
 
 shortcut:
     - KWin

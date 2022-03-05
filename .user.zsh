@@ -199,6 +199,5 @@ compdef upload-docker-images
 
 export PATH=/home/nash/.tiup/bin:$PATH
 
-export CRICTL=docker
 export HEADSCALE_CLI_ADDRESS="grpc.hs.xinminghui.com:8081"
 export HEADSCALE_CLI_API_KEY="JnEoWMBy0Q.8fP-raWZGXzCFKkBf3gnVOfmnz257t4zmzcgP8sy7Mo"
