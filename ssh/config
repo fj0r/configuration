@@ -35,8 +35,7 @@ Host tx
 ### server {{{
 ##region
 Host dev
-    HostName 120.224.237.162
-    HostName 172.178.5.16
+    HostName 172.178.5.7
     HostName 10.6.6.2
     Port 2222
     IdentityFile ~/.ssh/id_ed25519

@@ -12,7 +12,7 @@ fi
 
 # sources $CFG/.fzf/init.zsh
 
-sources $CFG/.user.zsh
+sources $CFG/../.user.zsh
 sources $HOME/.test.zsh
-sources $CFG/.mutagen-alias
+sources $CFG/../.mutagen-alias
 
