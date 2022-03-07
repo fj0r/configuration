@@ -1,4 +1,5 @@
 pacman -Sy yay
+### 中文输入法
 pacman -S fcitx5 fcitx5-rime fcitx5-material-color
 cat <<- EOF > ~/.config/fcitx5/conf
 Vertical Candidate List=False
@@ -17,11 +18,47 @@ yay -S zsh neovim tmux podman buildah skopeo
 yay -S krusader akregator
 yay -S blender freefilesync-bin vivaldi visual-studio-code-bin
 
+### podman
 sudo usermod -a -G podman agent
 sudo touch /etc/subuid
 sudo touch /etc/subgid
 sudo usermod --add-subuids 100000-150000 --add-subgids 100000-150000 agent
 podman system migrate
+
+### optimus manager
+yay -S optimus-manager
+cat <<- EOF > /etc/optimus-manager/optimus-manager.conf
+[amd]
+DRI=3
+driver=modesetting
+tearfree=
+
+[intel]
+DRI=3
+accel=
+driver=modesetting
+modeset=yes
+tearfree=
+
+[nvidia]
+DPI=96
+PAT=yes
+allow_external_gpus=no
+dynamic_power_management=no
+ignore_abi=no
+modeset=yes
+options=overclocking
+
+[optimus]
+auto_logout=yes
+pci_power_control=no
+pci_remove=no
+pci_reset=no
+startup_auto_battery_mode=integrated
+startup_auto_extpower_mode=nvidia
+startup_mode=nvidia
+switching=none
+EOF
 
 
 shortcut:

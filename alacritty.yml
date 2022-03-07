@@ -117,9 +117,10 @@ font:
     #   - (macOS) Menlo
     #   - (Linux/BSD) monospace
     #   - (Windows) Consolas
-    #family: JetBrainsMono Extra Light
+    family: JetBrainsMono Extra Light
+    #family: Hasklug Nerd Font Mono
     #family: Hasklig Medium
-    family: Hasklug Nerd Font Mono
+    #family: Operator Mono Lig
 
     # The `style` can be specified to pick a specific face.
     #style: Regular
