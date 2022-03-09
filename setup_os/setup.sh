@@ -3,17 +3,14 @@ zsh
 vim
 git
 tmux
-docker.io
-rsync
-wget curl
+podman
 sqlite
-jq tree httpie
-vscode-server
+jq tree
+wget curl xh
 openssh-server
 
 # 图形界面
 awesome rofi
-tilix
 scrot
 xscreensaver
 krusader
@@ -26,9 +23,10 @@ vscode
     brofox86.theme-espresso-soda-solarized
 vivaldi
 freefilesync
-fcitx-tools
-fcitx-table-wubi
-v2ray
+
+ibus-rime
+    fcitx-tools
+    fcitx-table-wubi
 fonts
     JetBrains Mono
     SansCode

@@ -1,13 +1,12 @@
 autorun:
-  #- ibus-daemon --xim
-  #- xscreensaver -no-splash
+  - ibus-daemon --xim
+  - xscreensaver -no-splash
   #- gnome-session
 
 monitor:
   partitions:
     - /
     - /home
-    - /media/nash/ExFat
 
 tags:
   - name: main
@@ -39,8 +38,8 @@ theme:
   wallpaper: /wallpapers
   powerline_taglist: false
 
-editor: vim
-terminal: urxvt
+editor: nvim
+terminal: alacritty
 #quake: terminator
 
 # inspect with xprop
