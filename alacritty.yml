@@ -117,7 +117,7 @@ font:
     #   - (macOS) Menlo
     #   - (Linux/BSD) monospace
     #   - (Windows) Consolas
-    family: JetBrainsMono Extra Light
+    family: JetBrainsMono Light
     #family: Hasklug Nerd Font Mono
     #family: Hasklig Medium
     #family: Operator Mono Lig
@@ -159,7 +159,7 @@ font:
     #style: Bold Italic
 
   # Point size
-  size: 11.0
+  size: 8.5
 
   # Offset is the extra space around each character. `offset.y` can be thought
   # of as modifying the line spacing, and `offset.x` as modifying the letter
