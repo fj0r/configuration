@@ -334,6 +334,10 @@ awful.rules.rules = {
     , properties = { floating = true, ontop = true, width = 600, height = 350, y = 750 }
     },
 
+    { rule = { class = 'MPlayer' }
+    , properties = { floating = true, ontop = true, width = 600, height = 350, y = 750 }
+    },
+
     -- Floating clients.
     { rule_any = conf.floating, properties = { floating = true }},
 
