@@ -244,7 +244,7 @@ clientkeys = keys.client {
 -- Bind all key numbers to tags.
 -- Be careful: we use keycodes to make it work on any keyboard layout.
 -- This should map on the top row of your keyboard, usually 1 to 9.
-for i = 1, 9 do
+for i = 1, 12 do
     globalkeys = gears.table.join(globalkeys,
         -- View tag only.
         -- default: { modkey }, "#" .. i + 9
@@ -259,7 +259,7 @@ for i = 1, 9 do
                   {description = "view tag #"..i, group = "tag"}),
         -- Toggle tag display.
         -- default: { modkey, "Control", "Shift" }, "#" .. i + 9
-        awful.key({ "Control", "Shift" }, "F" .. i,
+        awful.key({ modkey }, "F" .. i,
                   function ()
                       local screen = awful.screen.focused()
                       local tag = screen.tags[i]
@@ -281,7 +281,7 @@ for i = 1, 9 do
                   end,
                   {description = "move focused client to tag #"..i, group = "tag"}),
         -- Toggle tag on focused client.
-        awful.key({ modkey, "Control" }, "#" .. i + 9,
+        awful.key({ "Control" }, "F" .. i,
                   function ()
                       if client.focus then
                           local tag = client.focus.screen.tags[i]

@@ -14,16 +14,14 @@ local clock = {
     layout = wibox.layout.grid
 }
 
-local col = 3
-local row = 13
-local total = row * col
+local total = clock.forced_num_rows * clock.forced_num_cols
 
 local group = {2,2,2,1,2,2,2}
 for k, v in ipairs(group) do
     if k==1 then
-        group[k] = v * col
+        group[k] = v * clock.forced_num_cols
     else
-        group[k] = v * col + group[k - 1]
+        group[k] = v * clock.forced_num_cols + group[k - 1]
     end
 end
 
@@ -63,7 +61,7 @@ function tobitarray(r, t, len)
 end
 
 gears.timer {
-    timeout   = 8,
+    timeout   = 1,
     call_now  = true,
     autostart = true,
     callback  = function()
@@ -80,3 +78,4 @@ gears.timer {
 }
 
 return  c
+

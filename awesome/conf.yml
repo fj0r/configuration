@@ -1,7 +1,8 @@
 autorun:
-  - ibus-daemon --xim
+  - source ~/.config/xrandr.rc
+  - gnome-session --systemd-service
   - xscreensaver -no-splash
-  #- gnome-session
+  - ibus-daemon --xim
 
 monitor:
   partitions:
@@ -9,32 +10,38 @@ monitor:
     - /home
 
 tags:
-  - name: main
+  - name: '1'
     layout: tile
-  - name: test
+  - name: '2'
     layout: tile.bottom
-  - name: dev
+  - name: '3'
     layout: centerwork
     apps:
+      - class: Vivaldi
+        floating: true
+        screen: 2
       - class: Firefox
         screen: 1
       - class: Chromium
         floating: true
-  - name: 3d
+  - name: '4'
     layout: centerwork
-  - name: docker
-  - name: conf
-  - name: sync
-  - name: remote
-  - name: x
+  - name: '5'
+  - name: '6'
+  - name: '7'
+  - name: '8'
     layout: centerwork
+  - name: '9'
+  - name: 'A'
+  - name: 'B'
+  - name: 'C'
 
 theme:
-  gap: 2
+  gap: 1
   urgent_color: 'dde175'
   border:
     width: 2
-    focus: "588133"
+    focus: '6a6e09'
   wallpaper: /wallpapers
   powerline_taglist: false
 

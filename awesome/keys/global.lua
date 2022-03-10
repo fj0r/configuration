@@ -27,7 +27,7 @@ return function(t)
             end,
             {description = "focus previous by index", group = "client"}
         ),
-        awful.key({ modkey,           }, "w", function () mymainmenu:show() end,
+        awful.key({ modkey,           }, "e", function () mymainmenu:show() end,
                   {description = "show main menu", group = "awesome"}),
 
         -- Layout manipulation
@@ -35,9 +35,9 @@ return function(t)
                   {description = "swap with next client by index", group = "client"}),
         awful.key({ modkey, "Shift"   }, "k", function () awful.client.swap.byidx( -1)    end,
                   {description = "swap with previous client by index", group = "client"}),
-        awful.key({ modkey, "Control" }, "j", function () awful.screen.focus_relative( 1) end,
+        awful.key({ modkey,           }, ";", function () awful.screen.focus_relative( 1) end,
                   {description = "focus the next screen", group = "screen"}),
-        awful.key({ modkey, "Control" }, "k", function () awful.screen.focus_relative(-1) end,
+        awful.key({ modkey, "Control" }, ";", function () awful.screen.focus_relative(-1) end,
                   {description = "focus the previous screen", group = "screen"}),
         awful.key({ modkey,           }, "u", awful.client.urgent.jumpto,
                   {description = "jump to urgent client", group = "client"}),
@@ -84,9 +84,9 @@ return function(t)
                   {description = "select previous", group = "layout"}),
 
         -- Prompt
-        awful.key({ modkey,         }, "p", function () awful.spawn("rofi -show") end,
+        awful.key({ modkey,         }, "i", function () awful.spawn("rofi -show") end,
                   {description = "rofi -show window", group = "launcher"}),
-        awful.key({ modkey,         }, "q", function () awful.spawn("rofi -show run") end,
+        awful.key({ modkey,         }, "o", function () awful.spawn("rofi -show run") end,
                   {description = "rofi -show run", group = "launcher"}),
         awful.key({ modkey,         }, "z", function () awful.spawn("zeal") end,
                   {description = "zeal", group = "launcher"}),
