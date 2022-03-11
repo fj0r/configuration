@@ -1,5 +1,11 @@
 local wibox = require("wibox")
 local lain = require("lain")
+local naughty = require("naughty")
+
+local function hover(config)
+    -- TODO: hover
+    naughty.notify({ text = tostring(config.metrics()) })
+end
 
 local function new_monitor(config)
     local m = wibox.widget {
@@ -13,7 +19,33 @@ local function new_monitor(config)
             m:add_value(config.metrics())
         end
     }
-    -- cpu:connect_signal('mouse::enter', function() end)
+    m:connect_signal('mouse::enter', function() hover(config) end)
+    return wibox.container.mirror(m, { horizontal = true, vertical = config.reflection or false })
+end
+
+local function new_pie(config)
+    local m = wibox.widget {
+        color = config.color,
+        bg = '#888',
+        border_color = '#000000',
+        values = {},
+        max_value = config.max_value or 100,
+        min_value = 0,
+        rounded_edge = false,
+        start_angle = 0,
+        paddings = 2,
+        thickness = 4,
+        border_width = 0,
+        align = "center",
+        valign = "center",
+        widget = wibox.container.arcchart,
+    }
+    config.src {
+        settings = function()
+            m.value = config.metrics()
+        end
+    }
+    m:connect_signal('mouse::enter', function() hover(config) end)
     return wibox.container.mirror(m, { horizontal = true })
 end
 
@@ -78,12 +110,26 @@ local mem = new_monitor {
     metrics = function() return mem_now.perc end
 }
 
-local net = new_monitor {
+local net_up = new_monitor {
     color = '#e2692b',
     scale = false,
     max_value = 10240,
     src = lain.widget.net,
-    metrics = function() return net_now.sent + net_now.received end
+    metrics = function() return net_now.sent + 0 end
+}
+local net_down = new_monitor {
+    color = '#63ee00',
+    scale = false,
+    max_value = 10240,
+    reflection = true,
+    src = lain.widget.net,
+    metrics = function() return net_now.received + 0 end
+}
+
+local battery = new_pie {
+    color = '#6a6e09',
+    src = lain.widget.bat,
+    metrics = function() return bat_now.perc end
 }
 
 local fsw = function(config)
@@ -113,9 +159,11 @@ end
 return function(config)
     return wibox.widget {
             layout  = wibox.layout.fixed.vertical,
+            battery,
             cpu,
             mem,
-            net,
+            net_up,
+            net_down,
             fsw(config),
         }
 end
