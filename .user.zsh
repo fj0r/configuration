@@ -116,7 +116,7 @@ function archive-nvim-cfg {
             --exclude='*/plugged/vimspector/gadgets/*' \
             --exclude='plugged/LeaderF/autoload/leaderf/fuzzyMatch_C/build' \
             --exclude='pack/packer/*/nvim-tree.lua/.github/*' \
-            -cf - -C $CFG nvim | tar -xf - -C $tmp/
+            -cf - -C $CFG/.. nvim | tar -xf - -C $tmp/
     rm -f $tmp/nvim/.netrwhist
     pushd $tmp
     for i in nvim `sh -c 'ls -d nvim/pack/packer/start/*/'` `sh -c 'ls -d nvim/pack/packer/opt/*/'`; do
