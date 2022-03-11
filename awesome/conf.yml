@@ -1,4 +1,5 @@
 autorun:
+  - setxkbmap -option 'ctrl:swapcaps'
   - source ~/.config/xrandr.rc
   - gnome-session --systemd-service
   - xscreensaver -no-splash
