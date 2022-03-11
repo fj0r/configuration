@@ -71,6 +71,7 @@ floating:
     - xtightvncviewer
   name:
     - Event Tester
+    - qutebrowser-editor
   role:
     - AlarmWindow
     - ConfigManager
