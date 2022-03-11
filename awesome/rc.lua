@@ -317,29 +317,33 @@ root.keys(globalkeys)
 -- Rules to apply to new clients (through the "manage" signal).
 awful.rules.rules = {
     -- All clients will match this rule.
-    { rule = { },
-      properties = { border_width = conf.theme.border.width or beautiful.border_width,
-                     border_color = beautiful.border_normal,
-                     focus = awful.client.focus.filter,
-                     raise = true,
-                     keys = clientkeys,
-                     buttons = clientbuttons,
-                     screen = awful.screen.preferred,
-                     placement = awful.placement.no_overlap+awful.placement.no_offscreen
-     }
+    { rule = { }
+    , properties = { border_width = conf.theme.border.width or beautiful.border_width
+                   , border_color = beautiful.border_normal
+                   , focus = awful.client.focus.filter
+                   , raise = true
+                   , keys = clientkeys
+                   , buttons = clientbuttons
+                   , screen = awful.screen.preferred
+                   , placement = awful.placement.no_overlap+awful.placement.no_offscreen
+                   }
     },
 
-
-    { rule = { class = 'URxvt' }
-    , properties = { floating = true, ontop = true, width = 600, height = 350, y = 750 }
-    },
 
     { rule = { class = 'MPlayer' }
-    , properties = { floating = true, ontop = true, width = 600, height = 350, y = 750 }
+    , properties = { floating = true
+                   , ontop = true
+                   , placement = awful.placement.centered
+                   }
     },
 
     -- Floating clients.
-    { rule_any = conf.floating, properties = { floating = true }},
+    { rule_any = conf.floating
+    , properties = { floating = true
+                   , ontop = true
+                   , placement = awful.placement.centered
+                   }
+    },
 
     -- Add titlebars to normal clients and dialogs
     { rule_any = {type = { "normal", "dialog" } }
