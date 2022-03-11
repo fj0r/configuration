@@ -3,7 +3,6 @@ export https_proxy=http://localhost:7890
 export NVIM_PRESET=full
 export VIM_DUAL_ESC=0
 export KUBERNETES_SCHEMA_URL=file://$HOME/world/kubernetes-json-schema/all.json
-export PATH=/opt/kak-lsp:/opt/helix:/opt/julia/bin:/opt/ghc/bin:$PATH
 
 edit-rime () {
     pushd /mnt/d/app/rime
@@ -22,7 +21,6 @@ fi
 
 # docker save xxx | r='docker load'; parallel-ssh a b c
 
-export PATH=/opt/nu:$PATH
 
 alias lg='lazygit'
 alias nv='nvim -u $CFG/nvim/init.vim'
@@ -46,7 +44,7 @@ function parallel-ssh {
 compdef parallel-ssh=ssh
 
 
-export PATH=$HOME/anaconda3/bin:/opt/blender:$PATH
+export PATH=$HOME/anaconda3/bin:$PATH
 
 
 function efav {

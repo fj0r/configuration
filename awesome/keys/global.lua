@@ -6,7 +6,7 @@ return function(t)
     local quake = t.quake
     local revelation = t.revelation
     return gears.table.join(
-        awful.key({ modkey,           }, "s",      hotkeys_popup.show_help,
+        awful.key({ modkey,           }, "w",      hotkeys_popup.show_help,
                   {description="show help", group="awesome"}),
         awful.key({ modkey,           }, "Left",   awful.tag.viewprev,
                   {description = "view previous", group = "tag"}),
@@ -53,8 +53,6 @@ return function(t)
         -- Standard program
         awful.key({ modkey,           }, "Return", function () awful.spawn(terminal) end,
                   {description = "open a terminal", group = "launcher"}),
-        awful.key({ modkey,           }, "`", function () quake:toggle() end,
-                  {description = "打开雷神终端", group = "launcher"}),
         awful.key({ modkey,           }, "Escape", function () revelation({ curr_tag_only=true }) end,
                   {description = "revelation", group = "client"}),
         awful.key({ modkey, "Control" }, "r", awesome.restart,
@@ -92,7 +90,7 @@ return function(t)
                   {description = "zeal", group = "launcher"}),
 
         -- screenshot
-        awful.key({ modkey, "Control" }, "s", function () awful.spawn.with_shell("sleep 0.3 && scrot '%Y%m%d%H%M_$wx$h.png' -s -e 'mv $f ~/Screenshots/'", false) end,
+        awful.key({ modkey,         }, "s", function () awful.spawn.with_shell("sleep 0.3 && scrot '%Y%m%d%H%M_$wx$h.png' -s -e 'mv $f ~/Screenshots/'", false) end,
                   {description = "截图", group = "launcher"}),
 
         -- awful.key({ modkey },            "r",     function () awful.screen.focused().mypromptbox:run() end,
