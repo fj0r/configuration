@@ -2,6 +2,8 @@ c.content.proxy = 'socks://localhost:7891'
 c.editor.command = ['alacritty', '-t', 'qutebrowser-editor', '-e', 'nvim', '{file}', '-c', 'normal {line}G{column0}l']
 c.url.searchengines = { 'DEFAULT': 'https://www.google.com/search?q={}'}
 c.url.start_pages = 'https://google.com'
+c.auto_save.session = True
+c.session.lazy_restore = True
 
 c.fonts.web.family.standard= 'Noto Sans CJK SC'
 c.fonts.web.family.fixed= 'JetBrains Mono'
