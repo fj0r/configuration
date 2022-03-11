@@ -81,7 +81,7 @@ local mem = new_monitor {
 local net = new_monitor {
     color = '#e2692b',
     scale = false,
-    max_value = 1024,
+    max_value = 10240,
     src = lain.widget.net,
     metrics = function() return net_now.sent + net_now.received end
 }

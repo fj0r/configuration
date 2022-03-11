@@ -3,6 +3,10 @@ c.editor.command = ['alacritty', '-t', 'qutebrowser-editor', '-e', 'nvim', '{fil
 c.url.searchengines = { 'DEFAULT': 'https://www.google.com/search?q={}'}
 c.url.start_pages = 'https://google.com'
 
+c.fonts.web.family.standard= 'Noto Sans CJK SC'
+c.fonts.web.family.fixed= 'JetBrains Mono'
+c.fonts.web.family.sans_serif= 'Jetbrains Mono'
+c.fonts.web.family.serif= 'Noto Serif CJK SC'
 
 config.load_autoconfig()
 
