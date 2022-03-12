@@ -10,7 +10,10 @@ c.fonts.web.family.fixed= 'JetBrains Mono'
 c.fonts.web.family.sans_serif= 'Jetbrains Mono'
 c.fonts.web.family.serif= 'Noto Serif CJK SC'
 
-config.load_autoconfig()
+c.bind('<Ctrl-i>', 'edit-text')
+c.bind('<Ctrl-o>', 'edit-url')
+
+c.load_autoconfig()
 
 # gruvbox dark hard qutebrowser theme by Florian Bruhin <me@the-compiler.org>
 #
