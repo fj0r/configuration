@@ -4,16 +4,17 @@ c.url.searchengines = { 'DEFAULT': 'https://www.google.com/search?q={}'}
 c.url.start_pages = 'https://google.com'
 c.auto_save.session = True
 c.session.lazy_restore = True
+c.aliases['r'] = 'session-load'
 
 c.fonts.web.family.standard= 'Noto Sans CJK SC'
 c.fonts.web.family.fixed= 'JetBrains Mono'
 c.fonts.web.family.sans_serif= 'Jetbrains Mono'
 c.fonts.web.family.serif= 'Noto Serif CJK SC'
 
-c.bind('<Ctrl-i>', 'edit-text')
-c.bind('<Ctrl-o>', 'edit-url')
+config.bind('<Ctrl-i>', 'edit-text')
+config.bind('<Ctrl-o>', 'edit-url')
 
-c.load_autoconfig()
+config.load_autoconfig()
 
 # gruvbox dark hard qutebrowser theme by Florian Bruhin <me@the-compiler.org>
 #

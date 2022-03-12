@@ -4,6 +4,7 @@ vim
 git
 tmux
 podman
+    /etc/containers/containers.conf: detach_keys = ""
 sqlite
 jq tree
 wget curl xh
@@ -13,20 +14,14 @@ openssh-server
 awesome rofi
 scrot
 xscreensaver
-krusader
+qutebrowser
 liferea
+krusader
 
-vscode
-    ms-vscode-remote.vscode-remote-extensionpack
-    lfs.vscode-emacs-friendly
-    ms-azuretools.vscode-docker
-    brofox86.theme-espresso-soda-solarized
 vivaldi
 freefilesync
 
 ibus-rime
-    fcitx-tools
-    fcitx-table-wubi
 fonts
     JetBrains Mono
     SansCode

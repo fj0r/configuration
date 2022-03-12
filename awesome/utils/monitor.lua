@@ -1,25 +1,39 @@
 local wibox = require("wibox")
 local lain = require("lain")
-local naughty = require("naughty")
+local awful = require("awful")
+local beautiful = require("beautiful")
 
-local function hover(config)
-    -- TODO: hover
-    naughty.notify({ text = tostring(config.metrics()) })
+local function hover(config, obj, m)
+    obj.tooltip.markup = config.id .. ': ' .. tostring(config.metrics()) .. ' / ' .. m.max_value
+    obj.tooltip.visible = true
 end
+
+local default_tooltip = {
+    mode = 'outside',
+    preferred_positions = {'left', 'right'},
+    preferred_alignments = 'middle',
+    margins = 6,
+    border_width = 2,
+    bg = beautiful.tooltip_bg
+}
 
 local function new_monitor(config)
     local m = wibox.widget {
-        max_value = config.max_value or 100,
+        max_value = config.max_value,
         scale = config.scale,
         color = config.color,
         widget = wibox.widget.graph,
+    }
+    local o = {
+        tooltip = awful.tooltip(default_tooltip)
     }
     config.src {
         settings = function()
             m:add_value(config.metrics())
         end
     }
-    m:connect_signal('mouse::enter', function() hover(config) end)
+    m:connect_signal('mouse::enter', function() hover(config, o, m) end)
+    m:connect_signal('mouse::leave', function() o.tooltip.visible = false end)
     return wibox.container.mirror(m, { horizontal = true, vertical = config.reflection or false })
 end
 
@@ -40,12 +54,16 @@ local function new_pie(config)
         valign = "center",
         widget = wibox.container.arcchart,
     }
+    local o = {
+        tooltip = awful.tooltip(default_tooltip)
+    }
     config.src {
         settings = function()
             m.value = config.metrics()
         end
     }
-    m:connect_signal('mouse::enter', function() hover(config) end)
+    m:connect_signal('mouse::enter', function() hover(config, o, m) end)
+    m:connect_signal('mouse::leave', function() o.tooltip.visible = false end)
     return wibox.container.mirror(m, { horizontal = true })
 end
 
@@ -99,34 +117,40 @@ end
 
 
 local cpu = new_monitor {
+    id = 'CPU',
+    max_value = 100,
     color = '#63ee00',
     src = lain.widget.cpu,
     metrics = function() return cpu_now.usage end
 }
 
 local mem = new_monitor {
+    id = 'MEM',
+    max_value = 100,
     color = '#0366d6',
     src = lain.widget.mem,
     metrics = function() return mem_now.perc end
 }
 
 local net_up = new_monitor {
+    id = 'NET UP',
+    max_value = 1024,
     color = '#e2692b',
-    scale = false,
-    max_value = 10240,
     src = lain.widget.net,
     metrics = function() return net_now.sent + 0 end
 }
 local net_down = new_monitor {
-    color = '#63ee00',
-    scale = false,
+    id = 'NET DOWN',
     max_value = 10240,
+    color = '#63ee00',
     reflection = true,
     src = lain.widget.net,
     metrics = function() return net_now.received + 0 end
 }
 
 local battery = new_pie {
+    id = 'BATTERY',
+    max_value = 100,
     color = '#6a6e09',
     src = lain.widget.bat,
     metrics = function() return bat_now.perc end
