@@ -257,20 +257,9 @@ for i = 1, 12 do
                         end
                   end,
                   {description = "view tag #"..i, group = "tag"}),
-        -- Toggle tag display.
-        -- default: { modkey, "Control", "Shift" }, "#" .. i + 9
-        awful.key({ modkey }, "F" .. i,
-                  function ()
-                      local screen = awful.screen.focused()
-                      local tag = screen.tags[i]
-                      if tag then
-                         awful.tag.viewtoggle(tag)
-                      end
-                  end,
-                  {description = "toggle tag #" .. i, group = "tag"}),
         -- Move client to tag.
         -- default: { modkey, "Shift" }, "#" .. i + 9
-        awful.key({"Shift" }, "F" .. i,
+        awful.key({ modkey }, "F" .. i,
                   function ()
                       if client.focus then
                           local tag = client.focus.screen.tags[i]
@@ -280,8 +269,19 @@ for i = 1, 12 do
                      end
                   end,
                   {description = "move focused client to tag #"..i, group = "tag"}),
+        -- Toggle tag display.
+        -- default: { modkey, "Control", "Shift" }, "#" .. i + 9
+        awful.key({ "Mod1" }, "F" .. i,
+                  function ()
+                      local screen = awful.screen.focused()
+                      local tag = screen.tags[i]
+                      if tag then
+                         awful.tag.viewtoggle(tag)
+                      end
+                  end,
+                  {description = "toggle tag #" .. i, group = "tag"}),
         -- Toggle tag on focused client.
-        awful.key({ "Control" }, "F" .. i,
+        awful.key({ "Shift" }, "F" .. i,
                   function ()
                       if client.focus then
                           local tag = client.focus.screen.tags[i]

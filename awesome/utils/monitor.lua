@@ -39,20 +39,19 @@ end
 
 local function new_pie(config)
     local m = wibox.widget {
-        color = config.color,
-        bg = '#888',
-        border_color = '#000000',
-        values = {},
-        max_value = config.max_value or 100,
+        colors = {config.color},
         min_value = 0,
+        max_value = config.max_value or 100,
         rounded_edge = false,
         start_angle = 0,
         paddings = 2,
         thickness = 4,
+        bg = '#888',
         border_width = 0,
+        border_color = '#fff',
+        widget = wibox.container.arcchart,
         align = "center",
         valign = "center",
-        widget = wibox.container.arcchart,
     }
     local o = {
         tooltip = awful.tooltip(default_tooltip)
@@ -119,7 +118,7 @@ end
 local cpu = new_monitor {
     id = 'CPU',
     max_value = 100,
-    color = '#63ee00',
+    color = '#728639',
     src = lain.widget.cpu,
     metrics = function() return cpu_now.usage end
 }
@@ -127,7 +126,7 @@ local cpu = new_monitor {
 local mem = new_monitor {
     id = 'MEM',
     max_value = 100,
-    color = '#0366d6',
+    color = '#1071b0',
     src = lain.widget.mem,
     metrics = function() return mem_now.perc end
 }
@@ -135,14 +134,14 @@ local mem = new_monitor {
 local net_up = new_monitor {
     id = 'NET UP',
     max_value = 1024,
-    color = '#e2692b',
+    color = '#ff964f',
     src = lain.widget.net,
     metrics = function() return net_now.sent + 0 end
 }
 local net_down = new_monitor {
     id = 'NET DOWN',
     max_value = 10240,
-    color = '#63ee00',
+    color = '#08787f',
     reflection = true,
     src = lain.widget.net,
     metrics = function() return net_now.received + 0 end
@@ -151,7 +150,7 @@ local net_down = new_monitor {
 local battery = new_pie {
     id = 'BATTERY',
     max_value = 100,
-    color = '#6a6e09',
+    color = '#ffd8b1',
     src = lain.widget.bat,
     metrics = function() return bat_now.perc end
 }
@@ -170,7 +169,7 @@ local fsw = function(config)
     return wibox.widget {
         new_fschart {
             partitions = fs,
-            colors = config.colors or {'#e2692b', '#63ee00', '#0366d6'},
+            colors = config.colors or {'#e17701', '#c65102', '#ffd8b1'},
             default_color = config.default_colors or '#666',
         },
         layout = wibox.layout.fixed.vertical,
