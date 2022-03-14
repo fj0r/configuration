@@ -3,8 +3,20 @@ return function(t)
     local awful = t.awful
     local hotkeys_popup = t.hotkeys_popup
     local modkey = t.modkey
-    local quake = t.quake
     local revelation = t.revelation
+
+	local next_client_across_screen = function(i)
+	    awful.client.focus.byidx(i)
+	    if awful.client.ismarked() then
+	        awful.screen.focus_relative(-i)
+	        awful.client.getmarked()
+	    end
+	    if client.focus then
+	        client.focus:raise()
+	    end
+	    awful.client.togglemarked()
+	end
+
     return gears.table.join(
         awful.key({ modkey,           }, "w",      hotkeys_popup.show_help,
                   {description="show help", group="awesome"}),
@@ -12,8 +24,8 @@ return function(t)
                   {description = "view previous", group = "tag"}),
         awful.key({ modkey,           }, "Right",  awful.tag.viewnext,
                   {description = "view next", group = "tag"}),
-        awful.key({ modkey }, "Tab", awful.tag.history.restore,
-                  {description = "go back", group = "tag"}),
+        -- awful.key({ modkey }, "Tab", awful.tag.history.restore,
+        --           {description = "go back", group = "tag"}),
 
         awful.key({ modkey,           }, "j",
             function ()
@@ -41,19 +53,19 @@ return function(t)
                   {description = "focus the previous screen", group = "screen"}),
         awful.key({ modkey,           }, "u", awful.client.urgent.jumpto,
                   {description = "jump to urgent client", group = "client"}),
-        awful.key({ 'Mod1',           }, "Tab",
-            function ()
-                awful.client.focus.history.previous()
-                if client.focus then
-                    client.focus:raise()
-                end
-            end,
-            {description = "go back", group = "client"}),
+        -- awful.key({ 'Mod1',           }, "Tab",
+        --     function ()
+        --         awful.client.focus.history.previous()
+        --         if client.focus then
+        --             client.focus:raise()
+        --         end
+        --     end,
+        --     {description = "go back", group = "client"}),
 
         -- Standard program
         awful.key({ modkey,           }, "Return", function () awful.spawn(terminal) end,
                   {description = "open a terminal", group = "launcher"}),
-        awful.key({ modkey,           }, "Escape", function () revelation({ curr_tag_only=true }) end,
+        awful.key({ "Mod1",           }, "Tab", function () revelation({ curr_tag_only=true }) end,
                   {description = "revelation", group = "client"}),
         awful.key({ modkey, "Control" }, "r", awesome.restart,
                   {description = "reload awesome", group = "awesome"}),
