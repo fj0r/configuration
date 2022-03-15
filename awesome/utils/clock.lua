@@ -5,7 +5,6 @@ local beautiful = require'beautiful'
 local gears = require'gears'
 local naughty = require'naughty'
 
-
 local dbg = function(x)
     local aaa = ""
     for k, a in ipairs(x) do
@@ -13,6 +12,24 @@ local dbg = function(x)
     end
     naughty.notify{text=aaa}
 end
+
+function tobitarray(r, t, len)
+    for i = len - 1, 0, -1 do
+        table.insert(r, (t & (1 << i)) ~= 0 )
+    end
+end
+
+local time_names = {'y', 'm', 'd', 'w', 'H', 'M', 'S'}
+local group = {2,2,2,1,2,2,2}
+local agot = {}
+local agob = {}
+for _, v in ipairs(time_names) do
+    local t = tonumber(os.date('%'..v))
+    table.insert(agot, t)
+    tobitarray(agob, t, v == 'w' and 3 or 6)
+end
+
+
 
 local clock = {
     forced_num_cols = 3,
@@ -26,7 +43,6 @@ local clock = {
 
 local total = clock.forced_num_rows * clock.forced_num_cols
 
-local group = {2,2,2,1,2,2,2}
 for k, v in ipairs(group) do
     if k==1 then
         group[k] = v * clock.forced_num_cols
@@ -35,7 +51,6 @@ for k, v in ipairs(group) do
     end
 end
 
--- dbg(group)
 
 local color = {}
 local color_set = {'#dde175', '#88b555'}
@@ -53,7 +68,7 @@ function clock:init()
             end
         end
         table.insert(self, wibox.widget {
-            checked       = false,
+            checked       = agob[i],
             paddings = 0,
             color         = c,
             border_color = self.checked and c or '#555',
@@ -65,24 +80,6 @@ function clock:init()
 end
 
 local c = clock:init()
-
-function tobitarray(r, t, len)
-    for i = len - 1, 0, -1 do
-        table.insert(r, (t & (1 << i)) ~= 0 )
-    end
-end
-
-local time_names = {'y', 'm', 'd', 'w', 'H', 'M', 'S'}
-local agot = {}
-local agob = {}
-for _, v in ipairs(time_names) do
-    local t = tonumber(os.date('%'..v))
-    table.insert(agot, t)
-    tobitarray(agob, t, v == 'w' and 3 or 6)
-end
-for i = 1, total do
-    clock[i].checked = agob[i]
-end
 
 gears.timer {
     timeout   = 1,
@@ -98,24 +95,15 @@ gears.timer {
             end
             agot[i] = t
             begin_bit = group[i-1]
-            for x = 0, time_names[i] == 'w' and 3 or 6, 1 do
+            for x = 0, (time_names[i] == 'w' and 3 or 6) - 1, 1 do
                 table.insert(bits, 1, (t & (1 << x)) ~= 0)
             end
         end
         for i = begin_bit + 1, total, 1 do
-            clock[i].checked = bits[i - begin_bit]
+            if clock[i].checked ~= bits[i - begin_bit]
+            then clock[i].checked = bits[i - begin_bit]
+            end
         end
-        --dbg{begin_bit, total}
-        --dbg(bits)
-        --local vls = {}
-        --for k, v in ipairs(time_names) do
-        --    tobitarray(vls, tonumber(os.date('%'..v)), v == 'w' and 3 or 6)
-        --end
-        --for i = 1, total do
-        --    if clock[i].checked ~= vls[i]
-        --    then clock[i].checked = vls[i]
-        --    end
-        --end
     end
 }
 
