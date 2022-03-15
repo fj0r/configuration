@@ -20,34 +20,31 @@ function tobitarray(r, t, len)
 end
 
 local time_names = {'y', 'm', 'd', 'w', 'H', 'M', 'S'}
-local group = {2,2,2,1,2,2,2}
-local agot = {}
-local agob = {}
-for _, v in ipairs(time_names) do
+local group_lines = {2,2,2,1,2,2,2}
+local group_bits = {}
+local cached_time = {}
+local init_bits = {}
+
+local forced_num_cols = 3
+local forced_num_rows = 0
+for k, v in pairs(group_lines) do
+    forced_num_rows = forced_num_rows + v
+    group_bits[k] = v * forced_num_cols
+end
+local total = forced_num_rows * forced_num_cols
+
+for k, v in ipairs(time_names) do
     local t = tonumber(os.date('%'..v))
-    table.insert(agot, t)
-    tobitarray(agob, t, v == 'w' and 3 or 6)
+    table.insert(cached_time, t)
+    tobitarray(init_bits, t, group_bits[k])
 end
 
-
-
-local clock = {
-    forced_num_cols = 3,
-    forced_num_rows = 13,
-    homogeneous     = false,
-    expand          = true,
-    forced_height   = 90,
-    spacing         = 1,
-    layout = wibox.layout.grid
-}
-
-local total = clock.forced_num_rows * clock.forced_num_cols
-
-for k, v in ipairs(group) do
+local group = {}
+for k, v in ipairs(group_lines) do
     if k==1 then
-        group[k] = v * clock.forced_num_cols
+        group[k] = v * forced_num_cols
     else
-        group[k] = v * clock.forced_num_cols + group[k - 1]
+        group[k] = v * forced_num_cols + group[k - 1]
     end
 end
 
@@ -57,6 +54,16 @@ local color_set = {'#dde175', '#88b555'}
 for k, v in ipairs(group) do
     table.insert(color, color_set[k % #color_set + 1])
 end
+
+local clock = {
+    forced_num_cols = forced_num_cols,
+    forced_num_rows = forced_num_rows,
+    homogeneous     = false,
+    expand          = true,
+    forced_height   = 90,
+    spacing         = 1,
+    layout = wibox.layout.grid
+}
 
 function clock:init()
     for i = 1, total do
@@ -68,7 +75,7 @@ function clock:init()
             end
         end
         table.insert(self, wibox.widget {
-            checked       = agob[i],
+            checked       = init_bits[i],
             paddings      = 0,
             color         = c,
             border_color  = '#555',
@@ -91,12 +98,12 @@ gears.timer {
         local bits = {}
         for i = #time_names, 1, -1 do
             local t = tonumber(os.date('%'..time_names[i]))
-            if t == agot[i] then
+            if t == cached_time[i] then
                 break
             end
-            agot[i] = t
+            cached_time[i] = t
             begin_bit = group[i-1]
-            for x = 0, (time_names[i] == 'w' and 3 or 6) - 1, 1 do
+            for x = 0, group_bits[i] - 1, 1 do
                 table.insert(bits, 1, (t & (1 << x)) ~= 0)
             end
         end
