@@ -69,9 +69,10 @@ function clock:init()
         end
         table.insert(self, wibox.widget {
             checked       = agob[i],
-            paddings = 0,
+            paddings      = 0,
             color         = c,
-            border_color = self.checked and c or '#555',
+            border_color  = '#555',
+            border_width  = 1,
             shape         = gears.shape.rectangle, -- rectangle octogon
             widget        = wibox.widget.checkbox
         })
@@ -86,7 +87,7 @@ gears.timer {
     call_now  = true,
     autostart = true,
     callback  = function()
-        local begin_bit = 0
+        local begin_bit = group[#group]
         local bits = {}
         for i = #time_names, 1, -1 do
             local t = tonumber(os.date('%'..time_names[i]))
@@ -100,8 +101,8 @@ gears.timer {
             end
         end
         for i = begin_bit + 1, total, 1 do
-            if clock[i].checked ~= bits[i - begin_bit]
-            then clock[i].checked = bits[i - begin_bit]
+            if clock[i].checked ~= bits[i - begin_bit] then
+                clock[i].checked = bits[i - begin_bit]
             end
         end
     end
