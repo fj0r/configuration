@@ -5,7 +5,7 @@ export VIM_DUAL_ESC=0
 export KUBERNETES_SCHEMA_URL=file://$HOME/world/kubernetes-json-schema/all.json
 
 edit-rime () {
-    pushd /mnt/d/app/rime
+    pushd ~/data/rime-wubi
     nvim wubi86_fg.dict.yaml
 }
 
