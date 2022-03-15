@@ -4,6 +4,7 @@ return function(t)
     local hotkeys_popup = t.hotkeys_popup
     local modkey = t.modkey
     local revelation = t.revelation
+    local machi = require("layout-machi")
 
 	local next_client_across_screen = function(i)
 	    awful.client.focus.byidx(i)
@@ -75,6 +76,10 @@ return function(t)
                   {description = "quit awesome", group = "awesome"}),
 
 
+        awful.key({ modkey,           }, ".",    function () machi.default_editor.start_interactive() end,
+              {description = "edit the current layout if it is a machi layout", group = "layout"}),
+        awful.key({ modkey,           }, "/",    function () machi.switcher.start(client.focus) end,
+              {description = "switch between windows for a machi layout", group = "layout"}),
 
         awful.key({ modkey,           }, "l",     function () awful.tag.incmwfact( 0.05)          end,
                   {description = "increase master width factor", group = "layout"}),

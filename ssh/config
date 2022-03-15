@@ -15,12 +15,12 @@ Include config.d/*
 
 ### vps {{{
 ##region
-Host iffy
-    HostName 67.218.158.11
-    User root
+Host local
+    HostName 127.0.0.1
+    User agent
     IdentityFile ~/.ssh/id_ed25519
     IdentitiesOnly yes
-    Port 28620
+    Port 2222
 
 Host tx
     HostName 121.5.208.159
