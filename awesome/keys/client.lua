@@ -2,6 +2,7 @@ return function(t)
     local gears = t.gears
     local awful = t.awful
     local modkey = t.modkey
+    local naughty = require("naughty")
     return gears.table.join(
         awful.key({ modkey, "Control" }, "Return",
             function (c)
@@ -31,6 +32,8 @@ return function(t)
                 c:raise()
             end ,
             {description = "(un)maximize vertically", group = "client"}),
+        awful.key({ modkey, "Shift"   }, "u", function(c) c.urgent = true end,
+                  {description = "mark client urgent", group = "client"}),
         awful.key({ modkey, "Shift"   }, "m",
             function (c)
                 c.maximized_horizontal = not c.maximized_horizontal
