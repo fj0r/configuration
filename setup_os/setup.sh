@@ -1,26 +1,30 @@
 # 常用软件
-zsh
-vim
-git
-tmux
+zsh vim git tmux
 podman
-    /etc/containers/containers.conf: detach_keys = ""
-sqlite
-jq tree
-wget curl xh
+    /etc/containers/containers.conf: -> /usr/share/containers/containers.conf
+        detach_keys = ""
+        multi_image_archive = true
+    /etc/containers/storage.conf
+        [storage]
+        driver = "overlay"
+        [storage.options]
+        mount_program = "/usr/bin/fuse-overlayfs"
+    /etc/containers/registries.conf
+        [[registry]]
+        insecure = true
+        location = "registry.s"
+jq tree wget curl xh sqlite
 openssh-server
 
 # 图形界面
-awesome rofi
-scrot
-xscreensaver
-qutebrowser
-liferea
+awesome rofi scrot xscreensaver
+qutebrowser zathura(pdf) liferea
 krusader
 
 vivaldi
 freefilesync
 
+`setxkbmap -option 'ctrl:swapcaps'`
 ibus-rime
 fonts
     JetBrains Mono
