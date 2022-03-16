@@ -5,6 +5,7 @@ return function(t)
     local modkey = t.modkey
     local revelation = t.revelation
     local machi = require("layout-machi")
+    local naughty = require("naughty")
 
 	local next_client_across_screen = function(i)
 	    awful.client.focus.byidx(i)
@@ -50,8 +51,6 @@ return function(t)
                   {description = "swap with previous client by index", group = "client"}),
         awful.key({ modkey,           }, "Tab", function () awful.screen.focus_relative( 1) end,
                   {description = "focus the next screen", group = "screen"}),
-        awful.key({ modkey, "Shift"   }, "Tab", function () awful.screen.focus_relative(-1) end,
-                  {description = "focus the previous screen", group = "screen"}),
         awful.key({ modkey,           }, "u", awful.client.urgent.jumpto,
                   {description = "jump to urgent client", group = "client"}),
         -- awful.key({ 'Mod1',           }, "Tab",
