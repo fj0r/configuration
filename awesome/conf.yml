@@ -38,11 +38,13 @@ tags:
   - name: 'C'
 
 theme:
-  gap: 1
+  gap: 0
   urgent_color: 'dde175'
   border:
     width: 2
     focus: '6a6e09'
+    #focus: 'ffd8b1'
+    #focus: '82a67d'
   wallpaper: /wallpapers
   powerline_taglist: false
 
