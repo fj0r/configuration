@@ -22,8 +22,6 @@ fi
 # docker save xxx | r='docker load'; parallel-ssh a b c
 
 
-alias lg='lazygit'
-alias nv='nvim -u $CFG/nvim/init.vim'
 installNeovim () {
     if [ -z "$1" ]; then
         cat ~/nvim-linux64.tar.gz | sudo tar zxf - -C /usr/local --strip-components=1
@@ -61,8 +59,9 @@ hash -d k8s="$HOME/data/k8s"
 
 [ -f "${GHCUP_INSTALL_BASE_PREFIX:=$HOME}/.ghcup/env" ] && source "${GHCUP_INSTALL_BASE_PREFIX:=$HOME}/.ghcup/env"
 
-alias ytd="youtube-dl --proxy http://localhost:7890"
+alias ytd="/opt/youtube-dl/youtube-dl --proxy http://localhost:7890"
 alias ytdm="ytd -x --audio-quality 0 "
+alias xr="source ~/.config/xrandr.rc"
 
 function github_version {
     github_header="Accept: application/vnd.github.v3+json"
