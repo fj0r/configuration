@@ -63,7 +63,10 @@ end
 -- Themes define colours, icons, font and wallpapers.
 beautiful.init(gears.filesystem.get_themes_dir() .. "default/theme.lua")
 beautiful.useless_gap = conf.theme.gap
-beautiful.taglist_bg_urgent = conf.theme.urgent_color
+local color_normal = conf.theme.border.normal and "#" .. conf.theme.border.normal or beautiful.border_normal
+local color_focus = conf.theme.border.focus and "#" .. conf.theme.border.focus or beautiful.border_focus
+local color_urgent = "#" .. conf.theme.urgent_color
+beautiful.taglist_bg_urgent = color_urgent
 
 -- This is used later as the default terminal and editor to run.
 terminal = conf.terminal or "x-terminal-emulator"
@@ -444,12 +447,14 @@ client.connect_signal("mouse::enter", function(c)
 end)
 
 client.connect_signal("focus", function(c)
-    c.border_color = conf.theme.border.focus and "#" .. conf.theme.border.focus
-    or beautiful.border_focus
+    c.border_color = color_focus
 end)
 client.connect_signal("unfocus", function(c)
-    c.border_color = conf.theme.border.normal
-    and "#" .. conf.theme.border.normal
-    or beautiful.border_normal
+    if c.urgent then return end
+    c.border_color = color_normal
 end)
+client.connect_signal("property::urgent", function(c)
+    c.border_color = color_urgent
+end)
+
 -- }}}

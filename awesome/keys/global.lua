@@ -5,6 +5,7 @@ return function(t)
     local modkey = t.modkey
     local revelation = t.revelation
     local machi = require("layout-machi")
+    local naughty = require("naughty")
 
 	local next_client_across_screen = function(i)
 	    awful.client.focus.byidx(i)
