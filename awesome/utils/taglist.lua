@@ -124,11 +124,12 @@ local powerline_taglist = function(s)
 end
 
 local default_taglist = function(s)
-    return awful.widget.taglist {
+    local taglist = awful.widget.taglist {
         screen  = s,
         filter  = awful.widget.taglist.filter.all,
         buttons = taglist_buttons
     }
+    return taglist
 end
 
 local mk_taglist = function (s, power)
