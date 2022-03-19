@@ -11,7 +11,6 @@ done
 
 # sources $CFG/.fzf/init.zsh
 
-sources $CFG/.dstask.zsh
 #sources $CFG/.xkb.zsh
 sources $CFG/../.user.zsh
 sources $HOME/.test.zsh
