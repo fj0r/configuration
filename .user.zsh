@@ -74,12 +74,12 @@ function archive-cfg {
     local tmp="/tmp/cfg/$d/home"
     mkdir -p $tmp
     cp $CFG/_zshrc $tmp/.zshrc
-    cp -r $CFG/.zshrc.d $tmp/.zshrc.d
-    cp $CFG/.ext.zsh $tmp/
+    cp -r $CFG/../.zshrc.d $tmp/.zshrc.d
+    cp $CFG/../.ext.zsh $tmp/
     mkdir -p $tmp/.config
-    cp $CFG/_tmux.conf $tmp/.tmux.conf
+    cp $CFG/../_tmux.conf $tmp/.tmux.conf
     mkdir -p $tmp/.config/helix
-    cp $CFG/helix/* $tmp/.config/helix
+    cp $CFG/../helix/* $tmp/.config/helix
     mkdir -p $tmp/.local/bin
     cp /usr/local/bin/{just,watchexec,rq,yq,rg,fd,sd,dust,btm,xh,dog} $tmp/.local/bin
     #tar hzcvf - --transform "s|^$d\(.*\)|\1|" -C /tmp/cfg $d
