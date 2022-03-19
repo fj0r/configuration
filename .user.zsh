@@ -73,8 +73,8 @@ function archive-cfg {
     local d=$(date +"%Y%m%d%H%M%S")
     local tmp="/tmp/cfg/$d/home"
     mkdir -p $tmp
-    cp $CFG/_zshrc $tmp/.zshrc
     cp -r $CFG/../.zshrc.d $tmp/.zshrc.d
+    ln -fsr $tmp/.zshrc.d/_zshrc $tmp/.zshrc
     cp $CFG/../.ext.zsh $tmp/
     mkdir -p $tmp/.config
     cp $CFG/../_tmux.conf $tmp/.tmux.conf
@@ -146,14 +146,14 @@ function deploy-to-server {
     local sshcmd="ssh"
     for i in $*; do
         echo "--------- to $i"
-        cmd+="| tee >($sshcmd $i \"tar zxf - --strip-component=1; sudo chown \\\$(id -u):\\\$(id -g) -R ~/{.zshrc,.zshrc.d}\") "
+        cmd+="| tee >($sshcmd $i \"rm -rf ~/.zshrc.d; tar zxf - --strip-component=1; sudo chown \\\$(id -u):\\\$(id -g) -R ~/{.zshrc,.zshrc.d}\") "
     done
     cmd+="> /dev/null"
     echo $cmd
     eval $cmd
 
     echo "========= deploy neovim"
-    local cmd="cat $HOME/nvim-linux64.tar.gz "
+    local cmd="cat $HOME/Downloads/nvim-linux64.tar.gz "
     for i in $*; do
         echo "--------- to $i"
         cmd+="| tee >($sshcmd $i \"sudo tar zxf - -C /usr/local/ --strip-components=1\")"
@@ -167,16 +167,6 @@ function deploy-to-server {
     for i in $*; do
         echo "--------- to $i"
         cmd+="| tee >($sshcmd $i \"rm -rf ~/.config/nvim; tar zxf - -C ~/.config; sudo chown \\\$(id -u):\\\$(id -g) -R ~/.config/nvim\")"
-    done
-    cmd+="> /dev/null"
-    echo $cmd
-    eval $cmd
-
-    echo "========= deploy helix"
-    local cmd="cat $HOME/helix-*-x86_64-linux.tar.xz "
-    for i in $*; do
-        echo "--------- to $i"
-        cmd+="| tee >($sshcmd $i \"sudo mkdir -p /opt/helix; sudo tar -Jxf - -C /opt/helix --strip-components=1; sudo ln -sf /opt/helix/hx /usr/local/bin\")"
     done
     cmd+="> /dev/null"
     echo $cmd
