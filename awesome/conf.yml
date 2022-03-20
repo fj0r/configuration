@@ -2,6 +2,7 @@ autorun:
   - setxkbmap -option 'ctrl:swapcaps'
   - source ~/.config/xrandr.rc
   - gnome-session --systemd-service
+  - /usr/lib/polkit-1/polkitd
   - xscreensaver -no-splash
   - ibus-daemon --xim --replace --daemonize
 
