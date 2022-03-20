@@ -270,5 +270,6 @@
         "vuepress",
         "webhook",
         "webp"
-    ]
+    ],
+    "window.zoomLevel": 1
 }
