@@ -28,7 +28,7 @@ require("awful.hotkeys_popup.keys")
 
 -- autorun
 for k, v in ipairs(conf.autorun) do
-    awful.spawn.with_shell(v)
+    utils.run_once.run(v)
 end
 
 
