@@ -3,7 +3,7 @@ autorun:
   - source ~/.config/xrandr.rc
   - gnome-session --systemd-service
   - xscreensaver -no-splash
-  - ibus-daemon --xim
+  - ibus-daemon --xim --replace --daemonize
 
 monitor:
   partitions:
