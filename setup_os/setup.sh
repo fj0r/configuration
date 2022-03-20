@@ -7,8 +7,10 @@ podman
     /etc/containers/storage.conf
         [storage]
         driver = "overlay"
+        runroot = "/run/containers/storage"
+        graphroot = "/var/lib/containers/storage"
         [storage.options]
-        mount_program = "/usr/bin/fuse-overlayfs"
+        #mount_program = "/usr/bin/fuse-overlayfs"
     /etc/containers/registries.conf
         [[registry]]
         insecure = true

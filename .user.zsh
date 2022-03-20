@@ -53,6 +53,7 @@ hash -d tut="$HOME/pub/Tutorial"
 hash -d plt="$HOME/pub/Platform"
 hash -d dk="$HOME/data/docker.io"
 hash -d k8s="$HOME/data/k8s"
+hash -d a="$CFG/../awesome"
 
 #source /home/nash/k8s/istio-*/tools/_istioctl
 
