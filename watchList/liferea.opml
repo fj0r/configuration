@@ -66,7 +66,7 @@
       <outline title="authelia" text="authelia" description="authelia" type="atom" xmlUrl="https://github.com/authelia/authelia/releases.atom" htmlUrl="https://github.com/authelia/authelia/releases.atom"/>
       <outline title="pushpin" text="pushpin" description="pushpin" type="atom" xmlUrl="https://github.com/fanout/pushpin/releases.atom" htmlUrl="https://github.com/fanout/pushpin/releases.atom"/>
       <outline title="nchan" text="nchan" description="nchan" type="atom" xmlUrl="https://github.com/slact/nchan/releases.atom" htmlUrl="https://github.com/slact/nchan/releases.atom"/>
-      <outline title="New Subscription" text="New Subscription" description="New Subscription" xmlUrl="https://github.com/ory/hydra/releases.atom" htmlUrl=""/>
+      <outline title="hydra" text="hydra" description="hydra" type="atom" xmlUrl="https://github.com/ory/hydra/releases.atom" htmlUrl="https://github.com/ory/hydra/releases.atom"/>
       <outline title="dex" text="dex" description="dex" type="atom" xmlUrl="https://github.com/dexidp/dex/releases.atom" htmlUrl="https://github.com/dexidp/dex/releases.atom"/>
       <outline title="vouch-proxy" text="vouch-proxy" description="vouch-proxy" type="atom" xmlUrl="https://github.com/vouch/vouch-proxy/releases.atom" htmlUrl="https://github.com/vouch/vouch-proxy/releases.atom"/>
     </outline>
@@ -99,9 +99,9 @@
       <outline title="wasmtime" text="wasmtime" description="wasmtime" type="atom" xmlUrl="https://github.com/bytecodealliance/wasmtime/releases.atom" htmlUrl="https://github.com/bytecodealliance/wasmtime/releases.atom"/>
       <outline title="wasmer" text="wasmer" description="wasmer" type="atom" xmlUrl="https://github.com/wasmerio/wasmer/releases.atom" htmlUrl="https://github.com/wasmerio/wasmer/releases.atom"/>
       <outline title="gitea" text="gitea" description="gitea" type="rss" xmlUrl="https://blog.gitea.io/index.xml" htmlUrl="https://blog.gitea.io/"/>
-      <outline title="avro" text="avro" description="avro" xmlUrl="https://github.com/apache/avro/releases.atom" htmlUrl=""/>
+      <outline title="avro" text="avro" description="avro" type="atom" xmlUrl="https://github.com/apache/avro/releases.atom" htmlUrl="https://github.com/apache/avro/releases.atom"/>
       <outline title="boundary" text="boundary" description="boundary" type="atom" xmlUrl="https://github.com/hashicorp/boundary/releases.atom" htmlUrl="https://github.com/hashicorp/boundary/releases.atom"/>
-      <outline title="dropbear" text="dropbear" description="dropbear" xmlUrl="https://github.com/mkj/dropbear/releases.atom" htmlUrl=""/>
+      <outline title="dropbear" text="dropbear" description="dropbear" type="atom" xmlUrl="https://github.com/mkj/dropbear/releases.atom" htmlUrl="https://github.com/mkj/dropbear/releases.atom"/>
       <outline title="gitoxide(git)" text="gitoxide(git)" description="gitoxide(git)" type="atom" xmlUrl="https://github.com/Byron/gitoxide/releases.atom" htmlUrl="https://github.com/Byron/gitoxide/releases.atom"/>
       <outline title="vector(log)" text="vector(log)" description="vector(log)" type="atom" xmlUrl="https://github.com/vectordotdev/vector/releases.atom" htmlUrl="https://github.com/vectordotdev/vector/releases.atom"/>
     </outline>
@@ -118,7 +118,7 @@
       <outline title="incubator-age" text="incubator-age" description="incubator-age" type="atom" xmlUrl="https://github.com/apache/incubator-age/releases.atom" htmlUrl="https://github.com/apache/incubator-age/releases.atom"/>
       <outline title="pg_jieba" text="pg_jieba" description="pg_jieba" type="atom" xmlUrl="https://github.com/jaiminpan/pg_jieba/commits/master.atom" htmlUrl="https://github.com/jaiminpan/pg_jieba/commits/master.atom"/>
       <outline title="pg_cron" text="pg_cron" description="pg_cron" type="atom" xmlUrl="https://github.com/citusdata/pg_cron/releases.atom" htmlUrl="https://github.com/citusdata/pg_cron/releases.atom"/>
-      <outline title="pg parse" text="pg parse" description="pg parse" xmlUrl="https://github.com/paupino/pg_parse/releases.atom" htmlUrl=""/>
+      <outline title="pg parse" text="pg parse" description="pg parse" type="atom" xmlUrl="https://github.com/paupino/pg_parse/releases.atom" htmlUrl="https://github.com/paupino/pg_parse/releases.atom"/>
       <outline title="sqlparser-rs" text="sqlparser-rs" description="sqlparser-rs" type="atom" xmlUrl="https://github.com/sqlparser-rs/sqlparser-rs/releases.atom" htmlUrl="https://github.com/sqlparser-rs/sqlparser-rs/releases.atom"/>
       <outline title="jsoncdc" text="jsoncdc" description="jsoncdc" type="atom" xmlUrl="https://github.com/instructure/jsoncdc/releases.atom" htmlUrl="https://github.com/instructure/jsoncdc/releases.atom"/>
       <outline title="arangodb" text="arangodb" description="arangodb" type="atom" xmlUrl="https://github.com/arangodb/arangodb/releases.atom" htmlUrl="https://github.com/arangodb/arangodb/releases.atom"/>
@@ -176,7 +176,7 @@
       <outline title="netmaker" text="netmaker" description="netmaker" type="atom" xmlUrl="https://github.com/gravitl/netmaker/releases.atom" htmlUrl="https://github.com/gravitl/netmaker/releases.atom"/>
       <outline title="nebula" text="nebula" description="nebula" type="atom" xmlUrl="https://github.com/slackhq/nebula/releases.atom" htmlUrl="https://github.com/slackhq/nebula/releases.atom"/>
       <outline title="wiretrustee" text="wiretrustee" description="wiretrustee" type="atom" xmlUrl="https://github.com/wiretrustee/wiretrustee/releases.atom" htmlUrl="https://github.com/wiretrustee/wiretrustee/releases.atom"/>
-      <outline title="innernet" text="innernet" description="innernet" xmlUrl="https://github.com/tonarino/innernet/releases.atom" htmlUrl=""/>
+      <outline title="innernet" text="innernet" description="innernet" type="atom" xmlUrl="https://github.com/tonarino/innernet/releases.atom" htmlUrl="https://github.com/tonarino/innernet/releases.atom"/>
       <outline title="deluge" text="deluge" description="deluge" type="atom" xmlUrl="https://github.com/deluge-torrent/deluge/releases.atom" htmlUrl="https://github.com/deluge-torrent/deluge/releases.atom"/>
       <outline title="websocat" text="websocat" description="websocat" type="atom" xmlUrl="https://github.com/vi/websocat/releases.atom" htmlUrl="https://github.com/vi/websocat/releases.atom"/>
       <outline title="v2ray-core" text="v2ray-core" description="v2ray-core" type="atom" xmlUrl="https://github.com/v2ray/v2ray-core/releases.atom" htmlUrl="https://github.com/v2ray/v2ray-core/releases.atom"/>
