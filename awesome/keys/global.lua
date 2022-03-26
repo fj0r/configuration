@@ -4,20 +4,9 @@ return function(t)
     local hotkeys_popup = t.hotkeys_popup
     local modkey = t.modkey
     local revelation = t.revelation
-    local machi = require("layout-machi")
-    local naughty = require("naughty")
-
-	local next_client_across_screen = function(i)
-	    awful.client.focus.byidx(i)
-	    if awful.client.ismarked() then
-	        awful.screen.focus_relative(-i)
-	        awful.client.getmarked()
-	    end
-	    if client.focus then
-	        client.focus:raise()
-	    end
-	    awful.client.togglemarked()
-	end
+    local machi = t.machi
+    local cyclefocus = t.cyclefocus
+    local notify = require("naughty").notify
 
     return gears.table.join(
         awful.key({ modkey,           }, "w",      hotkeys_popup.show_help,
@@ -50,20 +39,31 @@ return function(t)
         awful.key({ modkey,           }, "u", awful.client.urgent.jumpto,
                   {description = "jump to urgent client", group = "client"}),
 
-        awful.key({ modkey            }, "`", awful.tag.history.restore,
-                  {description = "go back", group = "tag"}),
-        awful.key({ "Mod1",           }, "Escape", function () revelation({ curr_tag_only=true }) end,
-                  {description = "revelation", group = "client"}),
-        awful.key({ "Mod1",           }, "`", function () awful.screen.focus_relative( 1) end,
+        awful.key({ modkey,           }, "Tab", function () awful.screen.focus_relative( 1) end,
                   {description = "focus the next screen", group = "screen"}),
-        awful.key({ 'Mod1',           }, "Tab",
-            function ()
-                awful.client.focus.history.previous()
-                if client.focus then
-                    client.focus:raise()
-                end
-            end,
-            {description = "go back", group = "client"}),
+        awful.key({ "Mod1",           }, "`", function () revelation({ curr_tag_only=true }) end,
+                  {description = "revelation", group = "client"}),
+        cyclefocus.key({ "Mod1", }, "Tab", {
+                      cycle_filters = { function(c, source_c)
+                          local st = {}
+                          for s in screen do
+                              local t = s.selected_tag
+                              st[s] = t
+                          end
+                          for _, t in pairs(c:tags()) do
+                              return st[c.screen] == t
+                              -- for _, t2 in pairs(source_c:tags()) do
+                              --     if t == t2 then
+                              --         return true
+                              --     end
+                              -- end
+                          end
+                          return false
+                      end },
+                      debug_use_naughty_notify = true,
+                      keys = {'Tab', 'ISO_Left_Tab'}
+                  },
+                  {description = "cycle focus", group = "client"}),
 
         -- Standard program
         awful.key({ modkey,           }, "Return", function () awful.spawn(terminal) end,
@@ -73,7 +73,7 @@ return function(t)
         awful.key({ modkey, "Shift"   }, "q", awesome.quit,
                   {description = "quit awesome", group = "awesome"}),
         awful.key({ modkey, "Shift"   }, "/", function () awful.spawn("xscreensaver-command -lock") end,
-                  {description = "quit awesome", group = "awesome"}),
+                  {description = "lock screen", group = "awesome"}),
 
 
         awful.key({ modkey,           }, ".",    function () machi.default_editor.start_interactive() end,

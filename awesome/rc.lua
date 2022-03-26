@@ -21,6 +21,7 @@ local beautiful = require("beautiful")
 local naughty = require("naughty")
 local menubar = require("menubar")
 local machi = require("layout-machi")
+local cyclefocus = require("cyclefocus")
 local hotkeys_popup = require("awful.hotkeys_popup")
 -- Enable hotkeys help widget for VIM and other apps
 -- when client with a matching name is opened:
@@ -237,6 +238,8 @@ globalkeys = keys.global {
     awful = awful,
     quake = quake,
     revelation = revelation,
+    cyclefocus = cyclefocus,
+    machi = machi,
     hotkeys_popup = hotkeys_popup,
     modkey = modkey
 }
