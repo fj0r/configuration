@@ -5,7 +5,7 @@ local utils = require 'utils'
 local path = utils.script_path() .. 'conf.yml'
 local conf = utils.conf.gen_config(path)
 local myclock = utils.clock
-local rotated_widget = utils.rotate
+local rotated_widget = utils.rotate(conf.sidebar)
 local monitor = utils.monitor
 local keys = require 'keys'
 
@@ -196,7 +196,7 @@ awful.screen.connect_for_each_screen(function(s)
     })
 
     -- Create the wibox
-    s.mywibox = awful.wibar({ position = "right", screen = s })
+    s.mywibox = awful.wibar({ position = conf.sidebar, screen = s })
 
     -- Add widgets to the wibox
     s.mywibox:setup {

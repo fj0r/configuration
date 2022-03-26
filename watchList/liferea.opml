@@ -207,7 +207,8 @@
       <outline title="neuronika" text="neuronika" description="neuronika" type="atom" xmlUrl="https://github.com/neuronika/neuronika/releases.atom" htmlUrl="https://github.com/neuronika/neuronika/releases.atom"/>
     </outline>
     <outline title="app" text="app" description="app" type="folder">
-      <outline title="awesomewm" text="awesomewm" description="awesomewm" xmlUrl="https://github.com/awesomeWM/awesome/releases.atom" htmlUrl=""/>
+      <outline title="awesomewm" text="awesomewm" description="awesomewm" xmlUrl="https://github.com/awesomeWM/awesome/releases.atom" htmlUrl="https://github.com/awesomeWM/awesome/releases.atom"/>
+      <outline title="rofi" text="rofi" description="rofi" xmlUrl="https://github.com/davatorium/rofi/releases.atom" htmlUrl="https://github.com/davatorium/rofi/releases.atom"/>
       <outline title="zathura" text="zathura" description="zathura" type="atom" xmlUrl="https://github.com/pwmt/zathura/releases.atom" htmlUrl="https://github.com/pwmt/zathura/releases.atom"/>
       <outline title="excalidraw" text="excalidraw" description="excalidraw" type="atom" xmlUrl="https://github.com/excalidraw/excalidraw/releases.atom" htmlUrl="https://github.com/excalidraw/excalidraw/releases.atom"/>
       <outline title="Cloudreve" text="Cloudreve" description="Cloudreve" type="atom" xmlUrl="https://github.com/cloudreve/Cloudreve/releases.atom" htmlUrl="https://github.com/cloudreve/Cloudreve/releases.atom"/>
