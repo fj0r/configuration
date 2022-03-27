@@ -36,9 +36,7 @@ tags:
   - name: '8'
     layout: centerwork
   - name: '9'
-  - name: 'A'
-  - name: 'B'
-  - name: 'C'
+  - name: 'X'
 
 theme:
   gap: 0
