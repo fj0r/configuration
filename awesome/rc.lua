@@ -305,25 +305,6 @@ for i = 1, 10 do
 end
 
 
-for i = 1, 9 do
-    globalkeys = gears.table.join(globalkeys,
-        -- View tag only.
-        -- default: { modkey }, "#" .. i + 9
-        awful.key({ modkey }, "#" .. i + 9,
-                  function ()
-                      awful.screen.focus(i)
-                  end,
-                  {description = "screen focused #"..i, group = "screen"}),
-        awful.key({ "Control" }, "#" .. i + 9,
-                  function ()
-                      if client.focus then
-                          client.focus:move_to_screen(i)
-                      end
-                  end,
-                  {description = "screen move to #"..i, group = "screen"})
-    )
-end
-
 clientbuttons = gears.table.join(
     awful.button({ }, 1, function (c)
         c:emit_signal("request::activate", "mouse_click", {raise = true})
