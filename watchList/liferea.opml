@@ -99,6 +99,7 @@
       <outline title="wasmtime" text="wasmtime" description="wasmtime" type="atom" xmlUrl="https://github.com/bytecodealliance/wasmtime/releases.atom" htmlUrl="https://github.com/bytecodealliance/wasmtime/releases.atom"/>
       <outline title="wasmer" text="wasmer" description="wasmer" type="atom" xmlUrl="https://github.com/wasmerio/wasmer/releases.atom" htmlUrl="https://github.com/wasmerio/wasmer/releases.atom"/>
       <outline title="gitea" text="gitea" description="gitea" type="rss" xmlUrl="https://blog.gitea.io/index.xml" htmlUrl="https://blog.gitea.io/"/>
+      <outline title="mattermost-server" text="mattermost-server" description="mattermost-server" type="atom" xmlUrl="https://github.com/mattermost/mattermost-server/releases.atom" htmlUrl="https://github.com/mattermost/mattermost-server/releases.atom"/>
       <outline title="avro" text="avro" description="avro" type="atom" xmlUrl="https://github.com/apache/avro/releases.atom" htmlUrl="https://github.com/apache/avro/releases.atom"/>
       <outline title="boundary" text="boundary" description="boundary" type="atom" xmlUrl="https://github.com/hashicorp/boundary/releases.atom" htmlUrl="https://github.com/hashicorp/boundary/releases.atom"/>
       <outline title="dropbear" text="dropbear" description="dropbear" type="atom" xmlUrl="https://github.com/mkj/dropbear/releases.atom" htmlUrl="https://github.com/mkj/dropbear/releases.atom"/>
@@ -147,7 +148,7 @@
     <outline title="search" text="search" description="search" type="folder">
       <outline title="milvus" text="milvus" description="milvus" type="atom" xmlUrl="https://github.com/milvus-io/milvus/releases.atom" htmlUrl="https://github.com/milvus-io/milvus/releases.atom"/>
       <outline title="sonic" text="sonic" description="sonic" type="atom" xmlUrl="https://github.com/valeriansaliou/sonic/releases.atom" htmlUrl="https://github.com/valeriansaliou/sonic/releases.atom"/>
-      <outline title="New Subscription" text="New Subscription" description="New Subscription" type="atom" xmlUrl="https://github.com/hora-search/hora/releases.atom" htmlUrl="https://github.com/hora-search/hora/releases.atom"/>
+      <outline title="hora" text="hora" description="hora" type="atom" xmlUrl="https://github.com/hora-search/hora/releases.atom" htmlUrl="https://github.com/hora-search/hora/releases.atom"/>
       <outline title="meilisearch" text="meilisearch" description="meilisearch" type="atom" xmlUrl="https://github.com/meilisearch/meilisearch/releases.atom" htmlUrl="https://github.com/meilisearch/meilisearch/releases.atom"/>
       <outline title="jina" text="jina" description="jina" type="atom" xmlUrl="https://github.com/jina-ai/jina/releases.atom" htmlUrl="https://github.com/jina-ai/jina/releases.atom"/>
       <outline title="faiss" text="faiss" description="faiss" type="atom" xmlUrl="https://github.com/facebookresearch/faiss/releases.atom" htmlUrl="https://github.com/facebookresearch/faiss/releases.atom"/>
@@ -207,13 +208,13 @@
       <outline title="neuronika" text="neuronika" description="neuronika" type="atom" xmlUrl="https://github.com/neuronika/neuronika/releases.atom" htmlUrl="https://github.com/neuronika/neuronika/releases.atom"/>
     </outline>
     <outline title="app" text="app" description="app" type="folder">
-      <outline title="awesomewm" text="awesomewm" description="awesomewm" xmlUrl="https://github.com/awesomeWM/awesome/releases.atom" htmlUrl="https://github.com/awesomeWM/awesome/releases.atom"/>
-      <outline title="rofi" text="rofi" description="rofi" xmlUrl="https://github.com/davatorium/rofi/releases.atom" htmlUrl="https://github.com/davatorium/rofi/releases.atom"/>
+      <outline title="awesomewm" text="awesomewm" description="awesomewm" type="atom" xmlUrl="https://github.com/awesomeWM/awesome/releases.atom" htmlUrl="https://github.com/awesomeWM/awesome/releases.atom"/>
+      <outline title="rofi" text="rofi" description="rofi" type="atom" xmlUrl="https://github.com/davatorium/rofi/releases.atom" htmlUrl="https://github.com/davatorium/rofi/releases.atom"/>
       <outline title="zathura" text="zathura" description="zathura" type="atom" xmlUrl="https://github.com/pwmt/zathura/releases.atom" htmlUrl="https://github.com/pwmt/zathura/releases.atom"/>
+      <outline title="vaultwarden" text="vaultwarden" description="vaultwarden" type="atom" xmlUrl="https://github.com/dani-garcia/vaultwarden/releases.atom" htmlUrl="https://github.com/dani-garcia/vaultwarden/releases.atom"/>
       <outline title="excalidraw" text="excalidraw" description="excalidraw" type="atom" xmlUrl="https://github.com/excalidraw/excalidraw/releases.atom" htmlUrl="https://github.com/excalidraw/excalidraw/releases.atom"/>
       <outline title="Cloudreve" text="Cloudreve" description="Cloudreve" type="atom" xmlUrl="https://github.com/cloudreve/Cloudreve/releases.atom" htmlUrl="https://github.com/cloudreve/Cloudreve/releases.atom"/>
       <outline title="AppFlowy" text="AppFlowy" description="AppFlowy" type="atom" xmlUrl="https://github.com/AppFlowy-IO/AppFlowy/releases.atom" htmlUrl="https://github.com/AppFlowy-IO/AppFlowy/releases.atom"/>
-      <outline title="mattermost-server" text="mattermost-server" description="mattermost-server" type="atom" xmlUrl="https://github.com/mattermost/mattermost-server/releases.atom" htmlUrl="https://github.com/mattermost/mattermost-server/releases.atom"/>
       <outline title="openvscode-server" text="openvscode-server" description="openvscode-server" type="atom" xmlUrl="https://github.com/gitpod-io/openvscode-server/releases.atom" htmlUrl="https://github.com/gitpod-io/openvscode-server/releases.atom"/>
       <outline title="veloren" text="veloren" description="veloren" type="atom" xmlUrl="https://github.com/veloren/veloren/releases.atom" htmlUrl="https://github.com/veloren/veloren/releases.atom"/>
       <outline title="blender" text="blender" description="blender" type="atom" xmlUrl="https://github.com/blender/blender/releases.atom" htmlUrl="https://github.com/blender/blender/releases.atom"/>
