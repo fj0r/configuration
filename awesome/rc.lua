@@ -2,8 +2,9 @@
 -- found (e.g. lgi). If LuaRocks is not installed, do nothing.
 pcall(require, "luarocks.loader")
 local utils = require 'utils'
-local path = utils.script_path() .. 'conf.yml'
-local conf = utils.conf.gen_config(path)
+--local path = utils.script_path() .. 'conf.yml'
+--local conf = utils.conf.gen_config(path)
+local conf = require('conf')
 local myclock = utils.clock
 local rotated_widget = utils.rotate(conf.sidebar)
 local monitor = utils.monitor
@@ -173,6 +174,7 @@ awful.screen.connect_for_each_screen(function(s)
 
     -- Each screen has its own tag table.
     -- awful.tag({ "1", "2", "3", "4", "5", "6", "7", "8", "9" }, s, awful.layout.layouts[1])
+    naughty.notify { text = tostring(conf.tags[1].name)  }
     awful.tag(conf.tags, s, conf.layouts)
 
     -- Create a promptbox for each screen
@@ -229,7 +231,7 @@ root.buttons(gears.table.join(
 -- }}}
 
 -- {{{ Key bindings
-local quake = lain.util.quake { app = conf.quake or 'urxvt', settings = function(c) c.sticky = false end, height = 0.382 }
+local quake = lain.util.quake { app = conf.quake or 'alacritty', settings = function(c) c.sticky = false end, height = 0.382 }
 local revelation=require("revelation")
 revelation.init()
 

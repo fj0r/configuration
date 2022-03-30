@@ -1,5 +1,4 @@
 return {
-    conf = require("utils.conf"),
     monitor   = require("utils.monitor"),
     clock = require("utils.clock"),
     rotate = require('utils.rotate'),
