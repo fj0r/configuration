@@ -44,11 +44,12 @@
       <outline title="IHaskell:master" text="IHaskell:master" description="IHaskell:master" type="atom" xmlUrl="https://github.com/gibiansky/IHaskell/commits/master.atom" htmlUrl="https://github.com/IHaskell/IHaskell/commits/master.atom"/>
       <outline title="evcxr:master(jupyter kernel for rust)" text="evcxr:master(jupyter kernel for rust)" description="evcxr:master(jupyter kernel for rust)" type="rss" xmlUrl="https://github.com/google/evcxr/commits/master.atom" htmlUrl="https://github.com/google/evcxr/commits/master"/>
       <outline title="HVM" text="HVM" description="HVM" type="atom" xmlUrl="https://github.com/Kindelia/HVM/releases.atom" htmlUrl="https://github.com/Kindelia/HVM/releases.atom"/>
+      <outline title="scala-lang" text="scala-lang" description="scala-lang" type="atom" xmlUrl="https://scala-lang.org/feed/index.xml" htmlUrl="https://www.scala-lang.org/news/"/>
       <outline title="Node.js" text="Node.js" description="Node.js" type="rss" xmlUrl="https://nodejs.org/en/feed/releases.xml" htmlUrl="https://nodejs.org/en/"/>
       <outline title="golang" text="golang" description="golang" type="atom" xmlUrl="https://blog.golang.org/feed.atom" htmlUrl="https://go.dev/blog/feed.atom"/>
-      <outline title="scala-lang" text="scala-lang" description="scala-lang" type="atom" xmlUrl="https://scala-lang.org/feed/index.xml" htmlUrl="https://www.scala-lang.org/news/"/>
-      <outline title="rhai" text="rhai" description="rhai" type="atom" xmlUrl="https://github.com/rhaiscript/rhai/releases.atom" htmlUrl="https://github.com/rhaiscript/rhai/releases.atom"/>
       <outline title="gluon" text="gluon" description="gluon" type="atom" xmlUrl="https://github.com/gluon-lang/gluon/releases.atom" htmlUrl="https://github.com/gluon-lang/gluon/releases.atom"/>
+      <outline title="grain" text="grain" description="grain" type="atom" xmlUrl="https://github.com/grain-lang/grain/releases.atom" htmlUrl="https://github.com/grain-lang/grain/releases.atom"/>
+      <outline title="rhai" text="rhai" description="rhai" type="atom" xmlUrl="https://github.com/rhaiscript/rhai/releases.atom" htmlUrl="https://github.com/rhaiscript/rhai/releases.atom"/>
       <outline title="compiler-explorer" text="compiler-explorer" description="compiler-explorer" type="atom" xmlUrl="https://github.com/compiler-explorer/compiler-explorer/releases.atom" htmlUrl="https://github.com/compiler-explorer/compiler-explorer/releases.atom"/>
       <outline title="deno" text="deno" description="deno" type="atom" xmlUrl="https://github.com/denoland/deno/releases.atom" htmlUrl="https://github.com/denoland/deno/releases.atom"/>
     </outline>
@@ -64,6 +65,7 @@
       <outline title="n8n" text="n8n" description="n8n" type="atom" xmlUrl="https://github.com/n8n-io/n8n/releases.atom" htmlUrl="https://github.com/n8n-io/n8n/releases.atom"/>
       <outline title="oauth2-proxy" text="oauth2-proxy" description="oauth2-proxy" type="atom" xmlUrl="https://github.com/oauth2-proxy/oauth2-proxy/releases.atom" htmlUrl="https://github.com/oauth2-proxy/oauth2-proxy/releases.atom"/>
       <outline title="authelia" text="authelia" description="authelia" type="atom" xmlUrl="https://github.com/authelia/authelia/releases.atom" htmlUrl="https://github.com/authelia/authelia/releases.atom"/>
+      <outline title="centrifugo" text="centrifugo" description="centrifugo" xmlUrl="https://github.com/centrifugal/centrifugo/releases.atom" htmlUrl=""/>
       <outline title="pushpin" text="pushpin" description="pushpin" type="atom" xmlUrl="https://github.com/fanout/pushpin/releases.atom" htmlUrl="https://github.com/fanout/pushpin/releases.atom"/>
       <outline title="nchan" text="nchan" description="nchan" type="atom" xmlUrl="https://github.com/slact/nchan/releases.atom" htmlUrl="https://github.com/slact/nchan/releases.atom"/>
       <outline title="hydra" text="hydra" description="hydra" type="atom" xmlUrl="https://github.com/ory/hydra/releases.atom" htmlUrl="https://github.com/ory/hydra/releases.atom"/>
@@ -174,6 +176,7 @@
     <outline title="net" text="net" description="net" type="folder">
       <outline title="boringtun" text="boringtun" description="boringtun" type="atom" xmlUrl="https://github.com/cloudflare/boringtun/releases.atom" htmlUrl="https://github.com/cloudflare/boringtun/releases.atom"/>
       <outline title="wireguard-go" text="wireguard-go" description="wireguard-go" type="atom" xmlUrl="https://github.com/WireGuard/wireguard-go/releases.atom" htmlUrl="https://github.com/WireGuard/wireguard-go/releases.atom"/>
+      <outline title="headscale" text="headscale" description="headscale" type="atom" xmlUrl="https://github.com/juanfont/headscale/releases.atom" htmlUrl="https://github.com/juanfont/headscale/releases.atom"/>
       <outline title="netmaker" text="netmaker" description="netmaker" type="atom" xmlUrl="https://github.com/gravitl/netmaker/releases.atom" htmlUrl="https://github.com/gravitl/netmaker/releases.atom"/>
       <outline title="nebula" text="nebula" description="nebula" type="atom" xmlUrl="https://github.com/slackhq/nebula/releases.atom" htmlUrl="https://github.com/slackhq/nebula/releases.atom"/>
       <outline title="wiretrustee" text="wiretrustee" description="wiretrustee" type="atom" xmlUrl="https://github.com/wiretrustee/wiretrustee/releases.atom" htmlUrl="https://github.com/netbirdio/netbird/releases.atom"/>

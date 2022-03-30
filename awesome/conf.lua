@@ -2,6 +2,8 @@ local M = {
     autorun = {
         "setxkbmap -option 'ctrl:swapcaps'",
         "source ~/.config/xrandr.rc",
+    },
+    autorun_once = {
         "gnome-session --systemd-service" ,
         -- "/usr/lib/polkit-1/polkitd",
         "xscreensaver -no-splash",
