@@ -30,6 +30,10 @@ require("awful.hotkeys_popup.keys")
 
 -- autorun
 for k, v in ipairs(conf.autorun) do
+    awful.spawn.with_shell(v)
+end
+
+for k, v in ipairs(conf.autorun_once) do
     utils.run_once.run(v)
 end
 
@@ -174,7 +178,6 @@ awful.screen.connect_for_each_screen(function(s)
 
     -- Each screen has its own tag table.
     -- awful.tag({ "1", "2", "3", "4", "5", "6", "7", "8", "9" }, s, awful.layout.layouts[1])
-    naughty.notify { text = tostring(conf.tags[1].name)  }
     awful.tag(conf.tags, s, conf.layouts)
 
     -- Create a promptbox for each screen
