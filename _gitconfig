@@ -5,6 +5,8 @@
 [core]
   editor = nvim
   quotepath = false
+[init]
+	defaultBranch = main
 [alias]
   s       = status
   c       = checkout
