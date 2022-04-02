@@ -1,44 +1,49 @@
 # 常用软件
-zsh vim git tmux
-podman
-    /etc/containers/containers.conf: -> /usr/share/containers/containers.conf
-        detach_keys = ""
-        multi_image_archive = true
-    /etc/containers/storage.conf
-        [storage]
-        driver = "overlay"
-        runroot = "/run/containers/storage"
-        graphroot = "/var/lib/containers/storage"
-        [storage.options]
-        #mount_program = "/usr/bin/fuse-overlayfs"
-    /etc/containers/registries.conf
-        [[registry]]
-        insecure = true
-        location = "registry.s"
+zsh nvim git tmux
+
+podman buildah skopeo
+```
+/etc/containers/containers.conf: -> /usr/share/containers/containers.conf
+    detach_keys = ""
+    multi_image_archive = true
+/etc/containers/storage.conf
+    [storage]
+    driver = "overlay"
+    runroot = "/run/containers/storage"
+    graphroot = "/var/lib/containers/storage"
+    [storage.options]
+    #mount_program = "/usr/bin/fuse-overlayfs"
+/etc/containers/registries.conf
+    [[registry]]
+    insecure = true
+    location = "registry.s"
+```
+
 jq tree wget curl xh sqlite
+
 openssh-server
 
 # 图形界面
-awesome rofi scrot xscreensaver
-qutebrowser zathura(pdf) liferea
-krusader
+alacritty awesome rofi
 
-vivaldi
-freefilesync
+qutebrowser zathura(pdf) liferea
+
+xrandr scrot xscreensaver
+
+vivaldi freefilesync
 
 `setxkbmap -option 'ctrl:swapcaps'`
+
 ibus-rime
+
 fonts
-    JetBrains Mono
-    SansCode
-    Hasklig
-    Operator Mono Lig
-
-gnome-tweak-tool
-gnome-shell-extensions
-chrome-gnome-shell
+  - JetBrains Mono
+  - SansCode
+  - Hasklig
+  - Operator Mono Lig
 
 
+```bash
 # 更改默认 shell
 chsh -s /bin/zsh
 # 添加用户到组
@@ -57,3 +62,4 @@ sed -i 's/#\(PasswordAuthentication\).*$/\1 no/g' /etc/ssh/sshd_config
 echo "Match Address 10.0.0.0/8,172.178.0.0/16,192.168.0.0/16\n    PasswordAuthentication yes" >> /etc/ssh/sshd_config
 # 修改运行级别 (服务器模式)
 systemctl set-default multi-user.target
+```
