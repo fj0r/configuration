@@ -271,5 +271,6 @@
         "webhook",
         "webp"
     ],
-    "window.zoomLevel": 1
+    "window.zoomLevel": 1,
+    "vscode-neovim.neovimExecutablePaths.linux": "/usr/local/bin/nvim"
 }
