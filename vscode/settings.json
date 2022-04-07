@@ -28,7 +28,7 @@
     "workbench.editor.closeEmptyGroups": true,
     "workbench.iconTheme": null,
     "workbench.tree.renderIndentGuides": "always",
-    "workbench.colorTheme": "Solarized Light",
+    "workbench.colorTheme": "Gruvbox Material Light",
     "workbench.editorAssociations": {
         "*.ipynb": "jupyter.notebook.ipynb"
     },
