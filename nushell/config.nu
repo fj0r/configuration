@@ -381,3 +381,5 @@ alias gupv = git pull --rebase -v
 alias gupa = git pull --rebase --autostash
 alias gupav = git pull --rebase --autostash -v
 alias glum = git pull upstream $(git_main_branch)
+
+# cat ($nu.config-path | path dirname | path join 'scripts' | path join 'a.nu' )

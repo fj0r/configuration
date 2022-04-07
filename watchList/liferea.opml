@@ -28,7 +28,7 @@
       <outline title="MacTalk-&#x6C60;&#x5EFA;&#x5F3A;&#x7684;&#x968F;&#x60F3;&#x5F55;" text="MacTalk-&#x6C60;&#x5EFA;&#x5F3A;&#x7684;&#x968F;&#x60F3;&#x5F55;" description="MacTalk-&#x6C60;&#x5EFA;&#x5F3A;&#x7684;&#x968F;&#x60F3;&#x5F55;" type="rss" xmlUrl="http://macshuo.com/?feed=rss2" htmlUrl="http://macshuo.com"/>
       <outline title="&#x5C0F;&#x4F17;&#x8F6F;&#x4EF6;" text="&#x5C0F;&#x4F17;&#x8F6F;&#x4EF6;" description="&#x5C0F;&#x4F17;&#x8F6F;&#x4EF6;" type="rss" xmlUrl="http://feed.appinn.com/" htmlUrl="https://www.appinn.com"/>
       <outline title="&#x6708;&#x5149;&#x535A;&#x5BA2;" text="&#x6708;&#x5149;&#x535A;&#x5BA2;" description="&#x6708;&#x5149;&#x535A;&#x5BA2;" type="rss" xmlUrl="http://feed.williamlong.info/" htmlUrl="https://www.williamlong.info/"/>
-      <outline title="&#x6781;&#x5BA2;&#x516C;&#x56ED;" text="&#x6781;&#x5BA2;&#x516C;&#x56ED;" description="&#x6781;&#x5BA2;&#x516C;&#x56ED;" type="rss" xmlUrl="http://feeds.geekpark.net/" htmlUrl="http://mainssl.geekpark.net/rss.rss"/>
+      <outline title="&#x6781;&#x5BA2;&#x516C;&#x56ED;" text="&#x6781;&#x5BA2;&#x516C;&#x56ED;" description="&#x6781;&#x5BA2;&#x516C;&#x56ED;" type="rss" xmlUrl="http://feeds.geekpark.net/" htmlUrl="http://main_test.geekpark.net/rss.rss"/>
     </outline>
     <outline title="Scientific American" text="Scientific American" description="Scientific American" type="folder">
       <outline title="Scientific American Content: Global" text="Scientific American Content: Global" description="Scientific American Content: Global" type="rss" xmlUrl="http://rss.sciam.com/ScientificAmerican-Global?format=xml" htmlUrl="http://www.scientificamerican.com"/>
@@ -133,12 +133,12 @@
       <outline title="foundationdb" text="foundationdb" description="foundationdb" type="atom" xmlUrl="https://github.com/apple/foundationdb/releases.atom" htmlUrl="https://github.com/apple/foundationdb/releases.atom"/>
     </outline>
     <outline title="stream" text="stream" description="stream" type="folder">
-      <outline title="voik" text="voik" description="voik" xmlUrl="https://github.com/marceloboeira/voik.atom" htmlUrl=""/>
+      <outline title="pulsar" text="pulsar" description="pulsar" type="atom" xmlUrl="https://github.com/apache/pulsar/releases.atom" htmlUrl="https://github.com/apache/pulsar/releases.atom"/>
+      <outline title="redpanda" text="redpanda" description="redpanda" type="atom" xmlUrl="https://github.com/redpanda-data/redpanda/releases.atom" htmlUrl="https://github.com/redpanda-data/redpanda/releases.atom"/>
       <outline title="fluvio" text="fluvio" description="fluvio" type="atom" xmlUrl="https://github.com/infinyon/fluvio/releases.atom" htmlUrl="https://github.com/infinyon/fluvio/releases.atom"/>
       <outline title="liftbridge" text="liftbridge" description="liftbridge" type="atom" xmlUrl="https://github.com/liftbridge-io/liftbridge/releases.atom" htmlUrl="https://github.com/liftbridge-io/liftbridge/releases.atom"/>
-      <outline title="pulsar" text="pulsar" description="pulsar" type="atom" xmlUrl="https://github.com/apache/pulsar/releases.atom" htmlUrl="https://github.com/apache/pulsar/releases.atom"/>
       <outline title="pravega" text="pravega" description="pravega" type="atom" xmlUrl="https://github.com/pravega/pravega/releases.atom" htmlUrl="https://github.com/pravega/pravega/releases.atom"/>
-      <outline title="redpanda" text="redpanda" description="redpanda" type="atom" xmlUrl="https://github.com/redpanda-data/redpanda/releases.atom" htmlUrl="https://github.com/redpanda-data/redpanda/releases.atom"/>
+      <outline title="voik" text="voik" description="voik" xmlUrl="https://github.com/marceloboeira/voik.atom" htmlUrl=""/>
     </outline>
     <outline title="storage" text="storage" description="storage" type="folder">
       <outline title="minio" text="minio" description="minio" type="atom" xmlUrl="https://github.com/minio/minio/releases.atom" htmlUrl="https://github.com/minio/minio/releases.atom"/>
@@ -227,6 +227,7 @@
       <outline title="nyxt" text="nyxt" description="nyxt" type="atom" xmlUrl="https://github.com/atlas-engineer/nyxt/releases.atom" htmlUrl="https://github.com/atlas-engineer/nyxt/releases.atom"/>
       <outline title="qutebrowser" text="qutebrowser" description="qutebrowser" type="atom" xmlUrl="https://github.com/qutebrowser/qutebrowser/releases.atom" htmlUrl="https://github.com/qutebrowser/qutebrowser/releases.atom"/>
       <outline title="conduit:next" text="conduit:next" description="conduit:next" type="atom" xmlUrl="https://github.com/timokoesters/conduit/commits/next.atom" htmlUrl="https://github.com/timokoesters/conduit/commits/next.atom"/>
+      <outline title="koodo-reader" text="koodo-reader" description="koodo-reader" type="atom" xmlUrl="https://github.com/troyeguo/koodo-reader/releases.atom" htmlUrl="https://github.com/troyeguo/koodo-reader/releases.atom"/>
     </outline>
     <outline title="front-end" text="front-end" description="front-end" type="folder">
       <outline title="stdweb[rs]" text="stdweb[rs]" description="stdweb[rs]" type="atom" xmlUrl="https://github.com/koute/stdweb/releases.atom" htmlUrl="https://github.com/koute/stdweb/releases.atom"/>
