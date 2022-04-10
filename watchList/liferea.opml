@@ -25,7 +25,7 @@
       <outline title="&#x79D1;&#x5B66;&#x677E;&#x9F20;&#x4F1A;" text="&#x79D1;&#x5B66;&#x677E;&#x9F20;&#x4F1A;" description="&#x79D1;&#x5B66;&#x677E;&#x9F20;&#x4F1A;" type="rss" xmlUrl="http://songshuhui.net/feed" htmlUrl="https://songshuhui.net"/>
     </outline>
     <outline title="IT" text="IT" description="IT" type="folder">
-      <outline title="MacTalk-&#x6C60;&#x5EFA;&#x5F3A;&#x7684;&#x968F;&#x60F3;&#x5F55;" text="MacTalk-&#x6C60;&#x5EFA;&#x5F3A;&#x7684;&#x968F;&#x60F3;&#x5F55;" description="MacTalk-&#x6C60;&#x5EFA;&#x5F3A;&#x7684;&#x968F;&#x60F3;&#x5F55;" type="rss" xmlUrl="http://macshuo.com/?feed=rss2" htmlUrl="http://macshuo.com"/>
+      <outline title="MacTalk-&#x6C60;&#x5EFA;&#x5F3A;&#x7684;&#x968F;&#x60F3;&#x5F55;" text="MacTalk-&#x6C60;&#x5EFA;&#x5F3A;&#x7684;&#x968F;&#x60F3;&#x5F55;" description="MacTalk-&#x6C60;&#x5EFA;&#x5F3A;&#x7684;&#x968F;&#x60F3;&#x5F55;" type="rss" xmlUrl="http://macshuo.com/?feed=rss2" htmlUrl="https://macshuo.com"/>
       <outline title="&#x5C0F;&#x4F17;&#x8F6F;&#x4EF6;" text="&#x5C0F;&#x4F17;&#x8F6F;&#x4EF6;" description="&#x5C0F;&#x4F17;&#x8F6F;&#x4EF6;" type="rss" xmlUrl="http://feed.appinn.com/" htmlUrl="https://www.appinn.com"/>
       <outline title="&#x6708;&#x5149;&#x535A;&#x5BA2;" text="&#x6708;&#x5149;&#x535A;&#x5BA2;" description="&#x6708;&#x5149;&#x535A;&#x5BA2;" type="rss" xmlUrl="http://feed.williamlong.info/" htmlUrl="https://www.williamlong.info/"/>
       <outline title="&#x6781;&#x5BA2;&#x516C;&#x56ED;" text="&#x6781;&#x5BA2;&#x516C;&#x56ED;" description="&#x6781;&#x5BA2;&#x516C;&#x56ED;" type="rss" xmlUrl="http://feeds.geekpark.net/" htmlUrl="http://main_test.geekpark.net/rss.rss"/>
@@ -129,13 +129,14 @@
       <outline title="rethinkdb" text="rethinkdb" description="rethinkdb" type="atom" xmlUrl="https://github.com/rethinkdb/rethinkdb/releases.atom" htmlUrl="https://github.com/rethinkdb/rethinkdb/releases.atom"/>
       <outline title="indradb" text="indradb" description="indradb" type="atom" xmlUrl="https://github.com/indradb/indradb/releases.atom" htmlUrl="https://github.com/indradb/indradb/releases.atom"/>
       <outline title="sled" text="sled" description="sled" type="atom" xmlUrl="https://github.com/spacejam/sled/releases.atom" htmlUrl="https://github.com/spacejam/sled/releases.atom"/>
+      <outline title="noria" text="noria" description="noria" xmlUrl="https://github.com/mit-pdos/noria.atom" htmlUrl=""/>
       <outline title="materialize" text="materialize" description="materialize" type="atom" xmlUrl="https://github.com/MaterializeInc/materialize/releases.atom" htmlUrl="https://github.com/MaterializeInc/materialize/releases.atom"/>
       <outline title="foundationdb" text="foundationdb" description="foundationdb" type="atom" xmlUrl="https://github.com/apple/foundationdb/releases.atom" htmlUrl="https://github.com/apple/foundationdb/releases.atom"/>
     </outline>
     <outline title="stream" text="stream" description="stream" type="folder">
       <outline title="pulsar" text="pulsar" description="pulsar" type="atom" xmlUrl="https://github.com/apache/pulsar/releases.atom" htmlUrl="https://github.com/apache/pulsar/releases.atom"/>
-      <outline title="redpanda" text="redpanda" description="redpanda" type="atom" xmlUrl="https://github.com/redpanda-data/redpanda/releases.atom" htmlUrl="https://github.com/redpanda-data/redpanda/releases.atom"/>
       <outline title="fluvio" text="fluvio" description="fluvio" type="atom" xmlUrl="https://github.com/infinyon/fluvio/releases.atom" htmlUrl="https://github.com/infinyon/fluvio/releases.atom"/>
+      <outline title="redpanda" text="redpanda" description="redpanda" type="atom" xmlUrl="https://github.com/redpanda-data/redpanda/releases.atom" htmlUrl="https://github.com/redpanda-data/redpanda/releases.atom"/>
       <outline title="liftbridge" text="liftbridge" description="liftbridge" type="atom" xmlUrl="https://github.com/liftbridge-io/liftbridge/releases.atom" htmlUrl="https://github.com/liftbridge-io/liftbridge/releases.atom"/>
       <outline title="pravega" text="pravega" description="pravega" type="atom" xmlUrl="https://github.com/pravega/pravega/releases.atom" htmlUrl="https://github.com/pravega/pravega/releases.atom"/>
       <outline title="voik" text="voik" description="voik" xmlUrl="https://github.com/marceloboeira/voik.atom" htmlUrl=""/>
