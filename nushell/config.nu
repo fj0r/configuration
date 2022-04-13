@@ -1,59 +1,5 @@
 # Nushell Config File
 
-def create_left_prompt [] {
-    let path_segment = ($env.PWD)
-
-    $path_segment
-}
-
-def create_right_prompt [] {
-    let time_segment = ([
-        (date now | date format '%m/%d/%Y %r')
-    ] | str collect)
-
-    $time_segment
-}
-
-# Use nushell functions to define your right and left prompt
-let-env PROMPT_COMMAND = { create_left_prompt }
-let-env PROMPT_COMMAND_RIGHT = { create_right_prompt }
-
-# The prompt indicators are environmental variables that represent
-# the state of the prompt
-let-env PROMPT_INDICATOR = "〉"
-let-env PROMPT_INDICATOR_VI_INSERT = ": "
-let-env PROMPT_INDICATOR_VI_NORMAL = "〉"
-let-env PROMPT_MULTILINE_INDICATOR = "::: "
-
-# Specifies how environment variables are:
-# - converted from a string to a value on Nushell startup (from_string)
-# - converted from a value back to a string when running external commands (to_string)
-# Note: The conversions happen *after* config.nu is loaded
-let-env ENV_CONVERSIONS = {
-  "PATH": {
-    from_string: { |s| $s | split row (char esep) }
-    to_string: { |v| $v | str collect (char esep) }
-  }
-  "Path": {
-    from_string: { |s| $s | split row (char esep) }
-    to_string: { |v| $v | str collect (char esep) }
-  }
-}
-
-# Directories to search for scripts when calling source or use
-#
-# By default, <nushell-config-dir>/scripts is added
-let-env NU_LIB_DIRS = [
-    ($nu.config-path | path dirname | path join 'scripts')
-]
-
-# Directories to search for plugin binaries when calling register
-#
-# By default, <nushell-config-dir>/plugins is added
-let-env NU_PLUGIN_DIRS = [
-    ($nu.config-path | path dirname | path join 'plugins')
-]
-
 module completions {
   # Custom completions for external commands (those outside of Nushell)
   # Each completions has two parts: the form of the external command, including its flags and parameters
@@ -61,7 +7,7 @@ module completions {
   #
   # This is a simplified version of completions for git branches and git remotes
   def "nu-complete git branches" [] {
-    ^git branch | lines | each { |line| $line | str find-replace '\* ' '' | str trim }
+    ^git branch | lines | each { |line| $line | str replace '[\*\+] ' '' | str trim }
   }
 
   def "nu-complete git remotes" [] {
@@ -128,11 +74,11 @@ module completions {
 use completions *
 
 # for more information on themes see
-# https://github.com/nushell/nushell/blob/main/docs/How_To_Coloring_and_Theming.md
+# https://www.nushell.sh/book/coloring_and_theming.html
 let default_theme = {
     # color for nushell primitives
     separator: white
-    leading_trailing_space_bg: { attr: n } # no fg, no bg, attr non effectively turns this off
+    leading_trailing_space_bg: { attr: n } # no fg, no bg, attr none effectively turns this off
     header: green_bold
     empty: blue
     bool: white
@@ -196,22 +142,127 @@ let $config = {
   use_ansi_coloring: true
   filesize_format: "auto" # b, kb, kib, mb, mib, gb, gib, tb, tib, pb, pib, eb, eib, zb, zib, auto
   edit_mode: emacs # emacs, vi
-  max_history_size: 10000
-  menu_config: {
-    columns: 4
-    col_width: 20   # Optional value. If missing all the screen width is used to calculate column width
-    col_padding: 2
-    text_style: green
-    selected_text_style: green_reverse
-    marker: "| "
-  }
-  history_config: {
-    page_size: 10
-    selector: "!"
-    text_style: green
-    selected_text_style: green_reverse
-    marker: "? "
-  }
+  max_history_size: 10000 # Session has to be reloaded for this to take effect
+  sync_history_on_enter: true # Enable to share the history between multiple sessions, else you have to close the session to persist history to file
+  menus: [
+      # Configuration for default nushell menus
+      # Note the lack of souce parameter
+      {
+        name: completion_menu
+        only_buffer_difference: false
+        marker: "| "
+        type: {
+            layout: columnar
+            columns: 4
+            col_width: 20   # Optional value. If missing all the screen width is used to calculate column width
+            col_padding: 2
+        }
+        style: {
+            text: green
+            selected_text: green_reverse
+            description_text: yellow
+        }
+      }
+      {
+        name: history_menu
+        only_buffer_difference: true
+        marker: "? "
+        type: {
+            layout: list
+            page_size: 10
+        }
+        style: {
+            text: green
+            selected_text: green_reverse
+            description_text: yellow
+        }
+      }
+      {
+        name: help_menu
+        only_buffer_difference: true
+        marker: "? "
+        type: {
+            layout: description
+            columns: 4
+            col_width: 20   # Optional value. If missing all the screen width is used to calculate column width
+            col_padding: 2
+            selection_rows: 4
+            description_rows: 10
+        }
+        style: {
+            text: green
+            selected_text: green_reverse
+            description_text: yellow
+        }
+      }
+      # Example of extra menus created using a nushell source
+      # Use the source field to create a list of records that populates
+      # the menu
+      {
+        name: commands_menu
+        only_buffer_difference: false
+        marker: "# "
+        type: {
+            layout: columnar
+            columns: 4
+            col_width: 20
+            col_padding: 2
+        }
+        style: {
+            text: green
+            selected_text: green_reverse
+            description_text: yellow
+        }
+        source: { |buffer, position|
+            $nu.scope.commands
+            | where command =~ $buffer
+            | each { |it| {value: $it.command description: $it.usage} }
+        }
+      }
+      {
+        name: vars_menu
+        only_buffer_difference: true
+        marker: "# "
+        type: {
+            layout: list
+            page_size: 10
+        }
+        style: {
+            text: green
+            selected_text: green_reverse
+            description_text: yellow
+        }
+        source: { |buffer, position|
+            $nu.scope.vars
+            | where name =~ $buffer
+            | sort-by name
+            | each { |it| {value: $it.name description: $it.type} }
+        }
+      }
+      {
+        name: commands_with_description
+        only_buffer_difference: true
+        marker: "# "
+        type: {
+            layout: description
+            columns: 4
+            col_width: 20
+            col_padding: 2
+            selection_rows: 4
+            description_rows: 10
+        }
+        style: {
+            text: green
+            selected_text: green_reverse
+            description_text: yellow
+        }
+        source: { |buffer, position|
+            $nu.scope.commands
+            | where command =~ $buffer
+            | each { |it| {value: $it.command description: $it.usage} }
+        }
+      }
+  ]
   keybindings: [
     {
       name: completion_menu
@@ -256,130 +307,34 @@ let $config = {
         ]
       }
     }
+    # Keybindings used to trigger the user defined menus
+    {
+      name: commands_menu
+      modifier: control
+      keycode: char_t
+      mode: [emacs, vi_normal, vi_insert]
+      event: { send: menu name: commands_menu }
+    }
+    {
+      name: vars_menu
+      modifier: control
+      keycode: char_y
+      mode: [emacs, vi_normal, vi_insert]
+      event: { send: menu name: vars_menu }
+    }
+    {
+      name: commands_with_description
+      modifier: control
+      keycode: char_u
+      mode: [emacs, vi_normal, vi_insert]
+      event: { send: menu name: commands_with_description }
+    }
   ]
 }
 
+# mkdir ~/.cache/starship
+# starship init nu | save ~/.cache/starship/init.nu
+source ~/.cache/starship/init.nu
 
-alias e = nvim
-alias g = git
-alias d = docker
-alias k = kuberctl
-alias s = ssh
-
-
-alias gpp! = git add --all && git commit -v -a --no-edit --amend && git push --force
-alias gp = git push
-alias gl = git pull
-alias ga = git add
-alias gaa = git add --all
-alias gapa = git add --patch
-alias gau = git add --update
-alias gav = git add --verbose
-alias gap = git apply
-alias gapt = git apply --3way
-
-alias gb = git branch
-alias gba = git branch -a
-alias gbd = git branch -d
-alias gbda = 'git branch --no-color --merged | command grep -vE "^(\+|\*|\s*($(git_main_branch)|development|develop|devel|dev)\s*$)" | command xargs -n 1 git branch -d'
-alias gbD = git branch -D
-alias gbl = git blame -b -w
-alias gbnm = git branch --no-merged
-alias gbr = git branch --remote
-alias gbs = git bisect
-alias gbsb = git bisect bad
-alias gbsg = git bisect good
-alias gbsr = git bisect reset
-alias gbss = git bisect start
-
-alias gc = git commit -v
-alias gc! = git commit -v --amend
-alias gcn! = git commit -v --no-edit --amend
-alias gca = git commit -v -a
-alias gca! = git commit -v -a --amend
-alias gcan! = git commit -v -a --no-edit --amend
-alias gcans! = git commit -v -a -s --no-edit --amend
-alias gcam = git commit -a -m
-alias gcsm = git commit -s -m
-alias gcb = git checkout -b
-alias gcf = git config --list
-alias gcl = git clone --recurse-submodules
-alias gclean = git clean -id
-alias gpristine = git reset --hard && git clean -dffx
-alias gcm = git checkout $(git_main_branch)
-alias gcd = git checkout develop
-alias gcmsg = git commit -m
-alias gco = git checkout
-alias gcount = git shortlog -sn
-alias gcp = git cherry-pick
-alias gcpa = git cherry-pick --abort
-alias gcpc = git cherry-pick --continue
-alias gcs = git commit -S
-
-alias gd = git diff
-alias gdca = git diff --cached
-alias gdcw = git diff --cached --word-diff
-alias gdct = git describe --tags $(git rev-list --tags --max-count=1)
-alias gds = git diff --staged
-alias gdt = git diff-tree --no-commit-id --name-only -r
-alias gdw = git diff --word-diff
-
-alias gr = git remote
-alias gra = git remote add
-alias grb = git rebase
-alias grba = git rebase --abort
-alias grbc = git rebase --continue
-alias grbd = git rebase develop
-alias grbi = git rebase -i
-alias grbm = git rebase $(git_main_branch)
-alias grbo = git rebase --onto
-alias grbs = git rebase --skip
-alias grev = git revert
-alias grh = git reset
-alias grhh = git reset --hard
-alias groh = git reset origin/$(git_current_branch) --hard
-alias grm = git rm
-alias grmc = git rm --cached
-alias grmv = git remote rename
-alias grrm = git remote remove
-alias grs = git restore
-alias grset = git remote set-url
-alias grss = git restore --source
-alias grst = git restore --staged
-alias grt = cd "$(git rev-parse --show-toplevel || echo .)"
-alias gru = git reset --
-alias grup = git remote update
-alias grv = git remote -v
-
-alias gsb = git status -sb
-alias gsd = git svn dcommit
-alias gsh = git show
-alias gsi = git submodule init
-alias gsps = git show --pretty=short --show-signature
-alias gsr = git svn rebase
-alias gss = git status -s
-alias gs = git status
-
-
-alias gstaa = git stash apply
-alias gstc = git stash clear
-alias gstd = git stash drop
-alias gstl = git stash list
-alias gstp = git stash pop
-alias gsts = git stash show --text
-alias gstu = gsta --include-untracked
-alias gstall = git stash --all
-alias gsu = git submodule update
-alias gsw = git switch
-alias gswc = git switch -c
-
-alias gts = git tag -s
-
-alias gunignore = git update-index --no-assume-unchanged
-alias gup = git pull --rebase
-alias gupv = git pull --rebase -v
-alias gupa = git pull --rebase --autostash
-alias gupav = git pull --rebase --autostash -v
-alias glum = git pull upstream $(git_main_branch)
-
-# cat ($nu.config-path | path dirname | path join 'scripts' | path join 'a.nu' )
+source ~/.config/nushell/scripts/alias.nu
+source ~/.config/nushell/scripts/git.nu
