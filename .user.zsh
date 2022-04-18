@@ -62,7 +62,10 @@ hash -d a="$CFG/../awesome"
 
 alias ytd="/opt/youtube-dl/youtube-dl --proxy http://localhost:7890"
 alias ytdm="ytd -x --audio-quality 0 "
-alias xr="source ~/.config/xrandr.rc"
+function xr {
+    source ~/.config/xrandr.rc
+    sudo rm -rf /var/log/journal/*
+}
 
 function github_version {
     github_header="Accept: application/vnd.github.v3+json"
