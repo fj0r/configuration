@@ -6,7 +6,7 @@ local M = {
     autorun_once = {
         "gnome-session --systemd-service" ,
         -- "/usr/lib/polkit-1/polkitd",
-        "xscreensaver -no-splash",
+        -- "xscreensaver -no-splash",
         "ibus-daemon --xim --replace --daemonize",
     },
     sidebar = "right",
