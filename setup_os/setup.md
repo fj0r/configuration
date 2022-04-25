@@ -1,5 +1,5 @@
 # 常用软件
-zsh nvim git tmux
+zsh git tmux
 
 podman buildah skopeo
 ```
@@ -10,7 +10,7 @@ podman buildah skopeo
     [storage]
     driver = "overlay"
     runroot = "/run/containers/storage"
-    graphroot = "/var/lib/containers/storage"
+    graphroot = "/home/containers/storage"
     [storage.options]
     #mount_program = "/usr/bin/fuse-overlayfs"
 /etc/containers/registries.conf
