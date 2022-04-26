@@ -75,9 +75,13 @@ sudo systemctl daemon-reload
 sudo systemctl enable --now gitea
 ```
 
+## qutebrowser
+```bash
+sudo apt install rofi keyutils
+sudo npm install -g @bitwarden/cli
+```
 
 # GUI APP
-- qutebrowser
 - liferea
 - alacritty
 
