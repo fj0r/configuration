@@ -116,6 +116,7 @@
       <outline title="timescaledb" text="timescaledb" description="timescaledb" type="atom" xmlUrl="https://github.com/timescale/timescaledb/releases.atom" htmlUrl="https://github.com/timescale/timescaledb/releases.atom"/>
       <outline title="promscale" text="promscale" description="promscale" type="atom" xmlUrl="https://github.com/timescale/promscale/releases.atom" htmlUrl="https://github.com/timescale/promscale/releases.atom"/>
       <outline title="hasura graphql-engine" text="hasura graphql-engine" description="hasura graphql-engine" type="atom" xmlUrl="https://github.com/hasura/graphql-engine/releases.atom" htmlUrl="https://github.com/hasura/graphql-engine/releases.atom"/>
+      <outline title="ydb" text="ydb" description="ydb" type="atom" xmlUrl="https://github.com/ydb-platform/ydb/tags.atom" htmlUrl="https://github.com/ydb-platform/ydb/releases.atom"/>
       <outline title="loki" text="loki" description="loki" type="atom" xmlUrl="https://github.com/grafana/loki/releases.atom" htmlUrl="https://github.com/grafana/loki/releases.atom"/>
       <outline title="wal2json:master" text="wal2json:master" description="wal2json:master" type="atom" xmlUrl="https://github.com/eulerto/wal2json/commits/master.atom" htmlUrl="https://github.com/eulerto/wal2json/commits/master.atom"/>
       <outline title="wal-g" text="wal-g" description="wal-g" type="atom" xmlUrl="https://github.com/wal-g/wal-g/releases.atom" htmlUrl="https://github.com/wal-g/wal-g/releases.atom"/>
@@ -231,6 +232,7 @@
       <outline title="qutebrowser" text="qutebrowser" description="qutebrowser" type="atom" xmlUrl="https://github.com/qutebrowser/qutebrowser/releases.atom" htmlUrl="https://github.com/qutebrowser/qutebrowser/releases.atom"/>
       <outline title="conduit:next" text="conduit:next" description="conduit:next" type="atom" xmlUrl="https://github.com/timokoesters/conduit/commits/next.atom" htmlUrl="https://github.com/timokoesters/conduit/commits/next.atom"/>
       <outline title="koodo-reader" text="koodo-reader" description="koodo-reader" type="atom" xmlUrl="https://github.com/troyeguo/koodo-reader/releases.atom" htmlUrl="https://github.com/troyeguo/koodo-reader/releases.atom"/>
+      <outline title="neovide" text="neovide" description="neovide" type="atom" xmlUrl="https://github.com/neovide/neovide/releases.atom" htmlUrl="https://github.com/neovide/neovide/releases.atom"/>
     </outline>
     <outline title="front-end" text="front-end" description="front-end" type="folder">
       <outline title="stdweb[rs]" text="stdweb[rs]" description="stdweb[rs]" type="atom" xmlUrl="https://github.com/koute/stdweb/releases.atom" htmlUrl="https://github.com/koute/stdweb/releases.atom"/>
