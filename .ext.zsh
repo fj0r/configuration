@@ -12,6 +12,7 @@ done
 # sources $CFG/.fzf/init.zsh
 
 #sources $CFG/.xkb.zsh
+sources $CFG/../.dev.zsh
 sources $CFG/../.user.zsh
 sources $HOME/.test.zsh
 sources $CFG/../.mutagen-alias

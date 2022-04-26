@@ -17,7 +17,7 @@
     "editor.find.addExtraSpaceOnTop": true,
     "editor.find.autoFindInSelection": "multiline",
     "editor.scrollBeyondLastLine": false,
-    "editor.lineNumbers": "off",
+    "editor.lineNumbers": "relative",
     "diffEditor.ignoreTrimWhitespace": false,
     "git.autofetch": true,
     "git.confirmSync": false,
