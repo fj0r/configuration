@@ -60,7 +60,7 @@ hash -d a="$CFG/../awesome"
 
 [ -f "${GHCUP_INSTALL_BASE_PREFIX:=$HOME}/.ghcup/env" ] && source "${GHCUP_INSTALL_BASE_PREFIX:=$HOME}/.ghcup/env"
 
-alias ytd="/opt/youtube-dl/youtube-dl --proxy http://localhost:7890"
+alias ytd="youtube-dl --proxy http://localhost:7890"
 alias ytdm="ytd -x --audio-quality 0 "
 function xr {
     source ~/.config/xrandr.rc
