@@ -84,6 +84,7 @@ sudo npm install -g @bitwarden/cli
 # GUI APP
 - liferea
 - alacritty
+- calibre
 
 awesome rofi
 zathura(pdf)
