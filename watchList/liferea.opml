@@ -149,6 +149,7 @@
       <outline title="s3fs-fuse" text="s3fs-fuse" description="s3fs-fuse" type="atom" xmlUrl="https://github.com/s3fs-fuse/s3fs-fuse/releases.atom" htmlUrl="https://github.com/s3fs-fuse/s3fs-fuse/releases.atom"/>
       <outline title="longhorn" text="longhorn" description="longhorn" type="atom" xmlUrl="https://github.com/longhorn/longhorn/releases.atom" htmlUrl="https://github.com/longhorn/longhorn/releases.atom"/>
       <outline title="sftpgo" text="sftpgo" description="sftpgo" type="atom" xmlUrl="https://github.com/drakkan/sftpgo/releases.atom" htmlUrl="https://github.com/drakkan/sftpgo/releases.atom"/>
+      <outline title="Cloudreve" text="Cloudreve" description="Cloudreve" type="atom" xmlUrl="https://github.com/cloudreve/Cloudreve/releases.atom" htmlUrl="https://github.com/cloudreve/Cloudreve/releases.atom"/>
     </outline>
     <outline title="search" text="search" description="search" type="folder">
       <outline title="milvus" text="milvus" description="milvus" type="atom" xmlUrl="https://github.com/milvus-io/milvus/releases.atom" htmlUrl="https://github.com/milvus-io/milvus/releases.atom"/>
@@ -177,6 +178,7 @@
       <outline title="bustd" text="bustd" description="bustd" type="atom" xmlUrl="https://github.com/vrmiguel/bustd/releases.atom" htmlUrl="https://github.com/vrmiguel/bustd/releases.atom"/>
       <outline title="drill" text="drill" description="drill" type="atom" xmlUrl="https://github.com/fcsonline/drill/releases.atom" htmlUrl="https://github.com/fcsonline/drill/releases.atom"/>
       <outline title="clipcat" text="clipcat" description="clipcat" type="atom" xmlUrl="https://github.com/xrelkd/clipcat/releases.atom" htmlUrl="https://github.com/xrelkd/clipcat/releases.atom"/>
+      <outline title="atuin(shell history)" text="atuin(shell history)" description="atuin(shell history)" type="atom" xmlUrl="https://github.com/ellie/atuin/releases.atom" htmlUrl="https://github.com/ellie/atuin/releases.atom"/>
     </outline>
     <outline title="net" text="net" description="net" type="folder">
       <outline title="boringtun" text="boringtun" description="boringtun" type="atom" xmlUrl="https://github.com/cloudflare/boringtun/releases.atom" htmlUrl="https://github.com/cloudflare/boringtun/releases.atom"/>
@@ -221,7 +223,6 @@
       <outline title="zathura" text="zathura" description="zathura" type="atom" xmlUrl="https://github.com/pwmt/zathura/releases.atom" htmlUrl="https://github.com/pwmt/zathura/releases.atom"/>
       <outline title="vaultwarden" text="vaultwarden" description="vaultwarden" type="atom" xmlUrl="https://github.com/dani-garcia/vaultwarden/releases.atom" htmlUrl="https://github.com/dani-garcia/vaultwarden/releases.atom"/>
       <outline title="excalidraw" text="excalidraw" description="excalidraw" type="atom" xmlUrl="https://github.com/excalidraw/excalidraw/releases.atom" htmlUrl="https://github.com/excalidraw/excalidraw/releases.atom"/>
-      <outline title="Cloudreve" text="Cloudreve" description="Cloudreve" type="atom" xmlUrl="https://github.com/cloudreve/Cloudreve/releases.atom" htmlUrl="https://github.com/cloudreve/Cloudreve/releases.atom"/>
       <outline title="AppFlowy" text="AppFlowy" description="AppFlowy" type="atom" xmlUrl="https://github.com/AppFlowy-IO/AppFlowy/releases.atom" htmlUrl="https://github.com/AppFlowy-IO/AppFlowy/releases.atom"/>
       <outline title="openvscode-server" text="openvscode-server" description="openvscode-server" type="atom" xmlUrl="https://github.com/gitpod-io/openvscode-server/releases.atom" htmlUrl="https://github.com/gitpod-io/openvscode-server/releases.atom"/>
       <outline title="veloren" text="veloren" description="veloren" type="atom" xmlUrl="https://github.com/veloren/veloren/releases.atom" htmlUrl="https://github.com/veloren/veloren/releases.atom"/>

@@ -1,3 +1,12 @@
+Host *
+    Compression yes
+    ForwardAgent yes
+#    Controlmaster auto
+#    Controlpath ~/.ssh/+%r@%h:%p.sock
+    StrictHostKeyChecking no
+#Host localhost*
+#    UserKnownHostsFile /dev/null
+
 Host iffy.me
     #HostName iffy.me
     HostName localhost
@@ -22,5 +31,5 @@ Host github-fjord
   HostName github.com
   User git
   IdentityFile ~/.ssh/github
-  ProxyCommand nc -v -x 127.0.0.1:7891 %h %p
-  #ProxyCommand ssh -q wg0 nc %h %p
+  #ProxyCommand nc -v -x 127.0.0.1:7891 %h %p
+  ProxyCommand ssh -q wg0 nc %h %p

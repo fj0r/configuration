@@ -1,6 +1,23 @@
 Host redmi
-    HostName 10.6.6.14
+    #HostName 10.6.6.14
     #HostName 192.168.99.137
+    HostName 192.168.31.190
     User u0_a280
     Port 8022
     IdentityFile ~/.ssh/id_ed25519
+
+Host mid
+    #HostName 10.6.6.14
+    #HostName 192.168.99.137
+    HostName 192.168.31.199
+    User u0_a239
+    Port 2222
+    IdentityFile ~/.ssh/mipad
+
+Host mi
+    #HostName 10.6.6.14
+    #HostName 192.168.99.137
+    HostName 192.168.31.199
+    User u0_a239
+    Port 8022
+    IdentityFile ~/.ssh/mipad
