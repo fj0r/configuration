@@ -82,6 +82,7 @@
       <outline title="rancher" text="rancher" description="rancher" type="atom" xmlUrl="https://github.com/rancher/rancher/releases.atom" htmlUrl="https://github.com/rancher/rancher/releases.atom"/>
       <outline title="buildah" text="buildah" description="buildah" type="atom" xmlUrl="https://github.com/containers/buildah/releases.atom" htmlUrl="https://github.com/containers/buildah/releases.atom"/>
       <outline title="skopeo" text="skopeo" description="skopeo" type="atom" xmlUrl="https://github.com/containers/skopeo/releases.atom" htmlUrl="https://github.com/containers/skopeo/releases.atom"/>
+      <outline title="dive" text="dive" description="dive" type="atom" xmlUrl="https://github.com/wagoodman/dive/releases.atom" htmlUrl="https://github.com/wagoodman/dive/releases.atom"/>
       <outline title="youki" text="youki" description="youki" type="atom" xmlUrl="https://github.com/containers/youki/releases.atom" htmlUrl="https://github.com/containers/youki/releases.atom"/>
       <outline title="velero" text="velero" description="velero" type="atom" xmlUrl="https://github.com/vmware-tanzu/velero/releases.atom" htmlUrl="https://github.com/vmware-tanzu/velero/releases.atom"/>
       <outline title="telepresence" text="telepresence" description="telepresence" type="atom" xmlUrl="https://github.com/telepresenceio/telepresence/releases.atom" htmlUrl="https://github.com/telepresenceio/telepresence/releases.atom"/>
@@ -131,7 +132,7 @@
       <outline title="rethinkdb" text="rethinkdb" description="rethinkdb" type="atom" xmlUrl="https://github.com/rethinkdb/rethinkdb/releases.atom" htmlUrl="https://github.com/rethinkdb/rethinkdb/releases.atom"/>
       <outline title="indradb" text="indradb" description="indradb" type="atom" xmlUrl="https://github.com/indradb/indradb/releases.atom" htmlUrl="https://github.com/indradb/indradb/releases.atom"/>
       <outline title="sled" text="sled" description="sled" type="atom" xmlUrl="https://github.com/spacejam/sled/releases.atom" htmlUrl="https://github.com/spacejam/sled/releases.atom"/>
-      <outline title="noria" text="noria" description="noria" xmlUrl="https://github.com/mit-pdos/noria.atom" htmlUrl=""/>
+      <outline title="noria" text="noria" description="noria" type="atom" xmlUrl="https://github.com/mit-pdos/noria/releases.atom" htmlUrl="https://github.com/mit-pdos/noria/releases.atom"/>
       <outline title="materialize" text="materialize" description="materialize" type="atom" xmlUrl="https://github.com/MaterializeInc/materialize/releases.atom" htmlUrl="https://github.com/MaterializeInc/materialize/releases.atom"/>
       <outline title="foundationdb" text="foundationdb" description="foundationdb" type="atom" xmlUrl="https://github.com/apple/foundationdb/releases.atom" htmlUrl="https://github.com/apple/foundationdb/releases.atom"/>
     </outline>
@@ -141,7 +142,7 @@
       <outline title="redpanda" text="redpanda" description="redpanda" type="atom" xmlUrl="https://github.com/redpanda-data/redpanda/releases.atom" htmlUrl="https://github.com/redpanda-data/redpanda/releases.atom"/>
       <outline title="liftbridge" text="liftbridge" description="liftbridge" type="atom" xmlUrl="https://github.com/liftbridge-io/liftbridge/releases.atom" htmlUrl="https://github.com/liftbridge-io/liftbridge/releases.atom"/>
       <outline title="pravega" text="pravega" description="pravega" type="atom" xmlUrl="https://github.com/pravega/pravega/releases.atom" htmlUrl="https://github.com/pravega/pravega/releases.atom"/>
-      <outline title="voik" text="voik" description="voik" xmlUrl="https://github.com/marceloboeira/voik.atom" htmlUrl=""/>
+      <outline title="voik" text="voik" description="voik" type="atom" xmlUrl="https://github.com/marceloboeira/voik/releases.atom" htmlUrl="https://github.com/marceloboeira/voik/releases.atom"/>
     </outline>
     <outline title="storage" text="storage" description="storage" type="folder">
       <outline title="minio" text="minio" description="minio" type="atom" xmlUrl="https://github.com/minio/minio/releases.atom" htmlUrl="https://github.com/minio/minio/releases.atom"/>
@@ -150,6 +151,7 @@
       <outline title="longhorn" text="longhorn" description="longhorn" type="atom" xmlUrl="https://github.com/longhorn/longhorn/releases.atom" htmlUrl="https://github.com/longhorn/longhorn/releases.atom"/>
       <outline title="sftpgo" text="sftpgo" description="sftpgo" type="atom" xmlUrl="https://github.com/drakkan/sftpgo/releases.atom" htmlUrl="https://github.com/drakkan/sftpgo/releases.atom"/>
       <outline title="Cloudreve" text="Cloudreve" description="Cloudreve" type="atom" xmlUrl="https://github.com/cloudreve/Cloudreve/releases.atom" htmlUrl="https://github.com/cloudreve/Cloudreve/releases.atom"/>
+      <outline title="spacedrive" text="spacedrive" description="spacedrive" type="atom" xmlUrl="https://github.com/spacedriveapp/spacedrive/releases.atom" htmlUrl="https://github.com/spacedriveapp/spacedrive/releases.atom"/>
     </outline>
     <outline title="search" text="search" description="search" type="folder">
       <outline title="milvus" text="milvus" description="milvus" type="atom" xmlUrl="https://github.com/milvus-io/milvus/releases.atom" htmlUrl="https://github.com/milvus-io/milvus/releases.atom"/>
@@ -204,7 +206,7 @@
       <outline title="tch-rs" text="tch-rs" description="tch-rs" type="atom" xmlUrl="https://github.com/LaurentMazare/tch-rs/releases.atom" htmlUrl="https://github.com/LaurentMazare/tch-rs/releases.atom"/>
       <outline title="polars" text="polars" description="polars" type="atom" xmlUrl="https://github.com/pola-rs/polars/releases.atom" htmlUrl="https://github.com/pola-rs/polars/releases.atom"/>
       <outline title="linfa" text="linfa" description="linfa" type="atom" xmlUrl="https://github.com/rust-ml/linfa/releases.atom" htmlUrl="https://github.com/rust-ml/linfa/releases.atom"/>
-      <outline title="databend" text="databend" description="databend" xmlUrl="https://github.com/datafuselabs/databend.atom" htmlUrl=""/>
+      <outline title="databend" text="databend" description="databend" type="atom" xmlUrl="https://github.com/datafuselabs/databend/releases.atom" htmlUrl="https://github.com/datafuselabs/databend/releases.atom"/>
       <outline title="rayon" text="rayon" description="rayon" type="atom" xmlUrl="https://github.com/rayon-rs/rayon/releases.atom" htmlUrl="https://github.com/rayon-rs/rayon/releases.atom"/>
       <outline title="polynote" text="polynote" description="polynote" type="atom" xmlUrl="https://github.com/polynote/polynote/releases.atom" htmlUrl="https://github.com/polynote/polynote/releases.atom"/>
       <outline title="rust native_spark" text="rust native_spark" description="rust native_spark" type="atom" xmlUrl="https://github.com/rajasekarv/native_spark/releases.atom" htmlUrl="https://github.com/rajasekarv/vega/releases.atom"/>
