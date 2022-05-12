@@ -68,6 +68,7 @@
       <outline title="nerdctl" text="nerdctl" description="nerdctl" type="atom" xmlUrl="https://github.com/containerd/nerdctl/releases.atom" htmlUrl="https://github.com/containerd/nerdctl/releases.atom"/>
       <outline title="cri-o" text="cri-o" description="cri-o" type="atom" xmlUrl="https://github.com/cri-o/cri-o/releases.atom" htmlUrl="https://github.com/cri-o/cri-o/releases.atom"/>
       <outline title="containerd" text="containerd" description="containerd" type="atom" xmlUrl="https://github.com/containerd/containerd/releases.atom" htmlUrl="https://github.com/containerd/containerd/releases.atom"/>
+      <outline title="lens" text="lens" description="lens" type="atom" xmlUrl="https://github.com/lensapp/lens/releases.atom" htmlUrl="https://github.com/lensapp/lens/releases.atom"/>
       <outline title="krustlet" text="krustlet" description="krustlet" type="atom" xmlUrl="https://github.com/krustlet/krustlet/releases.atom" htmlUrl="https://github.com/krustlet/krustlet/releases.atom"/>
       <outline title="kubernetes" text="kubernetes" description="kubernetes" type="atom" xmlUrl="https://github.com/kubernetes/kubernetes/releases.atom" htmlUrl="https://github.com/kubernetes/kubernetes/releases.atom"/>
       <outline title="istio" text="istio" description="istio" type="atom" xmlUrl="https://github.com/istio/istio/releases.atom" htmlUrl="https://github.com/istio/istio/releases.atom"/>
@@ -185,6 +186,7 @@
     <outline title="net" text="net" description="net" type="folder">
       <outline title="boringtun" text="boringtun" description="boringtun" type="atom" xmlUrl="https://github.com/cloudflare/boringtun/releases.atom" htmlUrl="https://github.com/cloudflare/boringtun/releases.atom"/>
       <outline title="wireguard-go" text="wireguard-go" description="wireguard-go" type="atom" xmlUrl="https://github.com/WireGuard/wireguard-go/releases.atom" htmlUrl="https://github.com/WireGuard/wireguard-go/releases.atom"/>
+      <outline title="wireproxy" text="wireproxy" description="wireproxy" xmlUrl="https://github.com/octeep/wireproxy/releases.atom" htmlUrl=""/>
       <outline title="headscale" text="headscale" description="headscale" type="atom" xmlUrl="https://github.com/juanfont/headscale/releases.atom" htmlUrl="https://github.com/juanfont/headscale/releases.atom"/>
       <outline title="netmaker" text="netmaker" description="netmaker" type="atom" xmlUrl="https://github.com/gravitl/netmaker/releases.atom" htmlUrl="https://github.com/gravitl/netmaker/releases.atom"/>
       <outline title="nebula" text="nebula" description="nebula" type="atom" xmlUrl="https://github.com/slackhq/nebula/releases.atom" htmlUrl="https://github.com/slackhq/nebula/releases.atom"/>
