@@ -1,19 +1,8 @@
 Host nvidia
-    #HostName 39.96.87.188
-    #Port 13322
-    HostName 172.178.5.12
-    #HostName 10.6.6.10
+    #HostName 172.178.5.12
+    HostName 10.6.6.10
     Port 22
     IdentityFile ~/.ssh/nvidia
     IdentitiesOnly yes
     User eainger
 
-Host nvSpider
-   #HostName 39.96.87.188
-   #Port 12201
-   #HostName 172.178.5.12
-   HostName 10.6.6.10
-   Port 2201
-   IdentityFile ~/.ssh/spider
-   User root
-   IdentitiesOnly yes
