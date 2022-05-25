@@ -97,6 +97,7 @@
       <outline title="wasmtime" text="wasmtime" description="wasmtime" type="atom" xmlUrl="https://github.com/bytecodealliance/wasmtime/releases.atom" htmlUrl="https://github.com/bytecodealliance/wasmtime/releases.atom"/>
       <outline title="wasmer" text="wasmer" description="wasmer" type="atom" xmlUrl="https://github.com/wasmerio/wasmer/releases.atom" htmlUrl="https://github.com/wasmerio/wasmer/releases.atom"/>
       <outline title="gitea" text="gitea" description="gitea" type="rss" xmlUrl="https://blog.gitea.io/index.xml" htmlUrl="https://blog.gitea.io/"/>
+      <outline title="pachyderm" text="pachyderm" description="pachyderm" type="atom" xmlUrl="https://github.com/pachyderm/pachyderm/releases.atom" htmlUrl="https://github.com/pachyderm/pachyderm/releases.atom"/>
       <outline title="mattermost-server" text="mattermost-server" description="mattermost-server" type="atom" xmlUrl="https://github.com/mattermost/mattermost-server/releases.atom" htmlUrl="https://github.com/mattermost/mattermost-server/releases.atom"/>
       <outline title="n8n" text="n8n" description="n8n" type="atom" xmlUrl="https://github.com/n8n-io/n8n/releases.atom" htmlUrl="https://github.com/n8n-io/n8n/releases.atom"/>
       <outline title="nchan" text="nchan" description="nchan" type="atom" xmlUrl="https://github.com/slact/nchan/releases.atom" htmlUrl="https://github.com/slact/nchan/releases.atom"/>
@@ -119,6 +120,7 @@
       <outline title="clickhouse" text="clickhouse" description="clickhouse" type="atom" xmlUrl="https://github.com/ClickHouse/ClickHouse/releases.atom" htmlUrl="https://github.com/ClickHouse/ClickHouse/releases.atom"/>
       <outline title="rocksdb" text="rocksdb" description="rocksdb" type="atom" xmlUrl="https://github.com/facebook/rocksdb/releases.atom" htmlUrl="https://github.com/facebook/rocksdb/releases.atom"/>
       <outline title="timescaledb" text="timescaledb" description="timescaledb" type="atom" xmlUrl="https://github.com/timescale/timescaledb/releases.atom" htmlUrl="https://github.com/timescale/timescaledb/releases.atom"/>
+      <outline title="risingwave" text="risingwave" description="risingwave" type="atom" xmlUrl="https://github.com/singularity-data/risingwave/releases.atom" htmlUrl="https://github.com/singularity-data/risingwave/releases.atom"/>
       <outline title="promscale" text="promscale" description="promscale" type="atom" xmlUrl="https://github.com/timescale/promscale/releases.atom" htmlUrl="https://github.com/timescale/promscale/releases.atom"/>
       <outline title="hasura graphql-engine" text="hasura graphql-engine" description="hasura graphql-engine" type="atom" xmlUrl="https://github.com/hasura/graphql-engine/releases.atom" htmlUrl="https://github.com/hasura/graphql-engine/releases.atom"/>
       <outline title="scylladb" text="scylladb" description="scylladb" type="atom" xmlUrl="https://github.com/scylladb/scylla/tags.atom" htmlUrl="https://github.com/scylladb/scylla/releases.atom"/>
@@ -242,6 +244,7 @@
       <outline title="conduit:next" text="conduit:next" description="conduit:next" type="atom" xmlUrl="https://github.com/timokoesters/conduit/commits/next.atom" htmlUrl="https://github.com/timokoesters/conduit/commits/next.atom"/>
       <outline title="koodo-reader" text="koodo-reader" description="koodo-reader" type="atom" xmlUrl="https://github.com/troyeguo/koodo-reader/releases.atom" htmlUrl="https://github.com/troyeguo/koodo-reader/releases.atom"/>
       <outline title="neovide" text="neovide" description="neovide" type="atom" xmlUrl="https://github.com/neovide/neovide/releases.atom" htmlUrl="https://github.com/neovide/neovide/releases.atom"/>
+      <outline title="jellyfin" text="jellyfin" description="jellyfin" type="atom" xmlUrl="https://github.com/jellyfin/jellyfin/releases.atom" htmlUrl="https://github.com/jellyfin/jellyfin/releases.atom"/>
     </outline>
     <outline title="front-end" text="front-end" description="front-end" type="folder">
       <outline title="stdweb[rs]" text="stdweb[rs]" description="stdweb[rs]" type="atom" xmlUrl="https://github.com/koute/stdweb/releases.atom" htmlUrl="https://github.com/koute/stdweb/releases.atom"/>
