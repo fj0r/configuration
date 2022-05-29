@@ -172,7 +172,6 @@
       <outline title="neovim" text="neovim" description="neovim" type="atom" xmlUrl="https://github.com/neovim/neovim/releases.atom" htmlUrl="https://github.com/neovim/neovim/releases.atom"/>
       <outline title="nushell" text="nushell" description="nushell" type="atom" xmlUrl="https://github.com/nushell/nushell/releases.atom" htmlUrl="https://github.com/nushell/nushell/releases.atom"/>
       <outline title="alacritty" text="alacritty" description="alacritty" type="atom" xmlUrl="https://github.com/alacritty/alacritty/releases.atom" htmlUrl="https://github.com/alacritty/alacritty/releases.atom"/>
-      <outline title="termux-app" text="termux-app" description="termux-app" type="atom" xmlUrl="https://github.com/termux/termux-app/releases.atom" htmlUrl="https://github.com/termux/termux-app/releases.atom"/>
       <outline title="helix" text="helix" description="helix" type="atom" xmlUrl="https://github.com/helix-editor/helix/releases.atom" htmlUrl="https://github.com/helix-editor/helix/releases.atom"/>
       <outline title="zellij" text="zellij" description="zellij" type="atom" xmlUrl="https://github.com/zellij-org/zellij/releases.atom" htmlUrl="https://github.com/zellij-org/zellij/releases.atom"/>
       <outline title="mutagen" text="mutagen" description="mutagen" type="atom" xmlUrl="https://github.com/mutagen-io/mutagen/releases.atom" htmlUrl="https://github.com/mutagen-io/mutagen/releases.atom"/>
@@ -261,6 +260,11 @@
     <outline title="book" text="book" description="book" type="folder">
       <outline title="istio-handbook" text="istio-handbook" description="istio-handbook" type="atom" xmlUrl="https://github.com/servicemesher/istio-handbook/releases.atom" htmlUrl="https://github.com/servicemesher/istio-handbook/releases.atom"/>
       <outline title="kubernetes-handbook" text="kubernetes-handbook" description="kubernetes-handbook" type="atom" xmlUrl="https://github.com/rootsongjc/kubernetes-handbook/releases.atom" htmlUrl="https://github.com/rootsongjc/kubernetes-handbook/releases.atom"/>
+    </outline>
+    <outline title="android" text="android" description="android" type="folder">
+      <outline title="termux-app" text="termux-app" description="termux-app" type="atom" xmlUrl="https://github.com/termux/termux-app/releases.atom" htmlUrl="https://github.com/termux/termux-app/releases.atom"/>
+      <outline title="caps2ctrl" text="caps2ctrl" description="caps2ctrl" xmlUrl="https://github.com/shiftrot/caps2ctrl/releases.atom" htmlUrl=""/>
+      <outline title="librera" text="librera" description="librera" xmlUrl="https://github.com/foobnix/LibreraReader/releases.atom" htmlUrl=""/>
     </outline>
   </body>
 </opml>
