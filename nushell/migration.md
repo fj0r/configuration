@@ -18,6 +18,7 @@
           else
               alias ns="netstat -plnetu"
           fi
+        - china_mirrors
     - [ ] docker
     - [ ] docker dev helper
     - [ ] k8s
@@ -31,19 +32,41 @@
 - edit
     - [.] `enter` for `ls`
     - [.] `tab` in empty for cd: direct path and then `enter`
-- named dir: history?
+- path
+    - [ ] named dir: history?
+    - [ ] popd
+        - enter/shells
 - history
 - alternatives
     - [x] yq, jq, rq ...
-        - [ ] modify
+        - get
+        - update
+        - insert
+        - [ ] delete
     - [x] fd (recursive)
         - ls **/*
-    - [ ] sd
-    - [ ] rg?
-    - [ ] just
-    - [ ] watchexec
-    - [ ] btm
-    - [ ] dog
-    - [ ] dust
-    - [ ] curl, xh
-    - [ ] base64
+    - [x] sd
+        - 'my_library.rb' | str replace '(.+).rb' '$1.nu'
+    - [=] rg
+        - [x]find
+    - [=] just
+        - [x] overlays
+        - [ ] hooks
+            - [ ] enter/leave dir
+            - [x] pre_prompt + cache
+    - [x] watchexec
+        - watch . { |op, path, new_path| $"($op) ($path) ($new_path)"}
+    - [=] curl
+        - fetch, post
+    - [=] btm
+    - [=] dog
+    - [=] dust
+    - [=] xh
+
+### size
+    - zsh       4.8M
+    - yq        7.0M
+    - rq        3.9M
+    - watchexec 5.5M
+    - sd        1.8M
+    - jq        0.4M
