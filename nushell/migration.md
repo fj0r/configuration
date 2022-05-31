@@ -2,8 +2,8 @@
 
 - config struct
 - prompt
-    - [ ] k8s
-    - [ ] startship
+    - [x] k8s
+    - [x] startship
 - alias 
     - [ ] utils
         - [ ] a: alias
@@ -20,8 +20,10 @@
           fi
         - china_mirrors
     - [ ] docker
-    - [ ] docker dev helper
+        - [ ] docker dev helper
+        - [ ] list to table
     - [ ] k8s
+        - [ ] list to table
     - [ ] ssh
     - [ ] git
 - completions
