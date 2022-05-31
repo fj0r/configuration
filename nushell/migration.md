@@ -34,8 +34,9 @@
     - [.] `tab` in empty for cd: direct path and then `enter`
 - path
     - [ ] named dir: history?
-    - [ ] popd
-        - enter/shells
+        - auto enter at dir
+    - [x] popd
+        - enter/shells/g #/n/p
 - history
 - alternatives
     - [x] yq, jq, rq ...
