@@ -67,7 +67,7 @@ let-env config = {
   completion_algorithm: "fuzzy"  # prefix, fuzzy
   animate_prompt: false # redraw the prompt every second
   float_precision: 2
-  buffer_editor: "emacs" # command that will be used to edit the current line buffer with ctr+e
+  # buffer_editor: "emacs" # command that will be used to edit the current line buffer with ctrl+o, if unset fallback to $env.EDITOR and $env.VISUAL
   use_ansi_coloring: true
   filesize_format: "auto" # b, kb, kib, mb, mib, gb, gib, tb, tib, pb, pib, eb, eib, zb, zib, auto
   edit_mode: emacs # emacs, vi
@@ -75,6 +75,20 @@ let-env config = {
   sync_history_on_enter: true # Enable to share the history between multiple sessions, else you have to close the session to persist history to file
   shell_integration: true # enables terminal markers and a workaround to arrow keys stop working issue
   disable_table_indexes: false # set to true to remove the index column from tables
+  cd_with_abbreviations: false # set to true to allow you to do things like cd s/o/f and nushell expand it to cd some/other/folder
+  hooks: {
+    pre_prompt: [{
+      $nothing  # replace with source code to run before the prompt is shown
+    }]
+    pre_execution: [{
+      $nothing  # replace with source code to run before the repl input is run
+    }]
+    env_change: {
+      PWD: [{|before, after|
+        $nothing  # replace with source code to run if the PWD environment is different since the last repl input
+      }]
+    }
+  }
   menus: [
       # Configuration for default nushell menus
       # Note the lack of souce parameter
@@ -217,17 +231,19 @@ let-env config = {
     {
       name: history_menu
       modifier: control
-      keycode: char_x
+      keycode: char_r
       mode: emacs
-      event: {
-        until: [
-          { send: menu name: history_menu }
-          { send: menupagenext }
-        ]
-      }
+      event: { send: menu name: history_menu }
     }
     {
-      name: history_previous
+      name: next_page
+      modifier: control
+      keycode: char_x
+      mode: emacs
+      event: { send: menupagenext }
+    }
+    {
+      name: undo_or_previous_page
       modifier: control
       keycode: char_z
       mode: emacs
@@ -236,7 +252,7 @@ let-env config = {
           { send: menupageprevious }
           { edit: undo }
         ]
-      }
+       }
     }
     # Keybindings used to trigger the user defined menus
     {
