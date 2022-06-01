@@ -4,6 +4,7 @@
 - prompt
     - [x] k8s
     - [x] startship
+        - [ ] right prompt
 - alias 
     - [ ] utils
         - [ ] a: alias
@@ -24,6 +25,7 @@
         - [ ] list to table
     - [ ] k8s
         - [ ] list to table
+        - [ ] kubectx kubens
     - [ ] ssh
     - [ ] git
 - completions
@@ -32,11 +34,14 @@
     - [ ] ssh
     - [ ] git
 - edit
-    - [.] `enter` for `ls`
-    - [.] `tab` in empty for cd: direct path and then `enter`
+    - [-] `enter` for `ls`
+    - [-] `tab` in empty for cd: direct path and then `enter`
+    - [ ] `ctrl+q`
 - path
-    - [ ] named dir: history?
+    - [ ] named dir
         - auto enter at dir
+    - [x] history
+        - -
     - [x] popd
         - enter/shells/g #/n/p
 - history
@@ -65,6 +70,7 @@
     - [=] dog
     - [=] dust
     - [=] xh
+- [x] login shell
 
 ### size
     - zsh       4.8M
