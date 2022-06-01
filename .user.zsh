@@ -120,6 +120,7 @@ function archive-nvim-cfg {
             -cf - -C $CFG/.. nvim | tar -xf - -C $tmp/
     rm -f $tmp/nvim/.netrwhist
     pushd $tmp
+    cp -r $CFG/../nushell .
     for i in nvim `sh -c 'ls -d nvim/pack/packer/start/*/'` `sh -c 'ls -d nvim/pack/packer/opt/*/'`; do
         pushd $i
         echo ----------------------
@@ -131,7 +132,7 @@ function archive-nvim-cfg {
         --exclude='pack/packer/start/*/.git' \
         --exclude='pack/packer/opt/*/.git' \
         --exclude='.git' \
-        -zcf nvim-cfg.tar.gz nvim
+        -zcf nvim-cfg.tar.gz nvim nushell
     rm -f $HOME/pub/nvim-cfg.tar.gz
     mv nvim-cfg.tar.gz $HOME/pub
     popd
