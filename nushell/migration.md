@@ -1,6 +1,8 @@
 ## migrate
 
-- config struct
+- config
+    - [x] struct
+    - [ ] reload
 - prompt
     - [x] k8s
     - [x] startship
@@ -37,6 +39,7 @@
     - [-] `enter` for `ls`
     - [-] `tab` in empty for cd: direct path and then `enter`
     - [ ] `ctrl+q`
+    - [ ] {,a,b,c}
 - path
     - [ ] named dir
         - auto enter at dir
@@ -59,8 +62,10 @@
         - [x]find
     - [=] just
         - [x] overlays
+        - [x] Parameterizing Scripts
         - [ ] hooks
-            - [ ] enter/leave dir
+            - [x] enter/leave dir
+                - env_change.PWD
             - [x] pre_prompt + cache
     - [x] watchexec
         - watch . { |op, path, new_path| $"($op) ($path) ($new_path)"}
