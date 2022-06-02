@@ -1,5 +1,5 @@
 def glg [] {
-    git log --pretty='%h»¦«%s»¦«%aN»¦«%aE»¦«%aD'
+    git log --pretty=%h»¦«%s»¦«%aN»¦«%aE»¦«%aD
     | lines
     | split column "»¦«" sha message author email date
     | each {|x| ($x| update date ($x.date | into datetime))}
