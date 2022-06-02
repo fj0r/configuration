@@ -53,6 +53,7 @@ let default_theme = {
     shape_nothing: light_cyan
 }
 
+source dir-overlay.nu
 # The default config record. This is where much of your global configuration is setup.
 let-env config = {
   filesize_metric: false
@@ -84,12 +85,7 @@ let-env config = {
       $nothing  # replace with source code to run before the repl input is run
     }]
     env_change: {
-      PWD: [{|before, after|
-        if ($"($after)/overlay.nu" | path exists) {
-            #overlay add overlay.nu
-        }
-        $nothing  # replace with source code to run if the PWD environment is different since the last repl input
-      }]
+      PWD: [$dir-overlay]
     }
   }
   menus: [
