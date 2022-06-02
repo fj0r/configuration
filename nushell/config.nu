@@ -85,7 +85,9 @@ let-env config = {
     }]
     env_change: {
       PWD: [{|before, after|
-        $"($before) -> ($after)"
+        if ($"($after)/overlay.nu" | path exists) {
+            #overlay add overlay.nu
+        }
         $nothing  # replace with source code to run if the PWD environment is different since the last repl input
       }]
     }
@@ -287,8 +289,6 @@ let-env config = {
 source alias.nu
 source git.nu
 source git-cmp.nu
+source dir.nu
 
 source starship.nu
-if ('/usr/local/bin/starship' | path exists) {
-    source starship.nu
-}

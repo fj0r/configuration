@@ -39,7 +39,7 @@
     - [-] `enter` for `ls`
     - [-] `tab` in empty for cd: direct path and then `enter`
     - [ ] `ctrl+q`
-    - [ ] {,a,b,c}
+    - [ ] Brace Expansion {,a,b,c}
 - path
     - [ ] named dir
         - auto enter at dir
