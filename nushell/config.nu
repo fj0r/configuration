@@ -286,5 +286,7 @@ source alias.nu
 source git.nu
 source git-cmp.nu
 source dir.nu
+source kubernetes.nu
+source docker.nu
 
 source starship.nu
