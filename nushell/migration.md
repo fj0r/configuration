@@ -7,6 +7,7 @@
     - [x] k8s
     - [x] startship
         - [ ] right prompt
+        - [ ] indicator
 - alias 
     - [ ] utils
         - [ ] a: alias

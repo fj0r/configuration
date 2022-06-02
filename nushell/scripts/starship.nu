@@ -4,7 +4,7 @@ let-env PROMPT_MULTILINE_INDICATOR = (^starship prompt --continuation)
 
 # Does not play well with default character module.
 # TODO: Also Use starship vi mode indicators?
-let-env PROMPT_INDICATOR = ""
+let-env PROMPT_INDICATOR = "❯ "
 
 let-env PROMPT_COMMAND = {
     # jobs are not supported

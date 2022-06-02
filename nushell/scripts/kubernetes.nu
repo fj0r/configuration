@@ -1,23 +1,23 @@
-def _kube_pods [] {
+def "nu-complete kube pods" [] {
     kubectl get pods | from ssv | get NAME
 }
 
-def _kube_deployments [] {
+def "nu-complete kube deployments" [] {
     kubectl get deployments | from ssv | get NAME
 }
 
-def _kube_ctx [] { kubectx | lines}
+def "nu-complete kube ctx" [] { kubectx | lines}
 
-def _kube_ns [] { kubens | lines }
+def "nu-complete kube ns" [] { kubens | lines }
 
 
 ##################
 
-def kcc [ctx: string@_kube_ctx] {
+def kcc [ctx: string@"nu-complete kube ctx"] {
     kubectx $ctx
 }
 
-def kn [ns: string@_kube_ns] {
+def kn [ns: string@"nu-complete kube ns"] {
     kubens $ns
 }
 
@@ -52,14 +52,38 @@ def kgno [] {
     kubectl get nodes | from ssv | rename name status roles age version
 }
 
-def ked [pod: string@_kube_deployments] {
+def ked [pod: string@"nu-complete kube deployments"] {
     kubectl edit deployments $pod
 }
 
-def kep [pod: string@_kube_pods] {
+def kep [pod: string@"nu-complete kube pods"] {
     kubectl edit pod $pod
 }
 
-def kdp [pod: string@_kube_pods] {
+def kdp [pod: string@"nu-complete kube pods"] {
     kubectl describe pod $pod
+}
+
+def ka [pod: string@"nu-complete kube pods"] {
+    kubectl exec -it $pod -- bash
+}
+
+def kl [pod: string@"nu-complete kube pods"] {
+    kubectl logs $pod
+}
+
+def klf [pod: string@"nu-complete kube pods"] {
+    kubectl logs -f $pod
+}
+
+def kaf [file: path] {
+    kubectl apply -f $file
+}
+
+def kak [file: path] {
+    kubectl apply -k $file
+}
+
+def kk [file: path] {
+    kubectl kustomize
 }

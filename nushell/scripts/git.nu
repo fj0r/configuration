@@ -1,4 +1,25 @@
-alias gpp! = git add --all && git commit -v -a --no-edit --amend && git push --force
+def glg [] {
+    git log --pretty='%h»¦«%s»¦«%aN»¦«%aE»¦«%aD'
+    | lines
+    | split column "»¦«" sha message author email date
+    | each {|x| ($x| update date ($x.date | into datetime))}
+}
+
+def gpp! [] {
+    git add --all
+    git commit -v -a --no-edit --amend
+    git push --force
+}
+
+def gha [] {
+    git log --pretty=%h»¦«%aN»¦«%s»¦«%aD
+    | lines
+    | split column "»¦«" sha1 committer desc merged_at
+    | histogram committer merger
+    | sort-by merger
+    | reverse
+}
+
 alias gp = git push
 alias gl = git pull
 alias ga = git add
@@ -8,12 +29,6 @@ alias gau = git add --update
 alias gav = git add --verbose
 alias gap = git apply
 alias gapt = git apply --3way
-def glg [] {
-    git log --pretty='%h»¦«%s»¦«%aN»¦«%aE»¦«%aD' -n 100
-    | lines
-    | split column "»¦«"
-    | rename sha message author email date
-}
 
 alias gb = git branch
 alias gba = git branch -a
