@@ -8,7 +8,12 @@ alias gau = git add --update
 alias gav = git add --verbose
 alias gap = git apply
 alias gapt = git apply --3way
-alias glg = (git log --pretty='%h»¦«%s»¦«%aN»¦«%aE»¦«%aD' -n 10 | lines | split column "»¦«")
+def glg [] {
+    git log --pretty='%h»¦«%s»¦«%aN»¦«%aE»¦«%aD' -n 100
+    | lines
+    | split column "»¦«"
+    | rename sha message author email date
+}
 
 alias gb = git branch
 alias gba = git branch -a
