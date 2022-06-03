@@ -1,9 +1,9 @@
 def "nu-complete kube pods" [] {
-    kubectl get pods | from ssv | get NAME
+    kubectl get pods | from ssv -a | get NAME
 }
 
 def "nu-complete kube deployments" [] {
-    kubectl get deployments | from ssv | get NAME
+    kubectl get deployments | from ssv -a | get NAME
 }
 
 def "nu-complete kube ctx" [] { kubectx | lines}
@@ -37,19 +37,19 @@ def kgpo [] {
 }
 
 def kgp [] {
-    kubectl get pods -o wide | from ssv
+    kubectl get pods -o wide | from ssv -a
     | rename name ready status restarts age ip node
     | each {|x| ($x| update restarts ($x.restarts|split row ' '| get 0 | into int)) }
 }
 
 def kgpa [] {
-    kubectl get pods -o wide -A | from ssv
+    kubectl get pods -o wide -A | from ssv -a
     | rename ns name ready status restarts age ip node nominated-node readiness-gates
     | each {|x| ($x| update restarts ($x.restarts|split row ' '| get 0 | into int)) }
 }
 
 def kgno [] {
-    kubectl get nodes | from ssv | rename name status roles age version
+    kubectl get nodes | from ssv -a | rename name status roles age version
 }
 
 def ked [pod: string@"nu-complete kube deployments"] {
