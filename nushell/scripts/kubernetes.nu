@@ -36,6 +36,10 @@ def "nu-complete kube def" [] {
     ]
 }
 
+def filter-list [list, idx] {
+    $list | reduce -f [] -n {|it, acc| if $it.index not-in $idx { $acc.item | append $it.item} else { $acc.item }}
+}
+
 def "nu-complete kube res" [context: string, offset: int] {
     let ctx = ($context | split row ' ')
     let ns = ($ctx | each -n {|x| if $x.item == '-n' { $x.index }} )
@@ -44,7 +48,7 @@ def "nu-complete kube res" [context: string, offset: int] {
         kubectl get ($ctx | last) | from ssv -a | get NAME
     } else {
         let n = ($ctx | get ($ns + 1))
-        let def = ($ctx | reduce -f [] -n {|it, acc| if $it.index not-in [$ns ($ns + 1)] { $acc.item | append $it.item} else { $acc.item }})
+        let def = (filter-list $ctx [$ns ($ns + 1)])
         kubectl -n $n get ($def | last) | from ssv -a | get NAME
     }
 }
