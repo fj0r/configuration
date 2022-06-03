@@ -4,8 +4,12 @@
     - [x] struct
     - [ ] reload
 - prompt
-    - [x] k8s
+    - [x] nu
+        - [x] panache-git
+        - [ ] k8s
     - [x] startship
+        - [x] git
+        - [x] k8s
         - [ ] right prompt
         - [ ] indicator
 - alias 
