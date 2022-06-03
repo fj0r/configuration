@@ -289,4 +289,6 @@ source dir.nu
 source kubernetes.nu
 source docker.nu
 
-source starship.nu
+source _prompt.nu
+let-env PROMPT_COMMAND = { panache-git }
+#source starship.nu
