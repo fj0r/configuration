@@ -109,8 +109,16 @@ def kgno [] {
 }
 
 ### pods
-def "nu-complete kube pods" [] {
-    kubectl get pods | from ssv -a | get NAME
+def "nu-complete kube pods" [context: string, offset: int] {
+    let ctx = ($context | split row ' ')
+    let ns = ($ctx | each -n {|x| if $x.item == '-n' { $x.index }} )
+    let ns = if ($ns | empty?) { -1 } else { $ns | get 0 }
+    if $ns < 0 {
+        kubectl get pods | from ssv -a | get NAME
+    } else {
+        let n = ($ctx | get ($ns + 1))
+        kubectl -n $n get pods | from ssv -a | get NAME
+    }
 }
 
 def kgpo [] {
@@ -150,16 +158,28 @@ def kdp [pod: string@"nu-complete kube pods"] {
     kubectl describe pod $pod
 }
 
-def ka [pod: string@"nu-complete kube pods"] {
-    kubectl exec -it $pod -- bash
+def ka [pod: string@"nu-complete kube pods", -n: string@"nu-complete kube ns"] {
+    if ($n|empty?) {
+        kubectl exec -it $pod -- bash
+    } else {
+        kubectl -n $n exec -it $pod -- bash
+    }
 }
 
-def kl [pod: string@"nu-complete kube pods"] {
-    kubectl logs $pod
+def kl [pod: string@"nu-complete kube pods", -n: string@"nu-complete kube ns"] {
+    if ($n|empty?) {
+        kubectl logs $pod
+    } else {
+        kubectl -n $n logs $pod
+    }
 }
 
-def klf [pod: string@"nu-complete kube pods"] {
-    kubectl logs -f $pod
+def klf [pod: string@"nu-complete kube pods", -n: string@"nu-complete kube ns"] {
+    if ($n|empty?) {
+        kubectl logs -f $pod
+    } else {
+        kubectl -n $n logs -f $pod
+    }
 }
 
 ### service
