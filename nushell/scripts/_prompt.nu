@@ -468,6 +468,12 @@ module git {
   }
 }
 
+module k8s {
+    def "kube ctx" [] {
+        kubectl config get-contexts | from ssv -a 
+    }
+
+}
 # An opinionated Git prompt for Nushell, styled after posh-git
 def my-prompt [] {
   use git *

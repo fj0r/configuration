@@ -11,6 +11,6 @@ def dp [] {
 
 def di [] {
     podman images
-    | from ssv
+    | from ssv -a
     | rename repo tag id created size
 }
