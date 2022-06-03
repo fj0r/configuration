@@ -15,6 +15,29 @@
 #
 # For more documentation or to file an issue, see https://github.com/ehdevries/my-git
 
+def bright-cyan [] {
+  each { |it| $"(ansi -e '96m')($it)(ansi reset)" }
+}
+
+def bright-green [] {
+  each { |it| $"(ansi -e '92m')($it)(ansi reset)" }
+}
+
+def bright-red [] {
+  each { |it| $"(ansi -e '91m')($it)(ansi reset)" }
+}
+
+def bright-yellow [] {
+  each { |it| $"(ansi -e '93m')($it)(ansi reset)" }
+}
+
+def green [] {
+  each { |it| $"(ansi green)($it)(ansi reset)" }
+}
+
+def red [] {
+  each { |it| $"(ansi red)($it)(ansi reset)" }
+}
 
 # Internal commands for building up the my-git shell prompt
 module git {
@@ -365,8 +388,8 @@ module git {
       $'($branch-styled) ($local-summary) ($local-indicator)' | str trim
     )
 
-    let left-bracket = ('[' | bright-yellow)
-    let right-bracket = (']' | bright-yellow)
+    let left-bracket = ('|' | bright-yellow)
+    let right-bracket = ('' | bright-yellow)
 
     (if $status.in_git_repo {
       $'($left-bracket)($repo-summary)($right-bracket)'
@@ -381,29 +404,6 @@ module git {
     each { |it| $it == false }
   }
 
-  def bright-cyan [] {
-    each { |it| $"(ansi -e '96m')($it)(ansi reset)" }
-  }
-
-  def bright-green [] {
-    each { |it| $"(ansi -e '92m')($it)(ansi reset)" }
-  }
-
-  def bright-red [] {
-    each { |it| $"(ansi -e '91m')($it)(ansi reset)" }
-  }
-
-  def bright-yellow [] {
-    each { |it| $"(ansi -e '93m')($it)(ansi reset)" }
-  }
-
-  def green [] {
-    each { |it| $"(ansi green)($it)(ansi reset)" }
-  }
-
-  def red [] {
-    each { |it| $"(ansi red)($it)(ansi reset)" }
-  }
 
   def branch-local-only [
     branch: string
@@ -470,12 +470,43 @@ module git {
 
 module k8s {
     def "kube ctx" [] {
-        kubectl config get-contexts | from ssv -a 
+        do --ignore-errors {
+           kubectl config get-contexts
+           | from ssv -a
+           | where CURRENT == '*'
+           | rename curr name cluster authinfo namespace
+           | get 0
+        }
     }
 
+    export def "kube prompt" [] {
+        let ctx = kube ctx
+        let left-bracket = ('' | bright-yellow)
+        let right-bracket = ('|' | bright-yellow)
+        let c = if $ctx.name == $ctx.cluster {
+                    $ctx.name
+                } else {
+                    $"($ctx.authinfo)@($ctx.cluster)"
+                }
+        let p = $"(ansi cyan)($c)(ansi yellow)/(ansi purple)($ctx.namespace)"
+        $"($left-bracket)($p)($right-bracket)" | str trim
+    }
+
+}
+
+def create_right_prompt [] {
+    use k8s *
+    let time_segment = ([
+        (date now | date format '%m/%d/%Y %r')
+    ] | str collect)
+
+    $"(kube prompt)($time_segment)"
 }
 # An opinionated Git prompt for Nushell, styled after posh-git
 def my-prompt [] {
   use git *
-  $'(my-git dir)(my-git styled)'
+  $"(my-git dir)(my-git styled)"
 }
+
+let-env PROMPT_COMMAND = { my-prompt }
+let-env PROMPT_COMMAND_RIGHT = { create_right_prompt }
