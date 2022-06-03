@@ -290,5 +290,5 @@ source kubernetes.nu
 source docker.nu
 
 source _prompt.nu
-let-env PROMPT_COMMAND = { panache-git }
+let-env PROMPT_COMMAND = { my-prompt }
 #source starship.nu

@@ -1,26 +1,26 @@
-# panache-git
+# my-git
 # An opinionated Git prompt for Nushell, styled after posh-git
 #
 # Quick Start:
-# - Download this script (panache-git.nu)
+# - Download this script (my-git.nu)
 # - In your Nushell config:
 #   - Source this script
-#   - Set panache-git as your prompt command
+#   - Set my-git as your prompt command
 #   - Disable the separate prompt indicator by setting it to an empty string
 # - For example, with this script in your home directory:
-#     source ~/panache-git.nu
-#     let-env PROMPT_COMMAND = { panache-git }
+#     source ~/my-git.nu
+#     let-env PROMPT_COMMAND = { my-git }
 #     let-env PROMPT_INDICATOR = { "" }
 # - Restart Nushell
 #
-# For more documentation or to file an issue, see https://github.com/ehdevries/panache-git
+# For more documentation or to file an issue, see https://github.com/ehdevries/my-git
 
 
-# Internal commands for building up the panache-git shell prompt
-module panache-plumbing {
+# Internal commands for building up the my-git shell prompt
+module git {
 
   # Get the current directory with home abbreviated
-  export def "panache-git dir" [] {
+  export def "my-git dir" [] {
     let current-dir = ($env.PWD)
 
     let current-dir-relative-to-home = (
@@ -39,7 +39,7 @@ module panache-plumbing {
   }
 
   # Get repository status as structured data
-  export def "panache-git structured" [] {
+  export def "my-git structured" [] {
     let in-git-repo = (do --ignore-errors { git rev-parse --abbrev-ref HEAD } | empty? | nope)
 
     let status = (if $in-git-repo {
@@ -242,8 +242,8 @@ module panache-plumbing {
   }
 
   # Get repository status as a styled string
-  export def "panache-git styled" [] {
-    let status = (panache-git structured)
+  export def "my-git styled" [] {
+    let status = (my-git structured)
 
     let is-local-only = ($status.tracking_upstream_branch != true)
 
@@ -414,27 +414,27 @@ module panache-plumbing {
   def branch-upstream-deleted [
     branch: string
   ] {
-    $'($branch) (char failed)' | bright-cyan
+    $'($branch)(char failed)' | bright-cyan
   }
 
   def branch-up-to-date [
     branch: string
   ] {
-    $'($branch) (char identical_to)' | bright-cyan
+    $'($branch)(char identical_to)' | bright-cyan
   }
 
   def branch-ahead [
     branch: string
     ahead: int
   ] {
-    $'($branch) (char branch_ahead)($ahead)' | bright-green
+    $'($branch)(char branch_ahead)($ahead)' | bright-green
   }
 
   def branch-behind [
     branch: string
     behind: int
   ] {
-    $'($branch) (char branch_behind)($behind)' | bright-red
+    $'($branch)(char branch_behind)($behind)' | bright-red
   }
 
   def branch-ahead-and-behind [
@@ -442,7 +442,7 @@ module panache-plumbing {
     ahead: int
     behind: int
   ] {
-    $'($branch) (char branch_behind)($behind) (char branch_ahead)($ahead)' | bright-yellow
+    $'($branch)(char branch_behind)($behind)(char branch_ahead)($ahead)' | bright-yellow
   }
 
   def staging-changes [
@@ -450,7 +450,7 @@ module panache-plumbing {
     modified: int
     deleted: int
   ] {
-    $'+($added) ~($modified) -($deleted)' | green
+    $'+($added)~($modified)-($deleted)' | green
   }
 
   def worktree-changes [
@@ -458,7 +458,7 @@ module panache-plumbing {
     modified: int
     deleted: int
   ] {
-    $'+($added) ~($modified) -($deleted)' | red
+    $'+($added)~($modified)-($deleted)' | red
   }
 
   def unresolved-conflicts [
@@ -469,8 +469,7 @@ module panache-plumbing {
 }
 
 # An opinionated Git prompt for Nushell, styled after posh-git
-def panache-git [] {
-  use panache-plumbing *
-  let prompt = ($'(panache-git dir)(panache-git styled)' | str trim)
-  $'($prompt)'
+def my-prompt [] {
+  use git *
+  $'(my-git dir)(my-git styled)'
 }
