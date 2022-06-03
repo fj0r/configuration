@@ -38,11 +38,14 @@ def "nu-complete kube def" [] {
 
 def "nu-complete kube res" [context: string, offset: int] {
     let ctx = ($context | split row ' ')
-    let ns = ($ctx | each -n {|x| if $x.item == '-n' { $x.index }})
-    if ($ns|empty?) {
-        kubectl get $def | from ssv -a | get NAME
+    let ns = ($ctx | each -n {|x| if $x.item == '-n' { $x.index }} )
+    let ns = if ($ns | empty?) { -1 } else { $ns | get 0 }
+    if $ns < 0 {
+        kubectl get ($ctx | last) | from ssv -a | get NAME
     } else {
-        kubectl get $def | from ssv -a | get NAME
+        let n = ($ctx | get ($ns + 1))
+        let def = ($ctx | reduce -f [] -n {|it, acc| if $it.index not-in [$ns ($ns + 1)] { $acc.item | append $it.item} else { $acc.item }})
+        kubectl -n $n get ($def | last) | from ssv -a | get NAME
     }
 }
 
