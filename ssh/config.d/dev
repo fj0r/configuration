@@ -21,9 +21,9 @@ Host devx
 
 Host dx
     #HostName 10.19.0.4
-    HostName 10.6.6.40
+    #HostName 10.6.6.40
     #HostName 10.20.0.5
-    #HostName 172.178.5.21
+    HostName 172.178.5.21
     Port 2222
     IdentityFile ~/.ssh/devx
     IdentitiesOnly yes
