@@ -497,9 +497,8 @@ colors:
 #   - (Linux/BSD) user login shell
 #   - (Windows) powershell
 shell:
-  program: nu
-  args:
-    - --login
+  program: /usr/local/bin/nu
+  args: []
 
 # Startup directory
 #
