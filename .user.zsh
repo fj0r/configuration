@@ -73,7 +73,7 @@ function github_version {
     curl -sSL -H $github_header $github_api/${1}/releases | jq -r '.[].tag_name'
 }
 
-function archive-cfg {
+function archive-cfg-old {
     local d=$(date +"%Y%m%d%H%M%S")
     local tmp="/tmp/cfg/$d/home"
     mkdir -p $tmp
@@ -106,7 +106,7 @@ function archive-cfg {
     echo "restore: cat $HOME/pub/cfg.tgz | tar -C ~ -zxvf - --strip-component=1"
 }
 
-function archive-nvim-cfg {
+function archive-cfg {
     local d=$(date +"%Y%m%d%H%M%S")
     local tmp="/tmp/cfg/$d"
     mkdir -p $tmp
@@ -130,12 +130,9 @@ function archive-nvim-cfg {
         popd
     done
     tar \
-        --exclude='pack/packer/start/*/.git' \
-        --exclude='pack/packer/opt/*/.git' \
-        --exclude='.git' \
-        -zcf nvim-cfg.tar.gz nvim nushell tmux
-    rm -f $HOME/pub/nvim-cfg.tar.gz
-    mv nvim-cfg.tar.gz $HOME/pub
+        -zcf cfg.tar.gz nvim nushell tmux
+    rm -f $HOME/pub/cfg.tar.gz
+    mv cfg.tar.gz $HOME/pub
     popd
     rm -rf $tmp
 }

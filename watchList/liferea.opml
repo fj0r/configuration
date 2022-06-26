@@ -28,7 +28,7 @@
       <outline title="MacTalk-&#x6C60;&#x5EFA;&#x5F3A;&#x7684;&#x968F;&#x60F3;&#x5F55;" text="MacTalk-&#x6C60;&#x5EFA;&#x5F3A;&#x7684;&#x968F;&#x60F3;&#x5F55;" description="MacTalk-&#x6C60;&#x5EFA;&#x5F3A;&#x7684;&#x968F;&#x60F3;&#x5F55;" type="rss" xmlUrl="http://macshuo.com/?feed=rss2" htmlUrl="https://macshuo.com"/>
       <outline title="&#x5C0F;&#x4F17;&#x8F6F;&#x4EF6;" text="&#x5C0F;&#x4F17;&#x8F6F;&#x4EF6;" description="&#x5C0F;&#x4F17;&#x8F6F;&#x4EF6;" type="rss" xmlUrl="http://feed.appinn.com/" htmlUrl="https://www.appinn.com"/>
       <outline title="&#x6708;&#x5149;&#x535A;&#x5BA2;" text="&#x6708;&#x5149;&#x535A;&#x5BA2;" description="&#x6708;&#x5149;&#x535A;&#x5BA2;" type="rss" xmlUrl="http://feed.williamlong.info/" htmlUrl="https://www.williamlong.info/"/>
-      <outline title="&#x6781;&#x5BA2;&#x516C;&#x56ED;" text="&#x6781;&#x5BA2;&#x516C;&#x56ED;" description="&#x6781;&#x5BA2;&#x516C;&#x56ED;" type="rss" xmlUrl="http://feeds.geekpark.net/" htmlUrl="http://main_test.geekpark.net/rss.rss"/>
+      <outline title="&#x6781;&#x5BA2;&#x516C;&#x56ED;" text="&#x6781;&#x5BA2;&#x516C;&#x56ED;" description="&#x6781;&#x5BA2;&#x516C;&#x56ED;" type="rss" xmlUrl="http://feeds.geekpark.net/" htmlUrl="http://mainssl.geekpark.net/rss.rss"/>
     </outline>
     <outline title="Scientific American" text="Scientific American" description="Scientific American" type="folder">
       <outline title="Scientific American Content: Global" text="Scientific American Content: Global" description="Scientific American Content: Global" type="rss" xmlUrl="http://rss.sciam.com/ScientificAmerican-Global?format=xml" htmlUrl="http://www.scientificamerican.com"/>
@@ -161,6 +161,7 @@
       <outline title="sftpgo" text="sftpgo" description="sftpgo" type="atom" xmlUrl="https://github.com/drakkan/sftpgo/releases.atom" htmlUrl="https://github.com/drakkan/sftpgo/releases.atom"/>
       <outline title="Cloudreve" text="Cloudreve" description="Cloudreve" type="atom" xmlUrl="https://github.com/cloudreve/Cloudreve/releases.atom" htmlUrl="https://github.com/cloudreve/Cloudreve/releases.atom"/>
       <outline title="spacedrive" text="spacedrive" description="spacedrive" type="atom" xmlUrl="https://github.com/spacedriveapp/spacedrive/releases.atom" htmlUrl="https://github.com/spacedriveapp/spacedrive/releases.atom"/>
+      <outline title="dufs" text="dufs" description="dufs" type="atom" xmlUrl="https://github.com/sigoden/dufs/releases.atom" htmlUrl="https://github.com/sigoden/dufs/releases.atom"/>
     </outline>
     <outline title="search" text="search" description="search" type="folder">
       <outline title="milvus" text="milvus" description="milvus" type="atom" xmlUrl="https://github.com/milvus-io/milvus/releases.atom" htmlUrl="https://github.com/milvus-io/milvus/releases.atom"/>
