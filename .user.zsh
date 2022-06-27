@@ -145,17 +145,17 @@ function deploy-to-server {
     #rsync -av -e ssh $CFG/_tmux.conf $1:~/.tmux.conf
     #rsync -av --delete -e ssh $CFG/.fzf/ $1:~/.fzf
     echo "========= deploy config"
-    local cmd="cat $HOME/pub/cfg.tgz "
+    local cmd="cat $HOME/pub/cfg.tar.gz "
     local sshcmd="ssh"
     for i in $*; do
         echo "--------- to $i"
-        cmd+="| tee >($sshcmd $i \"rm -rf ~/.zshrc.d; tar zxf - --strip-component=1; sudo chown \\\$(id -u):\\\$(id -g) -R ~/{.zshrc,.zshrc.d}\") "
+        cmd+="| tee >($sshcmd $i \"rm -rf ~/.config/{nushell,nvim,tmux}; tar zxf - -C ~/.config; sudo chown \\\$(id -u):\\\$(id -g) -R ~/.config/{nushell,nvim,tmux}\") "
     done
     cmd+="> /dev/null"
     echo $cmd
     eval $cmd
 
-    echo "========= deploy neovim"
+    echo "========= deploy app"
     local cmd="cat $HOME/Downloads/nvim-linux64.tar.gz "
     for i in $*; do
         echo "--------- to $i"
@@ -165,15 +165,15 @@ function deploy-to-server {
     echo $cmd
     eval $cmd
 
-    echo "========= config neovim"
-    local cmd="cat $HOME/pub/nvim-cfg.tar.gz "
+    local cmd="cat $HOME/Downloads/nu-0.64.0-x86_64-unknown-linux-musl.tar.gz "
     for i in $*; do
         echo "--------- to $i"
-        cmd+="| tee >($sshcmd $i \"rm -rf ~/.config/nvim; tar zxf - -C ~/.config; sudo chown \\\$(id -u):\\\$(id -g) -R ~/.config/nvim\")"
+        cmd+="| tee >($sshcmd $i \"sudo tar zxf - -C /usr/local/bin/ --wildcards 'nu*'\")"
     done
     cmd+="> /dev/null"
     echo $cmd
     eval $cmd
+    
 }
 compdef deploy-to-server=ssh
 
