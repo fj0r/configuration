@@ -13,5 +13,5 @@ Host mi
 Host nuc
     HostName 172.178.5.21
     User agent
-    Port 22
+    Port 2222
     IdentityFile ~/.ssh/id_ed25519
