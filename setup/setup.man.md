@@ -1,4 +1,5 @@
 pacman -Sy yay
+
 ### 中文输入法
 pacman -S fcitx5 fcitx5-rime fcitx5-material-color
 cat <<- EOF > ~/.config/fcitx5/conf
@@ -14,7 +15,7 @@ Theme=Material-Color-Black
 EOF
 
 yay -S deepin-wine-tim
-yay -S zsh neovim tmux podman buildah skopeo
+yay -S tmux podman buildah skopeo
 yay -S krusader akregator
 yay -S blender freefilesync-bin vivaldi visual-studio-code-bin
 
