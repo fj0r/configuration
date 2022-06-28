@@ -9,3 +9,9 @@ Host mi
     User u0_a239
     Port 8022
     IdentityFile ~/.ssh/mipad
+
+Host nuc
+    HostName 172.178.5.21
+    User agent
+    Port 2222
+    IdentityFile ~/.ssh/id_ed25519
