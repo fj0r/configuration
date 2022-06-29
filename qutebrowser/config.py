@@ -17,7 +17,7 @@ c.fonts.web.family.serif= 'Noto Serif CJK SC'
 
 config.bind('<Ctrl-i>', 'edit-text')
 config.bind('<Ctrl-o>', 'edit-url')
-config.bind('zl', 'spawn --userscript bitwarden')
+config.bind('zl', 'spawn --userscript qute-bitwarden')
 
 config.load_autoconfig()
 
