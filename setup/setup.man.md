@@ -19,7 +19,7 @@ curl -sSL ${nu_url} | tar zxf - -C /usr/local/bin --wildcards 'nu*'
 
 ### 字体
 ```bash
-yay -S adobe-source-han-sans-cn-fonts adobe-source-han-serif-cn-fonts
+yay -S ttf-jetbrains-mono adobe-source-han-sans-cn-fonts adobe-source-han-serif-cn-fonts
 ```
 
 ## 容器
@@ -60,10 +60,17 @@ sudo yq -i e '.schema_list[0].schema="wubi86_fg_pinyin"' /usr/share/rime-data/de
 ## ext
 ```bash
 yay -S wireguard-tools
-yay -S qutebrowser vivaldi visual-studio-code-bin
-yay -S krusader akregator
+yay -S vivaldi visual-studio-code-bin
+yay -S akregator krusader
 yay -S blender freefilesync-bin
 yay -S deepin-wine-tim
+```
+
+### qutebrowser
+```bash
+yay -S qutebrowser rofi python-pip
+sudo pip install tldextract
+sudo npm install -g @bitwarden/cli
 ```
 
 ## optimus manager
