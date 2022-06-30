@@ -68,12 +68,31 @@ yay -S deepin-wine-tim
 
 ### qutebrowser
 ```bash
-yay -S qutebrowser rofi python-pip
+yay -S qutebrowser rofi python-pip nodejs npm
 sudo pip install tldextract
 sudo npm install -g @bitwarden/cli
 ```
 
-## optimus manager
+## 桌面环境
+
+### krohnkite
+[download](https://github.com/esjeon/krohnkite/releases/download/v0.8.1/krohnkite-0.8.1.kwinscript)
+
+
+### shortcut:
+- KWin
+    - 窗口到桌面1,4 -> Meta+F1,F4
+    - 垂直最大化窗口 -> Alt+F2
+    - 最大化窗口 -> Alt+F3
+    - 切换到桌面1,4 -> F1,F4
+    - 显示桌面网格 -> Meta+Esc
+    - 切换显示窗口(对当前桌面) -> Meta+Tab
+    - 切换显示窗口(对全部桌面) -> Meta+`
+- Yakuake
+    - 打开/缩回 -> Alt+`
+- 应用程序面板(小部件) -> Alt+F1 <Meta>
+
+## optimus manager (unnecessary)
 ```bash
 yay -S optimus-manager
 cat <<- EOF > /etc/optimus-manager/optimus-manager.conf
@@ -109,23 +128,3 @@ startup_mode=nvidia
 switching=none
 EOF
 ```
-
-## 桌面环境
-
-### krohnkite
-[download](https://github.com/esjeon/krohnkite/releases/download/v0.8.1/krohnkite-0.8.1.kwinscript)
-
-
-### shortcut:
-- KWin
-    - 窗口到桌面1,4 -> Meta+F1,F4
-    - 垂直最大化窗口 -> Alt+F2
-    - 最大化窗口 -> Alt+F3
-    - 切换到桌面1,4 -> F1,F4
-    - 显示桌面网格 -> Meta+Esc
-    - 切换显示窗口(对当前桌面) -> Meta+Tab
-    - 切换显示窗口(对全部桌面) -> Meta+`
-- Yakuake
-    - 打开/缩回 -> Alt+`
-- 应用程序面板(小部件) -> Alt+F1 <Meta>
-
