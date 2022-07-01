@@ -34,7 +34,7 @@ podman system migrate
 ```
 ## 中文输入法
 ```bash
-pacman -S fcitx5 fcitx5-rime fcitx5-material-color rime-wubi
+yay -S fcitx5 fcitx5-gtk fcitx5-qt fcitx5-rime fcitx5-material-color rime-wubi
 
 cat <<- EOF > ~/.config/fcitx5/conf/ui.conf
 Vertical Candidate List=False
