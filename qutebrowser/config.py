@@ -9,6 +9,7 @@ c.aliases['r'] = 'session-load'
 c.hints.chars = 'fjdksla;rueiwoqpty'
 c.hints.scatter = False
 c.fonts.hints = 'bold default_size "JetBrains Mono"'
+c.fonts.default_size = '8pt'
 
 c.fonts.web.family.standard= 'Noto Sans CJK SC'
 c.fonts.web.family.fixed= 'JetBrains Mono'
