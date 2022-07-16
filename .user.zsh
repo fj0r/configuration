@@ -73,37 +73,28 @@ function github_version {
     curl -sSL -H $github_header $github_api/${1}/releases | jq -r '.[].tag_name'
 }
 
-function archive-cfg-old {
+function archive-cfg-nvim {
     local d=$(date +"%Y%m%d%H%M%S")
-    local tmp="/tmp/cfg/$d/home"
+    local tmp="/tmp/cfg/$d"
     mkdir -p $tmp
-    cp -r $CFG/../.zshrc.d $tmp/.zshrc.d
-    ln -fsr $tmp/.zshrc.d/_zshrc $tmp/.zshrc
-    cp $CFG/../.ext.zsh $tmp/
-    mkdir -p $tmp/.config
-    cp $CFG/../_tmux.conf $tmp/.tmux.conf
-    mkdir -p $tmp/.config/helix
-    cp $CFG/../helix/* $tmp/.config/helix
-    mkdir -p $tmp/.local/bin
-    cp /usr/local/bin/{just,watchexec,rq,yq,rg,fd,sd,dust,btm,xh,dog} $tmp/.local/bin
-    #tar hzcvf - --transform "s|^$d\(.*\)|\1|" -C /tmp/cfg $d
-    # cp -r $CFG/nvim $tmp/.config/
-    #tar \
-    #        --exclude='*/.git*' \
-    #        --exclude='*/__pycache__*' \
-    #        --exclude='*/nvim-luapad/gifs*' \
-    #        --exclude='*/plugged/ultisnips/doc/*' \
-    #        --exclude='*/plugged/vimspector/gadgets/*' \
-    #        --exclude='plugged/LeaderF/autoload/leaderf/fuzzyMatch_C/build' \
-    #        -cf - -C $CFG nvim | tar -xf - -C $tmp/.config
-    #rm -f $tmp/.config/nvim/.netrwhist
-    pushd $tmp/..
-    tar -zcvf cfg.tgz home
-    rm -f $HOME/pub/cfg.tgz
-    mv cfg.tgz $HOME/pub
+    tar \
+            --exclude='*/__pycache__*' \
+            --exclude='*/nvim-luapad/gifs*' \
+            --exclude='*/plugged/ultisnips/doc/*' \
+            --exclude='*/plugged/vimspector/gadgets/*' \
+            --exclude='plugged/LeaderF/autoload/leaderf/fuzzyMatch_C/build' \
+            --exclude='pack/packer/*/*/.github' \
+            --exclude='pack/packer/*/*/.git' \
+            --exclude='.git*' \
+            -cf - -C $CFG/.. nvim | tar -xf - -C $tmp/
+    rm -f $tmp/nvim/.netrwhist
+    pushd $tmp
+    tar \
+        -zcf cfg.tar.gz nvim
+    rm -f $HOME/pub/nvim-cfg.tar.gz
+    mv cfg.tar.gz $HOME/pub/nvim-cfg.tar.gz
     popd
-    rm -rf /tmp/cfg
-    echo "restore: cat $HOME/pub/cfg.tgz | tar -C ~ -zxvf - --strip-component=1"
+    rm -rf $tmp
 }
 
 function archive-cfg {
