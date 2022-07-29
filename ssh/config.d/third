@@ -10,3 +10,9 @@ Host shengquan2
     User leoo
     IdentityFile ~/.ssh/shengquan
     ProxyJump shengquan
+
+Host xishi
+    HostName 101.37.169.40
+    Port 22
+    User root
+    IdentityFile ~/.ssh/xishi
