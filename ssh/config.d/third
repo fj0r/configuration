@@ -12,7 +12,9 @@ Host shengquan2
     ProxyJump shengquan
 
 Host xishi
-    HostName 101.37.169.40
+    #HostName 101.37.169.40
+    #HostName 10.71.0.15
+    HostName 10.71.0.19
     Port 22
     User root
     IdentityFile ~/.ssh/xishi
