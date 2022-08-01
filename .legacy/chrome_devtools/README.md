@@ -1,4 +1,0 @@
-- open chrome://flags/
-- search & enable 'enable-devtools-experiments'
-- open devtools -> settings -> experiments -> check 'Allow custom UI themes'
-- open chrome://extensions/ & load this dir

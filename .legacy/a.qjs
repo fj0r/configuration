@@ -1,3 +1,0 @@
-#!env qjs
-print('argv', scriptArgs)
-print('stdin', std.in.readAsString())

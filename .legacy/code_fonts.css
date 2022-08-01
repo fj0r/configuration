@@ -1,6 +1,0 @@
-pre, code, kbd, samp, var,
-.ace_text-layer {
-    font-family: SansCode-Light, "Microsoft Yahei", monospace !important;
-    text-shadow: 0.05em 0.05em 0.2em #999999 !important;
-    line-height: 150% !important;
-}
