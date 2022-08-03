@@ -93,3 +93,11 @@ Host php-container
     User root
     IdentityFile ~/.ssh/php-container
     IdentitiesOnly yes
+
+Host chenwei
+    HostName 118.195.243.36
+    Port 22
+    User root
+    IdentityFile ~/.ssh/chenwei
+    IdentitiesOnly yes
+

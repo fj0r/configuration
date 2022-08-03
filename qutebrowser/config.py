@@ -16,7 +16,7 @@ c.fonts.web.family.fixed= 'JetBrains Mono'
 c.fonts.web.family.sans_serif= 'Jetbrains Mono'
 c.fonts.web.family.serif= 'Noto Serif CJK SC'
 
-config.bind('<Ctrl-i>', 'edit-text')
+config.bind('<Alt-o>', 'edit-text')
 config.bind('<Ctrl-o>', 'edit-url')
 config.bind('zl', 'spawn --userscript qute-bitwarden')
 
