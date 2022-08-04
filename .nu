@@ -40,14 +40,14 @@ export def "x archive cfg" [] {
     rm -f $"($tmp)/nvim/.netrwhist"
     enter $tmp
     cp -r $"($curr)/nushell" .
-    cp -r $"($curr)/tmux" .
+    cp -r $"($curr)/zellij" .
     ls nvim/pack/packer/*/* | where type == dir | get name | each {|x|
         cd $x
         echo $'--------------($x|str trim)--------------'
         ^git reflog expire --all --expire=now
         ^git gc --prune=now --aggressive
     }
-    tar -zcf cfg.tar.gz nvim nushell tmux
+    tar -zcf cfg.tar.gz nvim nushell zellij 
     rm -f $"($env.HOME)/pub/cfg.tar.gz"
     mv cfg.tar.gz $"($env.HOME)/pub/cfg.tar.gz"
     exit
@@ -59,13 +59,13 @@ def "nu-complete ssh host" [] {
 }
 
 export def "x deploy via ssh" [...hosts: string@"nu-complete ssh host"] {
-    echo "should setup: tmux git zoxide"
+    echo "should setup: zellij git zoxide"
     let nvim = (ls $"($env.HOME)/Downloads/nvim-linux*.tar.gz" | sort-by modified -r | get name.0)
     let nushell = (ls $"($env.HOME)/Downloads/nu-*-x86_64-unknown-linux-musl.tar.gz" | sort-by modified -r | get name.0)
     let config = $"($env.HOME)/pub/cfg.tar.gz"
     $hosts | par-each {|host|
         cat $nvim | ^ssh $host $"sudo tar zxf - -C /usr/local/ --strip-components=1"
         cat $nushell | ^ssh $host $"sudo tar zxf - -C /usr/local/bin/ --exclude='LICENSE' --exclude='README.txt'"
-        cat $config | ^ssh $host $"bash -c 'rm -rf ~/.config/{nushell,nvim,tmux}; tar zxf - -C ~/.config; sudo chown $\(id -u):$\(id -g) -R ~/.config/{nushell,nvim,tmux}'"
+        cat $config | ^ssh $host $"bash -c 'rm -rf ~/.config/{nushell,nvim,zellij}; tar zxf - -C ~/.config; sudo chown $\(id -u):$\(id -g) -R ~/.config/{nushell,nvim,zellij}'"
     }
 }
