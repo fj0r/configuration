@@ -4,3 +4,6 @@
 [submodule ".zshrc.d"]
 	path = .zshrc.d
 	url = git@github.com:infra/.zshrc.d.git
+[submodule "zellij"]
+	path = zellij
+	url = url = git@github.com:infra/zellij.git
