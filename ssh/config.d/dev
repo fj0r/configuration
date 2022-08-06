@@ -11,60 +11,6 @@ Host test
     IdentitiesOnly yes
     User root
 
-Host devx
-    #HostName 10.20.0.5
-    HostName 172.178.5.21
-    Port 2222
-    IdentityFile ~/.ssh/devx
-    IdentitiesOnly yes
-    User root
-
-Host dx
-    #HostName 10.19.0.4
-    #HostName 10.6.6.40
-    #HostName 10.20.0.5
-    HostName 172.178.5.21
-    Port 2222
-    IdentityFile ~/.ssh/devx
-    IdentitiesOnly yes
-    User agent
-
-Host dxa
-    HostName 172.178.5.21
-    Port 2222
-    IdentityFile ~/.ssh/devx
-    IdentitiesOnly yes
-    User agent
-
-Host dev2
-    HostName 172.178.1.204
-    Port 22
-    IdentityFile ~/.ssh/dev
-    IdentitiesOnly yes
-    User ad
-
-Host dev1
-    HostName 172.178.1.37
-    Port 22
-    IdentityFile ~/.ssh/dev
-    IdentitiesOnly yes
-    User ad
-
-Host dev0
-    HostName 172.178.1.58
-    #HostName 10.6.6.12
-    Port 22
-    IdentityFile ~/.ssh/dev
-    IdentitiesOnly yes
-    User ad
-
-Host eng-backup
-    HostName 172.178.1.79
-    Port 22
-    IdentityFile ~/.ssh/backup
-    IdentitiesOnly yes
-    User ad
-
 Host safeman.cc
     #HostName 156.67.217.216
     HostName safeman.cc
@@ -73,29 +19,16 @@ Host safeman.cc
     Port 22
     User root
 
-Host ty
-    #HostName 140.246.117.6
-    HostName safeman.cc
-    IdentityFile ~/.ssh/ty.pem
-    IdentitiesOnly yes
-    Port 22
-    User root
-
-Host alalaba
-    HostName 39.97.113.120
-    IdentityFile ~/.ssh/alalaba.com
-    IdentitiesOnly yes
-    User root
-
-Host php-container
-    HostName localhost
-    Port 1223
-    User root
-    IdentityFile ~/.ssh/php-container
-    IdentitiesOnly yes
-
 Host chenwei
     HostName 118.195.243.36
+    Port 22
+    User root
+    IdentityFile ~/.ssh/chenwei
+    IdentitiesOnly yes
+
+Host cw2
+    HostName 120.27.18.149
+    #HostName 10.188.0.4
     Port 22
     User root
     IdentityFile ~/.ssh/chenwei
