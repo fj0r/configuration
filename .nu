@@ -47,7 +47,7 @@ export def "x archive cfg" [] {
         ^git reflog expire --all --expire=now
         ^git gc --prune=now --aggressive
     }
-    tar -zcf cfg.tar.gz nvim nushell zellij 
+    tar -zcf cfg.tar.gz nvim nushell zellij
     rm -f $"($env.HOME)/pub/cfg.tar.gz"
     mv cfg.tar.gz $"($env.HOME)/pub/cfg.tar.gz"
     exit
