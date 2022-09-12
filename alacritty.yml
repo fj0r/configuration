@@ -22,7 +22,7 @@ env:
   # check the local terminfo database and use `alacritty` if it is
   # available, otherwise `xterm-256color` is used.
   WINIT_X11_SCALE_FACTOR: "1"
-  TERM: alacritty
+  #TERM: alacritty
 
 window:
   # Window dimensions (changes require restart)
@@ -809,7 +809,20 @@ shell:
 #
 # If the same trigger is assigned to multiple actions, all of them are executed
 # in the order they were defined in.
-#key_bindings:
+key_bindings:
+  - { key: H, mods: Control|Shift, chars: "\x1b[72;6u" }
+  - { key: J, mods: Control|Shift, chars: "\x1b[74;6u" }
+  - { key: K, mods: Control|Shift, chars: "\x1b[75;6u" }
+  - { key: L, mods: Control|Shift, chars: "\x1b[76;6u" }
+
+  - { key: I, mods: Control, chars: "\x1b[105;5u" }
+
+  - { key: Period, mods: Control, chars: "\x1b[46;5u" }
+  - { key: Comma, mods: Control, chars: "\x1b[44;5u" }
+  - { key: Semicolon, mods: Control, chars: "\x1b[59;5u" }
+
+  - { key: Return, mods: Shift, chars: "\x1b[13;2u" }
+
   #- { key: Paste,                                       action: Paste          }
   #- { key: Copy,                                        action: Copy           }
   #- { key: L,         mods: Control,                    action: ClearLogNotice }
