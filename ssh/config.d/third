@@ -18,3 +18,14 @@ Host xishi
     Port 22
     User root
     IdentityFile ~/.ssh/xishi
+
+Host xinmeijie
+    HostName 47.104.84.220
+    User root
+    IdentityFile ~/.ssh/xinmeijie
+
+Host xinmeijie1
+    HostName 47.104.170.165
+    User root
+    IdentityFile ~/.ssh/xinmeijie
+
