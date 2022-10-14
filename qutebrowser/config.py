@@ -1,6 +1,6 @@
 c.content.proxy = 'socks://localhost:7891'
 c.window.hide_decoration = True
-c.editor.command = ['alacritty', '-t', 'qutebrowser-editor', '-e', 'nvim', '{file}', '-c', 'normal {line}G{column0}l']
+c.editor.command = ['neovide', '--nofork', '{file}', '--', '-c', 'normal {line}G{column0}l']
 c.url.searchengines = { 'DEFAULT': 'https://www.google.com/search?q={}'}
 c.url.start_pages = 'https://google.com'
 c.auto_save.session = True
