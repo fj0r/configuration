@@ -241,6 +241,8 @@
             <outline text="deno" type="rss" xmlUrl="https://github.com/denoland/deno/releases.atom"></outline>
             <outline text="compiler-explorer" type="rss" xmlUrl="https://github.com/compiler-explorer/compiler-explorer/releases.atom"></outline>
             <outline text="bun" type="rss" xmlUrl="https://github.com/oven-sh/bun/releases.atom"></outline>
+            <outline text="python-build-standalone(musl)" type="rss" xmlUrl="https://github.com/indygreg/python-build-standalone/releases.atom"></outline>
+            <outline text="ghc-wasm-meta" type="rss" xmlUrl="https://gitlab.haskell.org/ghc/ghc-wasm-meta.atom"></outline>
         </outline>
         <outline text="net">
             <outline text="wireguard-go" type="rss" xmlUrl="https://github.com/WireGuard/wireguard-go/releases.atom"></outline>
@@ -377,6 +379,7 @@
         <outline text="fluvio" type="rss" xmlUrl="https://github.com/infinyon/fluvio/releases.atom"></outline>
         <outline text="fornjot(cad)" type="rss" xmlUrl="https://github.com/hannobraun/Fornjot/releases.atom"></outline>
         <outline text="foundationdb" type="rss" xmlUrl="https://github.com/apple/foundationdb/releases.atom"></outline>
+        <outline text="ghc-wasm-meta" type="rss" xmlUrl="https://gitlab.haskell.org/ghc/ghc-wasm-meta.atom"></outline>
         <outline text="gitea" type="rss" xmlUrl="https://blog.gitea.io/index.xml"></outline>
         <outline text="gitoxide(git)" type="rss" xmlUrl="https://github.com/Byron/gitoxide/releases.atom"></outline>
         <outline text="gluon" type="rss" xmlUrl="https://github.com/gluon-lang/gluon/releases.atom"></outline>
@@ -460,6 +463,7 @@
         <outline text="promscale" type="rss" xmlUrl="https://github.com/timescale/promscale/releases.atom"></outline>
         <outline text="pulsar" type="rss" xmlUrl="https://github.com/apache/pulsar/releases.atom"></outline>
         <outline text="pushpin" type="rss" xmlUrl="https://github.com/fanout/pushpin/releases.atom"></outline>
+        <outline text="python-build-standalone(musl)" type="rss" xmlUrl="https://github.com/indygreg/python-build-standalone/releases.atom"></outline>
         <outline text="qtile" type="rss" xmlUrl="https://github.com/qtile/qtile/releases.atom"></outline>
         <outline text="qutebrowser" type="rss" xmlUrl="https://github.com/qutebrowser/qutebrowser/releases.atom"></outline>
         <outline text="rain" type="rss" xmlUrl="https://github.com/substantic/rain/releases.atom"></outline>
