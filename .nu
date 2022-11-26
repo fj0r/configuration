@@ -15,11 +15,7 @@ export def "x archive cfg nvim" [] {
             -cf - nvim | tar -xf - -C $tmp
     )
     rm -f $"($tmp)/nvim/.netrwhist"
-    enter $tmp
-    tar -zcf cfg.tar.gz nvim
-    rm -f $"($env.HOME)/pub/nvim-cfg.tar.gz"
-    mv cfg.tar.gz $"($env.HOME)/pub/nvim-cfg.tar.gz"
-    exit
+    tar -C $tmp -cf - nvim | zstd -19 -T0 | save $"($env.HOME)/pub/nvim-cfg.tar.zst"
     rm -rf $tmp
 }
 
@@ -46,9 +42,7 @@ export def "x archive cfg" [] {
         ^git reflog expire --all --expire=now
         ^git gc --prune=now --aggressive
     }
-    tar -zcf cfg.tar.gz nvim nushell
-    rm -f $"($env.HOME)/pub/cfg.tar.gz"
-    mv cfg.tar.gz $"($env.HOME)/pub/cfg.tar.gz"
+    tar -cf - nvim nushell | zstd -19 -T0 | save $"($env.HOME)/pub/cfg.tar.zst"
     exit
     rm -rf $tmp
 }
