@@ -218,6 +218,7 @@
             <outline text="youki" type="rss" xmlUrl="https://github.com/containers/youki/releases.atom"></outline>
             <outline text="cert-manager" type="rss" xmlUrl="https://github.com/cert-manager/cert-manager/releases.atom"></outline>
             <outline text="k3s" type="rss" xmlUrl="https://github.com/rancher/k3s/releases.atom"></outline>
+            <outline text="distribution(docker registry)" type="rss" xmlUrl="https://github.com/distribution/distribution/releases.atom"></outline>
         </outline>
         <outline text="lang">
             <outline text="haskell-language-server" type="rss" xmlUrl="https://github.com/haskell/haskell-language-server/releases.atom"></outline>
@@ -363,6 +364,7 @@
         <outline text="dfdx" type="rss" xmlUrl="https://github.com/coreylowman/dfdx/releases.atom"></outline>
         <outline text="differential-dataflow" type="rss" xmlUrl="https://github.com/TimelyDataflow/differential-dataflow/releases.atom"></outline>
         <outline text="dioxus" type="rss" xmlUrl="https://github.com/DioxusLabs/dioxus/releases.atom"></outline>
+        <outline text="distribution(docker registry)" type="rss" xmlUrl="https://github.com/distribution/distribution/releases.atom"></outline>
         <outline text="dive" type="rss" xmlUrl="https://github.com/wagoodman/dive/releases.atom"></outline>
         <outline text="docker postgres" type="rss" xmlUrl="https://github.com/docker-library/postgres/commits/master.atom"></outline>
         <outline text="dragonflydb" type="rss" xmlUrl="https://github.com/dragonflydb/dragonfly/releases.atom"></outline>
