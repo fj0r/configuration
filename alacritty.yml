@@ -499,7 +499,7 @@ colors-1:
 #   - (Linux/BSD) user login shell
 #   - (Windows) powershell
 shell:
-  program: /bin/bash
+  program: /usr/local/bin/nu
   args: []
 
 # Startup directory
