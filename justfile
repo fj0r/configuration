@@ -42,3 +42,53 @@ grhh:
     #git pull
   done
   cd $c
+
+archiveNvimCfg: archiveCfg
+    #!/bin/nu
+    let d = (date now | date format "%Y%m%d%H%M%S")
+    let tmp = $"/tmp/cfg/($d)"
+    let curr = $env.PWD
+    mkdir $tmp
+    (tar
+            --exclude='*/__pycache__*'
+            --exclude='*/nvim-luapad/gifs*'
+            --exclude='*/plugged/ultisnips/doc/*'
+            --exclude='*/plugged/vimspector/gadgets/*'
+            --exclude='plugged/LeaderF/autoload/leaderf/fuzzyMatch_C/build'
+            --exclude='pack/packer/*/*/.github'
+            --exclude='pack/packer/*/*/.git'
+            --exclude='.git*'
+            -cf - nvim | tar -xf - -C $tmp
+    )
+    rm -f $"($tmp)/nvim/.netrwhist"
+    tar -C $tmp -cf - nvim | zstd -19 -T0 | save $"($env.HOME)/pub/nvim-cfg.tar.zst"
+    rm -rf $tmp
+
+
+archiveCfg:
+    #!/bin/nu
+    let d = (date now | date format "%Y%m%d%H%M%S")
+    let tmp = $"/tmp/cfg/($d)"
+    let curr = $env.PWD
+    mkdir $tmp
+    (tar
+            --exclude='*/__pycache__*'
+            --exclude='*/nvim-luapad/gifs*'
+            --exclude='*/plugged/ultisnips/doc/*'
+            --exclude='*/plugged/vimspector/gadgets/*'
+            --exclude='plugged/LeaderF/autoload/leaderf/fuzzyMatch_C/build'
+            --exclude='pack/packer/*/*/.github'
+            -cf - nvim | tar -xf - -C $tmp
+    )
+    rm -f $"($tmp)/nvim/.netrwhist"
+    enter $tmp
+    cp -r $"($curr)/nushell" .
+    ls nvim/pack/packer/*/* | where type == dir | get name | each {|x|
+        cd $x
+        echo $'--------------($x|str trim)--------------'
+        ^git reflog expire --all --expire=now
+        ^git gc --prune=now --aggressive
+    }
+    tar -cf - nvim nushell | zstd -19 -T0 | save $"($env.HOME)/pub/cfg.tar.zst"
+    exit
+    rm -rf $tmp
