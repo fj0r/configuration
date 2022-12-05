@@ -36,8 +36,6 @@
             <outline text="librera" type="rss" xmlUrl="https://github.com/foobnix/LibreraReader/releases.atom"></outline>
         </outline>
         <outline text="app">
-            <outline text="bevy" type="rss" xmlUrl="https://github.com/bevyengine/bevy/releases.atom"></outline>
-            <outline text="godot" type="rss" xmlUrl="https://github.com/godotengine/godot/releases.atom"></outline>
             <outline text="penpot" type="rss" xmlUrl="https://github.com/penpot/penpot/releases.atom"></outline>
             <outline text="fornjot(cad)" type="rss" xmlUrl="https://github.com/hannobraun/Fornjot/releases.atom"></outline>
             <outline text="awesomewm" type="rss" xmlUrl="https://github.com/awesomeWM/awesome/releases.atom"></outline>
@@ -53,8 +51,6 @@
             <outline text="AFFiNE" type="rss" xmlUrl="https://github.com/toeverything/AFFiNE/releases.atom"></outline>
             <outline text="AppFlowy" type="rss" xmlUrl="https://github.com/AppFlowy-IO/AppFlowy/releases.atom"></outline>
             <outline text="openvscode-server" type="rss" xmlUrl="https://github.com/gitpod-io/openvscode-server/releases.atom"></outline>
-            <outline text="veloren(game)" type="rss" xmlUrl="https://github.com/veloren/veloren/releases.atom"></outline>
-            <outline text="blender" type="rss" xmlUrl="https://github.com/blender/blender/releases.atom"></outline>
             <outline text="krita" type="rss" xmlUrl="https://github.com/KDE/krita/releases.atom"></outline>
             <outline text="rustdesk" type="rss" xmlUrl="https://github.com/rustdesk/rustdesk/releases.atom"></outline>
             <outline text="nyxt" type="rss" xmlUrl="https://github.com/atlas-engineer/nyxt/releases.atom"></outline>
@@ -172,6 +168,13 @@
             <outline text="swc" type="rss" xmlUrl="https://github.com/swc-project/swc/releases.atom"></outline>
             <outline text="parcel" type="rss" xmlUrl="https://github.com/parcel-bundler/parcel/releases.atom"></outline>
             <outline text="tailwindcss" type="rss" xmlUrl="https://github.com/tailwindlabs/tailwindcss/releases.atom"></outline>
+        </outline>
+        <outline text="game">
+            <outline text="bevy" type="rss" xmlUrl="https://github.com/bevyengine/bevy/releases.atom"></outline>
+            <outline text="blender" type="rss" xmlUrl="https://github.com/blender/blender/releases.atom"></outline>
+            <outline text="godot" type="rss" xmlUrl="https://github.com/godotengine/godot/releases.atom"></outline>
+            <outline text="o3de" type="rss" xmlUrl="https://github.com/o3de/o3de/releases.atom"></outline>
+            <outline text="veloren" type="rss" xmlUrl="https://github.com/veloren/veloren/releases.atom"></outline>
         </outline>
         <outline text="gateway">
             <outline text="envoy" type="rss" xmlUrl="https://github.com/envoyproxy/envoy/releases.atom"></outline>
@@ -444,6 +447,7 @@
         <outline text="noria" type="rss" xmlUrl="https://github.com/mit-pdos/noria/releases.atom"></outline>
         <outline text="nushell" type="rss" xmlUrl="https://github.com/nushell/nushell/releases.atom"></outline>
         <outline text="nyxt" type="rss" xmlUrl="https://github.com/atlas-engineer/nyxt/releases.atom"></outline>
+        <outline text="o3de" type="rss" xmlUrl="https://github.com/o3de/o3de/releases.atom"></outline>
         <outline text="oauth2-proxy" type="rss" xmlUrl="https://github.com/oauth2-proxy/oauth2-proxy/releases.atom"></outline>
         <outline text="openvscode-server" type="rss" xmlUrl="https://github.com/gitpod-io/openvscode-server/releases.atom"></outline>
         <outline text="ouch(zip)" type="rss" xmlUrl="https://github.com/ouch-org/ouch/releases.atom"></outline>
@@ -528,7 +532,7 @@
         <outline text="vaultwarden" type="rss" xmlUrl="https://github.com/dani-garcia/vaultwarden/releases.atom"></outline>
         <outline text="vector(log)" type="rss" xmlUrl="https://github.com/vectordotdev/vector/releases.atom"></outline>
         <outline text="velero" type="rss" xmlUrl="https://github.com/vmware-tanzu/velero/releases.atom"></outline>
-        <outline text="veloren(game)" type="rss" xmlUrl="https://github.com/veloren/veloren/releases.atom"></outline>
+        <outline text="veloren" type="rss" xmlUrl="https://github.com/veloren/veloren/releases.atom"></outline>
         <outline text="voik" type="rss" xmlUrl="https://github.com/marceloboeira/voik/releases.atom"></outline>
         <outline text="vouch-proxy" type="rss" xmlUrl="https://github.com/vouch/vouch-proxy/releases.atom"></outline>
         <outline text="wal-g" type="rss" xmlUrl="https://github.com/wal-g/wal-g/releases.atom"></outline>
