@@ -1,10 +1,12 @@
 local wezterm = require 'wezterm'
 
 return {
+    default_prog = { "/usr/local/bin/nu" },
     color_scheme = "Gruvbox Dark",
     enable_tab_bar = false,
+    window_decorations = "NONE",
     font = wezterm.font {
-        family = 'JetBrainsMono',
+        family = 'JetBrains Mono',
         weight = 'Light',
         stretch = 'Condensed',
     },
