@@ -1,5 +1,4 @@
-sudo apt install curl jq zstd podman git wireguard-tools libfuse2 xclip xsel
-
+sudo apt install curl jq zstd podman git wireguard-tools libfuse2 xclip xsel resolvconf
 curl ${layer_host}/utils.tar.zst | zstd -d | sudo tar -xf - --strip-components=1 -C /usr/local/bin/
 curl ${layer_host}/nushell.tar.zst | zstd -d | sudo tar -xf - --strip-components=1 -C /usr/local/bin/
 curl ${layer_host}/nvim.tar.zst | zstd -d | sudo tar -xf - --strip-components=1 -C /usr/local/
@@ -29,5 +28,8 @@ sudo apt install gnome-shell-extensions
 #
 
 # kubectl
+podman run --rm -v /usr/local/bin:/x 0x:k8s cp /usr/local/bin/kubectl /x
 
 # fcitx
+sudo apt install fcitx5 fcitx5-rime fcitx5-material-color rime-data-wubi
+

@@ -1,10 +1,15 @@
 local wezterm = require 'wezterm'
+local mux = wezterm.mux
+wezterm.on("gui-startup", function()
+  local tab, pane, window = mux.spawn_window {}
+  window:gui_window():maximize()
+end)
 
 return {
     default_prog = { "/usr/local/bin/nu" },
     color_scheme = "Gruvbox Dark",
     enable_tab_bar = false,
-    window_decorations = "NONE",
+    window_decorations = "RESIZE",
     font = wezterm.font {
         family = 'JetBrains Mono',
         weight = 'Light',
