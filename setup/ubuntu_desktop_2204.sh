@@ -32,6 +32,7 @@ sudo apt install vivaldi-stable
 
 sudo apt install gnome-shell-extensions
 # https://extensions.gnome.org/extension/545/hide-top-bar/
+# https://extensions.gnome.org/extension/10/windownavigator/
 #
 
 # kubectl
@@ -43,4 +44,6 @@ sudo apt install fcitx5 fcitx5-rime fcitx5-material-color rime-data-wubi
 # freefilesync
 
 # other
-sudo apt install vlc
+sudo apt install \
+    vlc \
+    calibre
