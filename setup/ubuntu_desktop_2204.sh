@@ -2,6 +2,7 @@ sudo apt install curl jq zstd podman git wireguard-tools libfuse2 xclip xsel res
 curl ${layer_host}/utils.tar.zst | zstd -d | sudo tar -xf - --strip-components=1 -C /usr/local/bin/
 curl ${layer_host}/nushell.tar.zst | zstd -d | sudo tar -xf - --strip-components=1 -C /usr/local/bin/
 curl ${layer_host}/nvim.tar.zst | zstd -d | sudo tar -xf - --strip-components=1 -C /usr/local/
+curl ${layer_host}/setup.sh | sh -s node lslua
 
 sudo sed -i 's!#*\s*\(unqualified-search-registries\) = .*!\1 = ["docker.io"]!' /etc/containers/registries.conf
 
@@ -39,7 +40,10 @@ sudo apt install gnome-shell-extensions
 sudo podman run --rm -v /usr/local/bin:/x 0x:k8s cp /usr/local/bin/kubectl /x
 
 # fcitx
-sudo apt install fcitx5 fcitx5-rime fcitx5-material-color rime-data-wubi
+# sudo apt install fcitx5 fcitx5-rime fcitx5-material-color rime-data-wubi
+# ibus
+sudo apt-get install ibus ibus-clutter ibus-gtk ibus-gtk3 ibus-rime rime-data-wubi
+
 
 # freefilesync
 
@@ -47,3 +51,10 @@ sudo apt install fcitx5 fcitx5-rime fcitx5-material-color rime-data-wubi
 sudo apt install \
     vlc \
     calibre
+
+# Dock
+# 1 vivaldi
+# 2 wezterm
+# 3 nautilus
+# 4 System Monitor
+# 5 FreeFileSync
