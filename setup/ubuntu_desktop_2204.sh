@@ -43,4 +43,6 @@ sudo apt install fcitx5 fcitx5-rime fcitx5-material-color rime-data-wubi
 # freefilesync
 
 # other
-sudo apt install vlc
+sudo apt install \
+    vlc \
+    calibre
