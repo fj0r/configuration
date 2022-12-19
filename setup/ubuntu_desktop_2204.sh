@@ -32,6 +32,7 @@ sudo apt install vivaldi-stable
 
 sudo apt install gnome-shell-extensions
 # https://extensions.gnome.org/extension/545/hide-top-bar/
+# https://extensions.gnome.org/extension/10/windownavigator/
 #
 
 # kubectl
