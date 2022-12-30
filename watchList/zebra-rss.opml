@@ -277,6 +277,9 @@
             <outline text="vector(log)" type="rss" xmlUrl="https://github.com/vectordotdev/vector/releases.atom"></outline>
             <outline text="mattermost-server" type="rss" xmlUrl="https://github.com/mattermost/mattermost-server/releases.atom"></outline>
             <outline text="gitoxide(git)" type="rss" xmlUrl="https://github.com/Byron/gitoxide/releases.atom"></outline>
+            <outline text="act" type="rss" xmlUrl="https://github.com/nektos/act/releases.atom"></outline>
+            <outline text="Forgejo News" type="rss" xmlUrl="https://forgejo.org/rss.xml"></outline>
+            <outline text="Forgejo Releases" type="rss" xmlUrl="https://forgejo.org/releases/./rss.xml"></outline>
         </outline>
         <outline text="search">
             <outline text="milvus" type="rss" xmlUrl="https://github.com/milvus-io/milvus/releases.atom"></outline>
@@ -310,6 +313,8 @@
         <outline text="AppFlowy" type="rss" xmlUrl="https://github.com/AppFlowy-IO/AppFlowy/releases.atom"></outline>
         <outline text="Cloudreve" type="rss" xmlUrl="https://github.com/cloudreve/Cloudreve/releases.atom"></outline>
         <outline text="DockOne.io" type="rss" xmlUrl="https://rsshub.app/dockone/weekly"></outline>
+        <outline text="Forgejo News" type="rss" xmlUrl="https://forgejo.org/rss.xml"></outline>
+        <outline text="Forgejo Releases" type="rss" xmlUrl="https://forgejo.org/releases/./rss.xml"></outline>
         <outline text="HVM" type="rss" xmlUrl="https://github.com/Kindelia/HVM/releases.atom"></outline>
         <outline text="IHaskell:master" type="rss" xmlUrl="https://github.com/gibiansky/IHaskell/commits/master.atom"></outline>
         <outline text="InfoQ" type="rss" xmlUrl="https://www.infoq.cn/feed"></outline>
@@ -325,6 +330,7 @@
         <outline text="Scientific American News" type="rss" xmlUrl="http://rss.sciam.com/ScientificAmerican-News?format=xml"></outline>
         <outline text="TimelyDataflow" type="rss" xmlUrl="https://github.com/TimelyDataflow/timely-dataflow/releases.atom"></outline>
         <outline text="WasmEdge" type="rss" xmlUrl="https://github.com/WasmEdge/WasmEdge/releases.atom"></outline>
+        <outline text="act" type="rss" xmlUrl="https://github.com/nektos/act/releases.atom"></outline>
         <outline text="alacritty" type="rss" xmlUrl="https://github.com/alacritty/alacritty/releases.atom"></outline>
         <outline text="apisix" type="rss" xmlUrl="https://github.com/apache/apisix/releases.atom"></outline>
         <outline text="arangodb" type="rss" xmlUrl="https://github.com/arangodb/arangodb/releases.atom"></outline>
