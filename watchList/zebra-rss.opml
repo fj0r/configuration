@@ -58,6 +58,7 @@
             <outline text="koodo-reader" type="rss" xmlUrl="https://github.com/troyeguo/koodo-reader/releases.atom"></outline>
             <outline text="jellyfin" type="rss" xmlUrl="https://github.com/jellyfin/jellyfin/releases.atom"></outline>
             <outline text="tridactyl" type="rss" xmlUrl="https://github.com/tridactyl/tridactyl/tags.atom"></outline>
+            <outline text="kaf-cli" type="rss" xmlUrl="https://github.com/ystyle/kaf-cli/releases.atom"></outline>
         </outline>
         <outline text="blockchain">
             <outline text="substrate" type="rss" xmlUrl="https://github.com/paritytech/substrate/releases.atom"></outline>
@@ -94,7 +95,6 @@
             <outline text="tch-rs" type="rss" xmlUrl="https://github.com/LaurentMazare/tch-rs/releases.atom"></outline>
             <outline text="polars" type="rss" xmlUrl="https://github.com/pola-rs/polars/releases.atom"></outline>
             <outline text="linfa" type="rss" xmlUrl="https://github.com/rust-ml/linfa/releases.atom"></outline>
-            <outline text="databend" type="rss" xmlUrl="https://github.com/datafuselabs/databend/releases.atom"></outline>
             <outline text="rayon" type="rss" xmlUrl="https://github.com/rayon-rs/rayon/releases.atom"></outline>
             <outline text="polynote" type="rss" xmlUrl="https://github.com/polynote/polynote/releases.atom"></outline>
             <outline text="tensorflow" type="rss" xmlUrl="https://github.com/tensorflow/tensorflow/releases.atom"></outline>
@@ -105,6 +105,7 @@
             <outline text="TimelyDataflow" type="rss" xmlUrl="https://github.com/TimelyDataflow/timely-dataflow/releases.atom"></outline>
             <outline text="cube.js" type="rss" xmlUrl="https://github.com/cube-js/cube.js/releases.atom"></outline>
             <outline text="neuronika" type="rss" xmlUrl="https://github.com/neuronika/neuronika/releases.atom"></outline>
+            <outline text="burn" type="rss" xmlUrl="https://github.com/burn-rs/burn/releases.atom"></outline>
         </outline>
         <outline text="database">
             <outline text="PostgreSQL news" type="rss" xmlUrl="https://www.postgresql.org/news.rss"></outline>
@@ -143,6 +144,7 @@
             <outline text="noria" type="rss" xmlUrl="https://github.com/mit-pdos/noria/releases.atom"></outline>
             <outline text="materialize" type="rss" xmlUrl="https://github.com/MaterializeInc/materialize/releases.atom"></outline>
             <outline text="foundationdb" type="rss" xmlUrl="https://github.com/apple/foundationdb/releases.atom"></outline>
+            <outline text="databend" type="rss" xmlUrl="https://github.com/datafuselabs/databend/releases.atom"></outline>
         </outline>
         <outline text="framework">
             <outline text="axum" type="rss" xmlUrl="https://github.com/tokio-rs/axum/releases.atom"></outline>
@@ -175,6 +177,7 @@
             <outline text="godot" type="rss" xmlUrl="https://github.com/godotengine/godot/releases.atom"></outline>
             <outline text="o3de" type="rss" xmlUrl="https://github.com/o3de/o3de/releases.atom"></outline>
             <outline text="veloren" type="rss" xmlUrl="https://github.com/veloren/veloren/releases.atom"></outline>
+            <outline text="Fyrox" type="rss" xmlUrl="https://github.com/FyroxEngine/Fyrox/releases.atom"></outline>
         </outline>
         <outline text="gateway">
             <outline text="envoy" type="rss" xmlUrl="https://github.com/envoyproxy/envoy/releases.atom"></outline>
@@ -315,6 +318,7 @@
         <outline text="DockOne.io" type="rss" xmlUrl="https://rsshub.app/dockone/weekly"></outline>
         <outline text="Forgejo News" type="rss" xmlUrl="https://forgejo.org/rss.xml"></outline>
         <outline text="Forgejo Releases" type="rss" xmlUrl="https://forgejo.org/releases/./rss.xml"></outline>
+        <outline text="Fyrox" type="rss" xmlUrl="https://github.com/FyroxEngine/Fyrox/releases.atom"></outline>
         <outline text="HVM" type="rss" xmlUrl="https://github.com/Kindelia/HVM/releases.atom"></outline>
         <outline text="IHaskell:master" type="rss" xmlUrl="https://github.com/gibiansky/IHaskell/commits/master.atom"></outline>
         <outline text="InfoQ" type="rss" xmlUrl="https://www.infoq.cn/feed"></outline>
@@ -349,6 +353,7 @@
         <outline text="boundary" type="rss" xmlUrl="https://github.com/hashicorp/boundary/releases.atom"></outline>
         <outline text="buildah" type="rss" xmlUrl="https://github.com/containers/buildah/releases.atom"></outline>
         <outline text="bun" type="rss" xmlUrl="https://github.com/oven-sh/bun/releases.atom"></outline>
+        <outline text="burn" type="rss" xmlUrl="https://github.com/burn-rs/burn/releases.atom"></outline>
         <outline text="bustd" type="rss" xmlUrl="https://github.com/vrmiguel/bustd/releases.atom"></outline>
         <outline text="caps2ctrl" type="rss" xmlUrl="https://github.com/shiftrot/caps2ctrl/releases.atom"></outline>
         <outline text="centrifugo" type="rss" xmlUrl="https://github.com/centrifugal/centrifugo/releases.atom"></outline>
@@ -419,6 +424,7 @@
         <outline text="julia" type="rss" xmlUrl="https://github.com/JuliaLang/julia/releases.atom"></outline>
         <outline text="just" type="rss" xmlUrl="https://github.com/casey/just/releases.atom"></outline>
         <outline text="k3s" type="rss" xmlUrl="https://github.com/rancher/k3s/releases.atom"></outline>
+        <outline text="kaf-cli" type="rss" xmlUrl="https://github.com/ystyle/kaf-cli/releases.atom"></outline>
         <outline text="koodo-reader" type="rss" xmlUrl="https://github.com/troyeguo/koodo-reader/releases.atom"></outline>
         <outline text="krita" type="rss" xmlUrl="https://github.com/KDE/krita/releases.atom"></outline>
         <outline text="krustlet" type="rss" xmlUrl="https://github.com/krustlet/krustlet/releases.atom"></outline>
