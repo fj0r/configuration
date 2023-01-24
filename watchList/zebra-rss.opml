@@ -20,6 +20,8 @@
             <outline text="阮一峰的网络日志" type="rss" xmlUrl="http://www.ruanyifeng.com/blog/atom.xml"></outline>
             <outline text="SaltTiger" type="rss" xmlUrl="http://www.salttiger.com/feed/"></outline>
             <outline text="云风的 BLOG" type="rss" xmlUrl="http://blog.codingnow.com/atom.xml"></outline>
+            <outline text="云风的 BLOG" type="rss" xmlUrl="http://blog.codingnow.com/atom.xml"></outline>
+            <outline text="云风的 BLOG" type="rss" xmlUrl="http://blog.codingnow.com/atom.xml"></outline>
         </outline>
         <outline text="SCI">
             <outline text="Matrix67: The Aha Moments" type="rss" xmlUrl="http://www.matrix67.com/blog/feed"></outline>
@@ -59,6 +61,11 @@
             <outline text="jellyfin" type="rss" xmlUrl="https://github.com/jellyfin/jellyfin/releases.atom"></outline>
             <outline text="tridactyl" type="rss" xmlUrl="https://github.com/tridactyl/tridactyl/tags.atom"></outline>
             <outline text="kaf-cli" type="rss" xmlUrl="https://github.com/ystyle/kaf-cli/releases.atom"></outline>
+            <outline text="yt-dlp" type="rss" xmlUrl="https://github.com/yt-dlp/yt-dlp/releases.atom"></outline>
+            <outline text="bevy" type="rss" xmlUrl="https://github.com/bevyengine/bevy/releases.atom"></outline>
+            <outline text="godot" type="rss" xmlUrl="https://github.com/godotengine/godot/releases.atom"></outline>
+            <outline text="veloren" type="rss" xmlUrl="https://github.com/veloren/veloren/releases.atom"></outline>
+            <outline text="blender" type="rss" xmlUrl="https://github.com/blender/blender/releases.atom"></outline>
         </outline>
         <outline text="blockchain">
             <outline text="substrate" type="rss" xmlUrl="https://github.com/paritytech/substrate/releases.atom"></outline>
@@ -106,6 +113,7 @@
             <outline text="cube.js" type="rss" xmlUrl="https://github.com/cube-js/cube.js/releases.atom"></outline>
             <outline text="neuronika" type="rss" xmlUrl="https://github.com/neuronika/neuronika/releases.atom"></outline>
             <outline text="burn" type="rss" xmlUrl="https://github.com/burn-rs/burn/releases.atom"></outline>
+            <outline text="databend" type="rss" xmlUrl="https://github.com/datafuselabs/databend/releases.atom"></outline>
         </outline>
         <outline text="database">
             <outline text="PostgreSQL news" type="rss" xmlUrl="https://www.postgresql.org/news.rss"></outline>
@@ -170,6 +178,7 @@
             <outline text="swc" type="rss" xmlUrl="https://github.com/swc-project/swc/releases.atom"></outline>
             <outline text="parcel" type="rss" xmlUrl="https://github.com/parcel-bundler/parcel/releases.atom"></outline>
             <outline text="tailwindcss" type="rss" xmlUrl="https://github.com/tailwindlabs/tailwindcss/releases.atom"></outline>
+            <outline text="leptos" type="rss" xmlUrl="https://github.com/leptos-rs/leptos/releases.atom"></outline>
         </outline>
         <outline text="game">
             <outline text="bevy" type="rss" xmlUrl="https://github.com/bevyengine/bevy/releases.atom"></outline>
@@ -250,6 +259,7 @@
             <outline text="bun" type="rss" xmlUrl="https://github.com/oven-sh/bun/releases.atom"></outline>
             <outline text="python-build-standalone(musl)" type="rss" xmlUrl="https://github.com/indygreg/python-build-standalone/releases.atom"></outline>
             <outline text="ghc-wasm-meta" type="rss" xmlUrl="https://gitlab.haskell.org/ghc/ghc-wasm-meta.atom"></outline>
+            <outline text="starlark-rust" type="rss" xmlUrl="https://github.com/facebookexperimental/starlark-rust/releases.atom"></outline>
         </outline>
         <outline text="net">
             <outline text="wireguard-go" type="rss" xmlUrl="https://github.com/WireGuard/wireguard-go/releases.atom"></outline>
@@ -283,6 +293,7 @@
             <outline text="act" type="rss" xmlUrl="https://github.com/nektos/act/releases.atom"></outline>
             <outline text="Forgejo News" type="rss" xmlUrl="https://forgejo.org/rss.xml"></outline>
             <outline text="Forgejo Releases" type="rss" xmlUrl="https://forgejo.org/releases/./rss.xml"></outline>
+            <outline text="revolt backend" type="rss" xmlUrl="https://github.com/revoltchat/backend/tags.atom"></outline>
         </outline>
         <outline text="search">
             <outline text="milvus" type="rss" xmlUrl="https://github.com/milvus-io/milvus/releases.atom"></outline>
@@ -434,6 +445,7 @@
         <outline text="leftwm" type="rss" xmlUrl="https://github.com/leftwm/leftwm/releases.atom"></outline>
         <outline text="lego(https)" type="rss" xmlUrl="https://github.com/go-acme/lego/releases.atom"></outline>
         <outline text="lens" type="rss" xmlUrl="https://github.com/lensapp/lens/releases.atom"></outline>
+        <outline text="leptos" type="rss" xmlUrl="https://github.com/leptos-rs/leptos/releases.atom"></outline>
         <outline text="librera" type="rss" xmlUrl="https://github.com/foobnix/LibreraReader/releases.atom"></outline>
         <outline text="liftbridge" type="rss" xmlUrl="https://github.com/liftbridge-io/liftbridge/releases.atom"></outline>
         <outline text="linfa" type="rss" xmlUrl="https://github.com/rust-ml/linfa/releases.atom"></outline>
@@ -492,7 +504,9 @@
         <outline text="redis" type="rss" xmlUrl="https://github.com/antirez/redis/releases.atom"></outline>
         <outline text="redpanda" type="rss" xmlUrl="https://github.com/redpanda-data/redpanda/releases.atom"></outline>
         <outline text="rethinkdb" type="rss" xmlUrl="https://github.com/rethinkdb/rethinkdb/releases.atom"></outline>
+        <outline text="revolt backend" type="rss" xmlUrl="https://github.com/revoltchat/backend/tags.atom"></outline>
         <outline text="rhai" type="rss" xmlUrl="https://github.com/rhaiscript/rhai/releases.atom"></outline>
+        <outline text="risingwave" type="rss" xmlUrl="https://github.com/singularity-data/risingwave/releases.atom"></outline>
         <outline text="riverwm" type="rss" xmlUrl="https://github.com/riverwm/river/releases.atom"></outline>
         <outline text="rlink-rs" type="rss" xmlUrl="https://github.com/rlink-rs/rlink-rs/releases.atom"></outline>
         <outline text="roapi" type="rss" xmlUrl="https://github.com/roapi/roapi/releases.atom"></outline>
@@ -521,6 +535,7 @@
         <outline text="sshpiper" type="rss" xmlUrl="https://github.com/tg123/sshpiper/releases.atom"></outline>
         <outline text="sshportal" type="rss" xmlUrl="https://github.com/moul/sshportal/releases.atom"></outline>
         <outline text="stackage" type="rss" xmlUrl="https://www.stackage.org/feed"></outline>
+        <outline text="starlark-rust" type="rss" xmlUrl="https://github.com/facebookexperimental/starlark-rust/releases.atom"></outline>
         <outline text="stdweb[rs]" type="rss" xmlUrl="https://github.com/koute/stdweb/releases.atom"></outline>
         <outline text="substrate" type="rss" xmlUrl="https://github.com/paritytech/substrate/releases.atom"></outline>
         <outline text="surrealdb" type="rss" xmlUrl="https://github.com/surrealdb/surrealdb/releases.atom"></outline>
@@ -565,10 +580,12 @@
         <outline text="yew" type="rss" xmlUrl="https://github.com/yewstack/yew/releases.atom"></outline>
         <outline text="youki" type="rss" xmlUrl="https://github.com/containers/youki/releases.atom"></outline>
         <outline text="yq" type="rss" xmlUrl="https://github.com/mikefarah/yq/releases.atom"></outline>
+        <outline text="yt-dlp" type="rss" xmlUrl="https://github.com/yt-dlp/yt-dlp/releases.atom"></outline>
         <outline text="zathura" type="rss" xmlUrl="https://github.com/pwmt/zathura/releases.atom"></outline>
         <outline text="zellij" type="rss" xmlUrl="https://github.com/zellij-org/zellij/releases.atom"></outline>
         <outline text="zsh-histdb" type="rss" xmlUrl="https://github.com/larkery/zsh-histdb/commits/master.atom"></outline>
         <outline text="zx" type="rss" xmlUrl="https://github.com/google/zx/releases.atom"></outline>
+        <outline text="云风的 BLOG" type="rss" xmlUrl="http://blog.codingnow.com/atom.xml"></outline>
         <outline text="云风的 BLOG" type="rss" xmlUrl="http://blog.codingnow.com/atom.xml"></outline>
         <outline text="小众软件" type="rss" xmlUrl="http://feed.appinn.com/"></outline>
         <outline text="开源中国社区最新新闻" type="rss" xmlUrl="http://www.oschina.net/news/rss"></outline>
