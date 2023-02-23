@@ -117,6 +117,7 @@
             <outline text="burn" type="rss" xmlUrl="https://github.com/burn-rs/burn/releases.atom"></outline>
             <outline text="databend" type="rss" xmlUrl="https://github.com/datafuselabs/databend/releases.atom"></outline>
             <outline text="lance" type="rss" xmlUrl="https://github.com/eto-ai/lance/releases.atom"></outline>
+            <outline text="differential-datalog" type="rss" xmlUrl="https://github.com/vmware/differential-datalog/releases.atom"></outline>
         </outline>
         <outline text="database">
             <outline text="PostgreSQL news" type="rss" xmlUrl="https://www.postgresql.org/news.rss"></outline>
@@ -398,6 +399,7 @@
         <outline text="dex" type="rss" xmlUrl="https://github.com/dexidp/dex/releases.atom"></outline>
         <outline text="dfdx" type="rss" xmlUrl="https://github.com/coreylowman/dfdx/releases.atom"></outline>
         <outline text="differential-dataflow" type="rss" xmlUrl="https://github.com/TimelyDataflow/differential-dataflow/releases.atom"></outline>
+        <outline text="differential-datalog" type="rss" xmlUrl="https://github.com/vmware/differential-datalog/releases.atom"></outline>
         <outline text="dioxus" type="rss" xmlUrl="https://github.com/DioxusLabs/dioxus/releases.atom"></outline>
         <outline text="distribution(docker registry)" type="rss" xmlUrl="https://github.com/distribution/distribution/releases.atom"></outline>
         <outline text="dive" type="rss" xmlUrl="https://github.com/wagoodman/dive/releases.atom"></outline>
