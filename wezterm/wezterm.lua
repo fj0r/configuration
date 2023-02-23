@@ -6,7 +6,7 @@ wezterm.on("gui-startup", function()
 end)
 
 return {
-    default_prog = { "/usr/local/bin/nu" },
+    default_prog = { "tmux" },
     color_scheme = "Gruvbox Dark",
     enable_tab_bar = false,
     window_decorations = "RESIZE",
