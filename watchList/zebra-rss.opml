@@ -191,6 +191,7 @@
             <outline text="o3de" type="rss" xmlUrl="https://github.com/o3de/o3de/releases.atom"></outline>
             <outline text="veloren" type="rss" xmlUrl="https://github.com/veloren/veloren/releases.atom"></outline>
             <outline text="Fyrox" type="rss" xmlUrl="https://github.com/FyroxEngine/Fyrox/releases.atom"></outline>
+            <outline text="Ambient" type="rss" xmlUrl="https://github.com/AmbientRun/Ambient/releases.atom"></outline>
         </outline>
         <outline text="gateway">
             <outline text="envoy" type="rss" xmlUrl="https://github.com/envoyproxy/envoy/releases.atom"></outline>
@@ -333,6 +334,7 @@
             <outline text="voik" type="rss" xmlUrl="https://github.com/marceloboeira/voik/releases.atom"></outline>
         </outline>
         <outline text="AFFiNE" type="rss" xmlUrl="https://github.com/toeverything/AFFiNE/releases.atom"></outline>
+        <outline text="Ambient" type="rss" xmlUrl="https://github.com/AmbientRun/Ambient/releases.atom"></outline>
         <outline text="AppFlowy" type="rss" xmlUrl="https://github.com/AppFlowy-IO/AppFlowy/releases.atom"></outline>
         <outline text="Cloudreve" type="rss" xmlUrl="https://github.com/cloudreve/Cloudreve/releases.atom"></outline>
         <outline text="DockOne.io" type="rss" xmlUrl="https://rsshub.app/dockone/weekly"></outline>
