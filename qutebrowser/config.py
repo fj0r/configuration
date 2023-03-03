@@ -20,5 +20,20 @@ config.bind('<Alt-o>', 'edit-text')
 config.bind('<Ctrl-o>', 'edit-url')
 config.bind('zl', 'spawn --userscript qute-bitwarden')
 
+config.bind(';l', 'hint userscript link translate')
+config.bind(';T', 'hint userscript all translate --text')
+config.bind('<Ctrl+T>', 'spawn --userscript translate')
+config.bind('<Ctrl+Shift+T>', 'spawn --userscript translate --text')
+
+
+c.hints.selectors["code"] = [
+    # Selects all code tags whose direct parent is not a pre tag
+    ":not(pre) > code",
+    "pre"
+]
+config.bind(';c', 'hint code userscript code_select.py')
+
+
+
 config.load_autoconfig()
 
