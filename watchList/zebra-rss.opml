@@ -118,6 +118,7 @@
             <outline text="databend" type="rss" xmlUrl="https://github.com/datafuselabs/databend/releases.atom"></outline>
             <outline text="lance" type="rss" xmlUrl="https://github.com/eto-ai/lance/releases.atom"></outline>
             <outline text="differential-datalog" type="rss" xmlUrl="https://github.com/vmware/differential-datalog/releases.atom"></outline>
+            <outline text="ray" type="rss" xmlUrl="https://github.com/ray-project/ray/releases.atom"></outline>
         </outline>
         <outline text="database">
             <outline text="PostgreSQL news" type="rss" xmlUrl="https://www.postgresql.org/news.rss"></outline>
@@ -157,6 +158,8 @@
             <outline text="materialize" type="rss" xmlUrl="https://github.com/MaterializeInc/materialize/releases.atom"></outline>
             <outline text="foundationdb" type="rss" xmlUrl="https://github.com/apple/foundationdb/releases.atom"></outline>
             <outline text="databend" type="rss" xmlUrl="https://github.com/datafuselabs/databend/releases.atom"></outline>
+            <outline text="pgbackrest" type="rss" xmlUrl="https://github.com/pgbackrest/pgbackrest/releases.atom"></outline>
+            <outline text="greptimedb" type="rss" xmlUrl="https://github.com/GreptimeTeam/greptimedb/releases.atom"></outline>
         </outline>
         <outline text="framework">
             <outline text="axum" type="rss" xmlUrl="https://github.com/tokio-rs/axum/releases.atom"></outline>
@@ -332,6 +335,8 @@
             <outline text="pravega" type="rss" xmlUrl="https://github.com/pravega/pravega/releases.atom"></outline>
             <outline text="fluvio" type="rss" xmlUrl="https://github.com/infinyon/fluvio/releases.atom"></outline>
             <outline text="voik" type="rss" xmlUrl="https://github.com/marceloboeira/voik/releases.atom"></outline>
+            <outline text="memphis" type="rss" xmlUrl="https://github.com/memphisdev/memphis/releases.atom"></outline>
+            <outline text="vanus" type="rss" xmlUrl="https://github.com/vanus-labs/vanus/releases.atom"></outline>
         </outline>
         <outline text="AFFiNE" type="rss" xmlUrl="https://github.com/toeverything/AFFiNE/releases.atom"></outline>
         <outline text="Ambient" type="rss" xmlUrl="https://github.com/AmbientRun/Ambient/releases.atom"></outline>
@@ -428,6 +433,7 @@
         <outline text="golang" type="rss" xmlUrl="https://blog.golang.org/feed.atom"></outline>
         <outline text="goofys" type="rss" xmlUrl="https://github.com/kahing/goofys/releases.atom"></outline>
         <outline text="grain" type="rss" xmlUrl="https://github.com/grain-lang/grain/releases.atom"></outline>
+        <outline text="greptimedb" type="rss" xmlUrl="https://github.com/GreptimeTeam/greptimedb/releases.atom"></outline>
         <outline text="haskell-language-server" type="rss" xmlUrl="https://github.com/haskell/haskell-language-server/releases.atom"></outline>
         <outline text="hasura graphql-engine" type="rss" xmlUrl="https://github.com/hasura/graphql-engine/releases.atom"></outline>
         <outline text="headscale" type="rss" xmlUrl="https://github.com/juanfont/headscale/releases.atom"></outline>
@@ -471,6 +477,7 @@
         <outline text="materialize" type="rss" xmlUrl="https://github.com/MaterializeInc/materialize/releases.atom"></outline>
         <outline text="mattermost-server" type="rss" xmlUrl="https://github.com/mattermost/mattermost-server/releases.atom"></outline>
         <outline text="meilisearch" type="rss" xmlUrl="https://github.com/meilisearch/meilisearch/releases.atom"></outline>
+        <outline text="memphis" type="rss" xmlUrl="https://github.com/memphisdev/memphis/releases.atom"></outline>
         <outline text="milvus" type="rss" xmlUrl="https://github.com/milvus-io/milvus/releases.atom"></outline>
         <outline text="minio" type="rss" xmlUrl="https://github.com/minio/minio/releases.atom"></outline>
         <outline text="mirrord" type="rss" xmlUrl="https://github.com/metalbear-co/mirrord/releases.atom"></outline>
@@ -500,6 +507,7 @@
         <outline text="pg parse" type="rss" xmlUrl="https://github.com/paupino/pg_parse/releases.atom"></outline>
         <outline text="pg_cron" type="rss" xmlUrl="https://github.com/citusdata/pg_cron/releases.atom"></outline>
         <outline text="pg_jieba" type="rss" xmlUrl="https://github.com/jaiminpan/pg_jieba/commits/master.atom"></outline>
+        <outline text="pgbackrest" type="rss" xmlUrl="https://github.com/pgbackrest/pgbackrest/releases.atom"></outline>
         <outline text="pgx(pg extension)" type="rss" xmlUrl="https://github.com/tcdi/pgx/releases.atom"></outline>
         <outline text="planet.haskell" type="rss" xmlUrl="https://planet.haskell.org/rss20.xml"></outline>
         <outline text="podman" type="rss" xmlUrl="https://github.com/containers/libpod/releases.atom"></outline>
@@ -518,6 +526,7 @@
         <outline text="rain" type="rss" xmlUrl="https://github.com/substantic/rain/releases.atom"></outline>
         <outline text="rancher" type="rss" xmlUrl="https://github.com/rancher/rancher/releases.atom"></outline>
         <outline text="rathole" type="rss" xmlUrl="https://github.com/rapiz1/rathole/releases.atom"></outline>
+        <outline text="ray" type="rss" xmlUrl="https://github.com/ray-project/ray/releases.atom"></outline>
         <outline text="rayon" type="rss" xmlUrl="https://github.com/rayon-rs/rayon/releases.atom"></outline>
         <outline text="reason" type="rss" xmlUrl="https://github.com/reasonml/reason/releases.atom"></outline>
         <outline text="redis" type="rss" xmlUrl="https://github.com/antirez/redis/releases.atom"></outline>
@@ -576,6 +585,7 @@
         <outline text="tremor-runtime(etl)" type="rss" xmlUrl="https://github.com/tremor-rs/tremor-runtime/releases.atom"></outline>
         <outline text="tridactyl" type="rss" xmlUrl="https://github.com/tridactyl/tridactyl/tags.atom"></outline>
         <outline text="v2ray-core" type="rss" xmlUrl="https://github.com/v2ray/v2ray-core/releases.atom"></outline>
+        <outline text="vanus" type="rss" xmlUrl="https://github.com/vanus-labs/vanus/releases.atom"></outline>
         <outline text="vaultwarden" type="rss" xmlUrl="https://github.com/dani-garcia/vaultwarden/releases.atom"></outline>
         <outline text="vector(log)" type="rss" xmlUrl="https://github.com/vectordotdev/vector/releases.atom"></outline>
         <outline text="velero" type="rss" xmlUrl="https://github.com/vmware-tanzu/velero/releases.atom"></outline>
