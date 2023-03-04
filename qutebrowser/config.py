@@ -1,4 +1,6 @@
 c.content.proxy = 'socks://localhost:7891'
+c.content.plugins = True
+c.content.pdfjs = True
 c.window.hide_decoration = True
 c.editor.command = ['neovide', '--nofork', '{file}', '--', '-c', 'normal {line}G{column0}l']
 c.url.searchengines = { 'DEFAULT': 'https://www.google.com/search?q={}'}
@@ -10,6 +12,15 @@ c.hints.chars = 'fjdksla;rueiwoqpty'
 c.hints.scatter = False
 c.fonts.hints = 'bold default_size "JetBrains Mono"'
 c.fonts.default_size = '8pt'
+c.statusbar.show = 'always' # 'in-mode'
+c.downloads.position = 'bottom'
+#c.downloads.remove_finished = 5000
+c.tabs.position = 'top' # 'left'
+
+#c.hints.find_implementation = 'javascript'
+c.hints.selectors['all'] += ['.icon'] # for argo
+with config.pattern('*://*.infoq.cn/*') as p:
+        p.hints.selectors['all'] += ['.close-geo']
 
 c.fonts.web.family.standard= 'Noto Sans CJK SC'
 c.fonts.web.family.fixed= 'JetBrains Mono'
@@ -32,7 +43,6 @@ c.hints.selectors["code"] = [
     "pre"
 ]
 config.bind(';c', 'hint code userscript code_select.py')
-
 
 
 config.load_autoconfig()
