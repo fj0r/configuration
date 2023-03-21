@@ -67,6 +67,7 @@
             <outline text="veloren" type="rss" xmlUrl="https://github.com/veloren/veloren/releases.atom"></outline>
             <outline text="blender" type="rss" xmlUrl="https://github.com/blender/blender/releases.atom"></outline>
             <outline text="crowbook(epub)" type="rss" xmlUrl="https://github.com/lise-henry/crowbook/releases.atom"></outline>
+            <outline text="typst(like latex)" type="rss" xmlUrl="https://github.com/typst/typst/releases.atom"></outline>
         </outline>
         <outline text="blockchain">
             <outline text="substrate" type="rss" xmlUrl="https://github.com/paritytech/substrate/releases.atom"></outline>
@@ -95,10 +96,11 @@
             <outline text="sapling(git)" type="rss" xmlUrl="https://github.com/facebook/sapling/releases.atom"></outline>
             <outline text="atuin(shell history)" type="rss" xmlUrl="https://github.com/ellie/atuin/releases.atom"></outline>
             <outline text="Pijul(vcs)" type="rss" xmlUrl="http://pijul.org/index.xml"></outline>
+            <outline text="dasel" type="rss" xmlUrl="https://github.com/TomWright/dasel/releases.atom"></outline>
+            <outline text="wezterm" type="rss" xmlUrl="https://github.com/wez/wezterm/releases.atom"></outline>
         </outline>
         <outline text="data science">
             <outline text="rust native_spark" type="rss" xmlUrl="https://github.com/rajasekarv/native_spark/releases.atom"></outline>
-            <outline text="PyTorch" type="rss" xmlUrl="https://github.com/pytorch/pytorch/releases.atom"></outline>
             <outline text="jax" type="rss" xmlUrl="https://github.com/google/jax/releases.atom"></outline>
             <outline text="dfdx" type="rss" xmlUrl="https://github.com/coreylowman/dfdx/releases.atom"></outline>
             <outline text="tch-rs" type="rss" xmlUrl="https://github.com/LaurentMazare/tch-rs/releases.atom"></outline>
@@ -119,6 +121,7 @@
             <outline text="lance" type="rss" xmlUrl="https://github.com/eto-ai/lance/releases.atom"></outline>
             <outline text="differential-datalog" type="rss" xmlUrl="https://github.com/vmware/differential-datalog/releases.atom"></outline>
             <outline text="ray" type="rss" xmlUrl="https://github.com/ray-project/ray/releases.atom"></outline>
+            <outline text="PyTorch" type="rss" xmlUrl="https://pytorch.org/feed.xml"></outline>
         </outline>
         <outline text="database">
             <outline text="PostgreSQL news" type="rss" xmlUrl="https://www.postgresql.org/news.rss"></outline>
@@ -160,6 +163,7 @@
             <outline text="databend" type="rss" xmlUrl="https://github.com/datafuselabs/databend/releases.atom"></outline>
             <outline text="pgbackrest" type="rss" xmlUrl="https://github.com/pgbackrest/pgbackrest/releases.atom"></outline>
             <outline text="greptimedb" type="rss" xmlUrl="https://github.com/GreptimeTeam/greptimedb/releases.atom"></outline>
+            <outline text="DuckDB(parquet)" type="rss" xmlUrl="https://duckdb.org/feed.xml"></outline>
         </outline>
         <outline text="framework">
             <outline text="axum" type="rss" xmlUrl="https://github.com/tokio-rs/axum/releases.atom"></outline>
@@ -270,6 +274,9 @@
             <outline text="ghc-wasm-meta" type="rss" xmlUrl="https://gitlab.haskell.org/ghc/ghc-wasm-meta.atom"></outline>
             <outline text="starlark-rust" type="rss" xmlUrl="https://github.com/facebookexperimental/starlark-rust/releases.atom"></outline>
             <outline text="lunatic(wasm rt inspired by Erlang)" type="rss" xmlUrl="https://github.com/lunatic-solutions/lunatic/releases.atom"></outline>
+            <outline text="codon(py)" type="rss" xmlUrl="https://github.com/exaloop/codon/releases.atom"></outline>
+            <outline text="spiderlightning(wasm)" type="rss" xmlUrl="https://github.com/deislabs/spiderlightning/releases.atom"></outline>
+            <outline text="spin(wasm)" type="rss" xmlUrl="https://github.com/fermyon/spin/releases.atom"></outline>
         </outline>
         <outline text="net">
             <outline text="wireguard-go" type="rss" xmlUrl="https://github.com/WireGuard/wireguard-go/releases.atom"></outline>
@@ -343,6 +350,7 @@
         <outline text="AppFlowy" type="rss" xmlUrl="https://github.com/AppFlowy-IO/AppFlowy/releases.atom"></outline>
         <outline text="Cloudreve" type="rss" xmlUrl="https://github.com/cloudreve/Cloudreve/releases.atom"></outline>
         <outline text="DockOne.io" type="rss" xmlUrl="https://rsshub.app/dockone/weekly"></outline>
+        <outline text="DuckDB(parquet)" type="rss" xmlUrl="https://duckdb.org/feed.xml"></outline>
         <outline text="Forgejo News" type="rss" xmlUrl="https://forgejo.org/rss.xml"></outline>
         <outline text="Forgejo Releases" type="rss" xmlUrl="https://forgejo.org/releases/./rss.xml"></outline>
         <outline text="Fyrox" type="rss" xmlUrl="https://github.com/FyroxEngine/Fyrox/releases.atom"></outline>
@@ -355,7 +363,8 @@
         <outline text="Pijul(vcs)" type="rss" xmlUrl="http://pijul.org/index.xml"></outline>
         <outline text="Planet Haskell" type="rss" xmlUrl="https://planet.haskell.org/atom.xml"></outline>
         <outline text="PostgreSQL news" type="rss" xmlUrl="https://www.postgresql.org/news.rss"></outline>
-        <outline text="PyTorch" type="rss" xmlUrl="https://github.com/pytorch/pytorch/releases.atom"></outline>
+        <outline text="PyTorch" type="rss" xmlUrl="https://pytorch.org/feed.xml"></outline>
+        <outline text="Release notes from neon" type="rss" xmlUrl="https://github.com/neondatabase/neon/releases.atom"></outline>
         <outline text="SaltTiger" type="rss" xmlUrl="http://www.salttiger.com/feed/"></outline>
         <outline text="Scientific American Content: Global" type="rss" xmlUrl="http://rss.sciam.com/ScientificAmerican-Global?format=xml"></outline>
         <outline text="Scientific American Feature Articles" type="rss" xmlUrl="http://rss.sciam.com/sciam/feature-articles?format=xml"></outline>
@@ -389,6 +398,7 @@
         <outline text="cilium" type="rss" xmlUrl="https://github.com/cilium/cilium/releases.atom"></outline>
         <outline text="clickhouse" type="rss" xmlUrl="https://github.com/ClickHouse/ClickHouse/releases.atom"></outline>
         <outline text="clipcat" type="rss" xmlUrl="https://github.com/xrelkd/clipcat/releases.atom"></outline>
+        <outline text="codon(py)" type="rss" xmlUrl="https://github.com/exaloop/codon/releases.atom"></outline>
         <outline text="compiler-explorer" type="rss" xmlUrl="https://github.com/compiler-explorer/compiler-explorer/releases.atom"></outline>
         <outline text="conduit:next" type="rss" xmlUrl="https://github.com/timokoesters/conduit/commits/next.atom"></outline>
         <outline text="containerd" type="rss" xmlUrl="https://github.com/containerd/containerd/releases.atom"></outline>
@@ -400,6 +410,7 @@
         <outline text="csi-s3" type="rss" xmlUrl="https://github.com/ctrox/csi-s3/releases.atom"></outline>
         <outline text="cube.js" type="rss" xmlUrl="https://github.com/cube-js/cube.js/releases.atom"></outline>
         <outline text="dapr" type="rss" xmlUrl="https://github.com/dapr/dapr/releases.atom"></outline>
+        <outline text="dasel" type="rss" xmlUrl="https://github.com/TomWright/dasel/releases.atom"></outline>
         <outline text="databend" type="rss" xmlUrl="https://github.com/datafuselabs/databend/releases.atom"></outline>
         <outline text="deluge" type="rss" xmlUrl="https://github.com/deluge-torrent/deluge/releases.atom"></outline>
         <outline text="deno" type="rss" xmlUrl="https://github.com/denoland/deno/releases.atom"></outline>
@@ -559,6 +570,8 @@
         <outline text="solidjs" type="rss" xmlUrl="https://github.com/solidjs/solid/releases.atom"></outline>
         <outline text="sonic" type="rss" xmlUrl="https://github.com/valeriansaliou/sonic/releases.atom"></outline>
         <outline text="spacedrive" type="rss" xmlUrl="https://github.com/spacedriveapp/spacedrive/releases.atom"></outline>
+        <outline text="spiderlightning(wasm)" type="rss" xmlUrl="https://github.com/deislabs/spiderlightning/releases.atom"></outline>
+        <outline text="spin(wasm)" type="rss" xmlUrl="https://github.com/fermyon/spin/releases.atom"></outline>
         <outline text="sqlparser-rs" type="rss" xmlUrl="https://github.com/sqlparser-rs/sqlparser-rs/releases.atom"></outline>
         <outline text="sshpiper" type="rss" xmlUrl="https://github.com/tg123/sshpiper/releases.atom"></outline>
         <outline text="sshportal" type="rss" xmlUrl="https://github.com/moul/sshportal/releases.atom"></outline>
@@ -584,6 +597,7 @@
         <outline text="traefik" type="rss" xmlUrl="https://github.com/containous/traefik/releases.atom"></outline>
         <outline text="tremor-runtime(etl)" type="rss" xmlUrl="https://github.com/tremor-rs/tremor-runtime/releases.atom"></outline>
         <outline text="tridactyl" type="rss" xmlUrl="https://github.com/tridactyl/tridactyl/tags.atom"></outline>
+        <outline text="typst(like latex)" type="rss" xmlUrl="https://github.com/typst/typst/releases.atom"></outline>
         <outline text="v2ray-core" type="rss" xmlUrl="https://github.com/v2ray/v2ray-core/releases.atom"></outline>
         <outline text="vanus" type="rss" xmlUrl="https://github.com/vanus-labs/vanus/releases.atom"></outline>
         <outline text="vaultwarden" type="rss" xmlUrl="https://github.com/dani-garcia/vaultwarden/releases.atom"></outline>
@@ -602,6 +616,7 @@
         <outline text="watchexec" type="rss" xmlUrl="https://github.com/watchexec/watchexec/releases.atom"></outline>
         <outline text="websocat" type="rss" xmlUrl="https://github.com/vi/websocat/releases.atom"></outline>
         <outline text="weld" type="rss" xmlUrl="https://github.com/weld-project/weld/releases.atom"></outline>
+        <outline text="wezterm" type="rss" xmlUrl="https://github.com/wez/wezterm/releases.atom"></outline>
         <outline text="wireguard-go" type="rss" xmlUrl="https://github.com/WireGuard/wireguard-go/releases.atom"></outline>
         <outline text="wireproxy" type="rss" xmlUrl="https://github.com/octeep/wireproxy/releases.atom"></outline>
         <outline text="workerd" type="rss" xmlUrl="https://github.com/cloudflare/workerd/releases.atom"></outline>
