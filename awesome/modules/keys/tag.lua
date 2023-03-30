@@ -55,4 +55,6 @@ return function(conf, modkey, globalkeys)
                 { description = "toggle focused client on tag #" .. i, group = "tag" })
         )
     end
+
+    return globalkeys
 end
