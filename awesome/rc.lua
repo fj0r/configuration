@@ -5,7 +5,7 @@ local utils = require 'utils'
 --local path = utils.script_path() .. 'conf.yml'
 --local conf = utils.conf.gen_config(path)
 local conf = require('conf')
-local myclock = utils.clock
+local my_clock = utils.clock
 local rotated_widget = utils.rotate(conf.sidebar)
 local monitor = utils.monitor
 local keys = require 'keys'
@@ -116,7 +116,7 @@ awful.layout.layouts = {
 
 -- {{{ Menu
 -- Create a launcher widget and a main menu
-local myawesomemenu = {
+local my_awesomemenu = {
     { "hotkeys", function() hotkeys_popup.show_help(nil, awful.screen.focused()) end },
     { "manual", terminal .. " -e man awesome" },
     { "edit config", editor_cmd .. " " .. awesome.conffile },
@@ -124,10 +124,10 @@ local myawesomemenu = {
     { "quit", function() awesome.quit() end },
 }
 
-local menu_awesome = { "awesome", myawesomemenu, beautiful.awesome_icon }
+local menu_awesome = { "awesome", my_awesomemenu, beautiful.awesome_icon }
 local menu_terminal = { "open terminal", terminal }
 
-local my_mainmenu = awful.menu {
+my_mainmenu = awful.menu {
     items = {
         menu_awesome,
         menu_terminal,
@@ -195,7 +195,7 @@ awful.screen.connect_for_each_screen(function(s)
     awful.tag(conf.tags, s, conf.layouts)
 
     -- Create a promptbox for each screen
-    s.mypromptbox = awful.widget.prompt()
+    s.my_promptbox = awful.widget.prompt()
     -- Create an imagebox widget which will contain an icon indicating which layout we're using.
     -- We need one layoutbox per screen.
     s.my_layoutbox = awful.widget.layoutbox(s)
@@ -208,26 +208,26 @@ awful.screen.connect_for_each_screen(function(s)
     s.my_taglist = rotated_widget(utils.mk_taglist(s, conf.theme.powerline_taglist))
 
     -- Create a tasklist widget
-    s.mytasklist = rotated_widget(awful.widget.tasklist {
+    s.my_tasklist = rotated_widget(awful.widget.tasklist {
         screen  = s,
         filter  = awful.widget.tasklist.filter.currenttags,
         buttons = tasklist_buttons
     })
 
     -- Create the wibox
-    s.mywibox = awful.wibar { position = conf.sidebar, screen = s }
+    s.my_wibox = awful.wibar { position = conf.sidebar, screen = s }
 
     -- Add widgets to the wibox
-    s.mywibox:setup {
+    s.my_wibox:setup {
         layout = wibox.layout.align.vertical,
         { -- Left widgets
             layout = wibox.layout.fixed.vertical,
             s.my_layoutbox,
             s.my_taglist,
-            rotated_widget(s.mypromptbox),
-            myclock,
+            rotated_widget(s.my_promptbox),
+            my_clock,
         },
-        s.mytasklist, -- Middle widget
+        s.my_tasklist, -- Middle widget
         { -- Right widgets
             layout = wibox.layout.fixed.vertical,
             monitor(conf.monitor),
