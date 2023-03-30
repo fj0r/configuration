@@ -1,7 +1,15 @@
-# 常用软件
-nvim nushell git zellij
+- awesome(lua)
+    - wezterm(lua)
+        - nushell
+        - nvim(lua)
+        - zellij
+    - rofi
+    - scrot
+    - vivaldi
+    - ibus-rime
 
-podman buildah skopeo
+# 常用软件
+git podman buildah skopeo
 ```
 /etc/containers/containers.conf: -> /usr/share/containers/containers.conf
     detach_keys = ""
@@ -21,10 +29,7 @@ podman buildah skopeo
 
 openssh-server
 
-# 图形界面
-awesome rofi scrot
-
-wezterm alacritty
+alacritty
 
 vivaldi qutebrowser
 freefilesync [zathura(pdf) liferea]

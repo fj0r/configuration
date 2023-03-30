@@ -34,7 +34,7 @@ local M = {
         gap = 0,
         urgent_color = 'dde175',
         border = {
-            width = 2,
+            width = 1,
             focus = '6a6e09',
             -- focus: 'ffd8b1',
             -- focus: '82a67d',
@@ -43,7 +43,7 @@ local M = {
         powerline_taglist = false
     },
     editor = 'wezterm --config-file ' .. os.getenv('HOME') .. '/Configuration/wezterm/nvim.lua',
-    terminal = 'wezterm --config-file ' .. os.getenv('HOME') .. '/Configuration/wezterm/zellij.lua',
+    terminal = 'wezterm',
     -- inspect with xprop
     floating = {
         instance = {

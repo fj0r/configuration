@@ -1,18 +1,22 @@
 local wezterm = require 'wezterm'
-local mux = wezterm.mux
-wezterm.on("gui-startup", function()
-  local tab, pane, window = mux.spawn_window {}
-  window:gui_window():maximize()
+
+wezterm.on("gui-startup", function(cmd)
+    local tab, pane, window = wezterm.mux.spawn_window(cmd or {})
+    window:gui_window():maximize()
 end)
 
 return {
     color_scheme = "Gruvbox Dark",
     enable_tab_bar = false,
-    default_prog = { "nvim" },
+    --default_prog = { "nvim" },
+    launch_menu = {
+        { label = 'neovim', args = { 'nvim' } },
+        { label = 'zellij', args = { 'zellij' } },
+    },
     set_environment_variables = {
         SHELL = "/usr/local/bin/nu",
         NVIM_PRESET = "x",
-        PATH= "/opt/node/bin:" .. os.getenv("PATH"),
+        PATH = "/opt/node/bin:" .. os.getenv("PATH"),
     },
     window_decorations = "RESIZE",
     font = wezterm.font {
@@ -20,7 +24,7 @@ return {
         weight = 'Light',
         stretch = 'Condensed',
     },
-    font_size = 11,
+    font_size = 12,
     window_padding = {
         left = 2,
         right = 2,

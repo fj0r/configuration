@@ -211,8 +211,8 @@ end
 return function(config)
     return wibox.widget {
         layout = wibox.layout.fixed.vertical,
-        fsw(config),
         rotate(cpu_mem),
+        fsw(config),
         rotate(net),
         battery,
     }
