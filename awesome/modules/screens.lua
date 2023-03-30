@@ -89,6 +89,8 @@ return function(conf, menu, set_wallpaper)
                 menu.launcher,
             },
         }
+
+        s.tags[#s.tags]:view_only()
     end)
     -- }}}
 end
