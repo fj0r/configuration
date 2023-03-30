@@ -1,12 +1,12 @@
 local M = {
     autorun = {
         "setxkbmap -option 'ctrl:swapcaps'",
-        "source ~/.config/xrandr.rc",
+        --"source ~/.config/xrandr.rc",
     },
     autorun_once = {
-        "gnome-session --systemd-service" ,
+        "gnome-session --systemd-service",
         -- "/usr/lib/polkit-1/polkitd",
-        -- "xscreensaver -no-splash",
+        "xscreensaver -no-splash",
         "ibus-daemon --xim --replace --daemonize",
     },
     sidebar = "right",
@@ -16,15 +16,16 @@ local M = {
     tags = {
         { name = '1', layout = 'tile' },
         { name = '2', layout = 'tile' },
-        { name = '3', layout = 'centerwork'
-        , apps = { { class = "Vivaldi", floating = true, screen = 2 }
-                 , { class = "Chromium", floating = true },
-                 }
+        { name = '3', layout = 'centerwork',
+            apps = {
+                { class = "Vivaldi", floating = true, screen = 2 },
+                { class = "qutebrowser", floating = true },
+            }
         },
         { name = '4', layout = 'centerwork' },
-        { name = '5', layout = 'tile.bottom'  },
-        { name = '6', layout = 'tile.bottom'  },
-        { name = '7', layout = 'tile.bottom'  },
+        { name = '5', layout = 'tile.bottom' },
+        { name = '6', layout = 'tile.bottom' },
+        { name = '7', layout = 'tile.bottom' },
         { name = '8', layout = 'centerwork' },
         { name = '9' },
         { name = 'X' },
@@ -38,11 +39,11 @@ local M = {
             -- focus: 'ffd8b1',
             -- focus: '82a67d',
         },
-        wallpaper = '/wallpapers',
+        wallpaper = os.getenv('HOME') .. '/Pictures/wallpaper',
         powerline_taglist = false
     },
-    editor = 'nvim',
-    terminal = 'alacritty',
+    editor = 'wezterm --config-file ' .. os.getenv('HOME') .. '/Configuration/wezterm/nvim.lua',
+    terminal = 'wezterm --config-file ' .. os.getenv('HOME') .. '/Configuration/wezterm/zellij.lua',
     -- inspect with xprop
     floating = {
         instance = {
@@ -83,12 +84,12 @@ M.rules = {}
 for k, v in ipairs(M.tags) do
     table.insert(tags, v.name)
     table.insert(M.layouts, v.layout and #v.layout ~= 0
-            and get(awful.layout.suit, v.layout)
-            or awful.layout.suit.tile)
+        and get(awful.layout.suit, v.layout)
+        or awful.layout.suit.tile)
     for _, term in ipairs(v.apps or {}) do
         local rule = {}
         local count = 0
-        for p in ipairs({'instance', 'class', 'name', 'role'}) do
+        for p in ipairs({ 'instance', 'class', 'name', 'role' }) do
             if term[p] then
                 rule[p] = term[p]
                 term[p] = nil
