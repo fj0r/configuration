@@ -11,3 +11,12 @@
     - [x] dual graph
     - [ ] disk
 - overseer tag
+
+```lua
+{
+  rule = { class = "wm_kybrd_fcns.py" },
+  properties = { floating = true },
+  screen = awful.screen.focused,
+  tags = { "1", "2", "3", "4", "5" }
+},
+```

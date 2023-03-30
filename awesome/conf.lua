@@ -1,3 +1,4 @@
+local awful = require("awful")
 local M = {
     autorun = {
         "setxkbmap -option 'ctrl:swapcaps'",
@@ -12,6 +13,15 @@ local M = {
     sidebar = "right",
     monitor = {
         partitions = { "/", "/home" }
+    },
+    layouts = {},
+
+    rules = {
+        {
+            rule = { class = "Vivaldi" },
+            screen = awful.screen.focused,
+            tags = { "1", "2", "10", "X" }
+        },
     },
     tags = {
         { name = '1', layout = 'tile' },
@@ -75,39 +85,6 @@ local M = {
     }
 }
 
-local awful = require("awful")
-local get = require('utils.get')
-
-local tags = {}
-M.layouts = {}
-M.rules = {}
-for k, v in ipairs(M.tags) do
-    table.insert(tags, v.name)
-    table.insert(M.layouts, v.layout and #v.layout ~= 0
-        and get(awful.layout.suit, v.layout)
-        or awful.layout.suit.tile)
-    for _, term in ipairs(v.apps or {}) do
-        local rule = {}
-        local count = 0
-        for p in ipairs({ 'instance', 'class', 'name', 'role' }) do
-            if term[p] then
-                rule[p] = term[p]
-                term[p] = nil
-                count = count + 1
-            end
-        end
-        if count > 0 then
-            term.screen = term.screen or 1
-            term.tag = k
-            table.insert(M.rules, {
-                rule = rule,
-                properties = term
-            })
-        end
-    end
-end
-
-M.tags = tags
-
+-- require("utils").say(M.rules)
 
 return M
