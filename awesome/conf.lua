@@ -42,10 +42,10 @@ local M = {
     },
     theme = {
         gap = 0,
-        urgent_color = 'dde175',
+        urgent_color = '#dde175',
         border = {
             width = 1,
-            focus = '6a6e09',
+            focus = '#6a6e09',
             -- focus: 'ffd8b1',
             -- focus: '82a67d',
         },
