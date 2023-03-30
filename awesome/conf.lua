@@ -85,6 +85,4 @@ local M = {
     }
 }
 
--- require("utils").say(M.rules)
-
 return M
