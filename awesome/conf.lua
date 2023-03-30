@@ -15,7 +15,6 @@ local M = {
         partitions = { "/", "/home" }
     },
     layouts = {},
-
     rules = {
         {
             rule = { class = "Vivaldi" },
@@ -28,7 +27,7 @@ local M = {
         { name = '2', layout = 'tile' },
         { name = '3', layout = 'centerwork',
             apps = {
-                { class = "Vivaldi", floating = true, screen = 2 },
+                { class = "Vivaldi",     floating = true, screen = 2 },
                 { class = "qutebrowser", floating = true },
             }
         },
@@ -45,9 +44,9 @@ local M = {
         urgent_color = '#dde175',
         border = {
             width = 1,
-            focus = '#6a6e09',
-            -- focus: 'ffd8b1',
-            -- focus: '82a67d',
+            -- focus = '',
+            focus = { bg = '#985e2b' },
+            normal = {}
         },
         wallpaper = os.getenv('HOME') .. '/Pictures/wallpaper',
         powerline_taglist = false
