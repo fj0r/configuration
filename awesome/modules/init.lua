@@ -1,14 +1,15 @@
+local keys = require('modules.keys')
+
 return {
-    global_keys   = require('modules.global_keys'),
-    client_keys   = require('modules.client_keys'),
+    global_keys   = keys.global,
+    client_keys   = keys.client,
     autorun       = require('modules.autorun'),
     handle_error  = require('modules.error'),
     theme         = require('modules.theme'),
     menu          = require('modules.menu'),
     set_wallpaper = require('modules.wallpaper'),
-    rules         = require('modules.default_rules'),
+    rules         = require('modules.rule'),
     signal        = require('modules.signal'),
-    screen        = require('modules.screens'),
-    tags          = require('modules.tags'),
+    screen        = require('modules.screen'),
     mouse         = require('modules.mouse'),
 }

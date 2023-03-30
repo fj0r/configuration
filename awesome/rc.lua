@@ -59,9 +59,6 @@ modules.screen(conf, menu, set_wallpaper)
 modules.mouse()
 
 local globalkeys = modules.global_keys(conf, modkey)
-modules.tags(conf, modkey, globalkeys)
-
--- Set keys
 root.keys(globalkeys)
 
 local clientkeys = modules.client_keys(modkey)
