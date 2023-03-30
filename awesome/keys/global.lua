@@ -50,9 +50,9 @@ return function(t)
                     local t = s.selected_tag
                     st[s] = t
                 end
-                for _, t in pairs(c:tags()) do
+                for _, t in ipairs(c:tags()) do
                     return st[c.screen] == t
-                    -- for _, t2 in pairs(source_c:tags()) do
+                    -- for _, t2 in ipairs(source_c:tags()) do
                     --     if t == t2 then
                     --         return true
                     --     end

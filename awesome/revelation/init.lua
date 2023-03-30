@@ -179,9 +179,9 @@ function revelation.expose(args)
 
     for scr=1,capi.screen.count() do
         t[scr] = awful.tag.new({revelation.tag_name},
-            scr, awful.layout.get(src))[1]
+            scr, awful.layout.suit.fair)[1]
         zt[scr] = awful.tag.new({revelation.tag_name.."_zoom"},
-            scr, awful.layout.get(src))[1]
+            scr, awful.layout.suit.fair)[1]
 
         if curr_tag_only then
             match_clients(rule, awful.client.visible(scr), t[scr], is_excluded)
