@@ -1,5 +1,5 @@
 # 常用软件
-zsh git tmux
+nvim nushell git zellij
 
 podman buildah skopeo
 ```
@@ -19,18 +19,17 @@ podman buildah skopeo
     location = "registry.s"
 ```
 
-jq tree wget curl xh sqlite
-
 openssh-server
 
 # 图形界面
-alacritty awesome rofi
+awesome rofi scrot
 
-qutebrowser zathura(pdf) liferea
+wezterm alacritty
+
+vivaldi qutebrowser
+freefilesync [zathura(pdf) liferea]
 
 xrandr scrot xscreensaver
-
-vivaldi freefilesync
 
 `setxkbmap -option 'ctrl:swapcaps'`
 

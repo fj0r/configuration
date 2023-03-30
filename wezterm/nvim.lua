@@ -1,5 +1,5 @@
 local base = require("base")
 
-base.default_prog = { "zellij" }
+base.default_prog = { "nvim" }
 
 return base
