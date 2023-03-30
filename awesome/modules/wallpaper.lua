@@ -1,5 +1,6 @@
 local beautiful = require("beautiful")
 local gears = require("gears")
+local utils = require('utils')
 
 local random_wallpaper = function(conf)
     local wallpaper_list = {}
@@ -12,7 +13,7 @@ local random_wallpaper = function(conf)
     math.randomseed(os.time())
 
     return function()
-        if wallpaper_list then
+        if #wallpaper_list > 0 then
             local s = #wallpaper_list
             return wallpaper_list[math.random(s)]
         end
