@@ -34,6 +34,7 @@ local M = {
     },
     sidebar = "right",
     monitor = {
+        bandwidth = 20,
         partitions = { "/", "/home" }
     },
     layouts = {},
