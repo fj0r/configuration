@@ -78,7 +78,7 @@ return function(conf, menu, set_wallpaper)
                 s.my_layoutbox,
                 s.my_taglist,
                 rotated_widget(s.my_promptbox),
-                my_clock,
+                my_clock(conf.theme.clock),
             },
             s.my_tasklist, -- Middle widget
             { -- Right widgets

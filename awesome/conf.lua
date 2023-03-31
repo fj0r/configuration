@@ -64,12 +64,13 @@ local M = {
         gap = 0,
         color = {
             urgent = { bg = '#dde175', },
-            focus = { bg = palette.brown[5] },
+            focus = { bg = palette.green[3] },
             normal = {}
         },
         border = {
             width = 1,
         },
+        clock = { '#dde175', '#88b555' },
         wallpaper = os.getenv('HOME') .. '/Pictures/wallpaper',
         powerline_taglist = false
     },
