@@ -13,7 +13,7 @@ local default_tooltip = {
 }
 
 local function hover(config, obj)
-    obj.tooltip.markup = config.id .. ': ' .. tostring(config.metrics()) .. ' / ' .. config.max_value
+    obj.tooltip.markup = config.id .. ': <b>' .. tostring(config.metrics()) .. '</b> / ' .. config.max_value
     obj.tooltip.visible = true
 end
 
@@ -21,7 +21,7 @@ local function hover_dual(config, obj)
     local text = ''
     for k, v in ipairs(config.metrics) do
         local sep = k == #config.metrics and '' or '\n'
-        text = text .. v.id .. ': ' .. tostring(v.metrics()) .. ' / ' .. config.max_value .. sep
+        text = text .. v.id .. ': <b>' .. tostring(v.metrics()) .. '</b> / ' .. config.max_value .. sep
     end
     obj.tooltip.markup = text
     obj.tooltip.visible = true

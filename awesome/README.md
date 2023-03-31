@@ -9,6 +9,8 @@
 ## todo
 - monitor
     - [x] dual graph
+        - [ ] realtime tooltip
+    - [x] clock tooltip
     - [ ] disk
 - overseer tag
 
