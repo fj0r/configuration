@@ -65,7 +65,7 @@ local M = {
         gap = 0,
         color = {
             urgent = { bg = '#dde175' },
-            focus = { bg = palette.green[2], fg = 'black' },
+            focus = { bg = '#579c8e', fg = 'black' },
             normal = {}
         },
         border = {
