@@ -1,19 +1,9 @@
 -- Create a textclock widget
 local wibox = require 'wibox'
-local awful = require 'awful'
-local beautiful = require 'beautiful'
 local gears = require 'gears'
-local naughty = require 'naughty'
 
-local dbg = function(x)
-    local aaa = ""
-    for k, a in ipairs(x) do
-        aaa = aaa .. ', ' .. k .. ' = ' .. tostring(a)
-    end
-    naughty.notify { text = aaa }
-end
 
-function tobitarray(r, t, len)
+local tobitarray = function(r, t, len)
     for i = len - 1, 0, -1 do
         table.insert(r, (t & (1 << i)) ~= 0)
     end
@@ -49,10 +39,13 @@ for k, v in ipairs(group_lines) do
 end
 
 
-local color = {}
-local color_set = { '#dde175', '#88b555' }
-for k, v in ipairs(group) do
-    table.insert(color, color_set[k % #color_set + 1])
+local gen_colors = function(conf)
+    local color = {}
+    local color_set = conf or { '#dde175', '#88b555' }
+    for k, v in ipairs(group) do
+        table.insert(color, color_set[k % #color_set + 1])
+    end
+    return color
 end
 
 local clock = {
@@ -65,7 +58,8 @@ local clock = {
     layout          = wibox.layout.grid
 }
 
-function clock:init()
+function clock:init(conf)
+    local color = gen_colors(conf)
     for i = 1, total do
         local c
         for k, v in ipairs(group) do
@@ -87,32 +81,34 @@ function clock:init()
     return wibox.widget(self)
 end
 
-local c = clock:init()
+return function(conf)
+    local aclock = clock:init(conf)
 
-gears.timer {
-    timeout   = 1,
-    call_now  = true,
-    autostart = true,
-    callback  = function()
-        local begin_bit = group[#group]
-        local bits = {}
-        for i = #time_names, 1, -1 do
-            local t = tonumber(os.date('%' .. time_names[i]))
-            if t == cached_time[i] then
-                break
+    gears.timer {
+        timeout   = 1,
+        call_now  = true,
+        autostart = true,
+        callback  = function()
+            local begin_bit = group[#group]
+            local bits = {}
+            for i = #time_names, 1, -1 do
+                local t = tonumber(os.date('%' .. time_names[i]))
+                if t == cached_time[i] then
+                    break
+                end
+                cached_time[i] = t
+                begin_bit = group[i - 1]
+                for x = 0, group_bits[i] - 1, 1 do
+                    table.insert(bits, 1, (t & (1 << x)) ~= 0)
+                end
             end
-            cached_time[i] = t
-            begin_bit = group[i - 1]
-            for x = 0, group_bits[i] - 1, 1 do
-                table.insert(bits, 1, (t & (1 << x)) ~= 0)
+            for i = begin_bit + 1, total, 1 do
+                if clock[i].checked ~= bits[i - begin_bit] then
+                    clock[i].checked = bits[i - begin_bit]
+                end
             end
         end
-        for i = begin_bit + 1, total, 1 do
-            if clock[i].checked ~= bits[i - begin_bit] then
-                clock[i].checked = bits[i - begin_bit]
-            end
-        end
-    end
-}
+    }
 
-return c
+    return aclock
+end
