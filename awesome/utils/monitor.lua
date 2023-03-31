@@ -2,29 +2,19 @@ local wibox = require("wibox")
 local lain = require("lain")
 local awful = require("awful")
 local beautiful = require("beautiful")
+local say = require('say')
 
-local default_tooltip = {
-    mode = 'outside',
-    preferred_positions = { 'left', 'right' },
-    preferred_alignments = 'middle',
-    margins = 6,
-    border_width = 2,
-    bg = beautiful.tooltip_bg
-}
-
-local function hover(config, obj)
-    obj.tooltip.markup = config.id .. ': <b>' .. tostring(config.metrics()) .. '</b> / ' .. config.max_value
-    obj.tooltip.visible = true
-end
-
-local function hover_dual(config, obj)
-    local text = ''
-    for k, v in ipairs(config.metrics) do
-        local sep = k == #config.metrics and '' or '\n'
-        text = text .. v.id .. ': <b>' .. tostring(v.metrics()) .. '</b> / ' .. config.max_value .. sep
-    end
-    obj.tooltip.markup = text
-    obj.tooltip.visible = true
+local attach_tooltip = function(obj, fun)
+    return awful.tooltip {
+            objects = { obj },
+            mode = 'outside',
+            preferred_positions = { 'left', 'right' },
+            preferred_alignments = 'middle',
+            margins = 6,
+            border_width = 2,
+            bg = beautiful.tooltip_bg,
+            timer_function = fun
+        }
 end
 
 local function new_dual(config)
@@ -32,7 +22,7 @@ local function new_dual(config)
     for k = #config.metrics, 1, -1 do
         local v = config.metrics[k]
         local g = wibox.widget {
-            max_value = config.max_value,
+            max_value = 100,
             scale = config.scale,
             color = v.color,
             widget = wibox.widget.graph,
@@ -41,19 +31,25 @@ local function new_dual(config)
         table.insert(widgets, k % 2 == 1 and g or wibox.container.mirror(g, { vertical = true }))
         v.src {
             settings = function()
-                g:add_value(v.metrics())
+                g:add_value(v.value())
             end
         }
     end
     widgets.layout = wibox.layout.stack
     local m = wibox.widget(widgets)
-    local o = {
-        tooltip = awful.tooltip(default_tooltip)
-    }
-    m:connect_signal('mouse::enter', function() hover_dual(config, o) end)
-    m:connect_signal('mouse::leave', function() o.tooltip.visible = false end)
+
+    attach_tooltip(m, function ()
+        local text = ''
+        local len = #config.metrics
+        for k, v in ipairs(config.metrics) do
+            local sep = k == len and '' or '\n'
+            text = text .. v.format(v.value()) .. sep
+        end
+        return text
+    end)
     return m
 end
+
 
 local function new_pie(config)
     local m = wibox.widget {
@@ -71,16 +67,9 @@ local function new_pie(config)
         align = "center",
         valign = "center",
     }
-    local o = {
-        tooltip = awful.tooltip(default_tooltip)
-    }
-    config.src {
-        settings = function()
-            m.value = config.metrics()
-        end
-    }
-    m:connect_signal('mouse::enter', function() hover(config, o) end)
-    m:connect_signal('mouse::leave', function() o.tooltip.visible = false end)
+    attach_tooltip(m, function ()
+        return config.id .. ': <b>' .. tostring(config.value()) .. '</b> / ' .. '%'
+    end)
     return wibox.container.mirror(m, { horizontal = true })
 end
 
@@ -133,38 +122,36 @@ local function new_fschart(config)
 end
 
 local cpu_mem = new_dual {
-    max_value = 100,
     metrics = {
         {
-            id = 'cpu',
             color = '#728639',
             src = lain.widget.cpu,
-            metrics = function() return cpu_now.usage end
+            value = function() return cpu_now.usage end,
+            format = function(v) return 'cpu: <b>' .. v .. '</b>%' end,
         },
         {
-            id = 'mem',
             color = '#1071b0',
             src = lain.widget.mem,
-            metrics = function() return mem_now.perc end
+            value = function() return mem_now.perc end,
+            format = function(v) return 'mem: <b>' .. v .. '</b>%' end,
         }
     }
 }
 
 local net = new_dual {
-    max_value = 10240,
     metrics = {
         {
-            id = 'down',
             color = '#08787f',
             reflection = true,
             src = lain.widget.net,
-            metrics = function() return net_now.received + 0 end
+            value = function() return net_now.received + 0 end,
+            format = function(v) return 'down: <b>'..v..'</b>/10M' end,
         },
         {
-            id = 'up',
             color = '#ff964f',
             src = lain.widget.net,
-            metrics = function() return net_now.sent + 0 end
+            value = function() return net_now.sent + 0 end,
+            format = function(v) return 'up  : <b>'..v..'</b>/10M' end,
         }
     }
 }
@@ -174,7 +161,7 @@ local battery = new_pie {
     max_value = 100,
     color = '#ffd8b1',
     src = lain.widget.bat,
-    metrics = function() return bat_now.perc end
+    value = function() return bat_now.perc end
 }
 
 local fsw = function(config)
