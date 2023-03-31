@@ -10,6 +10,7 @@ local palette = {
         '#b85c38',
     },
     green = {
+        '#88b555',
         '#939b62',
         '#535204',
         '#4c4b16',
@@ -63,8 +64,8 @@ local M = {
     theme = {
         gap = 0,
         color = {
-            urgent = { bg = '#dde175', },
-            focus = { bg = palette.green[3] },
+            urgent = { bg = '#dde175' },
+            focus = { bg = palette.green[2], fg = 'black' },
             normal = {}
         },
         border = {
