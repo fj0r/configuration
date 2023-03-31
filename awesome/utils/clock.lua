@@ -1,6 +1,8 @@
 -- Create a textclock widget
+local awful = require 'awful'
 local wibox = require 'wibox'
 local gears = require 'gears'
+local beautiful = require 'beautiful'
 
 
 local tobitarray = function(r, t, len)
@@ -83,6 +85,19 @@ end
 
 return function(conf)
     local aclock = clock:init(conf)
+
+    awful.tooltip {
+        objects = { aclock },
+        mode = 'outside',
+        preferred_positions = { 'left', 'right' },
+        preferred_alignments = 'middle',
+        margins = 6,
+        border_width = 2,
+        bg = beautiful.tooltip_bg,
+        timer_function = function()
+            return '<b>' .. tostring(os.date('%Y-%m-%d %H:%M:%S %z')) .. '</b>'
+        end
+    }
 
     gears.timer {
         timeout   = 1,
