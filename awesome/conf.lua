@@ -1,4 +1,25 @@
 local awful = require("awful")
+
+local palette = {
+    brown = {
+        '#3c2a21',
+        '#472d2d',
+        '#5c3d2e',
+        '#753422',
+        '#87431d',
+        '#b85c38',
+    },
+    green = {
+        '#939b62',
+        '#535204',
+        '#4c4b16',
+        '#523906',
+    },
+    blue = {
+        '#3c6562',
+    }
+}
+
 local M = {
     autorun = {
         "setxkbmap -option 'ctrl:swapcaps'",
@@ -27,7 +48,7 @@ local M = {
         { name = '2', layout = 'tile' },
         { name = '3', layout = 'centerwork',
             apps = {
-                { class = "Vivaldi",     floating = true, screen = 2 },
+                { class = "Vivaldi", floating = true, screen = 2 },
                 { class = "qutebrowser", floating = true },
             }
         },
@@ -41,12 +62,13 @@ local M = {
     },
     theme = {
         gap = 0,
-        urgent_color = '#dde175',
+        color = {
+            urgent = { bg = '#dde175', },
+            focus = { bg = palette.brown[5] },
+            normal = {}
+        },
         border = {
             width = 1,
-            -- focus = '',
-            focus = { bg = '#985e2b' },
-            normal = {}
         },
         wallpaper = os.getenv('HOME') .. '/Pictures/wallpaper',
         powerline_taglist = false
