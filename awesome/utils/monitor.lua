@@ -22,7 +22,7 @@ local function new_dual(config)
     for k = #config.metrics, 1, -1 do
         local v = config.metrics[k]
         local g = wibox.widget {
-            max_value = 100,
+            max_value = config.max_value or 100,
             scale = config.scale,
             color = v.color,
             widget = wibox.widget.graph,
@@ -67,10 +67,11 @@ local function new_pie(config)
         align = "center",
         valign = "center",
     }
-    attach_tooltip(m, function ()
+    x = wibox.container.mirror(m, { horizontal = true })
+    attach_tooltip(x, function ()
         return config.id .. ': <b>' .. tostring(config.value()) .. '</b> / ' .. '%'
     end)
-    return wibox.container.mirror(m, { horizontal = true })
+    return x
 end
 
 local function new_fschart(config)
@@ -138,23 +139,47 @@ local cpu_mem = new_dual {
     }
 }
 
-local net = new_dual {
-    metrics = {
-        {
-            color = '#08787f',
-            reflection = true,
-            src = lain.widget.net,
-            value = function() return net_now.received + 0 end,
-            format = function(v) return 'down: <b>'..v..'</b>/10M' end,
-        },
-        {
-            color = '#ff964f',
-            src = lain.widget.net,
-            value = function() return net_now.sent + 0 end,
-            format = function(v) return 'up  : <b>'..v..'</b>/10M' end,
+local two_digit = function(f)
+    return math.ceil(f * 100) / 100
+end
+local gb = 1024 * 1024
+local mb = 1024
+local format_net = function(txt, total)
+    return function(v)
+        local value = v
+        local unit = 'K'
+        if v > gb then
+            value = v / gb
+            unit = 'G'
+        elseif v > mb then
+            value = v / mb
+            unit = 'M'
+        end
+    return txt .. ': <b>' .. two_digit(value) .. unit .. '</b>/' .. total
+    end
+end
+
+local net = function(config)
+    local bandwidth = config.bandwidth or 10
+    return new_dual {
+        max_value = bandwidth * mb,
+        metrics = {
+            {
+                color = '#08787f',
+                reflection = true,
+                src = lain.widget.net,
+                value = function() return net_now.received + 0 end,
+                format = format_net('down', bandwidth .. 'M')
+            },
+            {
+                color = '#ff964f',
+                src = lain.widget.net,
+                value = function() return net_now.sent + 0 end,
+                format = format_net('up', bandwidth .. 'M')
+            }
         }
     }
-}
+end
 
 local battery = new_pie {
     id = 'BATTERY',
@@ -200,7 +225,7 @@ return function(config)
         layout = wibox.layout.fixed.vertical,
         rotate(cpu_mem),
         fsw(config),
-        rotate(net),
+        rotate(net(config)),
         battery,
     }
 end
