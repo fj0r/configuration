@@ -2,7 +2,6 @@
 -- found (e.g. lgi). If LuaRocks is not installed, do nothing.
 pcall(require, "luarocks.loader")
 local utils = require 'utils'
-local say = utils.say
 local conf = require('conf')
 local modules = require 'modules'
 
