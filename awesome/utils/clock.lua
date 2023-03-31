@@ -1,26 +1,26 @@
 -- Create a textclock widget
-local wibox = require'wibox'
-local awful = require'awful'
-local beautiful = require'beautiful'
-local gears = require'gears'
-local naughty = require'naughty'
+local wibox = require 'wibox'
+local awful = require 'awful'
+local beautiful = require 'beautiful'
+local gears = require 'gears'
+local naughty = require 'naughty'
 
 local dbg = function(x)
     local aaa = ""
     for k, a in ipairs(x) do
         aaa = aaa .. ', ' .. k .. ' = ' .. tostring(a)
     end
-    naughty.notify{text=aaa}
+    naughty.notify { text = aaa }
 end
 
 function tobitarray(r, t, len)
     for i = len - 1, 0, -1 do
-        table.insert(r, (t & (1 << i)) ~= 0 )
+        table.insert(r, (t & (1 << i)) ~= 0)
     end
 end
 
-local time_names = {'y', 'm', 'd', 'w', 'H', 'M', 'S'}
-local group_lines = {2,2,2,1,2,2,2}
+local time_names = { 'y', 'm', 'd', 'w', 'H', 'M', 'S' }
+local group_lines = { 2, 2, 2, 1, 2, 2, 2 }
 local group_bits = {}
 local cached_time = {}
 local init_bits = {}
@@ -34,14 +34,14 @@ end
 local total = forced_num_rows * forced_num_cols
 
 for k, v in ipairs(time_names) do
-    local t = tonumber(os.date('%'..v))
+    local t = tonumber(os.date('%' .. v))
     table.insert(cached_time, t)
     tobitarray(init_bits, t, group_bits[k])
 end
 
 local group = {}
 for k, v in ipairs(group_lines) do
-    if k==1 then
+    if k == 1 then
         group[k] = v * forced_num_cols
     else
         group[k] = v * forced_num_cols + group[k - 1]
@@ -50,7 +50,7 @@ end
 
 
 local color = {}
-local color_set = {'#dde175', '#88b555'}
+local color_set = { '#dde175', '#88b555' }
 for k, v in ipairs(group) do
     table.insert(color, color_set[k % #color_set + 1])
 end
@@ -62,7 +62,7 @@ local clock = {
     expand          = true,
     forced_height   = 90,
     spacing         = 1,
-    layout = wibox.layout.grid
+    layout          = wibox.layout.grid
 }
 
 function clock:init()
@@ -75,13 +75,13 @@ function clock:init()
             end
         end
         table.insert(self, wibox.widget {
-            checked       = init_bits[i],
-            paddings      = 0,
-            color         = c,
-            border_color  = '#555',
-            border_width  = 1,
-            shape         = gears.shape.rectangle, -- rectangle octogon
-            widget        = wibox.widget.checkbox
+            checked      = init_bits[i],
+            paddings     = 0,
+            color        = c,
+            border_color = '#555',
+            border_width = 1,
+            shape        = gears.shape.rectangle, -- rectangle octogon
+            widget       = wibox.widget.checkbox
         })
     end
     return wibox.widget(self)
@@ -97,12 +97,12 @@ gears.timer {
         local begin_bit = group[#group]
         local bits = {}
         for i = #time_names, 1, -1 do
-            local t = tonumber(os.date('%'..time_names[i]))
+            local t = tonumber(os.date('%' .. time_names[i]))
             if t == cached_time[i] then
                 break
             end
             cached_time[i] = t
-            begin_bit = group[i-1]
+            begin_bit = group[i - 1]
             for x = 0, group_bits[i] - 1, 1 do
                 table.insert(bits, 1, (t & (1 << x)) ~= 0)
             end
@@ -115,5 +115,4 @@ gears.timer {
     end
 }
 
-return  c
-
+return c

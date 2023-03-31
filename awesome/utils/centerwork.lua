@@ -43,7 +43,7 @@ local function arrange(p, layout)
     local slaveFirstDim, slaveSecondDim = 0, 0
 
     if layout.name == cwname then -- vertical
-        if nbrFirstSlaves  > 0 then slaveFirstDim  = floor(wa.height / nbrFirstSlaves) end
+        if nbrFirstSlaves > 0 then slaveFirstDim = floor(wa.height / nbrFirstSlaves) end
         if nbrSecondSlaves > 0 then slaveSecondDim = floor(wa.height / nbrSecondSlaves) end
 
         g.height = wa.height
@@ -52,11 +52,11 @@ local function arrange(p, layout)
         g.x = wa.x + slaveLwid
         g.y = wa.y
     else -- horizontal
-        if nbrFirstSlaves  > 0 then slaveFirstDim  = floor(wa.width / nbrFirstSlaves) end
+        if nbrFirstSlaves > 0 then slaveFirstDim = floor(wa.width / nbrFirstSlaves) end
         if nbrSecondSlaves > 0 then slaveSecondDim = floor(wa.width / nbrSecondSlaves) end
 
-        g.height  = mainhei
-        g.width = wa.width
+        g.height = mainhei
+        g.width  = wa.width
 
         g.x = wa.x
         g.y = wa.y + slaveThei
@@ -73,7 +73,7 @@ local function arrange(p, layout)
         local c, g = cls[i], {}
         local idxChecker, dimToAssign
 
-        local rowIndex = floor(i/2)
+        local rowIndex = floor(i / 2)
 
         if layout.name == cwname then
             if i % 2 == 0 then -- left slave
