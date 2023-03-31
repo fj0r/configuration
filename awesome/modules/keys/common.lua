@@ -29,9 +29,12 @@ local cycle_filter_legacy = function(c, source_c)
     return false
 end
 
+
 return function(conf, modkey)
+    local terminal = conf.terminal or "x-terminal-emulator"
+
     local _quake = lain.util.quake {
-        app = conf.quake or 'alacritty',
+        app = terminal,
         settings = function(c) c.sticky = false end,
         height = 0.382
     }
