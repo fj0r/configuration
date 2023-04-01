@@ -44,7 +44,7 @@ end
 local gen_colors = function(conf)
     local color = {}
     local color_set = conf or { '#dde175', '#88b555' }
-    for k, v in ipairs(group) do
+    for k = 1, #group do
         table.insert(color, color_set[k % #color_set + 1])
     end
     return color
