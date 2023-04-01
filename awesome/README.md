@@ -11,8 +11,10 @@
     - [x] dual graph
         - [x] realtime tooltip
     - [x] clock tooltip
-    - [ ] disk
+    - [x] disk
+    - [x] margin
 - overseer tag
+    - [ ] rules
 
 ```lua
 {

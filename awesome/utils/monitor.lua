@@ -188,19 +188,18 @@ local fsw = function(config)
         layout = wibox.layout.fixed.vertical,
         align = 'center',
         valign = 'center',
-        paddings = 3,
     }
-    local color_list = config.colors or { '#e17701', '#ffd8b1', '#c65102' }
-    for ix, v in ipairs(config.partitions) do
+    for _, v in ipairs(config.partitions) do
         local y = new_fschart {
             values = {},
-            colors = { color_list[ix % #color_list] },
+            colors = {},
             default_color = config.default_colors or '#666',
         }
-        table.insert(x, y)
+        table.insert(x, wibox.container.margin(y, 2, 2, 1, 1))
         refs[v] = y
         attach_tooltip(y, function() return refs[v].tooltip end)
     end
+    local color_list = config.colors or { '#f7aa97', '#ed9282', '#de7e73', '#af4034', '#d81159' }
     lain.widget.fs {
         settings = function()
             for _, v in ipairs(config.partitions) do
@@ -208,6 +207,9 @@ local fsw = function(config)
                 refs[v].values = { p.percentage }
                 refs[v].tooltip = '<b>' ..
                     v .. '</b>: ' .. two_digit(p.free) .. p.units .. ' free, ' .. p.percentage .. '%'
+                local ic = math.ceil(p.percentage / (100 / #color_list))
+                local c = color_list[ic]
+                refs[v].colors = { c }
             end
         end
     }
@@ -224,9 +226,9 @@ end
 return function(config)
     return wibox.widget {
         layout = wibox.layout.fixed.vertical,
-        rotate(cpu_mem()),
-        rotate(net(config)),
-        battery(),
+        wibox.container.margin(rotate(cpu_mem()), 0, 0, 2, 1),
+        wibox.container.margin(rotate(net(config)), 0, 0, 0, 2),
+        wibox.container.margin(battery(), 2, 2, 1, 1),
         fsw(config),
     }
 end
