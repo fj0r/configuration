@@ -182,6 +182,21 @@ local function new_fschart(config)
     return fs_chart
 end
 
+local fstab = function(exclude_prefix)
+    local fs = {}
+    local p = io.popen("cat /etc/fstab | grep -v '^#' | awk '{print $2}'")
+    for f in p:lines() do
+        for _, e in ipairs(exclude_prefix or {}) do
+            if string.sub(f, 1, string.len(e)) == e then
+                goto continue
+            end
+        end
+        table.insert(fs, f)
+        ::continue::
+    end
+    return fs
+end
+
 local fsw = function(config)
     local refs = {}
     local x = {
@@ -189,7 +204,11 @@ local fsw = function(config)
         align = 'center',
         valign = 'center',
     }
-    for _, v in ipairs(config.partitions) do
+    local partitions = type(config.partitions) == "table"
+        and config.partitions
+        or fstab { '/boot', '/dev', '/proc', 'swap', 'none' }
+
+    for _, v in ipairs(partitions) do
         local y = new_fschart {
             values = {},
             colors = {},
@@ -202,7 +221,7 @@ local fsw = function(config)
     local color_list = config.colors or { '#f7aa97', '#ed9282', '#de7e73', '#af4034', '#d81159' }
     lain.widget.fs {
         settings = function()
-            for _, v in ipairs(config.partitions) do
+            for _, v in ipairs(partitions) do
                 local p = fs_now[v]
                 refs[v].values = { p.percentage }
                 refs[v].tooltip = '<b>' ..
