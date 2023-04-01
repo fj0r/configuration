@@ -50,22 +50,25 @@ local function new_dual(config)
     return m
 end
 
-local cpu_mem = new_dual {
-    metrics = {
-        {
-            color = '#728639',
-            src = lain.widget.cpu,
-            value = function() return cpu_now.usage end,
-            format = function(v) return 'cpu: <b>' .. v .. '</b>%' end,
-        },
-        {
-            color = '#1071b0',
-            src = lain.widget.mem,
-            value = function() return mem_now.perc end,
-            format = function(v) return 'mem: <b>' .. v .. '</b>%(<b>' .. mem_now.used .. '</b>M)' end,
+local cpu_mem = function()
+    return new_dual {
+        metrics = {
+            {
+                color = '#728639',
+                src = lain.widget.cpu,
+                value = function() return cpu_now.usage end,
+                format = function(v) return 'cpu: <b>' .. v .. '</b>%' end,
+            },
+            {
+                color = '#1071b0',
+                src = lain.widget.mem,
+                value = function() return mem_now.perc end,
+                format = function(v) return 'mem: <b>' .. v .. '</b>%(<b>' .. mem_now.used .. '</b>M)' end,
+            }
         }
     }
-}
+end
+
 
 local two_digit = function(f)
     return math.ceil(f * 100) / 100
@@ -142,29 +145,26 @@ local function new_pie(config)
     return x
 end
 
-local battery = new_pie {
-    color = '#ffd8b1',
-    invalid_color = 'black',
-    src = lain.widget.bat,
-    value = function() return bat_now.perc == 'N/A' and 0 or bat_now.perc end,
-    format = function(v) return v > 0 and 'BATTERY: <b>' .. v .. '</b>%' or 'NO BATTERY' end
-}
+local battery = function()
+    return new_pie {
+        color = '#ffd8b1',
+        invalid_color = 'black',
+        src = lain.widget.bat,
+        value = function() return bat_now.perc == 'N/A' and 0 or bat_now.perc end,
+        format = function(v) return v > 0 and 'BATTERY: <b>' .. v .. '</b>%' or 'NO BATTERY' end
+    }
+end
 
 local function new_fschart(config)
     local fs_text = wibox.widget {
-        text   = '',
+        text   = config.text,
         align  = "center",
         valign = "center",
         widget = wibox.widget.textbox,
     }
-    local colors = {}
-    for _, v in ipairs(config.colors) do
-        table.insert(colors, v)
-        table.insert(colors, config.default_color or '#888')
-    end
     local fs_chart = wibox.widget {
         fs_text,
-        colors       = colors,
+        colors       = config.colors,
         values       = {},
         max_value    = 100,
         min_value    = 0,
@@ -179,47 +179,39 @@ local function new_fschart(config)
         align        = "center",
         valign       = "center",
     }
-    lain.widget.fs {
-        settings = function()
-            local total = 0
-            local values = {}
-            for _, v in ipairs(config.partitions) do
-                local p = fs_now[v]
-                table.insert(values, (p.size - p.free) * 100)
-                table.insert(values, p.free * 100)
-                total = total + p.size
-            end
-            for k, v in ipairs(values) do
-                values[k] = v / total
-            end
-            fs_chart.values = values
-        end
-    }
-    return wibox.container.mirror(fs_chart, { horizontal = true })
+    return fs_chart
 end
 
 local fsw = function(config)
-    local fs = {}
-
-    local p = io.popen("lsblk -ln | awk '{print $7}' | awk NF")
-    for s in p:lines() do
-        for _, v1 in ipairs(config.partitions) do
-            if v1 == s then
-                table.insert(fs, s)
-            end
-        end
-    end
-    return wibox.widget {
-        new_fschart {
-            partitions = fs,
-            colors = config.colors or { '#e17701', '#c65102', '#ffd8b1' },
-            default_color = config.default_colors or '#666',
-        },
+    local refs = {}
+    local x = {
         layout = wibox.layout.fixed.vertical,
         align = 'center',
         valign = 'center',
         paddings = 3,
     }
+    local color_list = config.colors or { '#e17701', '#ffd8b1', '#c65102' }
+    for ix, v in ipairs(config.partitions) do
+        local y = new_fschart {
+            values = {},
+            colors = { color_list[ix % #color_list] },
+            default_color = config.default_colors or '#666',
+        }
+        table.insert(x, y)
+        refs[v] = y
+        attach_tooltip(y, function() return refs[v].tooltip end)
+    end
+    lain.widget.fs {
+        settings = function()
+            for _, v in ipairs(config.partitions) do
+                local p = fs_now[v]
+                refs[v].values = { p.percentage }
+                refs[v].tooltip = '<b>' ..
+                    v .. '</b>: ' .. two_digit(p.free) .. p.units .. ' free, ' .. p.percentage .. '%'
+            end
+        end
+    }
+    return wibox.widget(x)
 end
 
 local rotate = function(w)
@@ -232,9 +224,9 @@ end
 return function(config)
     return wibox.widget {
         layout = wibox.layout.fixed.vertical,
-        rotate(cpu_mem),
+        rotate(cpu_mem()),
         rotate(net(config)),
-        battery,
+        battery(),
         fsw(config),
     }
 end
