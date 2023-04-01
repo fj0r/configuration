@@ -73,17 +73,17 @@ end
 local two_digit = function(f)
     return math.ceil(f * 100) / 100
 end
-local gb = 1024 * 1024
-local mb = 1024
+local GB = 1024 * 1024
+local MB = 1024
 local format_net = function(txt, total)
     return function(v)
         local value = v
         local unit = 'K'
-        if v > gb then
-            value = v / gb
+        if v > GB then
+            value = v / GB
             unit = 'G'
-        elseif v > mb then
-            value = v / mb
+        elseif v > MB then
+            value = v / MB
             unit = 'M'
         end
         return txt .. ': <b>' .. two_digit(value) .. unit .. '</b>/' .. total
@@ -93,7 +93,7 @@ end
 local net = function(config)
     local bandwidth = config.bandwidth or 10
     return new_dual {
-        max_value = bandwidth * mb,
+        max_value = bandwidth * MB,
         metrics = {
             {
                 color = '#08787f',
@@ -112,15 +112,29 @@ local net = function(config)
     }
 end
 
+
+local color_generator = function (colors)
+    return function (value, total, reverse)
+        local ix = math.ceil(value / (total / #colors))
+        if reverse then
+            ix = #colors - ix + 1
+        end
+        return colors[ix]
+    end
+end
+
+local color_rank = color_generator {
+    '#d81159', '#af4034', '#fdd692', '#c5e99b', '#5cab7d'
+}
+
 local function new_pie(config)
     local m = wibox.widget {
-        colors = { config.color },
+        colors = {},
         min_value = 0,
         max_value = config.max_value or 100,
         rounded_edge = false,
         start_angle = 0,
-        paddings = 2,
-        thickness = 4,
+        thickness = 2,
         bg = '#888',
         border_width = 0,
         border_color = '#fff',
@@ -129,20 +143,21 @@ local function new_pie(config)
         valign = "center",
         values = {}
     }
-    local x = wibox.container.mirror(m, { horizontal = true })
     config.src {
         settings = function()
             local v = config.value()
             if v == 0 then
-                m.colors[1] = config.invalid_color or 'black'
+                m.colors = { config.invalid_color or 'black' }
+            else
+                m.colors = { color_rank(v, 100) }
             end
-            m.values[1] = v
+            m.values = { v }
         end
     }
-    attach_tooltip(x, function()
+    attach_tooltip(m, function()
         return config.format(config.value())
     end)
-    return x
+    return m
 end
 
 local battery = function()
@@ -170,8 +185,7 @@ local function new_fschart(config)
         min_value    = 0,
         rounded_edge = false,
         start_angle  = 0,
-        paddings     = 2,
-        thickness    = 4,
+        thickness    = 5,
         bg           = "#888",
         border_width = 0,
         border_color = "#000000",
@@ -218,7 +232,6 @@ local fsw = function(config)
         refs[v] = y
         attach_tooltip(y, function() return refs[v].tooltip end)
     end
-    local color_list = config.colors or { '#f7aa97', '#ed9282', '#de7e73', '#af4034', '#d81159' }
     lain.widget.fs {
         settings = function()
             for _, v in ipairs(partitions) do
@@ -226,8 +239,7 @@ local fsw = function(config)
                 refs[v].values = { p.percentage }
                 refs[v].tooltip = '<b>' ..
                     v .. '</b>: ' .. two_digit(p.free) .. p.units .. ' free, ' .. p.percentage .. '%'
-                local ic = math.ceil(p.percentage / (100 / #color_list))
-                local c = color_list[ic]
+                local c = color_rank(p.percentage, 100, true)
                 refs[v].colors = { c }
             end
         end
