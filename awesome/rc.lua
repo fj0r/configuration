@@ -57,12 +57,10 @@ modules.screen(conf, menu, set_wallpaper)
 
 modules.mouse()
 
-local globalkeys = modules.global_keys(conf, modkey)
-root.keys(globalkeys)
+root.keys(modules.global_keys(conf, modkey))
 
-local clientkeys = modules.client_keys(modkey)
 -- Rules to apply to new clients (through the "manage" signal).
-awful.rules.rules = modules.rules(conf, modkey, clientkeys)
+awful.rules.rules = modules.rules(conf, modkey, modules.client_keys(modkey))
 
 for _, rule in ipairs(conf.rules) do
     table.insert(awful.rules.rules, rule)
