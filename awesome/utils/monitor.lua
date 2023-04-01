@@ -124,13 +124,31 @@ local function new_pie(config)
         widget = wibox.container.arcchart,
         align = "center",
         valign = "center",
+        values = {}
     }
     local x = wibox.container.mirror(m, { horizontal = true })
+    config.src {
+        settings = function()
+            local v = config.value()
+            if v == 0 then
+                m.colors[1] = config.invalid_color or 'black'
+            end
+            m.values[1] = v
+        end
+    }
     attach_tooltip(x, function()
-        return config.id .. ': <b>' .. tostring(config.value()) .. '</b> / ' .. '%'
+        return config.format(config.value())
     end)
     return x
 end
+
+local battery = new_pie {
+    color = '#ffd8b1',
+    invalid_color = 'black',
+    src = lain.widget.bat,
+    value = function() return bat_now.perc == 'N/A' and 0 or bat_now.perc end,
+    format = function(v) return v > 0 and 'BATTERY: <b>' .. v .. '</b>%' or 'NO BATTERY' end
+}
 
 local function new_fschart(config)
     local fs_text = wibox.widget {
@@ -161,7 +179,7 @@ local function new_fschart(config)
         align        = "center",
         valign       = "center",
     }
-    lain.widget.fs({
+    lain.widget.fs {
         settings = function()
             local total = 0
             local values = {}
@@ -176,17 +194,9 @@ local function new_fschart(config)
             end
             fs_chart.values = values
         end
-    })
+    }
     return wibox.container.mirror(fs_chart, { horizontal = true })
 end
-
-local battery = new_pie {
-    id = 'BATTERY',
-    max_value = 100,
-    color = '#ffd8b1',
-    src = lain.widget.bat,
-    value = function() return bat_now.perc end
-}
 
 local fsw = function(config)
     local fs = {}
