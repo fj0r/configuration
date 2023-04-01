@@ -46,21 +46,49 @@ local M = {
         },
     },
     tags = {
-        { name = '1', layout = 'tile' },
-        { name = '2', layout = 'tile' },
-        { name = '3', layout = 'centerwork',
+        {
+            name = '1',
+            layout = 'tile'
+        },
+        {
+            name = '2',
+            layout = 'tile'
+        },
+        {
+            name = '3',
+            layout = 'centerwork'
+        },
+        {
+            name = '4',
+            layout = 'centerwork'
+        },
+        {
+            name = '5',
+            layout = 'tile.bottom'
+        },
+        {
+            name = '6',
+            layout = 'tile.bottom'
+        },
+        {
+            name = '7',
+            layout = 'tile.bottom'
+        },
+        {
+            name = '8',
+            layout = 'centerwork'
+        },
+        {
+            name = '9'
+        },
+        {
+            name = 'X',
+            layout = 'centerwork',
             apps = {
                 { class = "Vivaldi", floating = true, screen = 2 },
-                { class = "qutebrowser", floating = true },
+                { class = "qutebrowser", floating = false },
             }
         },
-        { name = '4', layout = 'centerwork' },
-        { name = '5', layout = 'tile.bottom' },
-        { name = '6', layout = 'tile.bottom' },
-        { name = '7', layout = 'tile.bottom' },
-        { name = '8', layout = 'centerwork' },
-        { name = '9' },
-        { name = 'X' },
     },
     theme = {
         gap = 0,
