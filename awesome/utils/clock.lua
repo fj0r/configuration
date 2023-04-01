@@ -14,7 +14,6 @@ end
 local time_names = { 'y', 'm', 'd', 'w', 'H', 'M', 'S' }
 local group_lines = { 2, 2, 2, 1, 2, 2, 2 }
 local group_bits = {}
-local cached_time = {}
 local init_bits = {}
 
 local forced_num_cols = 3
@@ -25,12 +24,6 @@ for k, v in pairs(group_lines) do
 end
 local total = forced_num_rows * forced_num_cols
 
-for k, v in ipairs(time_names) do
-    local t = tonumber(os.date('%' .. v))
-    table.insert(cached_time, t)
-    tobitarray(init_bits, t, group_bits[k])
-end
-
 local group = {}
 for k, v in ipairs(group_lines) do
     if k == 1 then
@@ -39,7 +32,6 @@ for k, v in ipairs(group_lines) do
         group[k] = v * forced_num_cols + group[k - 1]
     end
 end
-
 
 local gen_colors = function(conf)
     local color = {}
@@ -50,17 +42,24 @@ local gen_colors = function(conf)
     return color
 end
 
-local clock = {
-    forced_num_cols = forced_num_cols,
-    forced_num_rows = forced_num_rows,
-    homogeneous     = false,
-    expand          = true,
-    forced_height   = 90,
-    spacing         = 1,
-    layout          = wibox.layout.grid
-}
+return function(conf)
+    local cached_time = {}
+    for k, v in ipairs(time_names) do
+        local t = tonumber(os.date('%' .. v))
+        table.insert(cached_time, t)
+        tobitarray(init_bits, t, group_bits[k])
+    end
 
-function clock:init(conf)
+    local clock = {
+        forced_num_cols = forced_num_cols,
+        forced_num_rows = forced_num_rows,
+        homogeneous     = false,
+        expand          = true,
+        forced_height   = 90,
+        spacing         = 1,
+        layout          = wibox.layout.grid
+    }
+
     local color = gen_colors(conf)
     for i = 1, total do
         local c
@@ -70,7 +69,7 @@ function clock:init(conf)
                 break
             end
         end
-        table.insert(self, wibox.widget {
+        table.insert(clock, wibox.widget {
             checked      = init_bits[i],
             paddings     = 0,
             color        = c,
@@ -80,11 +79,8 @@ function clock:init(conf)
             widget       = wibox.widget.checkbox
         })
     end
-    return wibox.widget(self)
-end
+    local aclock = wibox.widget(clock)
 
-return function(conf)
-    local aclock = clock:init(conf)
 
     awful.tooltip {
         objects = { aclock },
