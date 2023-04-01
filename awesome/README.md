@@ -13,6 +13,9 @@
     - [x] clock tooltip
     - [x] disk
     - [x] margin
+- keymap
+    - [ ] shutdown, reboot whit timeout 10sec
+    - [ ] tap meta
 - overseer tag
     - [ ] rules
 
