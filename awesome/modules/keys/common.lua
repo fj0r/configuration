@@ -71,7 +71,7 @@ return function(conf, modkey)
             { description = "jump to urgent client", group = "client" }),
         awful.key({ modkey, }, "Tab", function() awful.screen.focus_relative(1) end,
             { description = "focus the next screen", group = "screen" }),
-        awful.key({ "Mod1", }, "`", function() revelation({ curr_tag_only = true }) end,
+        awful.key({ modkey, }, "v", function() revelation({ curr_tag_only = true }) end,
             { description = "revelation", group = "client" }),
         cyclefocus.key({ "Mod1", }, "Tab", {
             cycle_filters = { cyclefocus.filters.same_screen, cyclefocus.filters.common_tag },
@@ -111,8 +111,10 @@ return function(conf, modkey)
             { description = "select previous", group = "layout" }),
 
         -- Prompt
-        awful.key({ modkey, }, "i", function() awful.spawn("rofi -show") end,
+        awful.key({ 'Mod1', }, "`", function() awful.spawn("rofi -show") end,
             { description = "rofi -show window", group = "launcher" }),
+        awful.key({ modkey, }, "q", function() awful.spawn("rofi -show run") end,
+            { description = "rofi -show run", group = "launcher" }),
         awful.key({ modkey, }, "o", function() awful.spawn("rofi -show run") end,
             { description = "rofi -show run", group = "launcher" }),
         awful.key({ modkey, }, "z", function() awful.spawn("zeal") end,
