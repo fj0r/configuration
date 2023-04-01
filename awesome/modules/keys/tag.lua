@@ -1,15 +1,15 @@
 local gears = require("gears")
 local awful = require("awful")
+local NUM_OFFSET = 9
 
 return function(conf, modkey, globalkeys)
     -- Bind all key numbers to tags.
     -- Be careful: we use keycodes to make it work on any keyboard layout.
     -- This should map on the top row of your keyboard, usually 1 to 9.
-    for i = 1, 10 do
+    for i = 1, #conf.tags do
         globalkeys = gears.table.join(globalkeys,
             -- View tag only.
-            -- default: { modkey }, "#" .. i + 9
-            awful.key({ modkey }, "#" .. i + 9,
+            awful.key({ modkey }, "#" .. i + NUM_OFFSET,
                 function()
                     local screen = awful.screen.focused()
                     local tag = screen.tags[i]
