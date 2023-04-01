@@ -33,10 +33,10 @@ end
 return function(conf, modkey)
     local terminal = conf.terminal or "x-terminal-emulator"
 
-    local _quake = lain.util.quake {
+    local quake = lain.util.quake {
         app = terminal,
         settings = function(c) c.sticky = false end,
-        height = 0.382
+        height = 0.3
     }
 
     return gears.table.join(
@@ -118,13 +118,19 @@ return function(conf, modkey)
         awful.key({ modkey, }, "z", function() awful.spawn("zeal") end,
             { description = "zeal", group = "launcher" }),
 
+        -- quake
+        awful.key({ modkey, }, "`", function() quake:toggle() end,
+            { description = "quake", group = "launcher" }),
+        -- gpick
+        awful.key({ modkey, }, "p", function() awful.spawn("gpick") end,
+            { description = "gpick", group = "launcher" }),
         -- screenshot
         awful.key({ modkey, }, "s",
             function()
                 awful.spawn.with_shell("sleep 0.3 && scrot '%Y%m%d%H%M_$wx$h.png' -s -e 'mv $f ~/Screenshots/'",
                     false)
             end,
-            { description = "截图", group = "launcher" }),
+            { description = "screenshot", group = "launcher" }),
 
         -- awful.key({ modkey },            "r",     function () awful.screen.focused().my_promptbox:run() end,
         --          {description = "run prompt", group = "launcher"}),
