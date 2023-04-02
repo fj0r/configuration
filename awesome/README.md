@@ -5,8 +5,8 @@
 - scrot
 - xscreensaver
 - wallpaper(~/Pictures/wallpaper)
-- xcape
 - setxkbmap
+- xcape
 
 ## todo
 - monitor

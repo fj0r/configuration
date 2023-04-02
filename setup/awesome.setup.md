@@ -9,12 +9,13 @@
         - hide address bar: Type “Address Bar” in Quick Commands
         - Settings > Appearance > Status Bar > Only show status info overlay
         - Settings > Keyboard > Tab > Previous / Next (C-[ C-] M-[ M-])
+        - Settings > Keyboard > Tab > Address Bar (F3)
         - Surfingkeys
         - SingleFile
         - Bitwarden
     - ibus-rime
     - setxkbmap `setxkbmap -option 'ctrl:swapcaps'`
-    - xcape `xcape -e 'Super_L=Super_L|Control_L|Escape'`
+    - ~~xcape~~
     - xrandr
     - xscreensaver
 
