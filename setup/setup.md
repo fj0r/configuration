@@ -7,6 +7,8 @@
     - scrot
     - vivaldi
     - ibus-rime
+    - xcape
+    - setxkbmap
 
 # 常用软件
 git podman buildah skopeo

@@ -72,19 +72,17 @@ return function(conf, meta)
                 keys = { tab, 'ISO_Left_Tab' }
             },
             { description = "cycle focus", group = "client" }),
+        awful.key({ meta, }, tab, function() awful.screen.focus_relative(1) end,
+            { description = "focus the next screen", group = "screen" }),
         -- rofi -show
         -- rofi -show run
         -- rofi -show combi -combi-modes 'window,run' -modes combi
-        awful.key({ meta, }, tab, function() awful.spawn("rofi -show combi -combi-modes 'window,run' -modes combi") end,
+        awful.key({ alt, }, "`", function() awful.spawn("rofi -show combi -combi-modes 'window,run' -modes combi -kb-toggle-sort '' -kb-cancel 'Alt+grave'") end,
             { description = "rofi -show combi", group = "launcher" }),
-        awful.key({ alt, }, '`', function() awful.screen.focus_relative(1) end,
-            { description = "focus the next screen", group = "screen" }),
-        awful.key({ meta, }, "`", function() revelation({ curr_tag_only = true }) end,
+        awful.key({ meta, }, '`', function() revelation({ curr_tag_only = true }) end,
             { description = "revelation", group = "client" }),
-        awful.key({ meta, }, "q", function() quake:toggle() end,
-            { description = "quake", group = "launcher" }),
-        -- Prompt
-        awful.key({ meta, }, "o", function() awful.spawn("rofi -show combi -combi-modes 'window,run' -modes combi") end,
+        -- with xcape -e 'Super_L=Super_L|Control_L|Escape'
+        awful.key({ meta, ctrl }, 'Escape', function() awful.spawn("rofi -show combi -combi-modes 'window,run' -modes combi") end,
             { description = "rofi -show combi", group = "launcher" }),
         awful.key({ meta }, "x",
             function()
@@ -96,6 +94,10 @@ return function(conf, meta)
                 }
             end,
             { description = "lua execute prompt", group = "awesome" }),
+        awful.key({ meta, }, "q", function() quake:toggle() end,
+            { description = "quake", group = "launcher" }),
+        awful.key({ meta, }, "o", function() awful.spawn("rofi -show run -kb-cancel 'Super+o'") end,
+            { description = "rofi -show run", group = "launcher" }),
 
 
         awful.key({ meta, }, "j",

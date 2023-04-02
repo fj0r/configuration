@@ -24,6 +24,7 @@ local palette = {
 local M = {
     autorun = {
         "setxkbmap -option 'ctrl:swapcaps'",
+        "xcape -e 'Super_L=Super_L|Control_L|Escape'",
         --"source ~/.config/xrandr.rc",
     },
     autorun_once = {
