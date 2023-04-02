@@ -165,6 +165,7 @@ local battery = function()
         color = '#ffd8b1',
         invalid_color = 'black',
         src = lain.widget.bat,
+        status = function() return bat_now.ac_status end,
         value = function() return bat_now.perc == 'N/A' and 0 or bat_now.perc end,
         format = function(v) return v > 0 and 'BATTERY: <b>' .. v .. '</b>%' or 'NO BATTERY' end
     }
