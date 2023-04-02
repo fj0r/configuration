@@ -72,19 +72,20 @@ return function(conf, meta)
                 keys = { tab, 'ISO_Left_Tab' }
             },
             { description = "cycle focus", group = "client" }),
-        awful.key({ meta, }, tab, function() awful.spawn("rofi -show") end,
-            { description = "rofi -show window", group = "launcher" }),
+        -- rofi -show
+        -- rofi -show run
+        -- rofi -show combi -combi-modes 'window,run' -modes combi
+        awful.key({ meta, }, tab, function() awful.spawn("rofi -show combi -combi-modes 'window,run' -modes combi") end,
+            { description = "rofi -show combi", group = "launcher" }),
         awful.key({ alt, }, '`', function() awful.screen.focus_relative(1) end,
             { description = "focus the next screen", group = "screen" }),
-        awful.key({ meta, }, "`", function() awful.spawn("rofi -show run") end,
-            { description = "rofi -show run", group = "launcher" }),
+        awful.key({ meta, }, "`", function() revelation({ curr_tag_only = true }) end,
+            { description = "revelation", group = "client" }),
         awful.key({ meta, }, "q", function() quake:toggle() end,
             { description = "quake", group = "launcher" }),
-        awful.key({ meta, }, "v", function() revelation({ curr_tag_only = true }) end,
-            { description = "revelation", group = "client" }),
         -- Prompt
-        awful.key({ meta, }, "o", function() awful.spawn("rofi -show run") end,
-            { description = "rofi -show run", group = "launcher" }),
+        awful.key({ meta, }, "o", function() awful.spawn("rofi -show combi -combi-modes 'window,run' -modes combi") end,
+            { description = "rofi -show combi", group = "launcher" }),
         awful.key({ meta }, "x",
             function()
                 awful.prompt.run {
