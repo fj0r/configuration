@@ -71,20 +71,24 @@ return function(conf, meta)
                 debug_use_naughty_notify = true,
                 keys = { tab, 'ISO_Left_Tab' }
             },
-            { description = "cycle focus", group = "client" }),
+            { description = "cycle focus", group = "switch" }),
         awful.key({ meta, }, tab, function() awful.screen.focus_relative(1) end,
-            { description = "focus the next screen", group = "screen" }),
+            { description = "focus the next screen", group = "switch" }),
         -- rofi -show
         -- rofi -show run
         -- rofi -show combi -combi-modes 'window,run' -modes combi
         awful.key({ alt, }, "`", function() awful.spawn("rofi -show combi -combi-modes 'window,run' -modes combi -kb-toggle-sort '' -kb-cancel 'Alt+grave'") end,
-            { description = "rofi -show combi", group = "launcher" }),
+            { description = "rofi -show combi", group = "switch" }),
         awful.key({ meta, }, '`', function() revelation({ curr_tag_only = true }) end,
-            { description = "revelation", group = "client" }),
+            { description = "revelation", group = "switch" }),
         -- with xcape -e 'Super_L=Super_L|Control_L|Escape'
+        --[[
         awful.key({ meta, ctrl }, 'Escape', function() awful.spawn("rofi -show combi -combi-modes 'window,run' -modes combi") end,
             { description = "rofi -show combi", group = "launcher" }),
-        awful.key({ meta }, "x",
+        --]]
+        awful.key({ meta, }, "o", function() awful.spawn("rofi -show run -kb-cancel 'Super+o'") end,
+            { description = "rofi -show run", group = "launcher" }),
+        awful.key({ meta, ctrl }, "x",
             function()
                 awful.prompt.run {
                     prompt       = "Run Lua code: ",
@@ -94,10 +98,25 @@ return function(conf, meta)
                 }
             end,
             { description = "lua execute prompt", group = "awesome" }),
+        awful.key({ meta }, "x",
+            function()
+                awful.spawn.easy_async_with_shell(
+                    "xprop | grep -e '^\\(WM_NAME\\|WM_CLASS\\)'",
+                    function(out)
+                        require'naughty'.notify {
+                            titel = 'xprop',
+                            timeout = 0,
+                            opacity = 0.5,
+                            fg = '#FBFFB9',
+                            bg = 'black',
+                            text = out
+                        }
+                    end)
+            awful.spawn("xprop")
+            end,
+            { description = "xprop", group = "awesome" }),
         awful.key({ meta, }, "q", function() quake:toggle() end,
             { description = "quake", group = "launcher" }),
-        awful.key({ meta, }, "o", function() awful.spawn("rofi -show run -kb-cancel 'Super+o'") end,
-            { description = "rofi -show run", group = "launcher" }),
 
 
         awful.key({ meta, }, "j",
