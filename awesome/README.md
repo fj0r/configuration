@@ -5,6 +5,8 @@
 - scrot
 - xscreensaver
 - wallpaper(~/Pictures/wallpaper)
+- xcape
+- setxkbmap
 
 ## todo
 - monitor
@@ -15,7 +17,9 @@
     - [x] margin
 - keymap
     - [ ] shutdown, reboot whit timeout 10sec
-    - [ ] tap meta
+    - [x] tap Super(xcape)
+        - [x] !Super to exit rofi
+            - `-kb-cancel '!Super+Control+Escape'"`
 - overseer tag
     - [ ] rules
 
