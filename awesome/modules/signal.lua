@@ -3,6 +3,9 @@ local gears = require("gears")
 local wibox = require("wibox")
 
 return function()
+    -- TODO: spawn initiated
+    -- awesome.connect_signal("spawn::initiated", function(c) require'say'{'init', c} end)
+
     -- {{{ Signals
     -- Signal function to execute when a new client appears.
     client.connect_signal("manage", function(c)
