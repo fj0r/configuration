@@ -32,7 +32,7 @@ local cycle_filter_legacy = function(c, source_c)
 end
 
 
-return function(conf, meta)
+return function(conf, meta, wallpaper)
     local terminal = conf.terminal or "x-terminal-emulator"
 
     local quake = lain.util.quake {
@@ -60,7 +60,16 @@ return function(conf, meta)
             { description = "reload awesome", group = "awesome" }),
         awful.key({ meta, shift }, "q", awesome.quit,
             { description = "quit awesome", group = "awesome" }),
-        awful.key({ meta, shift }, "/", function() awful.spawn("i3lock && echo mem > /sys/power/state") end,
+        awful.key({ meta, shift }, "/", function()
+            local cmd = "convert " .. wallpaper .. " -resize"
+                .. " $(xdpyinfo | grep dimensions |"
+                .. " sed -r 's/^[^0-9]*([0-9]+x[0-9]+).*$/\1/') RGB:-"
+                .. " | i3lock --raw $(xdpyinfo | grep dimensions |"
+                .. " sed -r 's/^[^0-9]*([0-9]+x[0-9]+).*$/\1/'):rgb"
+                .. " --image /dev/stdin"
+            local sleep = 'bash -c "echo mem | sudo tee /sys/power/state > /dev/null"'
+            awful.spawn('bash -c "' .. cmd .. '"')
+        end,
             { description = "lock screen", group = "awesome" }),
         awful.key({ meta, }, ".", function() machi.default_editor.start_interactive() end,
             { description = "edit the current layout if it is a machi layout", group = "layout" }),
