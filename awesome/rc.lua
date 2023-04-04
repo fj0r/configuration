@@ -57,7 +57,7 @@ modules.screen(conf, menu, wallpaper)
 
 modules.mouse()
 
-root.keys(modules.global_keys(conf, modkey))
+root.keys(modules.global_keys(conf, modkey, wallpaper))
 
 -- Rules to apply to new clients (through the "manage" signal).
 awful.rules.rules = modules.rules(conf, modkey, modules.client_keys(modkey))
