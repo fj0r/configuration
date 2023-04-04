@@ -7,12 +7,12 @@ return function(conf)
     beautiful.init(gears.filesystem.get_themes_dir() .. "default/theme.lua")
     beautiful.useless_gap = conf.theme.gap
 
-    local normal_bg = conf.theme.color.normal.bg or beautiful.bg_normal
-    local normal_fg = conf.theme.color.normal.fg or beautiful.fg_normal
-    local focus_bg  = conf.theme.color.focus.bg or beautiful.bg_focus
-    local focus_fg  = conf.theme.color.focus.fg or beautiful.fg_focus
-    local urgent_bg = conf.theme.color.urgent.bg or beautiful.bg_urgent
-    local urgent_fg = conf.theme.color.urgent.fg or beautiful.fg_urgent
+    local normal_bg              = conf.theme.color.normal.bg or beautiful.bg_normal
+    local normal_fg              = conf.theme.color.normal.fg or beautiful.fg_normal
+    local focus_bg               = conf.theme.color.focus.bg or beautiful.bg_focus
+    local focus_fg               = conf.theme.color.focus.fg or beautiful.fg_focus
+    local urgent_bg              = conf.theme.color.urgent.bg or beautiful.bg_urgent
+    local urgent_fg              = conf.theme.color.urgent.fg or beautiful.fg_urgent
     beautiful.bg_normal          = normal_bg
     beautiful.fg_normal          = normal_fg
     beautiful.bg_focus           = focus_bg

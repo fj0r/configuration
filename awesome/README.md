@@ -3,10 +3,10 @@
 - wezterm
 - rofi
 - scrot
-- xscreensaver
 - wallpaper(~/Pictures/wallpaper)
 - setxkbmap
 - xcape
+- i3lock-color / x11-utils
 
 ## todo
 - monitor

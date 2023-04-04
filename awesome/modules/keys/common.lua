@@ -60,7 +60,7 @@ return function(conf, meta)
             { description = "reload awesome", group = "awesome" }),
         awful.key({ meta, shift }, "q", awesome.quit,
             { description = "quit awesome", group = "awesome" }),
-        awful.key({ meta, shift }, "/", function() awful.spawn("xdg-screensaver lock") end,
+        awful.key({ meta, shift }, "/", function() awful.spawn("i3lock && echo mem > /sys/power/state") end,
             { description = "lock screen", group = "awesome" }),
         awful.key({ meta, }, ".", function() machi.default_editor.start_interactive() end,
             { description = "edit the current layout if it is a machi layout", group = "layout" }),
@@ -77,7 +77,9 @@ return function(conf, meta)
         -- rofi -show
         -- rofi -show run
         -- rofi -show combi -combi-modes 'window,run' -modes combi
-        awful.key({ alt, }, "`", function() awful.spawn("rofi -show combi -combi-modes 'window,run' -modes combi -kb-toggle-sort '' -kb-cancel 'Alt+grave'") end,
+        awful.key({ alt, }, "`",
+            function() awful.spawn("rofi -show combi -combi-modes 'window,run' -modes combi -kb-toggle-sort '' -kb-cancel 'Alt+grave'") end
+            ,
             { description = "rofi -show combi", group = "switch" }),
         awful.key({ meta, }, '`', function() revelation({ curr_tag_only = true }) end,
             { description = "revelation", group = "switch" }),
@@ -103,7 +105,7 @@ return function(conf, meta)
                 awful.spawn.easy_async_with_shell(
                     "xprop | grep -e '^\\(WM_NAME\\|WM_CLASS\\)'",
                     function(out)
-                        require'naughty'.notify {
+                        require 'naughty'.notify {
                             titel = 'xprop',
                             timeout = 0,
                             opacity = 0.5,
@@ -112,7 +114,7 @@ return function(conf, meta)
                             text = out
                         }
                     end)
-            awful.spawn("xprop")
+                awful.spawn("xprop")
             end,
             { description = "xprop", group = "awesome" }),
         awful.key({ meta, }, "q", function() quake:toggle() end,
@@ -175,7 +177,7 @@ return function(conf, meta)
             end,
             { description = "screenshot", group = "launcher" })
 
-        -- awful.key({ modkey },            "r",     function () awful.screen.focused().my_promptbox:run() end,
-        --          {description = "run prompt", group = "launcher"}),
+    -- awful.key({ modkey },            "r",     function () awful.screen.focused().my_promptbox:run() end,
+    --          {description = "run prompt", group = "launcher"}),
     )
 end

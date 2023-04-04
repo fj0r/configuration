@@ -6,8 +6,8 @@ return function(conf, meta, globalkeys)
     local alt = 'Mod1'
     local ctrl = 'Control'
     local shift = 'Shift'
-    local fn = function (i) return 'F' .. i end
-    local num = function (i) return '#' .. i + 9 end
+    local fn = function(i) return 'F' .. i end
+    local num = function(i) return '#' .. i + 9 end
 
     -- Bind all key numbers to tags.
     -- Be careful: we use keycodes to make it work on any keyboard layout.

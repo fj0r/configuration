@@ -18,7 +18,7 @@ modules.autorun {
 modules.handle_error()
 modules.theme(conf)
 local menu = modules.menu(conf)
-local set_wallpaper = modules.set_wallpaper(conf)
+local wallpaper = modules.select_wallpaper(conf)
 modules.signal()
 
 -- Default modkey.
@@ -52,7 +52,7 @@ awful.layout.layouts = {
     machi.default_layout,
 }
 
-modules.screen(conf, menu, set_wallpaper)
+modules.screen(conf, menu, wallpaper)
 -- Re-set wallpaper when a screen's geometry changes (e.g. different resolution)
 
 modules.mouse()

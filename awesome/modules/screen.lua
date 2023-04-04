@@ -30,7 +30,16 @@ local tasklist_buttons = gears.table.join(
         awful.client.focus.byidx(-1)
     end))
 
-return function(conf, menu, set_wallpaper)
+
+local wallpaper_setter = function(wallpaper)
+    return function(s)
+        gears.wallpaper.maximized(wallpaper, s, true)
+    end
+end
+
+return function(conf, menu, wallpaper)
+    local set_wallpaper = wallpaper_setter(wallpaper)
+
     local rotated_widget = utils.rotate(conf.sidebar)
     screen.connect_signal("property::geometry", set_wallpaper)
 
