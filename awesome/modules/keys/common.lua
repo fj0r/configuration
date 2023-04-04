@@ -60,7 +60,7 @@ return function(conf, meta)
             { description = "reload awesome", group = "awesome" }),
         awful.key({ meta, shift }, "q", awesome.quit,
             { description = "quit awesome", group = "awesome" }),
-        awful.key({ meta, shift }, "/", function() awful.spawn("xscreensaver-command -lock") end,
+        awful.key({ meta, shift }, "/", function() awful.spawn("xdg-screensaver lock") end,
             { description = "lock screen", group = "awesome" }),
         awful.key({ meta, }, ".", function() machi.default_editor.start_interactive() end,
             { description = "edit the current layout if it is a machi layout", group = "layout" }),
