@@ -113,8 +113,8 @@ local net = function(config)
 end
 
 
-local color_generator = function (colors)
-    return function (value, total, reverse)
+local color_generator = function(colors)
+    return function(value, total, reverse)
         local ix = math.ceil(value / (total / #colors))
         if reverse then
             ix = #colors - ix + 1

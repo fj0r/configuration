@@ -1,6 +1,4 @@
 local beautiful = require("beautiful")
-local gears = require("gears")
-local utils = require('utils')
 
 local random_wallpaper = function(conf)
     local wallpaper_list = {}
@@ -24,20 +22,14 @@ end
 return function(conf)
     local rw = random_wallpaper(conf)
 
-    return function(s)
-        -- local wp = wallpaper_list[math.random(#wallpaper_list)]
-        -- gears.wallpaper.maximized(wp, screen)
-        local wallpaper
-        if conf.theme.wallpaper then
-            wallpaper = rw()
-        else
-            wallpaper = beautiful.wallpaper
-        end
-        if type(wallpaper) == "function" then
-            wallpaper = wallpaper(s)
-        end
-        gears.wallpaper.maximized(wallpaper, s, true)
+    -- local wp = wallpaper_list[math.random(#wallpaper_list)]
+    -- gears.wallpaper.maximized(wp, screen)
+    local wallpaper
+    if conf.theme.wallpaper then
+        wallpaper = rw()
+    else
+        wallpaper = beautiful.wallpaper
     end
 
-
+    return wallpaper
 end
