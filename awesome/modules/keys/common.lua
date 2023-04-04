@@ -87,7 +87,7 @@ return function(conf, meta, wallpaper)
         -- rofi -show run
         -- rofi -show combi -combi-modes 'window,run' -modes combi
         awful.key({ alt, }, "`",
-            function() awful.spawn("rofi -show combi -combi-modes 'window,run' -modes combi -kb-toggle-sort '' -kb-cancel 'Alt+grave'") end
+            function() awful.spawn("rofi -show combi -combi-modes 'window,run' -modes combi") end
             ,
             { description = "rofi -show combi", group = "switch" }),
         awful.key({ meta, }, '`', function() revelation({ curr_tag_only = true }) end,
@@ -97,7 +97,7 @@ return function(conf, meta, wallpaper)
         awful.key({ meta, ctrl }, 'Escape', function() awful.spawn("rofi -show combi -combi-modes 'window,run' -modes combi") end,
             { description = "rofi -show combi", group = "launcher" }),
         --]]
-        awful.key({ meta, }, "o", function() awful.spawn("rofi -show run -kb-cancel 'Super+o'") end,
+        awful.key({ meta, }, "o", function() awful.spawn("rofi -show run") end,
             { description = "rofi -show run", group = "launcher" }),
         awful.key({ meta, ctrl }, "x",
             function()
