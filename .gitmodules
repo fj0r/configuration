@@ -1,9 +1,18 @@
 [submodule "nvim"]
 	path = nvim
-	url = git@github.com:murphil/nvim.git
+	url = git@github.com:fj0r/nvim-lua.git
 [submodule ".zshrc.d"]
 	path = .zshrc.d
-	url = git@github.com:infra/.zshrc.d.git
+	url = git@github.com:fj0r/.zshrc.d.git
 [submodule "zellij"]
 	path = zellij
-	url = url = git@github.com:infra/zellij.git
+	url = git@github.com:fj0r/zellij.git
+[submodule "nushell"]
+	path = nushell
+	url = git@github.com:fj0r/nushell.git
+[submodule "awesome"]
+	path = awesome
+	url = git@github.com:fj0r/awesomewm.git
+[submodule "wezterm"]
+	path = wezterm
+	url = git@github.com:fj0r/wezterm.git
