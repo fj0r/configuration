@@ -6,7 +6,7 @@ wezterm.on("gui-startup", function(cmd)
 end)
 
 return {
-    color_scheme = "Gruvbox Dark",
+    color_scheme = "zenbones_dark",
     enable_tab_bar = false,
     --default_prog = { "nvim" },
     launch_menu = {
