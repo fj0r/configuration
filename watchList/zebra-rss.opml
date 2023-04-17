@@ -122,6 +122,8 @@
             <outline text="differential-datalog" type="rss" xmlUrl="https://github.com/vmware/differential-datalog/releases.atom"></outline>
             <outline text="ray" type="rss" xmlUrl="https://github.com/ray-project/ray/releases.atom"></outline>
             <outline text="PyTorch" type="rss" xmlUrl="https://pytorch.org/feed.xml"></outline>
+            <outline text="pygwalker" type="rss" xmlUrl="https://github.com/Kanaries/pygwalker/releases.atom"></outline>
+            <outline text="graphic-walker" type="rss" xmlUrl="https://github.com/Kanaries/graphic-walker/releases.atom"></outline>
         </outline>
         <outline text="database">
             <outline text="PostgreSQL news" type="rss" xmlUrl="https://www.postgresql.org/news.rss"></outline>
@@ -364,7 +366,6 @@
         <outline text="Planet Haskell" type="rss" xmlUrl="https://planet.haskell.org/atom.xml"></outline>
         <outline text="PostgreSQL news" type="rss" xmlUrl="https://www.postgresql.org/news.rss"></outline>
         <outline text="PyTorch" type="rss" xmlUrl="https://pytorch.org/feed.xml"></outline>
-        <outline text="Release notes from neon" type="rss" xmlUrl="https://github.com/neondatabase/neon/releases.atom"></outline>
         <outline text="SaltTiger" type="rss" xmlUrl="http://www.salttiger.com/feed/"></outline>
         <outline text="Scientific American Content: Global" type="rss" xmlUrl="http://rss.sciam.com/ScientificAmerican-Global?format=xml"></outline>
         <outline text="Scientific American Feature Articles" type="rss" xmlUrl="http://rss.sciam.com/sciam/feature-articles?format=xml"></outline>
@@ -444,6 +445,7 @@
         <outline text="golang" type="rss" xmlUrl="https://blog.golang.org/feed.atom"></outline>
         <outline text="goofys" type="rss" xmlUrl="https://github.com/kahing/goofys/releases.atom"></outline>
         <outline text="grain" type="rss" xmlUrl="https://github.com/grain-lang/grain/releases.atom"></outline>
+        <outline text="graphic-walker" type="rss" xmlUrl="https://github.com/Kanaries/graphic-walker/releases.atom"></outline>
         <outline text="greptimedb" type="rss" xmlUrl="https://github.com/GreptimeTeam/greptimedb/releases.atom"></outline>
         <outline text="haskell-language-server" type="rss" xmlUrl="https://github.com/haskell/haskell-language-server/releases.atom"></outline>
         <outline text="hasura graphql-engine" type="rss" xmlUrl="https://github.com/hasura/graphql-engine/releases.atom"></outline>
@@ -530,6 +532,7 @@
         <outline text="promscale" type="rss" xmlUrl="https://github.com/timescale/promscale/releases.atom"></outline>
         <outline text="pulsar" type="rss" xmlUrl="https://github.com/apache/pulsar/releases.atom"></outline>
         <outline text="pushpin" type="rss" xmlUrl="https://github.com/fanout/pushpin/releases.atom"></outline>
+        <outline text="pygwalker" type="rss" xmlUrl="https://github.com/Kanaries/pygwalker/releases.atom"></outline>
         <outline text="python-build-standalone(musl)" type="rss" xmlUrl="https://github.com/indygreg/python-build-standalone/releases.atom"></outline>
         <outline text="qtile" type="rss" xmlUrl="https://github.com/qtile/qtile/releases.atom"></outline>
         <outline text="quilkin(udp proxy)" type="rss" xmlUrl="https://github.com/googleforgames/quilkin/releases.atom"></outline>
