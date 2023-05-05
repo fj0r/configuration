@@ -120,7 +120,6 @@
             <outline text="cube.js" type="rss" xmlUrl="https://github.com/cube-js/cube.js/releases.atom"></outline>
             <outline text="neuronika" type="rss" xmlUrl="https://github.com/neuronika/neuronika/releases.atom"></outline>
             <outline text="burn" type="rss" xmlUrl="https://github.com/burn-rs/burn/releases.atom"></outline>
-            <outline text="databend" type="rss" xmlUrl="https://github.com/datafuselabs/databend/releases.atom"></outline>
             <outline text="lance" type="rss" xmlUrl="https://github.com/eto-ai/lance/releases.atom"></outline>
             <outline text="differential-datalog" type="rss" xmlUrl="https://github.com/vmware/differential-datalog/releases.atom"></outline>
             <outline text="ray" type="rss" xmlUrl="https://github.com/ray-project/ray/releases.atom"></outline>
@@ -169,6 +168,7 @@
             <outline text="pgbackrest" type="rss" xmlUrl="https://github.com/pgbackrest/pgbackrest/releases.atom"></outline>
             <outline text="greptimedb" type="rss" xmlUrl="https://github.com/GreptimeTeam/greptimedb/releases.atom"></outline>
             <outline text="DuckDB(parquet)" type="rss" xmlUrl="https://duckdb.org/feed.xml"></outline>
+            <outline text="milvus" type="rss" xmlUrl="https://github.com/milvus-io/milvus/releases.atom"></outline>
         </outline>
         <outline text="framework">
             <outline text="axum" type="rss" xmlUrl="https://github.com/tokio-rs/axum/releases.atom"></outline>
@@ -323,7 +323,6 @@
             <outline text="tremor-runtime(etl)" type="rss" xmlUrl="https://github.com/tremor-rs/tremor-runtime/releases.atom"></outline>
         </outline>
         <outline text="search">
-            <outline text="milvus" type="rss" xmlUrl="https://github.com/milvus-io/milvus/releases.atom"></outline>
             <outline text="sonic" type="rss" xmlUrl="https://github.com/valeriansaliou/sonic/releases.atom"></outline>
             <outline text="hora" type="rss" xmlUrl="https://github.com/hora-search/hora/releases.atom"></outline>
             <outline text="meilisearch" type="rss" xmlUrl="https://github.com/meilisearch/meilisearch/releases.atom"></outline>
