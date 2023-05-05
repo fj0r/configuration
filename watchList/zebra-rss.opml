@@ -36,6 +36,7 @@
             <outline text="termux-app" type="rss" xmlUrl="https://github.com/termux/termux-app/releases.atom"></outline>
             <outline text="caps2ctrl" type="rss" xmlUrl="https://github.com/shiftrot/caps2ctrl/releases.atom"></outline>
             <outline text="librera" type="rss" xmlUrl="https://github.com/foobnix/LibreraReader/releases.atom"></outline>
+            <outline text="plain-app" type="rss" xmlUrl="https://github.com/ismartcoding/plain-app/releases.atom"></outline>
         </outline>
         <outline text="app">
             <outline text="penpot" type="rss" xmlUrl="https://github.com/penpot/penpot/releases.atom"></outline>
@@ -68,6 +69,7 @@
             <outline text="blender" type="rss" xmlUrl="https://github.com/blender/blender/releases.atom"></outline>
             <outline text="crowbook(epub)" type="rss" xmlUrl="https://github.com/lise-henry/crowbook/releases.atom"></outline>
             <outline text="typst(like latex)" type="rss" xmlUrl="https://github.com/typst/typst/releases.atom"></outline>
+            <outline text="LibreTranslate" type="rss" xmlUrl="https://github.com/LibreTranslate/LibreTranslate/releases.atom"></outline>
         </outline>
         <outline text="blockchain">
             <outline text="substrate" type="rss" xmlUrl="https://github.com/paritytech/substrate/releases.atom"></outline>
@@ -98,6 +100,7 @@
             <outline text="Pijul(vcs)" type="rss" xmlUrl="http://pijul.org/index.xml"></outline>
             <outline text="dasel" type="rss" xmlUrl="https://github.com/TomWright/dasel/releases.atom"></outline>
             <outline text="wezterm" type="rss" xmlUrl="https://github.com/wez/wezterm/releases.atom"></outline>
+            <outline text="hurl" type="rss" xmlUrl="https://github.com/Orange-OpenSource/hurl/releases.atom"></outline>
         </outline>
         <outline text="data science">
             <outline text="rust native_spark" type="rss" xmlUrl="https://github.com/rajasekarv/native_spark/releases.atom"></outline>
@@ -201,6 +204,9 @@
             <outline text="veloren" type="rss" xmlUrl="https://github.com/veloren/veloren/releases.atom"></outline>
             <outline text="Fyrox" type="rss" xmlUrl="https://github.com/FyroxEngine/Fyrox/releases.atom"></outline>
             <outline text="Ambient" type="rss" xmlUrl="https://github.com/AmbientRun/Ambient/releases.atom"></outline>
+            <outline text="Ryujinx(switch emu)" type="rss" xmlUrl="https://github.com/Ryujinx/Ryujinx/tags.atom"></outline>
+            <outline text="yuzu (switch emu)" type="rss" xmlUrl="https://github.com/yuzu-emu/yuzu-mainline/releases.atom"></outline>
+            <outline text="yuzu ea" type="rss" xmlUrl="https://github.com/pineappleEA/pineapple-src/releases.atom"></outline>
         </outline>
         <outline text="gateway">
             <outline text="envoy" type="rss" xmlUrl="https://github.com/envoyproxy/envoy/releases.atom"></outline>
@@ -359,6 +365,7 @@
         <outline text="HVM(fp rt like llvm)" type="rss" xmlUrl="https://github.com/Kindelia/HVM/releases.atom"></outline>
         <outline text="IHaskell:master" type="rss" xmlUrl="https://github.com/gibiansky/IHaskell/commits/master.atom"></outline>
         <outline text="InfoQ" type="rss" xmlUrl="https://www.infoq.cn/feed"></outline>
+        <outline text="LibreTranslate" type="rss" xmlUrl="https://github.com/LibreTranslate/LibreTranslate/releases.atom"></outline>
         <outline text="MacTalk-池建强的随想录" type="rss" xmlUrl="http://macshuo.com/?feed=rss2"></outline>
         <outline text="Matrix67: The Aha Moments" type="rss" xmlUrl="http://www.matrix67.com/blog/feed"></outline>
         <outline text="Node.js" type="rss" xmlUrl="https://nodejs.org/en/feed/releases.xml"></outline>
@@ -366,6 +373,7 @@
         <outline text="Planet Haskell" type="rss" xmlUrl="https://planet.haskell.org/atom.xml"></outline>
         <outline text="PostgreSQL news" type="rss" xmlUrl="https://www.postgresql.org/news.rss"></outline>
         <outline text="PyTorch" type="rss" xmlUrl="https://pytorch.org/feed.xml"></outline>
+        <outline text="Ryujinx(switch emu)" type="rss" xmlUrl="https://github.com/Ryujinx/Ryujinx/tags.atom"></outline>
         <outline text="SaltTiger" type="rss" xmlUrl="http://www.salttiger.com/feed/"></outline>
         <outline text="Scientific American Content: Global" type="rss" xmlUrl="http://rss.sciam.com/ScientificAmerican-Global?format=xml"></outline>
         <outline text="Scientific American Feature Articles" type="rss" xmlUrl="http://rss.sciam.com/sciam/feature-articles?format=xml"></outline>
@@ -454,6 +462,7 @@
         <outline text="helm" type="rss" xmlUrl="https://github.com/helm/helm/releases.atom"></outline>
         <outline text="hora" type="rss" xmlUrl="https://github.com/hora-search/hora/releases.atom"></outline>
         <outline text="htmlq" type="rss" xmlUrl="https://github.com/mgdm/htmlq/releases.atom"></outline>
+        <outline text="hurl" type="rss" xmlUrl="https://github.com/Orange-OpenSource/hurl/releases.atom"></outline>
         <outline text="hydra" type="rss" xmlUrl="https://github.com/ory/hydra/releases.atom"></outline>
         <outline text="ihp(haskell)" type="rss" xmlUrl="https://github.com/digitallyinduced/ihp/releases.atom"></outline>
         <outline text="incubator-age" type="rss" xmlUrl="https://github.com/apache/incubator-age/releases.atom"></outline>
@@ -522,6 +531,7 @@
         <outline text="pg_jieba" type="rss" xmlUrl="https://github.com/jaiminpan/pg_jieba/commits/master.atom"></outline>
         <outline text="pgbackrest" type="rss" xmlUrl="https://github.com/pgbackrest/pgbackrest/releases.atom"></outline>
         <outline text="pgx(pg extension)" type="rss" xmlUrl="https://github.com/tcdi/pgx/releases.atom"></outline>
+        <outline text="plain-app" type="rss" xmlUrl="https://github.com/ismartcoding/plain-app/releases.atom"></outline>
         <outline text="planet.haskell" type="rss" xmlUrl="https://planet.haskell.org/rss20.xml"></outline>
         <outline text="podman" type="rss" xmlUrl="https://github.com/containers/libpod/releases.atom"></outline>
         <outline text="polars" type="rss" xmlUrl="https://github.com/pola-rs/polars/releases.atom"></outline>
@@ -629,6 +639,8 @@
         <outline text="youki" type="rss" xmlUrl="https://github.com/containers/youki/releases.atom"></outline>
         <outline text="yq" type="rss" xmlUrl="https://github.com/mikefarah/yq/releases.atom"></outline>
         <outline text="yt-dlp" type="rss" xmlUrl="https://github.com/yt-dlp/yt-dlp/releases.atom"></outline>
+        <outline text="yuzu (switch emu)" type="rss" xmlUrl="https://github.com/yuzu-emu/yuzu-mainline/releases.atom"></outline>
+        <outline text="yuzu ea" type="rss" xmlUrl="https://github.com/pineappleEA/pineapple-src/releases.atom"></outline>
         <outline text="zathura" type="rss" xmlUrl="https://github.com/pwmt/zathura/releases.atom"></outline>
         <outline text="zellij" type="rss" xmlUrl="https://github.com/zellij-org/zellij/releases.atom"></outline>
         <outline text="zsh-histdb" type="rss" xmlUrl="https://github.com/larkery/zsh-histdb/commits/master.atom"></outline>

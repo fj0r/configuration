@@ -1,7 +1,6 @@
 export-env {
-    let-env SHELL = 'nu' # for zellij
-
     let-env LS_ROOT = '/opt/language-server'
     let-env NVIM_PRESET = if 'NVIM_PRESET' in (env).name { $env.NVIM_PRESET } else { 'x' }
     let-env NU_POWER_MODE = 'power'
+    source ~/.local/share/atuin/init.nu
 }
