@@ -47,9 +47,6 @@ freefilesync [zathura(pdf) liferea]
 
 fonts
   - JetBrains Mono
-  - SansCode
-  - Hasklig
-  - Operator Mono Lig
 
 
 ```bash

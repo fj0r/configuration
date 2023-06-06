@@ -1,10 +1,18 @@
 # 常用软件
 ```bash
 sudo apt install \
-    zsh git tmux \
+    zsh git \
     podman buildah skopeo \
     openssh-server wireguard-tools resolvconf \
-    jq tree wget curl xh sqlite
+    jq tree wget curl sqlite
+
+# awesome
+sudo apt install \
+    awesome rofi scrot xclip
+# i3lock-color
+
+# cli
+# wezterm nushell nvim zellij
 ```
 ## 驱动
 ```bash
@@ -42,15 +50,13 @@ sudo systemctl enable --now wg-quick@wg3
 ```bash
 sudo apt install ibus-rime
 cd ~/data/rime-wubi
-sudo cp -f wubi86_fg* pinyin_simp* /usr/share/rime-data/
-sudo yq -i e '.schema_list[0].schema="wubi86_fg_pinyin"' /usr/share/rime-data/default.yaml
+just linux
+
+ibus-setup
 ```
 
 ## fonts
   - JetBrains Mono
-  - SansCode
-  - Hasklig
-  - Operator Mono Lig
 
 ```bash
 sudo cp -r ~plt/fonts/JetBrainsMono /usr/share/fonts
@@ -61,7 +67,7 @@ sudo fc-cache -fv
 ```bash
 cd ~/data/clash
 just run
-sudo cp ~c/systemd/clash.service /etc/systemd/system
+sudo cp clash.service /etc/systemd/system
 sudo systemctl daemon-reload
 sudo systemctl enable --now clash.service
 ```
@@ -70,7 +76,7 @@ sudo systemctl enable --now clash.service
 ```bash
 cd ~/data/gitea
 bash start.sh
-sudo cp ~c/systemd/gitea* /etc/systemd/system
+sudo cp systemd/* /etc/systemd/system
 sudo systemctl daemon-reload
 sudo systemctl enable --now gitea
 ```
@@ -86,12 +92,20 @@ sudo npm install -g @bitwarden/cli
 - alacritty
 - calibre
 
-awesome rofi
 zathura(pdf)
 
-xrandr scrot xscreensaver
+xrandr xscreensaver
 
-vivaldi freefilesync
+vivaldi
+  - hide address bar: Type “Address Bar” in Quick Commands
+  - Settings > Appearance > Status Bar > Only show status info overlay
+  - Settings > Keyboard > Tab > Previous / Next (C-[ C-] M-[ M-])
+  - Settings > Keyboard > Tab > Address Bar (F3)
+  - Surfingkeys
+  - SingleFile
+  - Bitwarden
+
+freefilesync
 
 `setxkbmap -option 'ctrl:swapcaps'`
 
