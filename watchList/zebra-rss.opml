@@ -16,11 +16,8 @@
             <outline text="开源中国社区最新新闻" type="rss" xmlUrl="http://www.oschina.net/news/rss"></outline>
             <outline text="Planet Haskell" type="rss" xmlUrl="https://planet.haskell.org/atom.xml"></outline>
             <outline text="planet.haskell" type="rss" xmlUrl="https://planet.haskell.org/rss20.xml"></outline>
-            <outline text="DockOne.io" type="rss" xmlUrl="https://rsshub.app/dockone/weekly"></outline>
             <outline text="阮一峰的网络日志" type="rss" xmlUrl="http://www.ruanyifeng.com/blog/atom.xml"></outline>
             <outline text="SaltTiger" type="rss" xmlUrl="http://www.salttiger.com/feed/"></outline>
-            <outline text="云风的 BLOG" type="rss" xmlUrl="http://blog.codingnow.com/atom.xml"></outline>
-            <outline text="云风的 BLOG" type="rss" xmlUrl="http://blog.codingnow.com/atom.xml"></outline>
             <outline text="云风的 BLOG" type="rss" xmlUrl="http://blog.codingnow.com/atom.xml"></outline>
         </outline>
         <outline text="SCI">
@@ -121,7 +118,6 @@
             <outline text="weld" type="rss" xmlUrl="https://github.com/weld-project/weld/releases.atom"></outline>
             <outline text="differential-dataflow" type="rss" xmlUrl="https://github.com/TimelyDataflow/differential-dataflow/releases.atom"></outline>
             <outline text="TimelyDataflow" type="rss" xmlUrl="https://github.com/TimelyDataflow/timely-dataflow/releases.atom"></outline>
-            <outline text="cube.js" type="rss" xmlUrl="https://github.com/cube-js/cube.js/releases.atom"></outline>
             <outline text="neuronika" type="rss" xmlUrl="https://github.com/neuronika/neuronika/releases.atom"></outline>
             <outline text="burn" type="rss" xmlUrl="https://github.com/burn-rs/burn/releases.atom"></outline>
             <outline text="differential-datalog" type="rss" xmlUrl="https://github.com/vmware/differential-datalog/releases.atom"></outline>
@@ -161,7 +157,6 @@
             <outline text="jsoncdc" type="rss" xmlUrl="https://github.com/instructure/jsoncdc/releases.atom"></outline>
             <outline text="roapi" type="rss" xmlUrl="https://github.com/roapi/roapi/releases.atom"></outline>
             <outline text="arangodb" type="rss" xmlUrl="https://github.com/arangodb/arangodb/releases.atom"></outline>
-            <outline text="nebula" type="rss" xmlUrl="https://github.com/vesoft-inc/nebula/releases.atom"></outline>
             <outline text="rethinkdb" type="rss" xmlUrl="https://github.com/rethinkdb/rethinkdb/releases.atom"></outline>
             <outline text="indradb" type="rss" xmlUrl="https://github.com/indradb/indradb/releases.atom"></outline>
             <outline text="sled" type="rss" xmlUrl="https://github.com/spacejam/sled/releases.atom"></outline>
@@ -195,7 +190,6 @@
             <outline text="seed" type="rss" xmlUrl="https://github.com/seed-rs/seed/releases.atom"></outline>
             <outline text="solidjs" type="rss" xmlUrl="https://github.com/solidjs/solid/releases.atom"></outline>
             <outline text="reason" type="rss" xmlUrl="https://github.com/reasonml/reason/releases.atom"></outline>
-            <outline text="svelte" type="rss" xmlUrl="https://github.com/sveltejs/svelte/releases.atom"></outline>
             <outline text="swc" type="rss" xmlUrl="https://github.com/swc-project/swc/releases.atom"></outline>
             <outline text="parcel" type="rss" xmlUrl="https://github.com/parcel-bundler/parcel/releases.atom"></outline>
             <outline text="tailwindcss" type="rss" xmlUrl="https://github.com/tailwindlabs/tailwindcss/releases.atom"></outline>
@@ -266,7 +260,6 @@
             <outline text="julia" type="rss" xmlUrl="https://github.com/JuliaLang/julia/releases.atom"></outline>
             <outline text="wasmer" type="rss" xmlUrl="https://github.com/wasmerio/wasmer/releases.atom"></outline>
             <outline text="workerd" type="rss" xmlUrl="https://github.com/cloudflare/workerd/releases.atom"></outline>
-            <outline text="HVM(fp rt like llvm)" type="rss" xmlUrl="https://github.com/Kindelia/HVM/releases.atom"></outline>
             <outline text="scala-lang" type="rss" xmlUrl="https://scala-lang.org/feed/index.xml"></outline>
             <outline text="Node.js" type="rss" xmlUrl="https://nodejs.org/en/feed/releases.xml"></outline>
             <outline text="golang" type="rss" xmlUrl="https://blog.golang.org/feed.atom"></outline>
@@ -362,12 +355,10 @@
         <outline text="Ambient" type="rss" xmlUrl="https://github.com/AmbientRun/Ambient/releases.atom"></outline>
         <outline text="AppFlowy" type="rss" xmlUrl="https://github.com/AppFlowy-IO/AppFlowy/releases.atom"></outline>
         <outline text="Cloudreve" type="rss" xmlUrl="https://github.com/cloudreve/Cloudreve/releases.atom"></outline>
-        <outline text="DockOne.io" type="rss" xmlUrl="https://rsshub.app/dockone/weekly"></outline>
         <outline text="DuckDB(parquet)" type="rss" xmlUrl="https://duckdb.org/feed.xml"></outline>
         <outline text="Forgejo News" type="rss" xmlUrl="https://forgejo.org/rss.xml"></outline>
         <outline text="Forgejo Releases" type="rss" xmlUrl="https://forgejo.org/releases/./rss.xml"></outline>
         <outline text="Fyrox" type="rss" xmlUrl="https://github.com/FyroxEngine/Fyrox/releases.atom"></outline>
-        <outline text="HVM(fp rt like llvm)" type="rss" xmlUrl="https://github.com/Kindelia/HVM/releases.atom"></outline>
         <outline text="HVM(fp rt like llvm)" type="rss" xmlUrl="https://github.com/Kindelia/HVM/releases.atom"></outline>
         <outline text="IHaskell:master" type="rss" xmlUrl="https://github.com/gibiansky/IHaskell/commits/master.atom"></outline>
         <outline text="InfoQ" type="rss" xmlUrl="https://www.infoq.cn/feed"></outline>
@@ -423,7 +414,6 @@
         <outline text="cri-o" type="rss" xmlUrl="https://github.com/cri-o/cri-o/releases.atom"></outline>
         <outline text="crowbook(epub)" type="rss" xmlUrl="https://github.com/lise-henry/crowbook/releases.atom"></outline>
         <outline text="csi-s3" type="rss" xmlUrl="https://github.com/ctrox/csi-s3/releases.atom"></outline>
-        <outline text="cube.js" type="rss" xmlUrl="https://github.com/cube-js/cube.js/releases.atom"></outline>
         <outline text="cube.js" type="rss" xmlUrl="https://github.com/cube-js/cube.js/releases.atom"></outline>
         <outline text="dapr" type="rss" xmlUrl="https://github.com/dapr/dapr/releases.atom"></outline>
         <outline text="dasel" type="rss" xmlUrl="https://github.com/TomWright/dasel/releases.atom"></outline>
@@ -517,7 +507,6 @@
         <outline text="n8n" type="rss" xmlUrl="https://github.com/n8n-io/n8n/releases.atom"></outline>
         <outline text="nchan" type="rss" xmlUrl="https://github.com/slact/nchan/releases.atom"></outline>
         <outline text="nebula" type="rss" xmlUrl="https://github.com/slackhq/nebula/releases.atom"></outline>
-        <outline text="nebula" type="rss" xmlUrl="https://github.com/vesoft-inc/nebula/releases.atom"></outline>
         <outline text="neovide" type="rss" xmlUrl="https://github.com/neovide/neovide/releases.atom"></outline>
         <outline text="neovim" type="rss" xmlUrl="https://github.com/neovim/neovim/releases.atom"></outline>
         <outline text="nerdctl" type="rss" xmlUrl="https://github.com/containerd/nerdctl/releases.atom"></outline>
@@ -603,7 +592,6 @@
         <outline text="stdweb[rs]" type="rss" xmlUrl="https://github.com/koute/stdweb/releases.atom"></outline>
         <outline text="substrate" type="rss" xmlUrl="https://github.com/paritytech/substrate/releases.atom"></outline>
         <outline text="surrealdb" type="rss" xmlUrl="https://github.com/surrealdb/surrealdb/releases.atom"></outline>
-        <outline text="svelte" type="rss" xmlUrl="https://github.com/sveltejs/svelte/releases.atom"></outline>
         <outline text="swc" type="rss" xmlUrl="https://github.com/swc-project/swc/releases.atom"></outline>
         <outline text="tailscale" type="rss" xmlUrl="https://github.com/tailscale/tailscale/releases.atom"></outline>
         <outline text="tailwindcss" type="rss" xmlUrl="https://github.com/tailwindlabs/tailwindcss/releases.atom"></outline>
@@ -656,7 +644,6 @@
         <outline text="zellij" type="rss" xmlUrl="https://github.com/zellij-org/zellij/releases.atom"></outline>
         <outline text="zsh-histdb" type="rss" xmlUrl="https://github.com/larkery/zsh-histdb/commits/master.atom"></outline>
         <outline text="zx" type="rss" xmlUrl="https://github.com/google/zx/releases.atom"></outline>
-        <outline text="云风的 BLOG" type="rss" xmlUrl="http://blog.codingnow.com/atom.xml"></outline>
         <outline text="云风的 BLOG" type="rss" xmlUrl="http://blog.codingnow.com/atom.xml"></outline>
         <outline text="小众软件" type="rss" xmlUrl="http://feed.appinn.com/"></outline>
         <outline text="开源中国社区最新新闻" type="rss" xmlUrl="http://www.oschina.net/news/rss"></outline>
