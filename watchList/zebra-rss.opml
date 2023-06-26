@@ -98,10 +98,9 @@
             <outline text="wezterm" type="rss" xmlUrl="https://github.com/wez/wezterm/releases.atom"></outline>
             <outline text="hurl" type="rss" xmlUrl="https://github.com/Orange-OpenSource/hurl/releases.atom"></outline>
             <outline text="jq" type="rss" xmlUrl="https://github.com/stedolan/jq/releases.atom"></outline>
-            <outline text="templar" type="rss" xmlUrl="https://github.com/proctorlabs/templar/releases.atom"></outline>
             <outline text="gomplate" type="rss" xmlUrl="https://github.com/hairyhenderson/gomplate/releases.atom"></outline>
             <outline text="tera-cli(templating)" type="rss" xmlUrl="https://github.com/chevdor/tera-cli/releases.atom"></outline>
-            <outline text="gotemplate" type="rss" xmlUrl="https://github.com/coveooss/gotemplate/releases.atom"></outline>
+            <outline text="dhall-haskell" type="rss" xmlUrl="https://github.com/dhall-lang/dhall-haskell/releases.atom"></outline>
         </outline>
         <outline text="data science">
             <outline text="rust native_spark" type="rss" xmlUrl="https://github.com/rajasekarv/native_spark/releases.atom"></outline>
@@ -203,7 +202,6 @@
             <outline text="veloren" type="rss" xmlUrl="https://github.com/veloren/veloren/releases.atom"></outline>
             <outline text="Fyrox" type="rss" xmlUrl="https://github.com/FyroxEngine/Fyrox/releases.atom"></outline>
             <outline text="Ambient" type="rss" xmlUrl="https://github.com/AmbientRun/Ambient/releases.atom"></outline>
-            <outline text="Ryujinx(switch emu)" type="rss" xmlUrl="https://github.com/Ryujinx/Ryujinx/tags.atom"></outline>
             <outline text="yuzu (switch emu)" type="rss" xmlUrl="https://github.com/yuzu-emu/yuzu-mainline/releases.atom"></outline>
             <outline text="orillusion" type="rss" xmlUrl="https://github.com/Orillusion/orillusion/releases.atom"></outline>
         </outline>
@@ -284,6 +282,7 @@
             <outline text="spiderlightning(wasm)" type="rss" xmlUrl="https://github.com/deislabs/spiderlightning/releases.atom"></outline>
             <outline text="spin(wasm)" type="rss" xmlUrl="https://github.com/fermyon/spin/releases.atom"></outline>
             <outline text="HVM(fp rt like llvm)" type="rss" xmlUrl="https://github.com/Kindelia/HVM/releases.atom"></outline>
+            <outline text="dhall-haskell" type="rss" xmlUrl="https://github.com/dhall-lang/dhall-haskell/releases.atom"></outline>
         </outline>
         <outline text="net">
             <outline text="wireguard-go" type="rss" xmlUrl="https://github.com/WireGuard/wireguard-go/releases.atom"></outline>
@@ -370,7 +369,6 @@
         <outline text="Planet Haskell" type="rss" xmlUrl="https://planet.haskell.org/atom.xml"></outline>
         <outline text="PostgreSQL news" type="rss" xmlUrl="https://www.postgresql.org/news.rss"></outline>
         <outline text="PyTorch" type="rss" xmlUrl="https://pytorch.org/feed.xml"></outline>
-        <outline text="Ryujinx(switch emu)" type="rss" xmlUrl="https://github.com/Ryujinx/Ryujinx/tags.atom"></outline>
         <outline text="SaltTiger" type="rss" xmlUrl="http://www.salttiger.com/feed/"></outline>
         <outline text="Scientific American Content: Global" type="rss" xmlUrl="http://rss.sciam.com/ScientificAmerican-Global?format=xml"></outline>
         <outline text="Scientific American Feature Articles" type="rss" xmlUrl="http://rss.sciam.com/sciam/feature-articles?format=xml"></outline>
@@ -422,6 +420,7 @@
         <outline text="deno" type="rss" xmlUrl="https://github.com/denoland/deno/releases.atom"></outline>
         <outline text="dex" type="rss" xmlUrl="https://github.com/dexidp/dex/releases.atom"></outline>
         <outline text="dfdx" type="rss" xmlUrl="https://github.com/coreylowman/dfdx/releases.atom"></outline>
+        <outline text="dhall-haskell" type="rss" xmlUrl="https://github.com/dhall-lang/dhall-haskell/releases.atom"></outline>
         <outline text="differential-dataflow" type="rss" xmlUrl="https://github.com/TimelyDataflow/differential-dataflow/releases.atom"></outline>
         <outline text="differential-datalog" type="rss" xmlUrl="https://github.com/vmware/differential-datalog/releases.atom"></outline>
         <outline text="dioxus" type="rss" xmlUrl="https://github.com/DioxusLabs/dioxus/releases.atom"></outline>
@@ -450,7 +449,6 @@
         <outline text="golang" type="rss" xmlUrl="https://blog.golang.org/feed.atom"></outline>
         <outline text="gomplate" type="rss" xmlUrl="https://github.com/hairyhenderson/gomplate/releases.atom"></outline>
         <outline text="goofys" type="rss" xmlUrl="https://github.com/kahing/goofys/releases.atom"></outline>
-        <outline text="gotemplate" type="rss" xmlUrl="https://github.com/coveooss/gotemplate/releases.atom"></outline>
         <outline text="grain" type="rss" xmlUrl="https://github.com/grain-lang/grain/releases.atom"></outline>
         <outline text="graphic-walker" type="rss" xmlUrl="https://github.com/Kanaries/graphic-walker/releases.atom"></outline>
         <outline text="greptimedb" type="rss" xmlUrl="https://github.com/GreptimeTeam/greptimedb/releases.atom"></outline>
@@ -599,7 +597,6 @@
         <outline text="tch-rs" type="rss" xmlUrl="https://github.com/LaurentMazare/tch-rs/releases.atom"></outline>
         <outline text="teleport" type="rss" xmlUrl="https://github.com/gravitational/teleport/releases.atom"></outline>
         <outline text="telepresence" type="rss" xmlUrl="https://github.com/telepresenceio/telepresence/releases.atom"></outline>
-        <outline text="templar" type="rss" xmlUrl="https://github.com/proctorlabs/templar/releases.atom"></outline>
         <outline text="tensorbase" type="rss" xmlUrl="https://github.com/tensorbase/tensorbase/releases.atom"></outline>
         <outline text="tensorflow" type="rss" xmlUrl="https://github.com/tensorflow/tensorflow/releases.atom"></outline>
         <outline text="tera-cli(templating)" type="rss" xmlUrl="https://github.com/chevdor/tera-cli/releases.atom"></outline>
