@@ -168,6 +168,7 @@
             <outline text="DuckDB(parquet)" type="rss" xmlUrl="https://duckdb.org/feed.xml"></outline>
             <outline text="milvus" type="rss" xmlUrl="https://github.com/milvus-io/milvus/releases.atom"></outline>
             <outline text="pgx(pg extension)" type="rss" xmlUrl="https://github.com/tcdi/pgx/releases.atom"></outline>
+            <outline text="PoloDB" type="rss" xmlUrl="https://github.com/PoloDB/PoloDB/releases.atom"></outline>
         </outline>
         <outline text="framework">
             <outline text="axum" type="rss" xmlUrl="https://github.com/tokio-rs/axum/releases.atom"></outline>
@@ -367,6 +368,7 @@
         <outline text="Node.js" type="rss" xmlUrl="https://nodejs.org/en/feed/releases.xml"></outline>
         <outline text="Pijul(vcs)" type="rss" xmlUrl="http://pijul.org/index.xml"></outline>
         <outline text="Planet Haskell" type="rss" xmlUrl="https://planet.haskell.org/atom.xml"></outline>
+        <outline text="PoloDB" type="rss" xmlUrl="https://github.com/PoloDB/PoloDB/releases.atom"></outline>
         <outline text="PostgreSQL news" type="rss" xmlUrl="https://www.postgresql.org/news.rss"></outline>
         <outline text="PyTorch" type="rss" xmlUrl="https://pytorch.org/feed.xml"></outline>
         <outline text="SaltTiger" type="rss" xmlUrl="http://www.salttiger.com/feed/"></outline>
