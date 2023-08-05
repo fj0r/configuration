@@ -59,7 +59,7 @@ gpasswd -a user docker
 chmod -R go-w *
 # sudo 免密码
 sed -i 's/^.*\(%sudo.*\)ALL$/\1NOPASSWD: ALL/g' /etc/sudoers
-#echo '%sudo ALL=(ALL) NOPASSWD: ALL' >> /etc/sudoers
+#echo '%sudo ALL=(ALL:ALL) NOPASSWD: ALL' >> /etc/sudoers
 
 sudo passwd -l root
 
