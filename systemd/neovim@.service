@@ -13,7 +13,7 @@ RestartSec=0s
 LimitNOFILE=infinity
 
 WorkingDirectory=/home/agent
-ExecStart=/usr/local/bin/nvim --listen 0.0.0.0:%i --headless +'set title titlestring=172.178.5.123:%i'
+ExecStart=/usr/local/bin/nvim --listen 0.0.0.0:%i --headless +'set title titlestring=🏰172.178.5.123:%i'
 Environment="SHELL=nu"
 Environment="TERM=screen-256color"
 
