@@ -1,4 +1,5 @@
 export-env {
-    let-env LS_ROOT = '/opt/language-server'
-    let-env NVIM_LEVEL = if 'NVIM_LEVEL' in (env).name { $env.NVIM_LEVEL } else { 'x' }
+    $env.LS_ROOT = '/opt/language-server'
+    $env.NVIM_LEVEL = if 'NVIM_LEVEL' in (env).name { $env.NVIM_LEVEL } else { 'x' }
+    $env.tx = '1'
 }
