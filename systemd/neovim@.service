@@ -6,14 +6,15 @@ Wants=network.target
 [Service]
 Type=simple
 SyslogIdentifier=neovim
-User=agent
 ExecReload=/bin/kill -HUP $MAINPID
 Restart=always
 RestartSec=0s
 LimitNOFILE=infinity
 
+User=agent
 WorkingDirectory=/home/agent
-ExecStart=/usr/local/bin/nvim --listen 0.0.0.0:%i --headless +'set title titlestring=🏰172.178.5.123:%i'
+Environment="HOSTNAME=dx"
+ExecStart=/usr/local/bin/nvim --listen 0.0.0.0:%i --headless +'set title titlestring=🏰${HOSTNAME}:%i'
 Environment="SHELL=nu"
 Environment="TERM=screen-256color"
 
