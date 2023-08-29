@@ -1,0 +1,6 @@
+upload:
+    #!/usr/bin/env bash
+    for f in configuration.nix partitions.sh; do
+        echo upload $f
+        curl -# -L -T ${f} file.s/${f}
+    done
