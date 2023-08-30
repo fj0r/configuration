@@ -146,7 +146,18 @@
     curl wget xh
     (python3.withPackages(ps: with ps; [ pandas httpx ipython ]))
     nodejs
+
+    neovide
+    vivaldi
+    rofi
+    scrot
+    wezterm
   ];
+
+  i18n.inputMethod = {
+    enabled = "ibus";
+    ibus.engines = with pkgs.ibus-engines; [ rime table-chinese ];
+  };
 
   environment.variables.EDITOR = "nvim";
 
