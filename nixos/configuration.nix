@@ -52,7 +52,7 @@
       experimental-features = "nix-command flakes";
       # Deduplicate and optimize nix store
       auto-optimise-store = true;
-      substituters = [ "https://mirrors.ustc.edu.cn/nix-channels/store" ];
+      substituters = lib.mkBefore [ "https://mirrors.ustc.edu.cn/nix-channels/store" ];
     };
   };
 
@@ -110,6 +110,8 @@
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users = {
+    root.hashedPassword = "!";
+
     agent = {
       initialPassword = "agent";
       isNormalUser = true;
@@ -123,6 +125,17 @@
     };
   };
 
+  #home-manager.users = {
+  #  agent = { pkgs, ... }: {
+  #    home.packages = [ ];
+  #    programs.neovim.enable = true;
+  #  };
+  #};
+
+  security.sudo = {
+    wheelNeedsPassword = false;
+  };
+
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
@@ -132,6 +145,9 @@
     curl
     wget
   ];
+
+  environment.variables.EDITOR = "nvim";
+
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
