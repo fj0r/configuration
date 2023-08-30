@@ -65,7 +65,7 @@
   time.timeZone = "Asia/Shanghai";
 
   # Configure network proxy if necessary
-  # networking.proxy.default = "http://user:password@proxy:port/";
+  networking.proxy.default = "http://172.178.5.21:7890/";
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
   # Select internationalisation properties.
@@ -92,7 +92,7 @@
       enable = true;
       luaModules = with pkgs.luaPackages; [
         luarocks # is the package manager for Lua modules
-        luadbi-mysql # Database abstraction layer
+        luadbi-postgresql # Database abstraction layer
       ];
 
     };
@@ -140,10 +140,12 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    neovim
     git
-    curl
-    wget
+    neovim
+    nushell zoxide
+    curl wget xh
+    (python3.withPackages(ps: with ps; [ pandas httpx ipython ]))
+    nodejs
   ];
 
   environment.variables.EDITOR = "nvim";
