@@ -1,4 +1,4 @@
-sudo apt install curl jq zstd podman git wireguard-tools libfuse2 xclip xsel resolvconf
+sudo apt install curl jq zstd podman git wireguard-tools libfuse2 xclip resolvconf
 curl ${layer_host}/utils.tar.zst | zstd -d | sudo tar -xf - --strip-components=1 -C /usr/local/bin/
 curl ${layer_host}/nushell.tar.zst | zstd -d | sudo tar -xf - --strip-components=1 -C /usr/local/bin/
 curl ${layer_host}/nvim.tar.zst | zstd -d | sudo tar -xf - --strip-components=1 -C /usr/local/
