@@ -1,4 +1,3 @@
-export-env {
-    $env.LS_ROOT = '/opt/language-server'
-    $env.NVIM_LEVEL = if 'NVIM_LEVEL' in (env).name { $env.NVIM_LEVEL } else { 'x' }
-}
+$env.LS_ROOT = '/opt/language-server'
+$env.NVIM_LEVEL = if 'NVIM_LEVEL' in $env { $env.NVIM_LEVEL } else { 'x' }
+#$env.NVIM_GUIFONT = "JetBrains Mono ExtraLight:h16:#e-subpixelantialias"
