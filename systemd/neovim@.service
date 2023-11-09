@@ -14,6 +14,7 @@ LimitNOFILE=infinity
 User=agent
 WorkingDirectory=/home/agent
 Environment="HOSTNAME=dx"
+Environment="NEOVIDE_SCALE_FACTOR=1"
 ExecStart=/usr/local/bin/nvim --listen 0.0.0.0:%i --headless +'set title titlestring=🏰${HOSTNAME}:%i'
 Environment="SHELL=nu"
 Environment="TERM=screen-256color"
