@@ -1,8 +1,15 @@
 ```
+setxkbmap -option 'ctrl:swapcaps'
+localectl set-x11-keymap "" "" "" ctrl:swapcaps
+```
+
+
+### debian
+```
 sudo vi /etc/default/keyboard
 ```
 
-change to `XKBOPTIONS="ctrl:swapcaps"`
+change `XKBOPTIONS=""` to `XKBOPTIONS="ctrl:swapcaps"`
 
 ```
 sudo dpkg-reconfigure keyboard-configuration
