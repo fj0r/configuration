@@ -4,9 +4,3 @@ theme = "everforest_dark"
 line-number = "relative"
 middle-click-paste = true
 mouse = false
-
-[lsp]
-display-messages = true
-
-[keys.insert]
-"A-x" = "normal_mode" # Maps Alt-X to enter normal mode
