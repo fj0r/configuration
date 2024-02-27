@@ -1,3 +1,4 @@
 $env.LS_ROOT = '/opt/language-server'
 $env.NVIM_LEVEL = if 'NVIM_LEVEL' in $env { $env.NVIM_LEVEL } else { 'x' }
+$env.PREFER_ALT = '1'
 $env.LIBRETRANSLATE_HOST = 'http://localhost:5000'
