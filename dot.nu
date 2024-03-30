@@ -2,7 +2,7 @@ $env.NVIM_LEVEL = if 'NVIM_LEVEL' in $env { $env.NVIM_LEVEL } else { 'x' }
 $env.PREFER_ALT = '1'
 $env.LIBRETRANSLATE_HOST = 'http://localhost:5000'
 
-use resolvenv.nu
+use resolvenv
 resolvenv select wlan0 [
     [{screen: {port: 'hdmi'}, wifi: 'pandorabox'} {
         NEOVIM_LINE_SPACE: '2'
@@ -14,3 +14,5 @@ resolvenv select wlan0 [
     }]
     [_ { print $in }]
 ]
+
+# $env.nlog_file = ~/.cache/nonstdout
