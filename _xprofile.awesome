@@ -1,0 +1,7 @@
+xscreensaver -no-splash &
+gnome-session &
+for gsd_app in sharing clipboard datetime power keyboard mouse sound xsettings; do
+    /usr/lib/gnome-settings-daemon/gsd-$gsd_app &
+done
+export $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh,gpg)
+
