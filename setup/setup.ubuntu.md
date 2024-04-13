@@ -1,9 +1,10 @@
 # 常用软件
 ```bash
 sudo apt install \
-    zsh git \
+    nushell git \
     podman buildah skopeo \
-    openssh-server wireguard-tools resolvconf \
+    wireguard-tools \
+    resolvconf \
     jq tree wget curl sqlite
 
 # awesome
