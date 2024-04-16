@@ -11,6 +11,7 @@ let apps = [
     {name: wget}
     {name: sqlite}
     {name: xclip}
+    {name: x11-utils}
     {name: ibus-rime}
     {name: rime-data-wubi}
 ]
@@ -46,3 +47,62 @@ sudo sed -i 's/^.*\(%sudo.*\)ALL$/\1NOPASSWD: ALL/g' /etc/sudoers
 print -e 'swap ctrl and caps'
 sudo sed -i 's/\(XKBOPTIONS\)=""/\1="ctrl:swapcaps"/' /etc/default/keyboard
 sudo dpkg-reconfigure keyboard-configuration
+
+print -e 'python'
+sudo apt install python3 python3-pip
+pip install --no-cache-dir --break-system-packages ...[
+    aiofile fastapi uvicorn
+    ipython debugpy pydantic pytest
+    httpx hydra-core typer pyyaml deepmerge
+    PyParsing structlog python-json-logger
+    decorator more-itertools cachetools
+]
+
+print -e 'rust'
+curl --retry 3 -sSL https://sh.rustup.rs
+| sh -s -- --default-toolchain stable -y --no-modify-path
+rustup component add rust-src clippy rustfmt
+rustup component add rust-analyzer
+rustup target add x86_64-unknown-linux-musl
+rustup target add wasm32-wasi wasm32-unknown-unknown
+cargo install ...[
+    cargo-wasi
+    cargo-watch cargo-expand cargo-eval cargo-tree
+    cargo-feature cargo-prefetch
+    cargo-generate
+    dioxus-cli
+]
+
+print -e 'haskell'
+# $env.BOOTSTRAP_HASKELL_NONINTERACTIVE = 1
+$env.GHCUP_ROOT = $"($env.HOME)/.ghcup"
+$env.STACK_ROOT = $"($env.HOME)/.stack"
+curl --retry 3 -sSLo $"($env.GHCUP_ROOT)/bin/ghcup" https://downloads.haskell.org/~ghcup/x86_64-linux-ghcup
+ghcup install stack
+ghcup install cabal
+stack config set system-ghc --global true
+stack config set install-ghc --global false
+let ghc_ver = curl --retry 3 -sSL https://www.stackage.org/lts -H 'Accept: application/json' | jq -r '.snapshot.ghc'
+ghcup -s '["GHCupURL", "StackSetupURL"]' install ghc $ghc_ver
+ghcup install hls
+for i in [tmp cache trash logs] {
+    rm -rf ($"($env.GHCUP_ROOT)/($i)/*" | into glob)
+}
+open $"($env.STACK_ROOT)/config.yaml"
+| upsert allow-different-user true
+| upsert allow-newer true
+| save -f $"($env.STACK_ROOT)/config.yaml"
+
+print -e 'language server'
+sudo apt install nodejs npm
+sudo npm install --location=global ...[
+    quicktype
+    pyright
+    vscode-langservers-extracted
+    yaml-language-server
+]
+
+let lua_ls = curl --retry 3 -sSL https://api.github.com/repos/LuaLS/lua-language-server/releases/latest | jq -r '.tag_name'
+let lua_ls = $"https://github.com/LuaLS/lua-language-server/releases/latest/download/lua-language-server-($lua_ls)-linux-x64.tar.gz"
+sudo mkdir -p $"($env.LS_ROOT)/lua"
+curl --retry 3 -sSL $lua_ls | sudo tar zxf - -C $"($env.LS_ROOT)/lua"
