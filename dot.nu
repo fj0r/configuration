@@ -16,5 +16,5 @@ resolvenv select wlp4s0 [
     [_ { print $in }]
 ]
 
-$env.lg.file = ~/.cache/nonstdout
+#$env.lg.file = ~/.cache/nonstdout
 $env.docker-cli = podman
