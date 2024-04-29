@@ -3,7 +3,7 @@ let apps = [
     {name: ripgrep, tag: [dev]}
     {name: jq, tag: [dev]}
     {name: curl, tag: [network dev]}
-    {name: podman, tag: container}
+    #{name: podman, tag: container}
     {name: buildah, tag: container}
     {name: skopeo, tag: container}
     {name: wireguard-tools, tag: [network]}
@@ -19,22 +19,39 @@ let apps = [
 sudo apt install ...($apps | get name)
 
 
-print -e 'setup podman'
-'
-unqualified-search-registries = ["docker.io"]
-[[registry]]
-insecure = true
-location = "registry.s"
-'
-| outdent
-| save -f /etc/containers/registries.conf
+if ($apps | where name == 'podman' | is-not-empty) {
+    print -e 'setup podman'
+    '
+    unqualified-search-registries = ["docker.io"]
+    [[registry]]
+    insecure = true
+    location = "registry.s"
+    '
+    | outdent
+    | save -f /etc/containers/registries.conf
 
-sudo sed ...[
-    -e 's!^.*\(detach_keys =\).*$!\1 ""!'
-    -e 's!^.*\(multi_image_archive =\).*$!\1 true!'
-    -i /usr/share/containers/containers.conf
-]
+    sudo sed ...[
+        -e 's!^.*\(detach_keys =\).*$!\1 ""!'
+        -e 's!^.*\(multi_image_archive =\).*$!\1 true!'
+        -i /usr/share/containers/containers.conf
+    ]
+}
 
+let nerdctl = true
+if $nerdctl {
+    '
+    abi <abi/4.0>,
+    include <tunables/global>
+
+    /opt/nerdctl/bin/rootlesskit flags=(unconfined) {
+      userns,
+
+      include if exists <local/opt.nerdctl.bin.rootlesskit>
+    }
+    '
+    | save -f /etc/apparmor.d/opt.nerdctl.bin.rootlesskit
+    systemctl restart apparmor.service
+}
 
 print -e 'setup wireguard'
 for c in (ls ~/.ssh/wg* | get name) {
