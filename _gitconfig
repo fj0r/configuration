@@ -1,11 +1,13 @@
 [user]
-	name = nash
-	email = nash@iffy.me
-	signingkey = 35677C0A7C8D6E4F96989682B98A2A1264077273
+  name = nash
+  email = nash@iffy.me
+  signingkey = 35677C0A7C8D6E4F96989682B98A2A1264077273
 [core]
   quotepath = false
 [init]
-	defaultBranch = main
+  defaultBranch = main
+[http]
+  sslVerify = false
 [alias]
   s       = status
   c       = checkout
