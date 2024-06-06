@@ -3,6 +3,7 @@ $env.NVIM_REMOTE_HISTORY = $"($env.HOME)/.cache/nvim_history.sqlite"
 $env.PREFER_ALT = '1'
 $env.LIBRETRANSLATE_HOST = 'http://localhost:5000'
 $env.NVIM_FONT = "nar12"
+# $env.NVIM_ARROW = 1
 
 use resolvenv
 resolvenv select wlp4s0 [
