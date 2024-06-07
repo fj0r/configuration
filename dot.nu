@@ -6,16 +6,16 @@ $env.NVIM_FONT = "nar12"
 # $env.NVIM_ARROW = 1
 
 use resolvenv
-resolvenv select wlp4s0 [
+resolvenv select wlan0 [
     [{screen: {port: 'hdmi'}, wifi: 'pandorabox'} {
         NEOVIM_LINE_SPACE: '0'
         NEOVIDE_SCALE_FACTOR: '1'
     }]
-    [{screen: {port: 'dp-2'}} {
+    [{screen: {port: 'eDP-1'}} {
         NEOVIM_LINE_SPACE: '0'
         NEOVIDE_SCALE_FACTOR: '1'
     }]
-    [_ { print $in }]
+    [_ { print ($in | table -e) }]
 ]
 
 #$env.lg.file = ~/.cache/nonstdout
