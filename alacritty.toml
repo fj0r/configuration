@@ -6,14 +6,14 @@ TERM = "alacritty"
 size = 11.0
 
 [font.normal]
-family = "Monaspace Argon"
+family = "MonaspiceAr Nerd Font Mono"
 
 [font.offset]
 x = 0
 y = 3
 
 [shell]
-program = "/usr/local/bin/nu"
+program = "nu"
 
 [window]
 decorations = "none"

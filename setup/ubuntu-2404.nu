@@ -3,7 +3,7 @@ let apps = [
     {name: ripgrep, tag: [dev]}
     {name: jq, tag: [dev]}
     {name: curl, tag: [network dev]}
-    #{name: podman, tag: container}
+    {name: podman, tag: container}
     {name: buildah, tag: container}
     {name: skopeo, tag: container}
     {name: wireguard-tools, tag: [network]}
@@ -59,9 +59,6 @@ for c in (ls ~/.ssh/wg* | get name) {
     ssc enable --now $"wg-quick@($c | path parse | get stem)"
 }
 
-
-print -e 'sudo without password'
-sudo sed -i 's/^.*\(%sudo.*\)ALL$/\1NOPASSWD: ALL/g' /etc/sudoers
 
 # setxkbmap -option 'ctrl:swapcaps'
 
