@@ -46,7 +46,7 @@ $manifest.podman = {
             '
             | outdent
             | sudo tee -a /etc/containers/registries.conf
-        
+
             sudo sed ...[
                 -e 's!^.*\(detach_keys =\).*$!\1 ""!'
                 -e 's!^.*\(multi_image_archive =\).*$!\1 true!'
@@ -168,5 +168,12 @@ $manifest.lsp = {
         let lua_ls = $"https://github.com/LuaLS/lua-language-server/releases/latest/download/lua-language-server-($lua_ls)-linux-x64.tar.gz"
         sudo mkdir -p $"($env.LS_ROOT)/lua"
         curl --retry 3 -sSL $lua_ls | sudo tar zxf - -C $"($env.LS_ROOT)/lua"
+    }
+}
+
+$manifest.fcitx = {
+    message: ''
+    action: {
+        sudo pacman -S fcitx fcitx-rime rime-wubi
     }
 }

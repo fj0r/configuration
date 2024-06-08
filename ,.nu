@@ -20,7 +20,7 @@ $env.comma = {|_|{}}
 
 'desktop neovide'
 | comma fun {
-    cp desktop/neovide.desktop ~/.local/share/applications/neovide.desktop
+    sudo cp desktop/neovide.desktop /usr/share/applications/neovide.desktop
 }
 
 'setup nushell'
