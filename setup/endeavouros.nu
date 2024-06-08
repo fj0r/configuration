@@ -11,6 +11,7 @@ let apps = [
     {name: jq, tag: [dev]}
     {name: fd, tag: [dev]}
     {name: curl, tag: [network dev]}
+    {name: dust}
     {name: podman, tag: container}
     {name: buildah, tag: container}
     {name: skopeo, tag: container}
@@ -20,9 +21,12 @@ let apps = [
     {name: sqlite}
     {name: xclip}
     #{name: x11-utils}
+    {name: yay}
     {name: vivaldi}
-    {name: hyprland}
-    {name: dust}
+    {name: hyprland, aur: 'hyprland-nvidia-git'}
+    {name: waybar}
+    {name: mako}
+    {name: wofi}
 ]
 
 $manifest.packages = {
@@ -175,5 +179,14 @@ $manifest.fcitx = {
     message: ''
     action: {
         sudo pacman -S fcitx fcitx-rime rime-wubi
+        [
+            'GTK_IM_MODULE=fcitx'
+            'QT_IM_MODULE=fcitx'
+            'XMODIFIERS=@im=fcitx'
+            'SDL_IM_MODULE=fcitx'
+            'INPUT_METHOD=fcitx'
+        ]
+        | str join (char newline)
+        | sudo tee -a /etc/environment
     }
 }

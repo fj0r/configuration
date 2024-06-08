@@ -1,0 +1,11 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 20,
+    "spacing": 6,
+    "modules-left": ["wlr/workspaces", "hyprland/window"],
+    "modules-center": [],
+    "modules-right": ["tray", "network", "pulseaudio", "memory", "cpu", "clock"],
+    "wlr/workspaces": {
+    }
+}

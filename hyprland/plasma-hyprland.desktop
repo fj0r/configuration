@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=XSession
+Exec=/usr/local/bin/plasma-hyprland.sh
+DesktopNames=KDE
+Name=Plasma (Hyprland)
+Comment=KDE Plasma with Hyprland as the WM

@@ -61,6 +61,12 @@ $env.comma = {|_|{}}
     make install
 }
 
+'setup kde'
+| comma fun {
+    sudo cp plasma-hyprland.sh /usr/local/bin/
+    sudo cp plasma-hyprland.desktop /usr/share/xsessions/
+}
+
 'install'
 | comma fun {|a,s,_|
     let m = $s.manifest
