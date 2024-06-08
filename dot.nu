@@ -11,7 +11,7 @@ resolvenv select wlan0 [
         NEOVIM_LINE_SPACE: '0'
         NEOVIDE_SCALE_FACTOR: '1'
     }]
-    [{screen: {port: 'eDP-1'}} {
+    [{screen: {port: 'eDP'}} {
         NEOVIM_LINE_SPACE: '0'
         NEOVIDE_SCALE_FACTOR: '1'
     }]
