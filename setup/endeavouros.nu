@@ -3,33 +3,35 @@ mut actions = {}
 
 ## setup
 let apps = [
-    {name: nushell}
-    {name: neovim}
-    {name: neovide}
-    {name: alacritty}
-    {name: git, tag: [dev]}
-    {name: ripgrep, tag: [dev]}
-    {name: jq, tag: [dev]}
-    {name: fd, tag: [dev]}
-    {name: curl, tag: [network dev]}
-    {name: dust}
-    {name: podman, tag: container}
-    {name: buildah, tag: container}
-    {name: skopeo, tag: container}
-    {name: wireguard-tools, tag: [network]}
-    {name: tree}
-    {name: wget}
-    {name: sqlite}
-    {name: xclip}
-    {name: kubectl, tag: [k8s]}
-    {name: helm, tag: [k8s]}
-    #{name: x11-utils}
-    {name: yay}
-    {name: vivaldi}
-    {name: hyprland, aur: 'hyprland-nvidia-git'}
-    {name: waybar}
-    {name: mako}
-    {name: wofi}
+    { name: nushell, tag: [core] }
+    { name: neovim, tag: [core] }
+    { name: neovide, tag: [core dev] }
+    { name: alacritty, tag: [core dev] }
+    { name: git, tag: [core dev] }
+    { name: ripgrep, tag: [core] }
+    { name: jq, tag: [core] }
+    { name: fd, tag: [core] }
+    { name: curl, tag: [core network] }
+    { name: dust, tag: [core] }
+    { name: rustic, tag: [core backup] }
+    { name: freefilesync, aur: 'freefilesync-bin', tag: [backup] }
+    { name: podman, tag: [container] }
+    { name: buildah, tag: [container] }
+    { name: skopeo, tag: [container] }
+    { name: wireguard-tools, tag: [core vpn] }
+    { name: tree, tag: [core] }
+    { name: wget, tag: [network] }
+    { name: sqlite, tag: [core] }
+    { name: xclip, tag: [core] }
+    { name: kubectl, tag: [k8s] }
+    { name: helm, tag: [k8s] }
+    # {name: x11-utils}
+    { name: yay, tag: [core] }
+    { name: vivaldi, tag: [core network] }
+    { name: hyprland, aur: 'hyprland-nvidia-git', tag: [wm] }
+    { name: waybar, tag: [wm] }
+    { name: mako, tag: [wm] }
+    { name: wofi, tag: [wm] }
 ]
 
 $manifest.packages = {
@@ -103,6 +105,29 @@ $actions.wireguard = {
         sudo cp $c /etc/wireguard/
         ssc enable --now $"wg-quick@($c | path parse | get stem)"
     }
+}
+
+$manifest.mirrors = {
+    message: ''
+}
+$actions.mirrors = {
+    [
+        'Server = https://mirrors.tuna.tsinghua.edu.cn/archlinux/$repo/os/$arch'
+        'Server = https://mirrors.ustc.edu.cn/archlinux/$repo/os/$arch'
+        (open /etc/pacman.d/mirrorlist)
+    ]
+    | str join (char newline)
+    | sudo tee /etc/pacman.d/mirrorlist.backup
+
+    let countries = [cn hk jp sg kr tw] # us
+    | each {|x| $"country=($x | str upcase)" }
+    | str join '&'
+    curl $"https://archlinux.org/mirrorlist/?($countries)&protocol=http&use_mirror_status=on"
+    | sed -e 's/^#Server/Server/' -e '/^#/d'
+    | rankmirrors -n 5 -
+
+    reflector-simple
+
 }
 
 $manifest.python = {
@@ -189,10 +214,10 @@ $actions.fcitx = {
     ]
     [
         'INPUT_METHOD=fcitx'
-        'GTK_IM_MODULE=fcitx'
-        'QT_IM_MODULE=fcitx'
         'XMODIFIERS=@im=fcitx'
-        'SDL_IM_MODULE=fcitx'
+        #'GTK_IM_MODULE=fcitx'
+        #'QT_IM_MODULE=fcitx'
+        #'SDL_IM_MODULE=fcitx'
     ]
     | str join (char newline)
     | sudo tee -a /etc/environment
