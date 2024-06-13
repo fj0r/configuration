@@ -21,6 +21,11 @@ desktopchangeosdEnabled=true
 minimizeallEnabled=true
 synchronizeskipswitcherEnabled=true
 
+[TabBox]
+ActivitiesMode=1
+DesktopMode=1
+MultiScreenMode=0
+
 [Tiling]
 padding=4
 
