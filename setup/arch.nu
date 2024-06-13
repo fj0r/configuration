@@ -1,5 +1,22 @@
-mut manifest = {}
-mut actions = {}
+$env.os_manifest = {}
+
+def --env os_setup [name, message, action] {
+    $env.os_manifest = (
+        $env.os_manifest | insert $name {
+            message: $message
+            action: $action
+        }
+    )
+}
+
+def "nu-complete os_manifest" [] {
+    $env.os_manifest | items {|k,v| {value: $k, description: $v.message} }
+}
+
+def os_apply [name: string@"nu-complete os_manifest", ...args] {
+    print $"(ansi grey)run (ansi yellow)($name)(ansi grey) -- ($env.os_manifest | get $name | get message)(ansi reset)"
+    do ($env.os_manifest | get $name | get action) ...$args
+}
 
 ## setup
 let apps = [
@@ -14,7 +31,7 @@ let apps = [
     { name: curl, tag: [core network] }
     { name: dust, tag: [core] }
     { name: rustic, tag: [core backup] }
-    { name: freefilesync, aur: 'freefilesync-bin', tag: [backup] }
+    { name: 'freefilesync-bin', type: 'aur', tag: [backup] }
     { name: podman, tag: [container] }
     { name: buildah, tag: [container] }
     { name: skopeo, tag: [container] }
@@ -28,24 +45,35 @@ let apps = [
     # {name: x11-utils}
     { name: yay, tag: [core] }
     { name: vivaldi, tag: [core network] }
-    { name: hyprland, aur: 'hyprland-nvidia-git', tag: [wm] }
+    { name: 'hyprland-nvidia-git', type: 'aur', tag: [wm] }
     { name: waybar, tag: [wm] }
     { name: mako, tag: [wm] }
     { name: wofi, tag: [wm] }
 ]
 
-$manifest.packages = {
-    message: 'install packages'
-}
-$actions.packages = {
-    sudo pacman -S ...($apps | get name)
+os_setup packages 'install packages' {|...tag|
+    let a = $apps
+    | filter {|x|
+        $tag | any {|e| $e in $x.tag }
+    }
+    | group-by {|x| $x.type? | default 'pacman' }
+    | transpose k v
+
+    for i in $a {
+        match $i.k {
+            'pacman' => {
+                print $"(ansi grey)pacman -S ($i.v | get name | str join ' ')(ansi reset)"
+                sudo pacman -S ...($i.v | get name)
+            }
+            'aur' => {
+                print $"(ansi grey)yay -S ($i.v | get name | str join ' ')(ansi reset)"
+                yay -S ...($i.v | get name)
+            }
+        }
+    }
 }
 
-
-$manifest.podman = {
-    message: ''
-}
-$actions.podman = {
+os_setup podman '' {
     if ($apps | where name == 'podman' | is-not-empty) {
         print -e 'setup podman'
         '
@@ -67,50 +95,33 @@ $actions.podman = {
     }
 }
 
-$manifest.ctrlcaps = {
-    message: 'swap ctrl and caps'
-}
-$actions.ctrlcaps = {
+os_setup ctrlcaps 'swap ctrl and caps' {
     localectl set-x11-keymap "" "" "" ctrl:swapcaps
 }
 
-$manifest.nopasswd = {
-    message: 'sudo without password'
-}
-$actions.nopasswd = {
+
+os_setup nopasswd 'sudo without password' {
     # sudo sed -i 's/^.*\(%wheel.*\)NOPASSWD: ALL$/\1NOPASSWD: ALL/g' /etc/sudoers.d/10-installer
     '%wheel ALL=(ALL) NOPASSWD: ALL' | sudo tee /etc/sudoers.d/g_wheel
 }
 
-$manifest.loader_timeout = {
-    message: ''
-}
-$actions.loader_timeout = {
+os_setup loader_timeout '' {
     sudo sed -i 's/^timeout.*/timeout 1/g' /efi/loader/loader.conf
 }
 
-$manifest.disable_beep = {
-    message: 'disable system beep'
-}
-$actions.disable_beep = {
+os_setup disable_beep 'disable system beep' {
     sudo rmmod pcspkr
     'blacklist pcspkr' | sudo tee -a /etc/modprobe.d/nobeep.conf
 }
 
-$manifest.wireguard = {
-    message: ''
-}
-$actions.wireguard = {
+os_setup wireguard '' {
     for c in (ls ~/.ssh/wg* | get name) {
         sudo cp $c /etc/wireguard/
         ssc enable --now $"wg-quick@($c | path parse | get stem)"
     }
 }
 
-$manifest.mirrors = {
-    message: ''
-}
-$actions.mirrors = {
+os_setup mirrors '' {
     [
         'Server = https://mirrors.tuna.tsinghua.edu.cn/archlinux/$repo/os/$arch'
         'Server = https://mirrors.ustc.edu.cn/archlinux/$repo/os/$arch'
@@ -127,13 +138,9 @@ $actions.mirrors = {
     | rankmirrors -n 5 -
 
     reflector-simple
-
 }
 
-$manifest.python = {
-    message: ''
-}
-$actions.python = {
+os_setup python '' {
     sudo pacman -S python python-pip
     pip install --no-cache-dir --break-system-packages ...[
         aiofile fastapi uvicorn
@@ -144,9 +151,7 @@ $actions.python = {
     ]
 }
 
-$manifest.rust = {
-}
-$actions.rust = {
+os_setup rust '' {
     curl --retry 3 -sSL https://sh.rustup.rs
     | sh -s -- --default-toolchain stable -y --no-modify-path
     rustup component add rust-src clippy rustfmt
@@ -162,9 +167,7 @@ $actions.rust = {
     ]
 }
 
-$manifest.haskell = {
-}
-$actions.haskell = {
+os_setup haskell '' {
     # $env.BOOTSTRAP_HASKELL_NONINTERACTIVE = 1
     $env.GHCUP_ROOT = $"($env.HOME)/.ghcup"
     $env.STACK_ROOT = $"($env.HOME)/.stack"
@@ -185,10 +188,7 @@ $actions.haskell = {
     | save -f $"($env.STACK_ROOT)/config.yaml"
 }
 
-$manifest.lsp = {
-    message: 'language server'
-}
-$actions.lsp = {
+os_setup lsp 'language server' {
     sudo pacman -S nodejs npm
     sudo npm install --location=global ...[
         quicktype
@@ -204,10 +204,7 @@ $actions.lsp = {
     curl --retry 3 -sSL $lua_ls | sudo tar zxf - -C $"($env.LS_ROOT)/lua"
 }
 
-$manifest.fcitx = {
-    message: ''
-}
-$actions.fcitx = {
+os_setup fcitx '' {
     sudo pacman -S ...[
         fcitx5 fcitx5-rime fcitx5-lua rime-wubi
         fcitx5-qt fcitx5-gtk fcitx5-nord
@@ -223,14 +220,13 @@ $actions.fcitx = {
     | sudo tee -a /etc/environment
 }
 
-$manifest.kde = {
-    message: ''
+os_setup kde 'restore kde settings' {
+    rm -f ~/.config/kwinrc
+    ln -fs ../kde/kwinrc ~/.config/kwinrc
+    rm -f ~/.kde4/share/config/kdeglobals
+    ln -fs ../kde/kdeglobals ~/.kde4/share/config/kdeglobals
 }
-$actions.kde = {
-    [
-        '[Windows]'
-        'BorderlessMaximizedWindows=true'
-    ]
-    | str join (char newline)
-    | sudo tree -a ~/.config/kwinrc
+
+os_setup bluetooth '' {
+    systemctl enable --now bluetooth
 }
