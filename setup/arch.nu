@@ -222,9 +222,11 @@ os_setup fcitx '' {
 
 os_setup kde 'restore kde settings' {
     rm -f ~/.config/kwinrc
-    ln -fs ../kde/kwinrc ~/.config/kwinrc
+    ln -fs ~/Configuration/kde/kwinrc ~/.config/kwinrc
+    rm -f ~/.config/kdedefaults
+    ln -fs ~/Configuration/kde/kdedefaults ~/.config/kdedefaults
     rm -f ~/.kde4/share/config/kdeglobals
-    ln -fs ../kde/kdeglobals ~/.kde4/share/config/kdeglobals
+    ln -fs ~/Configuration/kde/kdeglobals ~/.kde4/share/config/kdeglobals
 }
 
 os_setup bluetooth '' {
