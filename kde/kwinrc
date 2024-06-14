@@ -21,6 +21,10 @@ desktopchangeosdEnabled=true
 minimizeallEnabled=true
 synchronizeskipswitcherEnabled=true
 
+[SubSession: 10ba328c-55d9-420e-998f-ec49f7b0ae89]
+active=-1
+count=0
+
 [TabBox]
 ActivitiesMode=1
 DesktopMode=1
