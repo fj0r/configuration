@@ -13,7 +13,7 @@ def "nu-complete os_manifest" [] {
     $env.os_manifest | items {|k,v| {value: $k, description: $v.message} }
 }
 
-def os_apply [name: string@"nu-complete os_manifest", ...args] {
+def os_apply [name: string@"nu-complete os_manifest" ...args] {
     print $"(ansi grey)run (ansi yellow)($name)(ansi grey) -- ($env.os_manifest | get $name | get message)(ansi reset)"
     do ($env.os_manifest | get $name | get action) ...$args
 }
@@ -30,6 +30,9 @@ let apps = [
     { name: fd, tag: [core] }
     { name: curl, tag: [core network] }
     { name: dust, tag: [core] }
+    { name: bottom, tag: [core] }
+    { name: htop, tag: [core] }
+    { name: atuin, tag: [ext] }
     { name: rustic, tag: [core backup] }
     { name: 'freefilesync-bin', type: 'aur', tag: [backup] }
     { name: podman, tag: [container] }
@@ -39,6 +42,7 @@ let apps = [
     { name: tree, tag: [core] }
     { name: wget, tag: [network] }
     { name: sqlite, tag: [core] }
+    { name: duckdb-bin, type: 'aur', tag: [core] }
     { name: xclip, tag: [core] }
     { name: kubectl, tag: [k8s] }
     { name: helm, tag: [k8s] }
@@ -183,9 +187,12 @@ os_setup haskell '' {
         rm -rf ($"($env.GHCUP_ROOT)/($i)/*" | into glob)
     }
     open $"($env.STACK_ROOT)/config.yaml"
-    | upsert allow-different-user true
-    | upsert allow-newer true
-    | save -f $"($env.STACK_ROOT)/config.yaml"
+    | merge {
+        allow-different-user: true
+        allow-newer: true
+        recommend-stack-upgrade: false
+    }
+    | collect { $in | save -f $"($env.STACK_ROOT)/config.yaml" }
 }
 
 os_setup lsp 'language server' {
