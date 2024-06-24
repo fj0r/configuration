@@ -4,6 +4,7 @@ $env.PREFER_ALT = '1'
 $env.LIBRETRANSLATE_HOST = 'http://localhost:5000'
 $env.NVIM_FONT = "nar12"
 # $env.NVIM_ARROW = 1
+$env.EDITOR = 'helix'
 
 use resolvenv
 resolvenv select wlan0 [
