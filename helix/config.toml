@@ -1,6 +1,9 @@
-theme = "everforest_dark"
+theme = "gruvbox"
 
 [editor]
 line-number = "relative"
 middle-click-paste = true
 mouse = false
+
+[keys.insert]
+"A-;" = "normal_mode"

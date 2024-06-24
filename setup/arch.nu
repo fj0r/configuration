@@ -27,6 +27,7 @@ let apps = [
     { name: git, tag: [core dev] }
     { name: ripgrep, tag: [core] }
     { name: jq, tag: [core] }
+    { name: go-yq, tag: [core] }
     { name: fd, tag: [core] }
     { name: curl, tag: [core network] }
     { name: dust, tag: [core] }
