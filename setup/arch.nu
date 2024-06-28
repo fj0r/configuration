@@ -86,6 +86,9 @@ os_setup podman '' {
         [[registry]]
         insecure = true
         location = "registry.s"
+        [[registry]]
+        prefix = "docker.io"
+        location = "docker.lizzie.fun"
         '
         | outdent
         | sudo tee -a /etc/containers/registries.conf

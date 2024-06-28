@@ -33,6 +33,12 @@ MultiScreenMode=0
 [Tiling]
 padding=4
 
+[Tiling][12849ce6-38da-5f41-905e-d0746d515eb6]
+tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
+
+[Tiling][4e3dff3f-9c30-5ac6-9adb-ed766303fc5e]
+tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
+
 [Tiling][7526dd46-4c27-5b94-b922-79709069122d]
 tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
 
