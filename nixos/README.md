@@ -1,7 +1,7 @@
 switch to unstable
 ```
 # nix-channel --add https://nixos.org/channels/nixos-unstable nixos
-nix-channel --add https://mirrors.ustc.edu.cn/nix-channels/nixpkgs-unstable nixos
+# nix-channel --add https://mirrors.ustc.edu.cn/nix-channels/nixpkgs-unstable nixos
 nix-channel --add https://mirrors.ustc.edu.cn/nix-channels/nixpkgs-unstable nixpkgs
 nix-channel --update
 ```
