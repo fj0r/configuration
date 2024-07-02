@@ -5,17 +5,19 @@
 { inputs, outputs, lib, config, pkgs, ... }:
 
 {
+
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
     ];
 
+
   # Use the GRUB 2 boot loader.
+  # boot.loader.systemd-boot.enable = true;
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   # boot.loader.grub.enable = true;
   # boot.loader.grub.efiSupport = true;
-  #boot.loader.systemd-boot.enable = true;
   # boot.loader.grub.efiInstallAsRemovable = true;
   # boot.loader.efi.efiSysMountPoint = "/boot/efi";
   # Define on which hard drive you want to install Grub.
@@ -56,57 +58,45 @@
     };
   };
 
-  # networking.hostName = "nixos"; # Define your hostname.
+  networking.hostName = "nixos"; # Define your hostname.
   # Pick only one of the below networking options.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-  # networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
+  networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
 
   # Set your time zone.
   time.timeZone = "Asia/Shanghai";
 
   # Configure network proxy if necessary
-  networking.proxy.default = "http://172.178.5.21:7890/";
+  # networking.proxy.default = "http://172.178.5.21:7890/";
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
   # Select internationalisation properties.
-  # i18n.defaultLocale = "en_US.UTF-8";
+  i18n.defaultLocale = "en_US.UTF-8";
   console = {
     font = "Lat2-Terminus16";
     # keyMap = "us";
     useXkbConfig = true; # use xkbOptions in tty.
   };
 
-  services.xserver = {
-    # Enable the X11 windowing system.
-    enable = true;
-    # Configure keymap in X11
+  # Enable the X11 windowing system.
+  services.xserver.enable = true;
+  # Configure keymap in X11
+  services.xserver.xkb = {
     layout = "us";
-    xkbOptions = "ctrl:swapcaps";
-
-    displayManager = {
-        sddm.enable = true;
-        defaultSession = "none+awesome";
-    };
-
-    windowManager.awesome = {
-      enable = true;
-      luaModules = with pkgs.luaPackages; [
-        luarocks # is the package manager for Lua modules
-        luadbi-postgresql # Database abstraction layer
-      ];
-
-    };
+    options = "ctrl:swapcaps";
   };
+  services.displayManager.sddm.enable = true;
+  services.desktopManager.plasma6.enable = true;
 
   # Enable CUPS to print documents.
   # services.printing.enable = true;
 
   # Enable sound.
-  # sound.enable = true;
-  # hardware.pulseaudio.enable = true;
+  sound.enable = true;
+  hardware.pulseaudio.enable = true;
 
   # Enable touchpad support (enabled default in most desktopManager).
-  services.xserver.libinput.enable = true;
+  services.libinput.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users = {
@@ -115,7 +105,7 @@
     agent = {
       initialPassword = "agent";
       isNormalUser = true;
-      extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
+      extraGroups = [ "wheel" "networkmanager" ]; # Enable ‘sudo’ for the user.
       packages = with pkgs; [
         tree
       ];
@@ -142,20 +132,18 @@
   environment.systemPackages = with pkgs; [
     git
     neovim
-    nushell zoxide
-    curl wget xh
+    nushell
+    curl wget
     (python3.withPackages(ps: with ps; [ pandas httpx ipython ]))
     nodejs
 
     neovide
+    alacritty
     vivaldi
-    rofi
-    scrot
-    wezterm
   ];
 
   i18n.inputMethod = {
-    enabled = "ibus";
+    enabled = "fcitx5";
     ibus.engines = with pkgs.ibus-engines; [ rime table-chinese ];
   };
 
@@ -219,7 +207,7 @@
   # this value at the release version of the first install of this system.
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  system.stateVersion = "23.05"; # Did you read the comment?
+  system.stateVersion = "24.05"; # Did you read the comment?
 
 }
 
