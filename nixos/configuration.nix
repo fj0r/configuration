@@ -135,12 +135,22 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+
+    ripgrep
+    fd
+
     git
     neovim
     nushell
     curl wget
     (python3.withPackages(ps: with ps; [ pandas httpx ipython ]))
     nodejs
+
+    bottom
+    delta
+
+
+    gparted
 
     neovide
     alacritty
@@ -215,4 +225,3 @@
   system.stateVersion = "24.05"; # Did you read the comment?
 
 }
-

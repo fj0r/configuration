@@ -173,3 +173,11 @@ for e in [nuon toml yaml json] {
         'mirror.sjtu.edu.cn'
     ] }
 }
+
+'setup fetch'
+| comma fun {|a,s,_|
+    ^ssh ...[
+        ...$s.ssh_args
+        'sudo cat /etc/nixos/configuration.nix'
+    ] | save -f configuration.nix
+}
