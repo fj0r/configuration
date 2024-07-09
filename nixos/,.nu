@@ -11,17 +11,32 @@ for e in [nuon toml yaml json] {
 }
 ### }}}
 
-'ssh_args'
-| comma val null [
+'ssh'
+| comma val null {
+    port: 7788
+    user: agent
+    host: localhost
+}
+
+'login'
+| comma val computed {|a,s,m| [
     -o StrictHostKeyChecking=no
     -o UserKnownHostsFile=/dev/null
-    -p 7788
-    agent@localhost
-]
+    -p $s.ssh.port
+    $"($s.ssh.user)@($s.ssh.host)"
+] }
+
+'sync'
+| comma val computed {|a,s,m|
+    {
+        args: [-avp -e $'ssh -p ($s.ssh.port)']
+        host: $"agent@localhost"
+    }
+}
 
 'ssh'
 | comma fun {|a,s|
-    ^ssh ...$s.ssh_args
+    ^ssh ...$s.login
 }
 
 'wstunnel'
@@ -54,7 +69,7 @@ for e in [nuon toml yaml json] {
     | str join (char newline)
     print $"(ansi grey)($cmd)(ansi reset)"
     if ([y n] | input list 'continue?') == 'y' {
-        $cmd | ^ssh ...[...$s.ssh_args 'sudo bash']
+        $cmd | ^ssh ...$s.login 'sudo bash'
     }
 } {
     cmp: {|a,s| [
@@ -102,7 +117,7 @@ for e in [nuon toml yaml json] {
     | str join (char newline)
     print $"(ansi grey)($cmd)(ansi reset)"
     if ([y n] | input list 'continue?') == 'y' {
-        $cmd | ^ssh ...[...$s.ssh_args 'sudo bash']
+        $cmd | ^ssh ...$s.login 'sudo bash'
     }
 } {
     cmp: {|a,s| [
@@ -128,7 +143,7 @@ for e in [nuon toml yaml json] {
     | str join (char newline)
     print $"(ansi grey)($update)(ansi reset)"
     if ([y n] | input list 'update') == 'y' {
-        $update | ^ssh ...[...$s.ssh_args 'sudo bash']
+        $update | ^ssh ...$s.login 'sudo bash'
     }
 } {
     cmp: {|a,s| [
@@ -147,14 +162,14 @@ for e in [nuon toml yaml json] {
     | str join (char newline)
     print $"(ansi grey)($update)(ansi reset)"
     if ([y n] | input list 'update') == 'y' {
-        $update | ^ssh ...[...$s.ssh_args 'sudo bash']
+        $update | ^ssh ...$s.login 'sudo bash'
     }
 
-    let cfg = open configuration.nix
+    let cfg = open etc/configuration.nix
     print $"(ansi grey)($cfg)(ansi reset)"
     if ([y n] | input list 'sync') == 'y' {
         $cfg | ^ssh ...[
-            ...$s.ssh_args
+            ...$s.login
             'sudo tee /mnt/etc/nixos/configuration.nix > /dev/null'
         ]
     }
@@ -165,7 +180,7 @@ for e in [nuon toml yaml json] {
     | str join (char newline)
     print $"(ansi grey)($install)(ansi reset)"
     if ([y n] | input list 'install') == 'y' {
-        $install | ^ssh ...[...$s.ssh_args 'sudo bash']
+        $install | ^ssh ...$s.login 'sudo bash'
     }
 } {
     cmp: {|a,s| [
@@ -176,8 +191,12 @@ for e in [nuon toml yaml json] {
 
 'setup fetch'
 | comma fun {|a,s,_|
-    ^ssh ...[
-        ...$s.ssh_args
-        'sudo cat /etc/nixos/configuration.nix'
-    ] | save -f configuration.nix
+    rsync ...$s.sync.args $"($s.sync.host):/etc/nixos/" etc/
+}
+
+'setup put'
+| comma fun {|a,s,_|
+    rsync ...$s.sync.args etc/ $"($s.sync.host):nixos/" 
+    ^ssh ...$s.login 'sudo rsync -avp /home/agent/nixos/ /etc/nixos/'
+
 }

@@ -138,20 +138,41 @@
 
     ripgrep
     fd
+    jq
+    yq-go
 
     git
     neovim
     nushell
     curl wget
-    (python3.withPackages(ps: with ps; [ pandas httpx ipython ]))
+    sqlite
+    duckdb
     nodejs
+    (python3.withPackages(ps: with ps; [
+        httpx aiofile aiostream fastapi uvicorn
+        debugpy pytest pydantic pyparsing
+        ipython typer pydantic-settings pyyaml
+        boltons decorator deepmerge
+        structlog python-json-logger
+        polars
+    ]))
 
+    wireguard-tools
+    dust
+    tree
     bottom
     delta
+    htop
 
+    buildah
+    skopeo
+    kubectl
+    kubernetes-helm
+    rustic-rs
 
     gparted
 
+    xclip
     neovide
     alacritty
     vivaldi
