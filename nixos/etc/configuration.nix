@@ -112,7 +112,7 @@
       isNormalUser = true;
       extraGroups = [ "wheel" "networkmanager" ]; # Enable ‘sudo’ for the user.
       packages = with pkgs; [
-        tree
+        #tree
       ];
       openssh.authorizedKeys.keys = [
         "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIK2Q46WeaBZ9aBkS3TF2n9laj1spUkpux/zObmliHUOI"
@@ -140,6 +140,10 @@
     fd
     jq
     yq-go
+    socat
+    nmap
+    zstd
+    gnupg
 
     git
     neovim
