@@ -16,6 +16,7 @@ for e in [nuon toml yaml json] {
     port: 7788
     user: agent
     host: localhost
+    targetPort: 2222
 }
 
 'login'
@@ -29,7 +30,7 @@ for e in [nuon toml yaml json] {
 'sync'
 | comma val computed {|a,s,m|
     {
-        args: [-avp -e $'ssh -p ($s.ssh.port)']
+        args: [-avp --delete -e $'ssh -p ($s.ssh.port)']
         host: $"agent@localhost"
     }
 }
@@ -45,7 +46,7 @@ for e in [nuon toml yaml json] {
         'passwd'
         'curl http://file.s/wstunnel -O'
         'chmod +x wstunnel'
-        './wstunnel client -R tcp://7788:localhost:22 ws://10.0.2.2:7787'
+        $'./wstunnel client -R tcp://7788:localhost:($s.ssh.targetPort) ws://10.0.2.2:7787'
     ] { print $"(ansi grey)($i)(ansi reset)" }
     wstunnel server ws://0.0.0.0:7787
 }
@@ -194,7 +195,7 @@ for e in [nuon toml yaml json] {
     rsync ...$s.sync.args $"($s.sync.host):/etc/nixos/" etc/
 }
 
-'setup put'
+'setup sync'
 | comma fun {|a,s,_|
     rsync ...$s.sync.args etc/ $"($s.sync.host):nixos/" 
     ^ssh ...$s.login 'sudo rsync -avp /home/agent/nixos/ /etc/nixos/'
