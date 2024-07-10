@@ -66,6 +66,7 @@
       initialPassword = "agent";
       isNormalUser = true;
       extraGroups = [ "wheel" "networkmanager" ]; # Enable ‘sudo’ for the user.
+      shell = pkgs.nushell;
       packages = with pkgs; [
         #tree
       ];

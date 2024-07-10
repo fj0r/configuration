@@ -11,4 +11,9 @@
     alacritty
     vivaldi
   ];
+
+  environment.variables = {
+    TERM = "xterm-256color";
+  };
+
 }

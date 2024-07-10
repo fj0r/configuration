@@ -1,9 +1,9 @@
 {  pkgs,  lib,  ...}:
 
 {
-  
+
   imports = [
-    ./x.nix
+    ./default.nix
     ./font.nix
     ./fcitx.nix
   ];

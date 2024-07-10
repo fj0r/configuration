@@ -4,16 +4,13 @@
   
   fonts = {
     packages = with pkgs; [
-      # icon fonts
-      material-design-icons
-
       # normal fonts
       noto-fonts
       noto-fonts-cjk
       noto-fonts-emoji
 
       # nerdfonts
-      #(nerdfonts.override {fonts = ["Monaspace"];})
+      (nerdfonts.override {fonts = ["Monaspace"];})
     ];
 
     # use fonts specified by user rather than default ones
@@ -25,7 +22,7 @@
     fontconfig.defaultFonts = {
       serif = ["Noto Serif" "Noto Color Emoji"];
       sansSerif = ["Noto Sans" "Noto Color Emoji"];
-      monospace = ["JetBrainsMono Nerd Font" "Noto Color Emoji"];
+      monospace = ["MonaspiceAr Nerd Font Mono" "Noto Color Emoji"];
       emoji = ["Noto Color Emoji"];
     };
   };

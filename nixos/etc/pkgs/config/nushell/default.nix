@@ -6,7 +6,7 @@
 
 stdenvNoCC.mkDerivation rec {
   pname = "nu_scripts";
-  version = "0-unstable-2024-07-03";
+  version = "latest";
 
   src = fetchFromGitHub {
     owner = "nushell";

@@ -3,6 +3,7 @@
 {
 
   imports = [
+    #./gh
     ./alacritty
     ./git
   ];
