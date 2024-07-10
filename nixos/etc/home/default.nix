@@ -1,9 +1,17 @@
 { config, pkgs, ... }:
 
 {
+
+  imports = [
+    ./alacritty
+    ./git
+  ];
+
   # 注意修改这里的用户名与用户目录
   # home.username = "agent";
   home.homeDirectory = "/home/agent";
+
+
 
 
   # 直接将当前文件夹的配置文件，链接到 Home 目录下的指定位置
@@ -39,29 +47,6 @@
     pciutils # lspci
     usbutils # lsusb
   ];
-
-  # git 相关配置
-  programs.git = {
-    enable = true;
-    userName = "agent";
-    userEmail = "fj0rd@qq.com";
-  };
-
-
-  # alacritty - 一个跨平台终端，带 GPU 加速功能
-  programs.alacritty = {
-    enable = true;
-    # 自定义配置
-    settings = {
-      env.TERM = "xterm-256color";
-      font = {
-        size = 12;
-        draw_bold_text_with_bright_colors = true;
-      };
-      scrolling.multiplier = 5;
-      selection.save_to_clipboard = true;
-    };
-  };
 
   home.stateVersion = "24.05";
 
