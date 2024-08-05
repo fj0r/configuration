@@ -1,18 +1,63 @@
-export def main [] {
-    let cfg = $in
-    print ($cfg | table -e)
+export def main [
+    --gen-sh (-g)
+    --partitions (-p)
+] {
+    if $gen_sh {
+        if $partitions {
+            for i in (partitions -cf) {
+                print $"($i)"
+            }
+        }
 
-    for i in (partitions -cf) {
-        print $"($i)"
+        for i in (components -kcdv --lang [c js py rs hs] | install -h 'arch_wd' -p asdf) {
+            print $i
+        }
+    } else {
+        components -ecdv --lang [c js py rs hs] | install-pkgs
     }
+}
 
-    for i in (components -kcdv --lang [c js py rs hs] | setup -h 'arch_wd' -p asdf) {
+def lang-pkgs [-i: int = 8] {
+    let i = '' | fill -c ' ' -w $i
+    $in | items {|k, v|
+        match $k {
+            pip => {
+                $"($i)pip install --no-cache-dir --break-system-packages ($v.name | str join ' ')"
+            }
+            npm => {
+                $"($i)npm install --location=global ($v.name | str join ' ')"
+            }
+            cargo => {
+                $"($i)cargo install ($v.name | str join ' ')"
+            }
+            aur => {
+                $"($i)paru -S --noconfirm ($v.name | str join ' ')"
+            }
+            _ => ''
+        }
+    }
+}
+
+def install-pkgs [--indent (-i): int = 8] {
+    let com = $in | group-by type
+    let pkg = $com.sys | get name | [paru -S ...$in] | str join ' '
+
+    let post = $com.sys
+    | filter {|x| $x.post? | is-not-empty }
+    | get post
+    | flatten
+    | [$"export XDG_CONFIG_HOME=($env.HOME)/.config" ...$in]
+    | str join (char newline)
+
+    print $pkg
+    print $post
+
+    for i in ($com | lang-pkgs -i 0) {
         print $i
     }
 }
 
-
-def setup [
+def install [
     --mnt: string = /mnt
     --master (-m): string = master
     --password (-p): string
@@ -42,25 +87,7 @@ def setup [
         paru/paru -S --noconfirm paru
         rm -rf paru
         exit"
-    let pkgs = $components | items {|k, v|
-        let idt = '        '
-        match $k {
-            pip => {
-                $"($idt)pip install --no-cache-dir --break-system-packages ($v.name | str join ' ')"
-            }
-            npm => {
-                $"($idt)npm install --location=global ($v.name | str join ' ')"
-            }
-            cargo => {
-                $"($idt)cargo install ($v.name | str join ' ')"
-            }
-            aur => {
-                $"($idt)paru -S --noconfirm ($v.name | str join ' ')"
-            }
-            _ => ''
-        }
-    }
-    | str join $nl
+    let pkgs = $components | lang-pkgs | str join $nl
     let post = $components.sys
     | each {|x| if ($x.post? | is-empty) {[]} else {$x.post} }
     | flatten
@@ -104,6 +131,7 @@ def setup [
 }
 
 def components [
+    --extend (-e)
     --kde (-k)
     --container (-c)
     --dev (-d)
@@ -111,7 +139,11 @@ def components [
     --lang (-l): list<string> = []
 ] {
     let manifest = open pacman.yml
-    mut r = [core network sys base hardware ...$lang]
+    mut r = (if $extend {
+        [base ...$lang font x]
+    } else {
+        [core network sys base hardware ...$lang]
+    })
     if $container {
         $r ++= [container kubernetes]
     }
