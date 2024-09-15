@@ -23,6 +23,12 @@ resolvenv select wlan0 [
 
 #$env.lg.file = ~/.cache/nonstdout
 
+let expert = {
+    rust: '你是Rust专家，'
+    js: '你是javascript专家，'
+    python: '你是Python专家，'
+    nushell: '你是Nushell专家，'
+}
 $env.OPENAI_PROMPT = $env.OPENAI_PROMPT
 | insert 'trans-to-zh' {
     prompt: [
@@ -39,6 +45,34 @@ $env.OPENAI_PROMPT = $env.OPENAI_PROMPT
     ]
     model: '',
     description: 'Analyze JSON content, converting it into a Rust struct'
+}
+| insert 'git-summary-zh' {
+    prompt: [
+        "从git的差异中总结提取出提交日志，只总结文件内容变化，忽略hash变化"
+        "```"
+        "{}"
+        "```"
+    ]
+    model: 'qwen-max'
+}
+| insert 'synonyms' {
+    prompt: [
+        "解释以下词语的区别，并介绍相关的近义词和反义词"
+        "```{}```"
+    ]
+    model: 'qwen-max'
+    description: '近义词解析'
+}
+| insert 'api-doc-zh' {
+    prompt: [
+        "{} 查询API的用法并给出示例"
+        "```"
+        "{}"
+        "```"
+    ]
+    placeholder: [ $expert ]
+    description: 'api 文档查询'
+    model: 'qwen-max'
 }
 
 source ~/.config/qwen-key.nu
