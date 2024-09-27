@@ -4,7 +4,7 @@ $env.PREFER_ALT = '1'
 $env.LIBRETRANSLATE_HOST = 'http://localhost:5000'
 $env.NVIM_FONT = "nar12"
 # $env.NVIM_ARROW = 1
-$env.EDITOR = 'helix'
+$env.EDITOR = 'nvim'
 $env.OLLAMA_BASEURL = 'http://gitea.s:11434'
 
 use resolvenv
