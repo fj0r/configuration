@@ -24,3 +24,4 @@ resolvenv select wlan0 [
 
 #source ~/.config/qwen-key.nu
 
+#use comma *
