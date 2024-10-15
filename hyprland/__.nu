@@ -1,21 +1,5 @@
-const s = {
-    manifest: {
-        src: $'~/Downloads/hyprland'
-        dist: '/usr'
-        list: {
-            Hyprland: 'bin/'
-            hyprctl: 'bin/'
-            hyprpm: 'bin/'
-            'example/hyprland.desktop': 'share/wayland-sessions/'
-            'example/hyprland.conf': 'share/hyprland/'
-            'assets/hyprland-portals.conf': 'share/xdg-desktop-portal/'
-            'assets/wall*': 'share/hyprland/'
-        }
-    }
-}
-
 export def 'download' [] {
-    let src = $s.manifest.src
+    let src = $env.manifest.src
     let src1 = $src | path split | range ..-2 | path join
     let v = curl --retry 3 -sSL https://api.github.com/repos/Hyprwm/Hyprland/releases/latest
     | from json
@@ -46,7 +30,7 @@ export def 'setup kde' [] {
 }
 
 export def 'install' [] {
-    let m = $s.manifest
+    let m = $env.manifest
     for i in ($m.list | transpose k v) {
         let s = [$m.src $i.k] | path join | into glob
         let d = if ($i.v | str starts-with '/') or ($i.v | str starts-with '~') {

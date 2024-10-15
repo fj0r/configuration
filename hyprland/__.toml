@@ -1,0 +1,12 @@
+[manifest]
+src = "~/Downloads/hyprland"
+dist = "/usr"
+
+[manifest.list]
+Hyprland = "bin/"
+hyprctl = "bin/"
+hyprpm = "bin/"
+"example/hyprland.desktop" = "share/wayland-sessions/"
+"example/hyprland.conf" = "share/hyprland/"
+"assets/hyprland-portals.conf" = "share/xdg-desktop-portal/"
+"assets/wall*" = "share/hyprland/"
