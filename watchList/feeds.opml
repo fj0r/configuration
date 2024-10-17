@@ -2,7 +2,7 @@
 <opml version="2.0">
     <head>
         <title>Miniflux</title>
-        <dateCreated>Sat, 07 Sep 2024 08:13:06 UTC</dateCreated>
+        <dateCreated>Mon, 28 Oct 2024 00:49:42 UTC</dateCreated>
     </head>
     <body>
         <outline text="IT">
@@ -12,12 +12,10 @@
             <outline title="极客公园" text="极客公园" xmlUrl="https://www.geekpark.net/rss" htmlUrl="http://feeds.geekpark.net/" type="rss"></outline>
         </outline>
         <outline text="PROG">
-            <outline title="1Link.Fun 科技周刊" text="1Link.Fun 科技周刊" xmlUrl="https://1link.fun/index.xml" htmlUrl="https://1link.fun/" type="rss"></outline>
+            <outline title="SaltTiger" text="SaltTiger" xmlUrl="https://salttiger.com/feed/" htmlUrl="http://www.salttiger.com/feed/" type="rss"></outline>
             <outline title="☆☆☆InfoQ" text="☆☆☆InfoQ" xmlUrl="https://www.infoq.cn/feed" htmlUrl="https://www.infoq.cn/feed" type="rss"></outline>
             <outline title="planet.haskell" text="planet.haskell" xmlUrl="https://planet.haskell.org/rss20.xml" htmlUrl="https://planet.haskell.org/rss20.xml" type="rss"></outline>
-            <outline title="SaltTiger" text="SaltTiger" xmlUrl="https://salttiger.com/feed/" htmlUrl="http://www.salttiger.com/feed/" type="rss"></outline>
             <outline title="云风的 BLOG" text="云风的 BLOG" xmlUrl="https://blog.codingnow.com/atom.xml" htmlUrl="http://blog.codingnow.com/atom.xml" type="rss"></outline>
-            <outline title="介绍 on SuperTechFans" text="介绍 on SuperTechFans" xmlUrl="https://www.supertechfans.com/cn/index.xml" htmlUrl="https://supertechfans.com/cn/" type="rss"></outline>
             <outline title="开源中国社区最新新闻" text="开源中国社区最新新闻" xmlUrl="https://www.oschina.net/news/rss" htmlUrl="http://www.oschina.net/news/rss" type="rss"></outline>
             <outline title="☆☆阮一峰的网络日志" text="☆☆阮一峰的网络日志" xmlUrl="http://www.ruanyifeng.com/blog/atom.xml" htmlUrl="http://www.ruanyifeng.com/blog/atom.xml" type="rss"></outline>
         </outline>
@@ -118,6 +116,7 @@
             <outline title="edgedb" text="edgedb" xmlUrl="https://github.com/edgedb/edgedb/releases.atom" htmlUrl="https://github.com/edgedb/edgedb/releases.atom" type="rss"></outline>
             <outline title="ferretdb(mongo(pg))" text="ferretdb(mongo(pg))" xmlUrl="https://github.com/FerretDB/FerretDB/releases.atom" htmlUrl="https://github.com/FerretDB/FerretDB/releases.atom" type="rss"></outline>
             <outline title="foundationdb" text="foundationdb" xmlUrl="https://github.com/apple/foundationdb/releases.atom" htmlUrl="https://github.com/apple/foundationdb/releases.atom" type="rss"></outline>
+            <outline title="glaredb" text="glaredb" xmlUrl="https://github.com/GlareDB/glaredb/releases.atom" htmlUrl="https://github.com/GlareDB/glaredb/releases" type="rss"></outline>
             <outline title="gluesql" text="gluesql" xmlUrl="https://github.com/gluesql/gluesql/releases.atom" htmlUrl="https://github.com/gluesql/gluesql/releases" type="rss"></outline>
             <outline title="greptimedb" text="greptimedb" xmlUrl="https://github.com/GreptimeTeam/greptimedb/releases.atom" htmlUrl="https://github.com/GreptimeTeam/greptimedb/releases.atom" type="rss"></outline>
             <outline title="☆☆hasura graphql-engine" text="☆☆hasura graphql-engine" xmlUrl="https://github.com/hasura/graphql-engine/releases.atom" htmlUrl="https://github.com/hasura/graphql-engine/releases.atom" type="rss"></outline>
@@ -178,6 +177,7 @@
             <outline title="☆☆leptos" text="☆☆leptos" xmlUrl="https://github.com/leptos-rs/leptos/releases.atom" htmlUrl="https://github.com/leptos-rs/leptos/releases.atom" type="rss"></outline>
             <outline title="parcel" text="parcel" xmlUrl="https://github.com/parcel-bundler/parcel/releases.atom" htmlUrl="https://github.com/parcel-bundler/parcel/releases.atom" type="rss"></outline>
             <outline title="reason" text="reason" xmlUrl="https://github.com/reasonml/reason/releases.atom" htmlUrl="https://github.com/reasonml/reason/releases.atom" type="rss"></outline>
+            <outline title="sauron" text="sauron" xmlUrl="https://github.com/ivanceras/sauron/releases.atom" htmlUrl="https://github.com/ivanceras/sauron/releases" type="rss"></outline>
             <outline title="seed" text="seed" xmlUrl="https://github.com/seed-rs/seed/releases.atom" htmlUrl="https://github.com/seed-rs/seed/releases.atom" type="rss"></outline>
             <outline title="☆☆solidjs" text="☆☆solidjs" xmlUrl="https://github.com/solidjs/solid/releases.atom" htmlUrl="https://github.com/solidjs/solid/releases.atom" type="rss"></outline>
             <outline title="stdweb[rs]" text="stdweb[rs]" xmlUrl="https://github.com/koute/stdweb/releases.atom" htmlUrl="https://github.com/koute/stdweb/releases.atom" type="rss"></outline>
@@ -274,6 +274,7 @@
             <outline title="⚝dfdx" text="⚝dfdx" xmlUrl="https://github.com/coreylowman/dfdx/releases.atom" htmlUrl="https://github.com/coreylowman/dfdx/releases.atom" type="rss"></outline>
             <outline title="EmbedAnything" text="EmbedAnything" xmlUrl="https://github.com/StarlightSearch/EmbedAnything/releases.atom" htmlUrl="https://github.com/StarlightSearch/EmbedAnything/releases" type="rss"></outline>
             <outline title="⚝linfa" text="⚝linfa" xmlUrl="https://github.com/rust-ml/linfa/releases.atom" htmlUrl="https://github.com/rust-ml/linfa/releases.atom" type="rss"></outline>
+            <outline title="mistral.rs" text="mistral.rs" xmlUrl="https://github.com/EricLBuehler/mistral.rs/releases.atom" htmlUrl="https://github.com/EricLBuehler/mistral.rs/releases" type="rss"></outline>
             <outline title="neuronika" text="neuronika" xmlUrl="https://github.com/neuronika/neuronika/releases.atom" htmlUrl="https://github.com/neuronika/neuronika/releases.atom" type="rss"></outline>
             <outline title="☆ollama" text="☆ollama" xmlUrl="https://github.com/ollama/ollama/releases.atom" htmlUrl="https://github.com/ollama/ollama/releases" type="rss"></outline>
             <outline title="☆PyTorch" text="☆PyTorch" xmlUrl="https://pytorch.org/feed.xml" htmlUrl="https://pytorch.org/feed.xml" type="rss"></outline>
@@ -349,7 +350,7 @@
         </outline>
         <outline text="storage">
             <outline title="☆alist" text="☆alist" xmlUrl="https://github.com/alist-org/alist/releases.atom" htmlUrl="https://github.com/alist-org/alist/releases" type="rss"></outline>
-            <outline title="cubefs" text="cubefs" xmlUrl="https://github.com/cubefs/cubefs/releases.atom" htmlUrl="https://github.com/cubefs/cubefs/releases" type="rss"></outline>
+            <outline title="☆cubefs" text="☆cubefs" xmlUrl="https://github.com/cubefs/cubefs/releases.atom" htmlUrl="https://github.com/cubefs/cubefs/releases" type="rss"></outline>
             <outline title="dufs" text="dufs" xmlUrl="https://github.com/sigoden/dufs/releases.atom" htmlUrl="https://github.com/sigoden/dufs/releases.atom" type="rss"></outline>
             <outline title="☆Garage HQ" text="☆Garage HQ" xmlUrl="https://garagehq.deuxfleurs.fr/rss.xml" htmlUrl="https://garagehq.deuxfleurs.fr" type="rss"></outline>
             <outline title="goofys" text="goofys" xmlUrl="https://github.com/kahing/goofys/releases.atom" htmlUrl="https://github.com/kahing/goofys/releases.atom" type="rss"></outline>
