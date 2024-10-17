@@ -22,6 +22,4 @@ resolvenv select wlan0 [
 
 #$env.lg.file = ~/.cache/nonstdout
 
-#source ~/.config/qwen-key.nu
-
-#use comma *
+#source ~/.config/ai.config.nu
