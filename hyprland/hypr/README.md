@@ -1,0 +1,9 @@
+qutebrowser
+alacritty
+walker
+nushell
+slurp
+grim
+ags
+mako
+fcitx5
