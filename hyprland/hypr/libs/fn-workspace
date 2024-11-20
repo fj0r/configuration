@@ -1,0 +1,17 @@
+bind = , F1, workspace, 1
+bind = , F2, workspace, 2
+bind = , F3, workspace, 3
+bind = , F4, workspace, 4
+bind = , F5, workspace, 5
+bind = , F6, workspace, 6
+bind = , F7, workspace, 7
+bind = , F8, workspace, 8
+
+bind = ALT, F1, movetoworkspace, 1
+bind = ALT, F2, movetoworkspace, 2
+bind = ALT, F3, movetoworkspace, 3
+bind = ALT, F4, movetoworkspace, 4
+bind = ALT, F5, movetoworkspace, 5
+bind = ALT, F6, movetoworkspace, 6
+bind = ALT, F7, movetoworkspace, 7
+bind = ALT, F8, movetoworkspace, 8

@@ -7,3 +7,5 @@ grim
 ags
 mako
 fcitx5
+#hyprswitch
+aylurs-gtk-shell-git
