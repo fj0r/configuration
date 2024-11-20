@@ -1,0 +1,6 @@
+exec-once = hyprswitch init --show-title --size-factor 5.5 --workspaces-per-row 5 &
+$key = tab
+$reverse = grave
+
+bind = alt, $key, exec, hyprswitch gui --mod-key alt_l --key $key --close mod-key-release --reverse-key=mod=$reverse && hyprswitch dispatch
+bind = alt $reverse, $key, exec, hyprswitch gui --mod-key alt_l --key $key --close mod-key-release --reverse-key=mod=$reverse && hyprswitch dispatch -r

@@ -1,0 +1,6 @@
+env = HYPRLAND_STATE,~/.cache/nushell/hyprland.db
+exec-once = nu ~/.config/hypr/nu/init.nu 
+exec-once = nu ~/.config/hypr/nu/listen.nu
+bind = ALT,Tab, exec, nu ~/.config/hypr/nu/cycle-workspace.nu cycle
+bind = SUPER,Tab, exec, nu ~/.config/hypr/nu/cycle-workspace.nu pop
+
