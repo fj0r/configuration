@@ -1,3 +1,5 @@
 #!/usr/bin/env bash
 
+riverctl spawn alacritty
+
 nu ~/.config/river/init.nu
