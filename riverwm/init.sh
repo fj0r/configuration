@@ -162,4 +162,3 @@ riverctl default-layout rivertile
 rivertile -view-padding 6 -outer-padding 6 &
 
 riverctl map normal Supre I spawn alacritty
-riverctl map normal Supre Q spawn xterm
