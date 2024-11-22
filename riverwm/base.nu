@@ -3,7 +3,7 @@
         [mod, key, action];
         [Super Q [dolphin]]
         [Super W [qutebrowser]]
-        [Super E ["nu -c 'source ~/.env.nu; source ~/Configuration/nushell/scripts/main/env.nu; source ~/.nu; cd ~; neovide --frame=none --maximized --vsync'"]]
+        [Super E ["nu -c 'source ~/.env.nu; source ~/Configuration/nushell/scripts/main/env.nu; source ~/.nu; cd ~; neovide --maximized'"]]
         [Super I [alacritty]]
         [Super O [walker]]
         [Super R [`bash -c 'grim -g "$(slurp)" - | wl-copy && wl-paste > ~/Pictures/Screenshots/Screenshot-$(date +%F_%T).png | dunstify "Screenshot of the region taken" -t 1000'`]]
@@ -26,10 +26,10 @@
     passthrough: [Super F11]
     setting: [
         [background-color '0x002b36']
-        [border-color-focused '0x93a1a1']
+        [border-color-focused '0x33ccff']
         [border-color-unfocused '0x586e75']
-        [set-repeat 50 300]
-        [xcursor-theme capitaine-cursors]
+        #[set-repeat 50 300]
+        #[xcursor-theme capitaine-cursors]
     ]
     keymap: {
         normal: [
