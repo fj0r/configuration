@@ -4,7 +4,7 @@ Encoding=UTF-8
 Version=1.0
 Type=Application
 Terminal=false
-Exec=nu -c 'source ~/.env.nu; source ~/Configuration/nushell/scripts/main/env.nu; source ~/.nu; cd ~; neovide %F --frame=none --maximized --vsync'
+Exec=nu -c 'source ~/.env.nu; source ~/Configuration/nushell/scripts/main/env.nu; source ~/.nu; cd ~; neovide %F --maximized'
 Name=Neovide
 Icon=neovide
 Categories=Utility;TextEditor;

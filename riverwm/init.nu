@@ -42,7 +42,18 @@ for i in 0..<8 {
     riverctl map normal Super+Shift+Control $i toggle-view-tags $tags
 }
 
-riverctl spawn 'dbus-update-activation-environment SEATD_SOCK DISPLAY WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=river'
+riverctl spawn "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=river"
+riverctl spawn "systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=river"
+
+wlr-randr
+
+$env.WLR_NO_HARDWARE_CURSORS = 'true'
+$env.LIBVA_DRIVER_NAME = 'nvidia'
+$env.__GLX_VENDOR_LIBRARY_NAME = 'nvidia'
+$env.GDK_BACKEND = 'wayland,x11,*'
+$env.QT_QPA_PLATFORM = 'wayland;xcb'
+$env.SDL_VIDEODRIVER = 'wayland'
+$env.CLUTTER_BACKEND = 'wayland'
 
 riverctl default-layout rivertile
 

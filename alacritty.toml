@@ -12,9 +12,11 @@ family = "MonaspiceAr Nerd Font Mono"
 x = 0
 y = 3
 
-[shell]
+[terminal.shell]
 program = "nu"
 
 [window]
-decorations = "none"
-startup_mode = "Maximized"
+decorations = "transparent"
+#startup_mode = "Maximized"
+
+[terminal]
