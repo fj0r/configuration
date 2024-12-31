@@ -6,6 +6,7 @@ $env.NVIM_FONT = "nar12"
 # $env.NVIM_ARROW = 1
 $env.EDITOR = 'nvim'
 $env.OLLAMA_BASEURL = 'http://gitea.s:11434'
+$env.MARKDOWN_RENDER = 'glow'
 
 use resolvenv
 resolvenv select wlan0 [
