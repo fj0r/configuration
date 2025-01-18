@@ -5,8 +5,9 @@ $env.LIBRETRANSLATE_HOST = 'http://localhost:5000'
 $env.NVIM_FONT = "nar12"
 # $env.NVIM_ARROW = 1
 $env.EDITOR = 'nvim'
-$env.OLLAMA_BASEURL = 'http://gitea.s:11434'
+$env.OLLAMA_BASEURL = 'http://172.178.5.123:11434'
 $env.MARKDOWN_RENDER = 'glow'
+$env.MARKDOWN_TRANSFORM.summary-zh = { $in | ad text-summary zh -o }
 
 use resolvenv
 resolvenv select wlan0 [
