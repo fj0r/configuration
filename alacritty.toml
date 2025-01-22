@@ -17,6 +17,5 @@ program = "nu"
 
 [window]
 decorations = "transparent"
-#startup_mode = "Maximized"
 
 [terminal]
