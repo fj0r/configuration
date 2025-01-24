@@ -9,18 +9,21 @@ $env.OLLAMA_BASEURL = 'http://172.178.5.123:11434'
 $env.MARKDOWN_RENDER = 'glow'
 $env.MARKDOWN_TRANSFORM.summary-zh = { $in | ad text-summary zh -o }
 
-use resolvenv
-resolvenv select wlan0 [
-    [{screen: {port: 'hdmi'}, wifi: 'pandorabox'} {
-        NEOVIM_LINE_SPACE: '0'
-        NEOVIDE_SCALE_FACTOR: '1'
-    }]
-    [{screen: {port: 'eDP'}} {
-        NEOVIM_LINE_SPACE: '0'
-        NEOVIDE_SCALE_FACTOR: '1'
-    }]
-    [_ { print ($in | table -e) }]
-]
+$env.NEOVIM_LINE_SPACE = '0'
+$env.NEOVIDE_SCALE_FACTOR = '1'
+
+# use resolvenv
+# resolvenv select wlan0 [
+#     [{screen: {port: 'hdmi'}, wifi: 'pandorabox'} {
+#         NEOVIM_LINE_SPACE: '0'
+#         NEOVIDE_SCALE_FACTOR: '1'
+#     }]
+#     [{screen: {port: 'eDP'}} {
+#         NEOVIM_LINE_SPACE: '0'
+#         NEOVIDE_SCALE_FACTOR: '1'
+#     }]
+#     [_ { print ($in | table -e) }]
+# ]
 
 #$env.lg.file = ~/.cache/nonstdout
 
