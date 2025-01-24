@@ -12,8 +12,6 @@
         [rivertile -view-padding 0 -outer-padding 0]
         [mako]
         [fcitx5 -d]
-        #[localectl set-x11-keymap "" "" "" ctrl:swapcaps]
-        #[setxkbmap -option 'ctrl:swapcaps']
     ]
     env: {
         INPUT_METHOD: fcitx
