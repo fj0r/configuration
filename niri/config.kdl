@@ -244,6 +244,13 @@ animations {
     // slowdown 3.0
 }
 
+window-rule {
+    match app-id=r#"neovide"#
+    match app-id=r#"org.qutebrowser.qutebrowser"#
+    match app-id=r#"org.kde.okular"#
+    open-maximized true
+}
+
 // Window rules let you adjust behavior for individual windows.
 // Find more information on the wiki:
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Window-Rules
@@ -269,7 +276,7 @@ window-rule {
 
 // Example: block out two password managers from screen capture.
 // (This example rule is commented out with a "/-" in front.)
-/-window-rule {
+window-rule {
     match app-id=r#"^org\.keepassxc\.KeePassXC$"#
     match app-id=r#"^org\.gnome\.World\.Secrets$"#
 
