@@ -9,6 +9,29 @@ def get-ctx [] {
     | first
 }
 
+def to-html [title] {
+    let body = $in | lines | each {|x| $"<p>($x)</p>"}
+    let head = [
+        "<head>"
+        "<style>"
+        ".root{display:flex;flex-direction:column;flex: 1 1 auto;align-items:center;}"
+        ".main{max-width:800px;display:flex;flex-direction:column;flex: 1 1 auto;align-items:stretch}"
+        ".main>p{margin:0.3em 0;}"
+        "</style>"
+        "</head>"
+        "<body>"
+        "<div class=\"root\">"
+        $"<h3>($title)</h3>"
+        "<div class=\"main\">"
+    ]
+    let tail = [
+        '</div>'
+        '</div>'
+        "</body>"
+    ]
+    [$head $body $tail] | flatten | str join (char newline)
+}
+
 export def main [--text] {
     let t = qute selected-text
     let t = if ($t | is-empty) {
@@ -73,7 +96,8 @@ export def main [--text] {
 
     $r
     | get -i choices.0.message.content
-    | qute open-tab translate.md
+    | to-html $env.QUTE_TITLE
+    | qute open-tab translate.html
 
     $env.QUTE_EXIT_CODE.SUCCESS
 }

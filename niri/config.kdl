@@ -214,8 +214,8 @@ layout {
 spawn-at-startup "xwayland-satellite"
 
 environment {
-    DISPLAY ":0"
-    XAUTHORITY "/home/master/.Xauthority"
+    // DISPLAY ":0"
+    // XAUTHORITY "/home/master/.Xauthority"
 }
 
 // Uncomment this line to ask the clients to omit their client-side decorations if possible.
@@ -246,6 +246,7 @@ animations {
 
 window-rule {
     match app-id=r#"neovide"#
+    match app-id=r#"vivaldi"#
     match app-id=r#"org.qutebrowser.qutebrowser"#
     match app-id=r#"org.kde.okular"#
     open-maximized true
