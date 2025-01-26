@@ -29,12 +29,11 @@ c.fonts.web.family.serif= 'Noto Serif CJK SC'
 
 config.bind('<Alt-o>', 'edit-text')
 config.bind('<Ctrl-o>', 'edit-url')
-config.bind('zl', 'spawn --userscript qute-bitwarden')
+config.bind('zl', 'spawn --userscript rbw.nu')
 
-config.bind(';l', 'hint userscript link translate')
-config.bind(';T', 'hint userscript all translate --text')
-config.bind('<Ctrl+T>', 'spawn --userscript translate')
-config.bind('<Ctrl+Shift+T>', 'spawn --userscript translate --text')
+config.bind(';l', 'hint userscript link translate.nu')
+config.bind(';T', 'hint userscript all translate.nu --text')
+config.bind('<Ctrl+T>', 'spawn --userscript translate.nu')
 
 
 c.hints.selectors["code"] = [
