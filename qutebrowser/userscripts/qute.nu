@@ -103,6 +103,29 @@ export def open-tab [name] {
     $"open -t ($f)" | save -a $env.QUTE_FIFO
 }
 
+export def to-html [title] {
+    let body = $in | lines | each {|x| $"<p>($x)</p>"}
+    let head = [
+        "<head>"
+        "<style>"
+        ".root{display:flex;flex-direction:column;flex: 1 1 auto;align-items:center;}"
+        ".main{max-width:800px;display:flex;flex-direction:column;flex: 1 1 auto;align-items:stretch}"
+        ".main>p{margin:0.3em 0;}"
+        "</style>"
+        "</head>"
+        "<body>"
+        "<div class=\"root\">"
+        $"<h3>($title)</h3>"
+        "<div class=\"main\">"
+    ]
+    let tail = [
+        '</div>'
+        '</div>'
+        "</body>"
+    ]
+    [$head $body $tail] | flatten | str join (char newline)
+}
+
 export-env {
     $env.QUTE_EXIT_CODE = {
         SUCCESS: 0
