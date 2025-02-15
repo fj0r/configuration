@@ -28,3 +28,4 @@ $env.NEOVIDE_SCALE_FACTOR = '1'
 #$env.lg.file = ~/.cache/nonstdout
 
 #source ~/.config/ai.config.nu
+$env.AI_TOOLS.web_search.config.proxy = 'http://localhost:7890'
