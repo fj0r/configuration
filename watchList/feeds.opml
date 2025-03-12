@@ -2,7 +2,7 @@
 <opml version="2.0">
     <head>
         <title>Miniflux</title>
-        <dateCreated>Wed, 26 Feb 2025 03:47:31 UTC</dateCreated>
+        <dateCreated>Mon, 10 Mar 2025 08:13:27 UTC</dateCreated>
     </head>
     <body>
         <outline text="IT">
@@ -12,15 +12,12 @@
             <outline title="极客公园" text="极客公园" xmlUrl="https://www.geekpark.net/rss" htmlUrl="http://feeds.geekpark.net/" type="rss"></outline>
         </outline>
         <outline text="PROG">
-            <outline title="云风的 BLOG" text="云风的 BLOG" xmlUrl="https://blog.codingnow.com/atom.xml" htmlUrl="http://blog.codingnow.com/atom.xml" type="rss"></outline>
             <outline title="☆☆☆InfoQ" text="☆☆☆InfoQ" xmlUrl="https://www.infoq.cn/feed" htmlUrl="https://www.infoq.cn/feed" type="rss"></outline>
             <outline title="planet.haskell" text="planet.haskell" xmlUrl="https://planet.haskell.org/rss20.xml" htmlUrl="https://planet.haskell.org/rss20.xml" type="rss"></outline>
             <outline title="SaltTiger" text="SaltTiger" xmlUrl="https://salttiger.com/feed/" htmlUrl="http://www.salttiger.com/feed/" type="rss"></outline>
+            <outline title="云风的 BLOG" text="云风的 BLOG" xmlUrl="https://blog.codingnow.com/atom.xml" htmlUrl="http://blog.codingnow.com/atom.xml" type="rss"></outline>
             <outline title="开源中国社区最新新闻" text="开源中国社区最新新闻" xmlUrl="https://www.oschina.net/news/rss" htmlUrl="http://www.oschina.net/news/rss" type="rss"></outline>
             <outline title="☆☆阮一峰的网络日志" text="☆☆阮一峰的网络日志" xmlUrl="http://www.ruanyifeng.com/blog/atom.xml" htmlUrl="http://www.ruanyifeng.com/blog/atom.xml" type="rss"></outline>
-        </outline>
-        <outline text="SCI">
-            <outline title="知乎每日精选" text="知乎每日精选" xmlUrl="https://www.zhihu.com/rss" htmlUrl="http://www.zhihu.com/rss" type="rss"></outline>
         </outline>
         <outline text="Scientific American">
             <outline title="Scientific American Content: Global" text="Scientific American Content: Global" xmlUrl="http://rss.sciam.com/ScientificAmerican-Global?format=xml" htmlUrl="http://rss.sciam.com/ScientificAmerican-Global?format=xml" type="rss"></outline>
