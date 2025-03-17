@@ -1,6 +1,6 @@
 export def 'desktop neovide' [] {
     cp desktop/neovide.desktop ~/.local/share/applications
-    #sudo cp desktop/neovide.desktop /usr/share/applications/neovide.desktop
+    sudo cp desktop/neovide.desktop /usr/share/applications/neovide.desktop
 }
 
 export def 'setup nushell' [] {
