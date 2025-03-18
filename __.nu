@@ -1,5 +1,6 @@
 export def 'desktop neovide' [] {
     cp desktop/neovide.desktop ~/.local/share/applications
+    sudo cp desktop/neovide.svg /usr/local/share/icon
     sudo cp desktop/neovide.desktop /usr/share/applications/neovide.desktop
 }
 
