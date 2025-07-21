@@ -1,6 +1,7 @@
 $env.NVIM_LEVEL = if 'NVIM_LEVEL' in $env { $env.NVIM_LEVEL } else { 'x' }
 $env.NVIM_REMOTE_HISTORY = $"($env.HOME)/.cache/nvim_history.sqlite"
 $env.PREFER_ALT = '1'
+$env.RUST_BACKTRACE = 'full'
 $env.LIBRETRANSLATE_HOST = 'http://localhost:5000'
 $env.NVIM_FONT = "nar11"
 $env.NVIM_LIGHT = $env.NVIM_LIGHT? | default '1'
@@ -33,3 +34,5 @@ $env.RUSTC_WRAPPER = '/usr/local/bin/sccache'
 #source ~/.config/ai.config.nu
 $env.AI_TOOLS.web_search.context.proxy = 'http://localhost:7890'
 $env.AI_TOOLS.web_fetch.context.proxy = 'http://localhost:7890'
+
+do -i { open ~/.config/openai_secrets.toml } | default {}  | load-env
