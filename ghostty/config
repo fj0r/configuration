@@ -57,3 +57,4 @@ command = zellij attach -c local
 #adjust-cell-height = 5%
 #window-decoration = none
 theme = Arthur
+#env = NVIM_LIGHT=0
