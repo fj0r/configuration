@@ -1,18 +1,22 @@
 [env]
 NVIM_LEVEL = "x"
+NVIM_LIGHT = "0"
 TERM = "alacritty"
 
 [font]
-size = 12.0
+size = 11.0
 
 [font.normal]
-family = "MonaspiceAr Nerd Font Mono"
+family = "JetBrainsMono Nerd Font Mono"
 
 [font.offset]
 x = 0
 y = 1
 
 [window]
-#decorations = "none"
+decorations = "none"
+startup_mode = "Maximized"
 
-[terminal]
+[terminal.shell]
+program = "nu"
+args = ["-c", "zellij attach -c local" ]
