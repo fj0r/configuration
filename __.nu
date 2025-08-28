@@ -16,3 +16,23 @@ export def 'setup nvim' [] {
     ln -fs $"($env.PWD)/nvim" ~/.config/nvim
 }
 
+def cmpl-feed [] {
+    ls watchList/ | get name
+}
+
+export def 'list feeds' [
+    file:string@cmpl-feed = 'watchList/feeds.opml'
+] {
+    open $file
+    | from xml
+    | get content.content.1
+    | reduce -f {} {|x, a|
+        $a
+        | insert $x.attributes.text (
+            $x
+            | get content
+            | get attributes
+            | select title xmlUrl
+        )
+    }
+}

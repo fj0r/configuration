@@ -1,6 +1,8 @@
+$env.SCRATCH_BACKUP_DIR = $'($env.HOME)/Documents/scratch-backup'
 $env.NVIM_LEVEL = if 'NVIM_LEVEL' in $env { $env.NVIM_LEVEL } else { 'x' }
 $env.NVIM_REMOTE_HISTORY = $"($env.HOME)/.cache/nvim_history.sqlite"
 $env.PREFER_ALT = '1'
+$env.BLINK_CMP_RUST_FUZZY = '1'
 $env.LIBRETRANSLATE_HOST = 'http://localhost:5000'
 $env.NVIM_FONT = "Lilex11"
 $env.NVIM_LIGHT = $env.NVIM_LIGHT? | default '1'
@@ -35,4 +37,4 @@ $env.RUSTC_WRAPPER = '/usr/local/bin/sccache'
 $env.AI_TOOLS.web_search.context.proxy = 'http://localhost:7890'
 $env.AI_TOOLS.web_fetch.context.proxy = 'http://localhost:7890'
 
-do -i { open ~/.config/openai_secrets.toml } | default {}  | load-env
+do -i { open ~/.config/secrets.toml } | default {}  | load-env
