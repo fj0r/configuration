@@ -1,14 +1,19 @@
 yay -S paru
-pa nushell git neovim neovide alacritty zellij
-pa podman buildkit skopeo kubectl helm
-pa dust wireguard-tools wl-clipboard openbsd-netcat resolvconf jq tree
-pa vivaldi wechat freefilesync smplayer qutebrowser flameshot rofi
+pa git nushell duckdb neovim neovide alacritty zellij
+pa podman buildah skopeo kubectl kubeadm helm
+pa rustup sccache cmake nodejs npm uv
+pa wireguard-tools wl-clipboard openbsd-netcat resolvconf
+pa jq tree dust glow
+pa vivaldi freefilesync smplayer qutebrowser flameshot wps-office rofi
+pa wechat telegram-desktop
 pa fcitx5 fcitx5-gtk fcitx5-qt fcitx5-rime rime-wubi fcitx5-configtool fcitx5-chinese-addons
-pa zathura zathura-pdf-mupdf calibre blender krita
+pa blender krita calibre zathura zathura-pdf-mupdf
 
 # sudo 免密码
 sed -i 's/# \(%.*NOPASSWD.*\)/&\n\1/' /etc/sudoers
 #echo '%wheel ALL=(ALL:ALL) NOPASSWD: ALL' >> /etc/sudoers
+
+rm /etc/sudoers.d/10-installer
 
 sudo passwd -l root
 
