@@ -16,7 +16,7 @@ $env.PATH = $env.PATH | prepend ($env.HOME)/.moon/bin
 #$env.NEOVIM_LINE_SPACE = '0'
 $env.NEOVIDE_SCALE_FACTOR = '1.0'
 
-$env.RUSTC_WRAPPER = '/usr/local/bin/sccache'
+$env.RUSTC_WRAPPER = '/usr/bin/sccache'
 
 # use resolvenv
 # resolvenv select wlan0 [
