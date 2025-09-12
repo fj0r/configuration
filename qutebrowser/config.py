@@ -1,4 +1,4 @@
-c.content.proxy = 'socks://localhost:7891'
+c.content.proxy = 'http://localhost:7890'
 c.content.plugins = True
 c.content.pdfjs = True
 c.window.hide_decoration = True

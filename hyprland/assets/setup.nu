@@ -1,5 +1,7 @@
+const MANIFEST = path self setup.toml
+
 export def 'download' [] {
-    let src = $env.manifest.src
+    let src = open $MANIFEST | get src
     let src1 = $src | path split | range ..-2 | path join
     let v = curl --retry 3 -sSL https://api.github.com/repos/Hyprwm/Hyprland/releases/latest
     | from json
@@ -30,7 +32,7 @@ export def 'setup kde' [] {
 }
 
 export def 'install' [] {
-    let m = $env.manifest
+    let m = open $MANIFEST
     for i in ($m.list | transpose k v) {
         let s = [$m.src $i.k] | path join | into glob
         let d = if ($i.v | str starts-with '/') or ($i.v | str starts-with '~') {

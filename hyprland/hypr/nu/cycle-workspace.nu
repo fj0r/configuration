@@ -19,7 +19,7 @@ export def main [act args?] {
             let now = date now | into int
             let all = hyprctl workspaces
             | lines
-            | filter { $in | str starts-with 'workspace' }
+            | where { $in | str starts-with 'workspace' }
             | parse -r 'workspace ID (?<id>[0-9]+)'
             | get id
             | str join ','

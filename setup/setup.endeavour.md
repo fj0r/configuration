@@ -8,6 +8,7 @@ pa vivaldi freefilesync smplayer qutebrowser flameshot wps-office rofi
 pa wechat telegram-desktop
 pa fcitx5 fcitx5-gtk fcitx5-qt fcitx5-rime rime-wubi fcitx5-configtool fcitx5-chinese-addons
 pa blender krita calibre zathura zathura-pdf-mupdf
+pa hyprland quickshell
 
 # sudo 免密码
 sed -i 's/# \(%.*NOPASSWD.*\)/&\n\1/' /etc/sudoers
