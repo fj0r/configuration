@@ -43,7 +43,7 @@ def install-pkgs [--indent (-i): int = 8] {
     let pkg = $com.sys | get name | [paru -S ...$in] | str join ' '
 
     let post = $com.sys
-    | filter {|x| $x.post? | is-not-empty }
+    | where {|x| $x.post? | is-not-empty }
     | get post
     | flatten
     | [$"export XDG_CONFIG_HOME=($env.HOME)/.config" ...$in]
@@ -68,10 +68,10 @@ def install [
     let nl = char newline
     let tab = char tab
     mut cmds = []
-    $cmds ++= $"sed -i '1i Server = https://mirrors.tuna.tsinghua.edu.cn/archlinux/$repo/os/$arch' /etc/pacman.d/mirrorlist"
+    $cmds ++= [$"sed -i '1i Server = https://mirrors.tuna.tsinghua.edu.cn/archlinux/$repo/os/$arch' /etc/pacman.d/mirrorlist"]
     mut sys_pkg = $components.sys.name
-    $cmds ++= $"pacstrap -K ($mnt) ($sys_pkg | str join ' ')"
-    $cmds ++= $"genfstab -U ($mnt) >> '($mnt)/etc/fstab'"
+    $cmds ++= [$"pacstrap -K ($mnt) ($sys_pkg | str join ' ')"]
+    $cmds ++= [$"genfstab -U ($mnt) >> '($mnt)/etc/fstab'"]
     $cmds ++= [
         $"echo '### new fstab'"
         $"cat ($mnt)/etc/fstab"
@@ -116,7 +116,7 @@ def install [
         ($post)"
 
 
-    $cmds ++= ([
+    $cmds ++= [([
         $"arch-chroot ($mnt) /bin/bash << EOF"
         $chroot_cmd
         $paru
@@ -126,7 +126,7 @@ def install [
         "EOF"
         $"echo 'fuser -km ($mnt)'"
         $"umount -R ($mnt)"
-    ] | str join $nl)
+    ] | str join $nl)]
     $cmds
 }
 
@@ -158,7 +158,7 @@ def components [
     }
     let r = $r | uniq
     $manifest
-    | filter {|x|
+    | where {|x|
         $x.tags | all {|y| $y in $r }
     }
     | each {|x|
