@@ -58,7 +58,7 @@ let apps = [
 
 os_setup packages 'install packages' {|...tag|
     let a = $apps
-    | filter {|x|
+    | where {|x|
         $tag | any {|e| $e in $x.tag }
     }
     | group-by {|x| $x.type? | default 'pacman' }
