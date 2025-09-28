@@ -7,3 +7,6 @@ mouse = false
 
 [keys.insert]
 "A-;" = "normal_mode"
+
+[keys.normal]
+space = { space = "goto_word" }

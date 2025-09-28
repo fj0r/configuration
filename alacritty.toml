@@ -7,16 +7,18 @@ TERM = "alacritty"
 size = 11.0
 
 [font.normal]
-family = "JetBrainsMono Nerd Font Mono"
+family = "Lilex"
 
 [font.offset]
 x = 0
-y = 1
+y = 0
 
 [window]
-decorations = "none"
-startup_mode = "Maximized"
+#decorations = "none"
+#startup_mode = "Maximized"
+dimensions = { columns = 120, lines = 40 }
 
 [terminal.shell]
 program = "nu"
 args = ["-c", "zellij attach -c local" ]
+
