@@ -8,7 +8,7 @@ yay -S jq tree dust glow termshark
 yay -S vivaldi zed freefilesync smplayer qutebrowser flameshot wps-office rofi
 yay -S wechat telegram-desktop
 yay -S fcitx5 fcitx5-gtk fcitx5-qt fcitx5-rime rime-wubi fcitx5-configtool fcitx5-chinese-addons
-yay -S blender krita calibre zathura zathura-pdf-mupdf
+yay -S blender krita calibre zathura zathura-pdf-mupdf ttf-lilex
 yay -S hyprland quickshell # qt5compat qtsvg qtimageformats qtmultimedia
 
 # sudo 免密码
@@ -104,7 +104,7 @@ sudo sudo cp ~/.ssh/wg*.conf /etc/wireguard
 sudo systemctl enable --now wg-quick@wg0
 sudo systemctl enable --now wg-quick@wg3
 
-# file search
+# disable file search
 balooctl6 suspend
 balooctl6 disable
 balooctl6 purge
