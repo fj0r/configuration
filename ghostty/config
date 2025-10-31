@@ -53,7 +53,7 @@ window-width = 120
 keybind = ctrl+shift+comma=reload_config
 keybind = ctrl+shift+v=paste_from_clipboard
 keybind = ctrl+shift+p=paste_from_selection
-command = zellij attach -c local
+#command = zellij attach -c local
 #adjust-cell-height = 5%
 #window-decoration = none
 theme = Arthur

@@ -1,12 +1,23 @@
-theme = "gruvbox"
+theme = "autumn"
 
 [editor]
 line-number = "relative"
 middle-click-paste = true
-mouse = false
+mouse = true
+enable-steel = true
+
+[editor.cursor-shape]
+insert = "bar"
+select = "underline"
+
+[editor.soft-wrap]
+enable = true
 
 [keys.insert]
 "A-;" = "normal_mode"
 
 [keys.normal]
+space = { space = "goto_word" }
+
+[keys.select]
 space = { space = "goto_word" }
