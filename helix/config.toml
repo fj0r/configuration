@@ -1,10 +1,13 @@
-theme = "autumn"
+theme = "gruvbox_light_soft"
 
 [editor]
 line-number = "relative"
 middle-click-paste = true
 mouse = true
 enable-steel = true
+
+[editor.auto-save]
+after-delay = { enable = true, timeout = 1000 }
 
 [editor.cursor-shape]
 insert = "bar"
@@ -17,7 +20,14 @@ enable = true
 "A-;" = "normal_mode"
 
 [keys.normal]
+"A-j" = "page_down"
+"A-k" = "page_up"
 space = { space = "goto_word" }
+
+"A-s" = "save_selection"
+"C-s" = "split_selection_on_newline"
 
 [keys.select]
 space = { space = "goto_word" }
+"A-;" = "normal_mode"
+"A-'" = "flip_selections"
