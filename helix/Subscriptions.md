@@ -1,0 +1,20 @@
+- [Add Steel as an optional plugin system](https://github.com/helix-editor/helix/pull/8675)
+- [Integrated Terminal](https://github.com/helix-editor/helix/pull/14664)
+- [Kakoune-style client-server model](https://github.com/helix-editor/helix/issues/312)
+  - [Added socket listening](https://github.com/helix-editor/helix/pull/13896)
+- [Global search and replace](https://github.com/helix-editor/helix/issues/4335)
+- [select first completion when available](https://github.com/helix-editor/helix/pull/14536)
+
+- [new statusline.merge-with-commandline option](https://github.com/helix-editor/helix/pull/12204)
+  - [Hide Commandline](https://github.com/helix-editor/helix/pull/11223)
+- [Code folding](https://github.com/helix-editor/helix/pull/14593)
+- [Allow the wrap indicator to be displayed on the gutter](https://github.com/helix-editor/helix/pull/14818)
+  - [render soft-wrap indicators in the gutter](https://github.com/helix-editor/helix/pull/14825)
+- [add support for trailing whitespace rendering](https://github.com/helix-editor/helix/pull/7215)
+  - [:trim to remove trailing whitespace](https://github.com/helix-editor/helix/pull/8366)
+- [Sticky Context](https://github.com/helix-editor/helix/pull/6118)
+
+- [automatic reload when file changes externally](https://github.com/helix-editor/helix/pull/13963)
+- [File explorer and tree helper (v3) ](https://github.com/helix-editor/helix/pull/5768)
+- [Create, Delete, Copy, Move, Rename files in the File Explorer](https://github.com/helix-editor/helix/pull/12902)
+

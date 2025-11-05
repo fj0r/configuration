@@ -1,16 +1,19 @@
-theme = "gruvbox_light"
+#theme = "gruvbox_light"
+theme = "zenburn"
+#theme = "everforest_dark"
 
 [editor]
 line-number = "relative"
 middle-click-paste = true
 mouse = true
 enable-steel = true
-trim-trailing-whitespace = true
-trim-final-newlines	= true
+trim-trailing-whitespace = false
+trim-final-newlines	= false
 popup-border = "none"
 
 [editor.auto-save]
-after-delay = { enable = true, timeout = 1000 }
+focus-lost = true
+idle = true
 
 [editor.cursor-shape]
 insert = "bar"
@@ -18,6 +21,9 @@ select = "underline"
 
 [editor.soft-wrap]
 enable = true
+
+[editor.statusline]
+merge-with-commandline = true
 
 [keys.insert]
 "A-;" = "normal_mode"
@@ -32,24 +38,6 @@ space = { space = "goto_word" }
 
 "A-h" = "jump_backward"
 "A-l" = "jump_forward"
-
-[keys.normal.A-w]
-"A-w" = "rotate_view"
-w = "rotate_view"
-o = "wonly"
-q = "wclose"
-t = "transpose_view"
-v = "vsplit"
-s = "hsplit"
-n = { v = "vsplit_new", s = "hsplit_new" }
-h = "jump_view_left"
-j = "jump_view_down"
-k = "jump_view_up"
-l = "jump_view_right"
-"A-h" = "swap_view_left"
-"A-j" = "swap_view_down"
-"A-k" = "swap_view_up"
-"A-l" = "swap_view_right"
 
 [keys.select]
 space = { space = "goto_word" }
