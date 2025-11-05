@@ -5,8 +5,8 @@ line-number = "relative"
 middle-click-paste = true
 mouse = true
 enable-steel = true
-trim-trailing-whitespace = true
-trim-final-newlines	= true
+trim-trailing-whitespace = false
+trim-final-newlines	= false
 popup-border = "none"
 
 [editor.auto-save]

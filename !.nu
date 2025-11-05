@@ -36,3 +36,30 @@ export def 'list feeds' [
         )
     }
 }
+
+export def 'helix build' [
+    --skip-compile
+] {
+    let dest = '/opt/helix/bin'
+    let p = $dest | path parse | get parent
+    let etc = $p | path join 'etc'
+    sudo mkdir -p $etc
+    sudo cp -f ./helix/* $etc
+
+    cd ~/world/helix/
+    if not $skip_compile {
+        git pull
+        cargo xtask steel
+    }
+    tar cf - --exclude=runtime/grammars/sources runtime
+    | sudo tar xvf - -C $dest
+
+    cd ~/.cargo/bin
+    for i in [hx steel-language-server] {
+        strip -s $i
+        mv -f $i $dest
+    }
+    #ln -fs ($dest | path join "hx") hx
+    cd $p
+    tar cvf - bin etc | zstd -19 -T0 | save -f ~/Downloads/helix-steel.tar.zst
+}
