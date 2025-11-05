@@ -4,22 +4,24 @@
 
 (provide shell git-add open-helix-scm open-init-scm)
 
-;;@doc
-;; Specialized shell implementation, where % is a wildcard for the current file
-(define (shell cx . args)
-  ;; Replace the % with the current file
-  (define expanded (map (lambda (x) (if (equal? x "%") (current-path) x)) args))
-  (apply helix.run-shell-command expanded))
-
-;;@doc
-;; Adds the current file to git
-(define (git-add cx)
-  (shell cx "git" "add" "%"))
-
 (define (current-path)
   (let* ([focus (editor-focus)]
          [focus-doc-id (editor->doc-id focus)])
     (editor-document->path focus-doc-id)))
+
+;;@doc
+;; Specialized shell implementation, where % is a wildcard for the current file
+(define (shell . args)
+  (helix.run-shell-command
+    (string-join
+      ;; Replace the % with the current file
+      (map (lambda (x) (if (equal? x "%") (current-path) x)) args)
+      " ")))
+
+;;@doc
+;; Adds the current file to git
+(define (git-add)
+  (shell "git" "add" "%"))
 
 ;;@doc
 ;; Open the helix.scm file
