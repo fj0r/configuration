@@ -12,6 +12,7 @@ $env.OLLAMA_BASEURL = 'http://172.178.5.123:11434'
 $env.MARKDOWN_RENDER = 'glow'
 $env.MARKDOWN_TRANSFORM.summary-zh = { $in | ad text-summary zh -o }
 $env.PATH = $env.PATH | prepend ($env.HOME)/.moon/bin
+$env.CWD_HISTORY_BLOCK ++= ['Downloads/crawl', 'Downloads/qbittorrent']
 
 #$env.NEOVIM_LINE_SPACE = '0'
 $env.NEOVIDE_SCALE_FACTOR = '1.0'
