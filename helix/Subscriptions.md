@@ -1,4 +1,6 @@
 - [Add Steel as an optional plugin system](https://github.com/helix-editor/helix/pull/8675)
+  - [x] [File explorer and tree helper (v3) ](https://github.com/helix-editor/helix/pull/5768)
+  - [x] [Create, Delete, Copy, Move, Rename files in the File Explorer](https://github.com/helix-editor/helix/pull/12902)
 - [Integrated Terminal](https://github.com/helix-editor/helix/pull/14664)
 - [Kakoune-style client-server model](https://github.com/helix-editor/helix/issues/312)
   - [Added socket listening](https://github.com/helix-editor/helix/pull/13896)
@@ -15,6 +17,4 @@
 - [Sticky Context](https://github.com/helix-editor/helix/pull/6118)
 
 - [automatic reload when file changes externally](https://github.com/helix-editor/helix/pull/13963)
-- [File explorer and tree helper (v3) ](https://github.com/helix-editor/helix/pull/5768)
-- [Create, Delete, Copy, Move, Rename files in the File Explorer](https://github.com/helix-editor/helix/pull/12902)
 
