@@ -24,6 +24,11 @@ sudo gpasswd -a master lp
 #sudo usermod -a -G lp master
 sudo chmod -R go-w *
 
+## wireshark
+sudo groupadd wireshark
+sudo usermod -aG wireshark master
+sudo setcap 'CAP_NET_RAW+eip CAP_NET_ADMIN+eip' (whereis dumpcap | split row -r '\s+' | get 1)
+
 # sshd disable password login
 sed -i 's/#\(PasswordAuthentication\).*$/\1 no/g' /etc/ssh/sshd_config
 echo "Match Address 10.0.0.0/8,172.178.0.0/16,192.168.0.0/16\n    PasswordAuthentication yes" >> /etc/ssh/sshd_config
