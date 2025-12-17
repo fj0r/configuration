@@ -37,33 +37,51 @@ export def 'list feeds' [
     }
 }
 
-export def 'helix build' [
-    --skip-compile
-    --skip-pull
-] {
-    let dest = '/opt/helix/bin'
-    let p = $dest | path parse | get parent
-    let etc = $p | path join 'etc'
-    sudo mkdir -p $etc
-    sudo cp -f ./helix/* $etc
-
-    cd ~/world/helix/
-    if not $skip_compile {
-        if not $skip_pull {
-            git pull
+export module helix {
+    def cmpl-pr [] {
+        const data = path self helix/data.yaml
+        open $data
+        | get subscription
+        | each {|x|
+            let value = $x.url | split row '/' | last
+            { value: $value, description: $x.title }
         }
-        cargo xtask steel
+        | { completions: $in, options: { sort: false } }
     }
-    cp target/release/hx ~/.cargo/bin/hx
-    tar cf - --exclude=runtime/grammars/sources runtime
-    | sudo tar xvf - -C $dest
+    export def merge [pr:int@cmpl-pr] {
+        cd ~/world/helix/
+        gh pr checkout $pr
+    }
 
-    cd ~/.cargo/bin
-    for i in [hx steel-language-server] {
-        strip -s $i
-        mv -f $i $dest
+    export def build [
+        --skip-compile
+        --skip-pull
+    ] {
+        let dest = '/opt/helix/bin'
+        let p = $dest | path parse | get parent
+        let etc = $p | path join 'etc'
+        sudo mkdir -p $etc
+        sudo cp -f ./helix/* $etc
+
+        cd ~/world/helix/
+        if not $skip_compile {
+            if not $skip_pull {
+                git pull
+            }
+            cargo xtask steel
+        }
+        cp target/release/hx ~/.cargo/bin/hx
+        tar cf - --exclude=runtime/grammars/sources runtime
+        | sudo tar xvf - -C $dest
+
+        cd ~/.cargo/bin
+        for i in [hx steel-language-server] {
+            strip -s $i
+            mv -f $i $dest
+        }
+        #ln -fs ($dest | path join "hx") hx
+        cd $p
+        tar cvf - bin etc | zstd -19 -T0 | save -f ~/Downloads/helix-steel.tar.zst
     }
-    #ln -fs ($dest | path join "hx") hx
-    cd $p
-    tar cvf - bin etc | zstd -19 -T0 | save -f ~/Downloads/helix-steel.tar.zst
 }
+
