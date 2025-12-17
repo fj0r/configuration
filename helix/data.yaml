@@ -1,0 +1,39 @@
+subscription:
+- title: Add Steel as an optional plugin system
+  url: https://github.com/helix-editor/helix/pull/8675
+  done: false
+- title: File explorer and tree helper (v3) 
+  url: https://github.com/helix-editor/helix/pull/5768
+  done: true
+- title: Create, Delete, Copy, Move, Rename files in the File Explorer
+  url: https://github.com/helix-editor/helix/pull/12902
+  done: true
+- title: Integrated Terminal
+  url: https://github.com/helix-editor/helix/pull/14664
+- title: Kakoune-style client-server model
+  url: https://github.com/helix-editor/helix/issues/312
+- title: Added socket listening
+  url: https://github.com/helix-editor/helix/pull/13896
+- title: Global search and replace
+  url: https://github.com/helix-editor/helix/issues/4335
+- title: select first completion when available
+  url: https://github.com/helix-editor/helix/pull/14536
+- title: new statusline.merge-with-commandline option
+  url: https://github.com/helix-editor/helix/pull/12204
+- title: Hide Commandline
+  url: https://github.com/helix-editor/helix/pull/11223
+- title: Code folding
+  url: https://github.com/helix-editor/helix/pull/14593
+- title: Allow the wrap indicator to be displayed on the gutter
+  url: https://github.com/helix-editor/helix/pull/14818
+- title: render soft-wrap indicators in the gutter
+  url: https://github.com/helix-editor/helix/pull/14825
+- title: add support for trailing whitespace rendering
+  url: https://github.com/helix-editor/helix/pull/7215
+- title: :trim to remove trailing whitespace
+  url: https://github.com/helix-editor/helix/pull/8366
+- title: Sticky Context
+  url: https://github.com/helix-editor/helix/pull/6118
+- title: automatic reload when file changes externally
+  url: https://github.com/helix-editor/helix/pull/13963
+
