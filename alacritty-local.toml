@@ -15,8 +15,10 @@ y = 0
 
 [window]
 decorations = "none"
-startup_mode = "Maximized"
+#startup_mode = "Maximized"
+dimensions = { columns = 120, lines = 40 }
 
 [terminal.shell]
 program = "nu"
-args = ["-c", "zellij attach -c dev" ]
+args = ["-c", "zellij attach -c local" ]
+
