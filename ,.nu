@@ -59,9 +59,10 @@ export module helix {
     ] {
         let dest = '/opt/helix/bin'
         let p = $dest | path parse | get parent
-        let etc = $p | path join 'etc'
-        sudo mkdir -p $etc
-        sudo cp -f ./helix/* $etc
+        let config = $p | path join 'config'
+        sudo rm -rf $config
+        sudo mkdir -p $config
+        sudo cp -f ./helix/* $config
 
         cd ~/world/helix/
         if not $skip_compile {
@@ -79,9 +80,21 @@ export module helix {
             strip -s $i
             mv -f $i $dest
         }
+        sudo cp /usr/bin/yazi $dest
         #ln -fs ($dest | path join "hx") hx
         cd $p
-        tar cvf - bin etc | zstd -19 -T0 | save -f ~/Downloads/helix-steel.tar.zst
+        tar cvf - bin config | zstd -19 -T0 | save -f ~/Downloads/helix-steel.tar.zst
+    }
+
+    export def push [image: string = "ghcr.io/fj0r/data:helix"] {
+        oci wrap $image --author "fj0r" {|d|
+            cat ~/Downloads/helix-steel.tar.zst
+            | zstd -d
+            | tar xvf - -C $d
+        }
     }
 }
 
+export def xtools [image: string = "ghcr.io/fj0r/data:xtools"] {
+
+}
