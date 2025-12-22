@@ -69,6 +69,7 @@ export module helix {
             if not $skip_pull {
                 git pull
             }
+            $env.RUSTFLAGS = "-C target-feature=-crt-static"
             cargo xtask steel
         }
         cp target/release/hx ~/.cargo/bin/hx
