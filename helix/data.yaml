@@ -36,4 +36,6 @@ subscription:
   url: https://github.com/helix-editor/helix/pull/6118
 - title: automatic reload when file changes externally
   url: https://github.com/helix-editor/helix/pull/13963
+- title: Key remapping for compositor components
+  url: https://github.com/helix-editor/helix/issues/5505
 

@@ -1,6 +1,4 @@
 [env]
-NVIM_LEVEL = "x"
-NVIM_LIGHT = "0"
 TERM = "alacritty"
 
 [font]
