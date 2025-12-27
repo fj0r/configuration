@@ -1,0 +1,8 @@
+[language-server.rust-analyzer.config]
+cargo.allFeatures = false
+cachePriming.enable = false
+lru.capacity = 64
+procMacro.enable = true # 如果关了它，很多库的代码提示会失效，慎重
+diagnostics.enable = true
+check.command = 'clippy' # clippy | check
+inlayHints.enable = true
