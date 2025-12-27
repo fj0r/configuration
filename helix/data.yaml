@@ -18,8 +18,8 @@ subscription:
   url: https://github.com/helix-editor/helix/issues/4335
 - title: select first completion when available
   url: https://github.com/helix-editor/helix/pull/14536
-- title: new statusline.merge-with-commandline option
-  url: https://github.com/helix-editor/helix/pull/12204
+- title: Hide Commandline
+  url: https://github.com/helix-editor/helix/pull/11223
 - title: Hide Commandline
   url: https://github.com/helix-editor/helix/pull/11223
 - title: Code folding
