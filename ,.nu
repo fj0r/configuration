@@ -59,10 +59,12 @@ export module helix {
     ] {
         let dest = '/opt/helix/bin'
         let p = $dest | path parse | get parent
+        sudo rm -rf $p
+        sudo mkdir -p $dest
+
         let config = $p | path join 'config'
-        sudo rm -rf $config
         sudo mkdir -p $config
-        sudo cp -f ./helix/* $config
+        sudo cp -rf ./helix/* $config
 
         cd ~/world/helix/
         if not $skip_compile {
@@ -72,14 +74,14 @@ export module helix {
             $env.RUSTFLAGS = "-C target-feature=-crt-static"
             cargo xtask steel
         }
-        cp target/release/hx ~/.cargo/bin/hx
+        sudo cp target/release/hx $dest
         tar cf - --exclude=runtime/grammars/sources runtime
         | sudo tar xvf - -C $dest
 
         cd ~/.cargo/bin
-        for i in [hx steel-language-server] {
+        for i in [steel-language-server] {
             strip -s $i
-            mv -f $i $dest
+            sudo cp -f $i $dest
         }
         sudo cp /usr/bin/yazi $dest
         #ln -fs ($dest | path join "hx") hx

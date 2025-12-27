@@ -10,6 +10,7 @@ enable-steel = true
 trim-trailing-whitespace = false
 trim-final-newlines	= false
 popup-border = "none"
+commandline = false
 
 [editor.auto-save]
 focus-lost = true
@@ -21,9 +22,6 @@ select = "underline"
 
 [editor.soft-wrap]
 enable = true
-
-[editor.statusline]
-merge-with-commandline = true
 
 [keys.insert]
 "A-;" = "normal_mode"
@@ -40,7 +38,7 @@ merge-with-commandline = true
 
 [keys.normal.space]
 space = "goto_word"
-e = [
+o = [
   ':sh rm -f /tmp/unique-file',
   ':insert-output yazi %{buffer_name} --chooser-file=/tmp/unique-file',
   ':insert-output echo "\x1b[?1049h\x1b[?2004h" > /dev/tty',
