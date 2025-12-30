@@ -56,6 +56,7 @@ export module helix {
     export def build [
         --skip-compile
         --skip-pull
+        --skip-steel
     ] {
         let dest = '/opt/helix/bin'
         let p = $dest | path parse | get parent
@@ -71,15 +72,21 @@ export module helix {
             if not $skip_pull {
                 git pull
             }
-            $env.RUSTFLAGS = "-C target-feature=-crt-static"
-            cargo xtask steel
+            # $env.RUSTFLAGS = "-C target-feature=-crt-static"
+            if not $skip_steel {
+                cargo xtask steel
+            }
         }
         sudo cp target/release/hx $dest
         tar cf - --exclude=runtime/grammars/sources runtime
         | sudo tar xvf - -C $dest
 
         cd ~/.cargo/bin
-        for i in [steel-language-server] {
+        mut ms = []
+        if not $skip_steel {
+            $ms ++= [steel-language-server]
+        }
+        for i in $ms {
             strip -s $i
             sudo cp -f $i $dest
         }
