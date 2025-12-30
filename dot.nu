@@ -11,6 +11,7 @@ $env.DEFAULT_DOCKER_REGISTRY = 'registry.s'
 
 $env.RUSTC_WRAPPER = '/usr/bin/sccache'
 $env.SCCACHE_CACHE_SIZE = '30G'
+$env.SSLKEYLOGFILE = "/tmp/ssl_keys.log"
 
 # use resolvenv
 # resolvenv select wlan0 [
