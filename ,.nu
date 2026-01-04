@@ -68,6 +68,7 @@ export module helix {
         sudo cp -rf ./helix/* $config
 
         cd ~/world/helix/
+        cp -r ~/world/moonbit.helix/runtime/queries/moonbit/ runtime/queries/
         if not $skip_compile {
             if not $skip_pull {
                 git pull
