@@ -7,8 +7,8 @@ line-number = "relative"
 middle-click-paste = true
 mouse = true
 enable-steel = true
-trim-trailing-whitespace = false
-trim-final-newlines	= false
+trim-trailing-whitespace = true
+trim-final-newlines	= true
 popup-border = "none"
 commandline = false
 
