@@ -63,7 +63,7 @@ export module helix {
         sudo rm -rf $p
         sudo mkdir -p $dest
 
-        let config = $p | path join 'config'
+        let config = $p | path join 'etc' 'helix'
         sudo mkdir -p $config
         sudo cp -rf ./helix/* $config
 
@@ -92,17 +92,27 @@ export module helix {
             sudo cp -f $i $dest
         }
         sudo cp /usr/bin/yazi $dest
+
         #ln -fs ($dest | path join "hx") hx
         cd $p
-        tar cvf - bin config | zstd -19 -T0 | save -f ~/Downloads/helix-steel.tar.zst
+        sudo mkdir -p share/steel/cogs
+        tar -cf - --exclude=target -C ~/.local/share/steel/cogs . | sudo tar -xf - -C share/steel/cogs
+        tar -cvf - --transform='s#^./##' . | zstd -19 -T0 | save -f ~/Downloads/helix-steel.tar.zst
     }
 
-    export def push [image: string = "ghcr.io/fj0r/data:helix"] {
+    export def push [image: string = "ghcr.io/fj0r/assets:helix"] {
+        use docker *
+        use lg *
         oci wrap $image --author "fj0r" {|d|
             cat ~/Downloads/helix-steel.tar.zst
             | zstd -d
             | tar xvf - -C $d
         }
+    }
+
+    export def unshare-push [] {
+        const s = path self
+        buildah unshare nu -c $"use lg; use docker *; overlay use ($s); helix push"
     }
 }
 
