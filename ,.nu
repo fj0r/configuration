@@ -104,6 +104,11 @@ export module helix {
             | tar xvf - -C $d
         }
     }
+
+    export def unshare-push [] {
+        const s = path self
+        buildah unshare nu -c $"use lg; use docker *; overlay use ($s); helix push"
+    }
 }
 
 export def xtools [image: string = "ghcr.io/fj0r/data:xtools"] {
