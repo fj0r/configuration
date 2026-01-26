@@ -1,6 +1,7 @@
-#theme = "gruvbox_light"
-theme = "zenburn"
-#theme = "everforest_dark"
+# theme = "gruvbox_light"
+# theme = "zenburn"
+# theme = "everforest_dark"
+theme = 'gruvbox_dark_soft'
 
 [editor]
 line-number = "relative"
