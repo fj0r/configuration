@@ -18,5 +18,3 @@ dimensions = { columns = 120, lines = 40 }
 
 [terminal.shell]
 program = "nu"
-args = ["-c", "zellij attach -c local" ]
-
