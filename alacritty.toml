@@ -17,4 +17,4 @@ startup_mode = "Maximized"
 
 [terminal.shell]
 program = "nu"
-args = ["-c", "zellij attach -c dev" ]
+# args = ["-c", "zellij attach -c dev" ]
