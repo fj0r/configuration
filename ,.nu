@@ -56,7 +56,8 @@ export module helix {
     export def build [
         --skip-compile
         --skip-pull
-        --skip-steel
+        --with-steel
+        --musl
     ] {
         let dest = '/opt/helix/bin'
         let p = $dest | path parse | get parent
@@ -68,14 +69,24 @@ export module helix {
         sudo cp -rf ./helix/* $config
 
         cd ~/world/helix/
-        cp -r ~/world/moonbit.helix/runtime/queries/moonbit/ runtime/queries/
+        # cp -r ~/world/moonbit.helix/runtime/queries/moonbit/ runtime/queries/
         if not $skip_compile {
             if not $skip_pull {
                 git pull
             }
-            # $env.RUSTFLAGS = "-C target-feature=-crt-static"
-            if not $skip_steel {
+            if $musl {
+                $env.RUSTFLAGS = "-C target-feature=-crt-static -C link-arg=-static -l m"
+                $env.CC = '/bin/musl-gcc'
+                $env.CXX = '/bin/musl-g++'
+            }
+            if not $with_steel {
                 cargo xtask steel
+            } else {
+                mut args = [--path helix-term --locked --features 'steel,git' --force]
+                if $musl {
+                    $args ++= [--target x86_64-unknown-linux-musl]
+                }
+                cargo install ...$args
             }
         }
         sudo cp target/release/hx $dest
@@ -84,7 +95,7 @@ export module helix {
 
         cd ~/.cargo/bin
         mut ms = []
-        if not $skip_steel {
+        if $with_steel {
             $ms ++= [steel-language-server]
         }
         for i in $ms {
