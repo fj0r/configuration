@@ -1,0 +1,52 @@
+;; 定义变量用于控制透明度交互
+(defvar opac 0.4)
+
+;; 侧边悬浮窗口定义
+(defwindow sys-monitor
+  :monitor 0
+  :geometry (geometry :x "0px"
+                      :y "20%"
+                      :width "45px"
+                      :anchor "top right")
+  :stacking "fg"
+  :exclusive false  ;; 不挤压其他窗口空间
+  :focusable false
+  (monitor-widget))
+
+;; 核心挂件布局
+(defwidget monitor-widget []
+  (eventbox :onhover "eww update opac=1.0"
+            :onhoverlost "eww update opac=0.4"
+    (box :orientation "v"
+         :space-evenly false
+         :class "main-container"
+         :style "opacity: ${opac};"
+
+      ;; 时间部分 (纵向排列)
+      (box :class "time-box" :orientation "v" :space-evenly false
+        (label :text "${formattime(EWW_TIME, '%m-%d')}" :class "time-month")
+        (label :text "${formattime(EWW_TIME, '%w')}" :class "time-week")
+        (label :text "${formattime(EWW_TIME, '%H:%M')}" :class "time-min")
+        ; (label :text "${formattime(EWW_TIME, '%S')}" :class "time-sec")
+      )
+
+      (box :class "divider")
+
+      (box :orientation "v" :space-evenly false :tooltip "CPU: ${round(EWW_CPU.avg, 0)}%"
+        (scale :class "cpu-bar" :flipped true :orientation "v" :min 0 :max 101 :active false :value {EWW_CPU.avg})
+        (label :text "CPU" :class "indicator-label"))
+
+      (box :orientation "v" :space-evenly false :style "margin-top: 10px;" :tooltip "RAM: ${round(EWW_RAM.used_mem_perc, 0)}%"
+        (scale :class "mem-bar" :flipped true :orientation "v" :min 0 :max 101 :active false :value {EWW_RAM.used_mem_perc})
+        (label :text "MEM" :class "indicator-label"))
+
+      (box :orientation "v" :space-evenly false :tooltip "BAT`: ${round(EWW_BATTERY.BAT1.capacity, 0)}%"
+        (scale :class "cpu-bar" :flipped true :orientation "v" :min 0 :max 101 :active false :value {EWW_BATTERY.BAT1.capacity})
+        (label :text "BAT" :class "indicator-label"))
+
+      (box :orientation "v" :space-evenly false :style "margin-top: 10px;"
+        (label :text "${round(EWW_NET.wlan0.NET_DOWN / 1024 / 1024, 1)}" :class "net-text")
+        (label :text "MB/s" :class "net-unit"))
+    )
+  )
+)

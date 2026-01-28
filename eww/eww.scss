@@ -1,0 +1,47 @@
+$bg_color: rgba(30, 30, 46, 0.4);
+$fg_color: #cdd6f4;
+$accent_color: #89b4fa;
+$shadow_color: rgba(0, 0, 0, 0.6);
+
+* {
+  all: unset;
+  font-family: "JetBrains Mono Nerd Font", "Inter", sans-serif;
+}
+
+.floating-ball {
+  background-color: $bg_color;
+  color: $fg_color;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 15px 8px;
+  box-shadow: 0px 4px 15px $shadow_color;
+  transition: all 300ms ease;
+}
+
+.time {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: -5px;
+  color: $accent_color;
+  text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.divider {
+  background-color: rgba(255, 255, 255, 0.2);
+  min-height: 2px;
+  margin: 15px 5px;
+}
+
+label {
+  font-size: 0.8rem;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+
+graph {
+  color: $accent_color;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  min-height: 50px;
+  min-width: 30px;
+}
