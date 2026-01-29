@@ -2,7 +2,7 @@
 (defvar opac 0.4)
 
 ;; 侧边悬浮窗口定义
-(defwindow sys-monitor
+(defwindow omni-tray
   :monitor 0
   :geometry (geometry :x "0px"
                       :y "20%"
