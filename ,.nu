@@ -59,14 +59,8 @@ export module helix {
         --with-steel
         --musl
     ] {
+        const self = path self .
         let dest = '/opt/helix/bin'
-        let p = $dest | path parse | get parent
-        sudo rm -rf $p
-        sudo mkdir -p $dest
-
-        let config = $p | path join 'etc' 'helix'
-        sudo mkdir -p $config
-        sudo cp -rf ./helix/* $config
 
         cd ~/world/helix/
         # cp -r ~/world/moonbit.helix/runtime/queries/moonbit/ runtime/queries/
@@ -79,19 +73,30 @@ export module helix {
                 $env.CC = '/bin/musl-gcc'
                 $env.CXX = '/bin/musl-g++'
             }
-            if not $with_steel {
+            if $with_steel {
                 cargo xtask steel
             } else {
                 mut args = [--path helix-term --locked --features 'steel,git' --force]
                 if $musl {
                     $args ++= [--target x86_64-unknown-linux-musl]
                 }
+                print $"::::(ansi grey)cargo install ($args)(ansi reset)"
                 cargo install ...$args
             }
         }
+
+        let p = $dest | path parse | get parent
+        sudo rm -rf $p
+        sudo mkdir -p $dest
+
         sudo cp target/release/hx $dest
         tar cf - --exclude=runtime/grammars/sources runtime
         | sudo tar xvf - -C $dest
+
+        let config = $p | path join 'etc' 'helix'
+        sudo mkdir -p $config
+        cd $self
+        sudo cp -rf ./helix/* $config
 
         cd ~/.cargo/bin
         mut ms = []
