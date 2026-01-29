@@ -1,0 +1,65 @@
+spawn-at-startup "mako"
+spawn-at-startup "eww" "open" "omni-tray"
+// wechat
+spawn-at-startup "xwayland-satellite"
+// walker
+spawn-at-startup "elephant"
+
+binds {
+    // Suggested binds for running programs: terminal, app launcher, screen locker.
+    Mod+8 { spawn "nu" "~/.config/niri/scripts/focus.nu" "browser"; }
+    Mod+9 { spawn "nu" "~/.config/niri/scripts/focus.nu" "workspace"; }
+    Mod+0 { spawn "nu" "~/.config/niri/scripts/focus.nu" "chat"; }
+    Mod+Space { spawn "walker"; }
+    Super+Alt+L { spawn "swaylock"; }
+}
+
+window-rule {
+    match app-id=r#"neovide"#
+    match app-id=r#"vivaldi"#
+    match app-id=r#"chromium"#
+    match app-id=r#"firefox"#
+    match app-id=r#"org.qutebrowser.qutebrowser"#
+    match app-id=r#"org.kde.okular"#
+    match app-id=r#"Foliate"#
+    match app-id=r#"ghostty"# title=r#"^dev"#
+    open-maximized true
+}
+
+workspace "file"
+window-rule {
+    match title=r#"FreeFileSync"#
+    default-column-width {}
+    open-on-workspace "file"
+}
+
+workspace "doc"
+window-rule {
+    match app-id=r#"Foliate"#
+    match app-id=r#"org.kde.okular"#
+    default-column-width {}
+    open-on-workspace "doc"
+}
+
+workspace "work"
+window-rule {
+    match app-id=r#"vivaldi"#
+    match app-id=r#"ghostty"# title=r#"^dev"#
+    open-on-workspace "work"
+}
+
+workspace "chat"
+window-rule {
+    match app-id=r#"wechat"#
+    match title=r#"Weixin"#
+    match title=r#"WeChat"#
+    open-on-workspace "chat"
+}
+
+workspace "adhoc"
+window-rule {
+    // match app-id=r#"ghostty"#
+    // match app-id=r#"Alacritty"#
+    open-on-workspace "adhoc"
+    default-column-width {}
+}
