@@ -3,12 +3,12 @@
 // Check the wiki for a full description of the configuration:
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Overview
 
-include "apps.kdl"
 include "libs/device.kdl"
 include "libs/layout.kdl"
 include "libs/animations.kdl"
 include "libs/rules.kdl"
 include "libs/binds.kdl"
+include "apps.kdl"
 
 environment {
     // DISPLAY ":0"

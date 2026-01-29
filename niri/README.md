@@ -1,3 +1,6 @@
 eww
 mako
-walker
+fuzzel / anyrun / walker
+grim slurp satty
+
+- [ ] pinned window
