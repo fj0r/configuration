@@ -9,7 +9,7 @@ export def main [app_id] {
                   $x.title? | default '' | str starts-with 'dev'
                 )
             }
-            cmd: [ghostty --command="zellij attach --create dev"]
+            cmd: [ghostty -e zellij attach --create dev]
         }
         browser: {
             cond: {|x|
@@ -29,7 +29,7 @@ export def main [app_id] {
         let a = $apps | where $cond
         if ($a | is-empty) {
             let p = $rules | get $app_id | get cmd
-            ^($p | first) ...($p | slice 1..)
+            ^($p | first) ...($p | skip 1)
         } else {
           niri msg action focus-window --id $a.0.id
         }
