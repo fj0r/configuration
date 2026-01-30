@@ -1,0 +1,75 @@
+{
+    (
+        modifiers: [
+            Super,
+            Ctrl,
+        ],
+        key: "s",
+    ): ToggleSticky,
+    (
+        modifiers: [
+            Super,
+        ],
+        key: "3",
+    ): Spawn("nu /home/master/Configuration/cosmic/focus.nu 3"),
+    (
+        modifiers: [
+            Super,
+        ],
+        key: "1",
+    ): Spawn("nu /home/master/Configuration/cosmic/focus.nu 1"),
+    (
+        modifiers: [
+            Super,
+        ],
+        key: "5",
+    ): Spawn("nu /home/master/Configuration/cosmic/focus.nu 5"),
+    (
+        modifiers: [
+            Super,
+        ],
+        key: "9",
+    ): Spawn("nu /home/master/Configuration/cosmic/focus.nu 9"),
+    (
+        modifiers: [
+            Super,
+        ],
+        key: "q",
+    ): Spawn("flameshot gui"),
+    (
+        modifiers: [
+            Super,
+        ],
+        key: "4",
+    ): Spawn("nu /home/master/Configuration/cosmic/focus.nu 4"),
+    (
+        modifiers: [
+            Super,
+        ],
+        key: "8",
+    ): Spawn("nu /home/master/Configuration/cosmic/focus.nu 8"),
+    (
+        modifiers: [
+            Super,
+        ],
+        key: "6",
+    ): Spawn("nu /home/master/Configuration/cosmic/focus.nu 6"),
+    (
+        modifiers: [
+            Super,
+        ],
+        key: "7",
+    ): Spawn("nu /home/master/Configuration/cosmic/focus.nu 7"),
+    (
+        modifiers: [
+            Super,
+        ],
+        key: "0",
+    ): Spawn("nu /home/master/Configuration/cosmic/focus.nu 0"),
+    (
+        modifiers: [
+            Super,
+        ],
+        key: "2",
+    ): Spawn("nu /home/master/Configuration/cosmic/focus.nu 2"),
+}
