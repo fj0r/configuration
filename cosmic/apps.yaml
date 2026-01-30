@@ -1,0 +1,37 @@
+apps:
+  rules:
+  - id: [8, 4]
+    filter:
+    - app_id =~ ghostty
+    - title starts-with dev
+    cmd:
+    - ghostty
+    - -e
+    - zellij
+    - attach
+    - --create
+    - dev
+  - id: [9, 3]
+    filter:
+    - app_id =~ vivaldi
+    cmd:
+    - vivaldi
+  - id: 0
+    filter:
+    - app_id =~ Foliate
+    cmd:
+    - foliate
+  - id: 2
+    filter:
+    - app_id =~ wechat
+    cmd:
+    - wechat
+  - id: 1
+    filter:
+    - title =~ WeChat
+    cmd: []
+  - id: 7
+    filter:
+    - app_id =~ firefox
+    cmd:
+    - firefox

@@ -1,39 +1,56 @@
 #!/usr/bin/env nu
 
-export def main [app_id] {
-    let apps = cos-cli info --json | from json | get apps
-    let rules = {
-        term: {
-            cond: {|x|
-                (
-                  $x.app_id? | default '' | $in =~ ghostty
-                ) and (
-                  $x.title? | default '' | str starts-with 'dev'
-                )
+const RULE = path self apps.yaml
+
+def flt [rules] {
+    let n = $in
+    $rules | reduce -f true {|i,a|
+        let r = $i | split row -r '\s+'
+        $a and match $r.1 {
+            '==' => {
+                ($n | get $r.0) == $r.2
             }
-            cmd: [ghostty -e zellij attach --create dev]
-        }
-        browser: {
-            cond: {|x|
-                $x.app_id? | default '' | $in =~ vivaldi
+            '!=' => {
+                ($n | get $r.0) != $r.2
             }
-            cmd: [vivaldi]
-        }
-        chat: {
-            cond: {|x|
-                $x.app_id? | default '' | $in =~ wechat
+            '=~' => {
+                ($n | get $r.0) =~ $r.2
             }
-            cmd: [wechat]
+            'starts-with' => {
+                ($n | get $r.0) | str starts-with $r.2
+            }
         }
     }
-    if $app_id in $rules {
-        let cond = $rules | get $app_id | get cond
-        let a = $apps | where $cond
+}
+
+def to-list [id] {
+    if ($id | describe -d).type == list {
+        $id
+    } else {
+        [$id]
+    }
+}
+
+export def main [app_id] {
+    let rules = open $RULE | get apps.rules
+    let r = $rules | where {|x| ($app_id | into int) in (to-list $x.id) } | get -o 0
+    if ($r | is-not-empty) {
+        let a = list | where { $in | flt $r.filter }
         if ($a | is-empty) {
-            let p = $rules | get $app_id | get cmd
+            let p = $r | get cmd
             ^($p | first) ...($p | skip 1)
         } else {
-            cos-cli activate -i $a.0.index
+            activate $a.0.index
         }
     }
+}
+
+### https://github.com/estin/cos-cli
+
+def list [] {
+    cos-cli info --json | from json | get apps
+}
+
+def activate [id] {
+    cos-cli activate -i $id
 }
