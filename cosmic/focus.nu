@@ -6,19 +6,32 @@ def flt [rules] {
     let n = $in
     $rules | reduce -f true {|i,a|
         let r = $i | split row -r '\s+'
-        $a and match $r.1 {
+        let f = if $r.0 == 'not' {
+            true
+        } else {
+            false
+        }
+        let x = if $f { $r.1 } else { $r.0 }
+        let p = if $f { $r.2 } else { $r.1 }
+        let y = if $f { $r.3 } else { $r.2 }
+        let b = match $p {
             '==' => {
-                ($n | get $r.0) == $r.2
+                ($n | get $x) == $y
             }
             '!=' => {
-                ($n | get $r.0) != $r.2
+                ($n | get $x) != $y
             }
             '=~' => {
-                ($n | get $r.0) =~ $r.2
+                ($n | get $x) =~ $y
             }
             'starts-with' => {
-                ($n | get $r.0) | str starts-with $r.2
+                ($n | get $x) | str starts-with $y
             }
+        }
+        if $f {
+            $a and (not $b)
+        } else {
+            $a and $b
         }
     }
 }
