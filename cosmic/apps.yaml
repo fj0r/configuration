@@ -1,6 +1,6 @@
 apps:
   rules:
-  - id: [8, 4]
+  - id: [8]
     filter:
     - app_id =~ ghostty
     - title starts-with dev
@@ -21,12 +21,18 @@ apps:
     - app_id =~ Foliate
     cmd:
     - foliate
-  - id: 2
+  - id: 4
+    filter:
+    - app_id =~ ghostty
+    - not title starts-with dev
+    cmd:
+    - foliate
+  - id: 1
     filter:
     - app_id =~ wechat
     cmd:
     - wechat
-  - id: 1
+  - id: 2
     filter:
     - title =~ WeChat
     cmd: []
