@@ -1,6 +1,6 @@
 apps:
   rules:
-  - id: [8]
+  - keys: [3]
     filter:
     - app_id =~ ghostty
     - title starts-with dev
@@ -11,32 +11,32 @@ apps:
     - attach
     - --create
     - dev
-  - id: [9, 3]
+  - keys: 2
     filter:
     - app_id =~ vivaldi
     cmd:
     - vivaldi
-  - id: 0
-    filter:
-    - app_id =~ Foliate
-    cmd:
-    - foliate
-  - id: 4
+  - keys: 4
     filter:
     - app_id =~ ghostty
     - not title starts-with dev
     cmd:
+    - ghostty
+  - keys: 1
+    filter:
+    - app_id =~ Foliate
+    cmd:
     - foliate
-  - id: 1
+  - keys: 9
     filter:
     - app_id =~ wechat
     cmd:
     - wechat
-  - id: 2
+  - keys: 10
     filter:
     - title =~ WeChat
     cmd: []
-  - id: 7
+  - keys: 5
     filter:
     - app_id =~ firefox
     cmd:
