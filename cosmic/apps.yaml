@@ -1,6 +1,6 @@
 apps:
   rules:
-  - keys: [3, 12]
+  - keys: [2, 12]
     filter:
     - app_id =~ ghostty
     - title starts-with dev
@@ -11,7 +11,7 @@ apps:
     - attach
     - --create
     - dev
-  - keys: [2, 9]
+  - keys: [3, 9]
     filter:
     - app_id =~ vivaldi
     cmd:
@@ -27,12 +27,12 @@ apps:
     - app_id =~ Foliate
     cmd:
     - foliate
-  - keys: 10
+  - keys: 11
     filter:
     - app_id =~ wechat
     cmd:
     - wechat
-  - keys: 11
+  - keys: 10
     filter:
     - title =~ WeChat
     cmd: []
@@ -40,7 +40,7 @@ apps:
     filter:
     - app_id =~ CosmicFile
     cmd:
-    - CosmicFile
+    - cosmic-files
   - keys: 6
     filter:
     - app_id =~ firefox
