@@ -1,5 +1,65 @@
 {
     (
+        modifiers: [ ],
+        key: "F1",
+        description: Some("F1"),
+    ): Spawn("nu /home/master/Configuration/cosmic/focus.nu 1"),
+    (
+        modifiers: [ ],
+        key: "F2",
+        description: Some("F2"),
+    ): Spawn("nu /home/master/Configuration/cosmic/focus.nu 2"),
+    (
+        modifiers: [ ],
+        key: "F3",
+        description: Some("F3"),
+    ): Spawn("nu /home/master/Configuration/cosmic/focus.nu 3"),
+    (
+        modifiers: [ ],
+        key: "F4",
+        description: Some("F4"),
+    ): Spawn("nu /home/master/Configuration/cosmic/focus.nu 4"),
+    (
+        modifiers: [ ],
+        key: "F5",
+        description: Some("F5"),
+    ): Spawn("nu /home/master/Configuration/cosmic/focus.nu 5"),
+    (
+        modifiers: [ ],
+        key: "F6",
+        description: Some("F6"),
+    ): Spawn("nu /home/master/Configuration/cosmic/focus.nu 6"),
+    (
+        modifiers: [ ],
+        key: "F7",
+        description: Some("F7"),
+    ): Spawn("nu /home/master/Configuration/cosmic/focus.nu 7"),
+    (
+        modifiers: [ ],
+        key: "F8",
+        description: Some("F8"),
+    ): Spawn("nu /home/master/Configuration/cosmic/focus.nu 8"),
+    (
+        modifiers: [ ],
+        key: "F9",
+        description: Some("F9"),
+    ): Spawn("nu /home/master/Configuration/cosmic/focus.nu 9"),
+    (
+        modifiers: [ ],
+        key: "F10",
+        description: Some("F10"),
+    ): Spawn("nu /home/master/Configuration/cosmic/focus.nu 10"),
+    (
+        modifiers: [ ],
+        key: "F11",
+        description: Some("F11"),
+    ): Spawn("nu /home/master/Configuration/cosmic/focus.nu 11"),
+    (
+        modifiers: [ ],
+        key: "F12",
+        description: Some("F12"),
+    ): Spawn("nu /home/master/Configuration/cosmic/focus.nu 12"),
+    (
         modifiers: [
             Super,
             Ctrl,
@@ -10,66 +70,6 @@
         modifiers: [
             Super,
         ],
-        key: "3",
-    ): Spawn("nu /home/master/Configuration/cosmic/focus.nu 3"),
-    (
-        modifiers: [
-            Super,
-        ],
-        key: "1",
-    ): Spawn("nu /home/master/Configuration/cosmic/focus.nu 1"),
-    (
-        modifiers: [
-            Super,
-        ],
-        key: "5",
-    ): Spawn("nu /home/master/Configuration/cosmic/focus.nu 5"),
-    (
-        modifiers: [
-            Super,
-        ],
-        key: "9",
-    ): Spawn("nu /home/master/Configuration/cosmic/focus.nu 9"),
-    (
-        modifiers: [
-            Super,
-        ],
         key: "q",
     ): Spawn("flameshot gui"),
-    (
-        modifiers: [
-            Super,
-        ],
-        key: "4",
-    ): Spawn("nu /home/master/Configuration/cosmic/focus.nu 4"),
-    (
-        modifiers: [
-            Super,
-        ],
-        key: "8",
-    ): Spawn("nu /home/master/Configuration/cosmic/focus.nu 8"),
-    (
-        modifiers: [
-            Super,
-        ],
-        key: "6",
-    ): Spawn("nu /home/master/Configuration/cosmic/focus.nu 6"),
-    (
-        modifiers: [
-            Super,
-        ],
-        key: "7",
-    ): Spawn("nu /home/master/Configuration/cosmic/focus.nu 7"),
-    (
-        modifiers: [
-            Super,
-        ],
-        key: "0",
-    ): Spawn("nu /home/master/Configuration/cosmic/focus.nu 0"),
-    (
-        modifiers: [
-            Super,
-        ],
-        key: "2",
-    ): Spawn("nu /home/master/Configuration/cosmic/focus.nu 2"),
 }

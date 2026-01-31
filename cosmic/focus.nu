@@ -36,17 +36,19 @@ def flt [rules] {
     }
 }
 
-def to-list [id] {
-    if ($id | describe -d).type == list {
-        $id
+def to-list [v] {
+    if ($v | describe -d).type == list {
+        $v
     } else {
-        [$id]
+        [$v]
     }
 }
 
-export def main [app_id] {
+export def main [key] {
     let rules = open $RULE | get apps.rules
-    let r = $rules | where {|x| ($app_id | into int) in (to-list $x.id) } | get -o 0
+    let r = $rules
+    | where {|x| ($key | into int) in (to-list $x.keys) }
+    | get -o 0
     if ($r | is-not-empty) {
         let a = list | where { $in | flt $r.filter }
         if ($a | is-empty) {
