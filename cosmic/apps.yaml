@@ -1,6 +1,6 @@
 apps:
   rules:
-  - keys: [3]
+  - keys: [3, 12]
     filter:
     - app_id =~ ghostty
     - title starts-with dev
@@ -11,33 +11,47 @@ apps:
     - attach
     - --create
     - dev
-  - keys: 2
+  - keys: [2, 9]
     filter:
     - app_id =~ vivaldi
     cmd:
     - vivaldi
-  - keys: 4
+  - keys: 1
     filter:
     - app_id =~ ghostty
     - not title starts-with dev
     cmd:
     - ghostty
-  - keys: 1
+  - keys: 4
     filter:
     - app_id =~ Foliate
     cmd:
     - foliate
-  - keys: 9
+  - keys: 10
     filter:
     - app_id =~ wechat
     cmd:
     - wechat
-  - keys: 10
+  - keys: 11
     filter:
     - title =~ WeChat
     cmd: []
   - keys: 5
     filter:
+    - app_id =~ CosmicFile
+    cmd:
+    - CosmicFile
+  - keys: 6
+    filter:
     - app_id =~ firefox
     cmd:
     - firefox
+keybindings:
+  - modifiers:
+    - Super
+    - Ctrl
+    key: s
+    action: ToggleSticky
+  - modifiers: [Super]
+    key: q
+    action: Spawn("flameshot gui")
