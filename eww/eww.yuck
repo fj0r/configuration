@@ -43,13 +43,21 @@
       )
 
       (box :orientation "v" :space-evenly false :class "chart-box"
-        :tooltip "DOWN: ${round(EWW_NET.wlan0.NET_DOWN / 1024 / 1024, 1)}"
-        (graph :class "net-graph"
-               :value {round(EWW_NET.wlan0.NET_DOWN / 1024 / 1024, 1)}
-               :thickness 2
-               :time-range "30s"
-               :dynamic true
-               :line-style "round")
+        :tooltip "${round(EWW_NET.wlan0.NET_DOWN / 1024 / 1024, 1)} / ${round(EWW_NET.wlan0.NET_UP / 1024 / 1024, 1)}"
+        (overlay
+          (graph :class "net-up"
+                 :value {round(EWW_NET.wlan0.NET_UP / 1024 / 1024, 1)}
+                 :thickness 2
+                 :time-range "30s"
+                 :dynamic true
+                 :line-style "round")
+          (graph :class "net-down"
+                 :value {round(EWW_NET.wlan0.NET_DOWN / 1024 / 1024, 1)}
+                 :thickness 2
+                 :time-range "30s"
+                 :dynamic true
+                 :line-style "round")
+        )
       )
 
       (box :orientation "v" :space-evenly false :class "chart-box"
@@ -60,7 +68,7 @@
                :start-at 75)
       )
 
-      (box :class "divider")
+      ; (box :class "divider")
 
       (box :class "time-box" :orientation "v" :space-evenly false
         (label :text "${formattime(EWW_TIME, '%m')}" :class "time")
