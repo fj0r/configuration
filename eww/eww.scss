@@ -1,7 +1,17 @@
-$bg_color: rgba(30, 30, 46, 0.8);
-$fg_color: #cdd6f4;
-$accent_color: #89b4fa;
-$shadow_color: rgba(0, 0, 0, 0.6);
+/* Morandi ANSI Palette */
+
+// Neutral / Greyscale
+$black: rgba(60, 60, 60, 1.0); // Deep Charcoal (Text/Icons)
+$white: rgba(235, 235, 235, 1.0); // Soft Pearl (Main BG)
+$gray: rgba(122, 122, 122, 1.0); // Muted Shadow (Unplugged/Secondary)
+
+// Functional Colors
+$red: rgba(186, 134, 126, 1.0); // Rose Terracotta (Critical/Upload)
+$green: rgba(147, 166, 147, 1.0); // Sage Green (Battery/Normal)
+$yellow: rgba(181, 156, 110, 1.0); // Muted Mustard (CPU/Warning)
+$blue: rgba(132, 155, 166, 1.0); // Dusty Blue (Memory/RAM)
+$magenta: rgba(149, 135, 158, 1.0); // Muted Lavender (Swap/Misc)
+$cyan: rgba(130, 158, 154, 1.0); // Misty Teal (Network Down)
 
 * {
   /* all: unset; */
@@ -19,20 +29,29 @@ $shadow_color: rgba(0, 0, 0, 0.6);
   transition: all 300ms ease;
 }
 
-.time {
+.time-y {
   font-size: 1.2rem;
   font-weight: bold;
   margin-bottom: -5px;
-  color: $accent_color;
-  text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
+  color: $blue;
 }
 
-.week {
-  color: yellow;
+.time-w {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: -5px;
+  color: $yellow;
+}
+
+.time-d {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: -5px;
+  color: $green;
 }
 
 .divider {
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: $cyan;
   min-height: 2px;
   margin: 10px 5px;
 }
@@ -40,7 +59,7 @@ $shadow_color: rgba(0, 0, 0, 0.6);
 .chart-box {
   margin: 2px 0px;
   min-height: 30px;
-  background-color: rgba(50, 50, 50, 0.4);
+  background-color: rgba($gray, 0.3);
 }
 
 label {
@@ -50,18 +69,23 @@ label {
 }
 
 graph {
-  color: $accent_color;
   border-radius: 5px;
   min-height: 50px;
 }
 
+tooltip {
+  border: none;
+  border-width: 0px;
+  box-shadow: none;
+}
+
 scale trough highlight {
-  background-color: #5294e2;
+  background-color: rgba($blue, 0.5);
   border-radius: 5px;
 }
 
 scale trough {
-  background-color: #444;
+  background-color: rgba($black, 0.5);
   border-radius: 5px;
 }
 
@@ -70,22 +94,70 @@ scale {
   min-width: 30px;
 }
 
+
 .cpu-graph {
-  color: goldenrod;
+  color: $yellow;
+  background-color: rgba($yellow, 0.5);
+}
+
+.gpu-graph {
+  color: $magenta;
+  background-color: rgba($magenta, 0.5);
 }
 
 .mem-graph {
-  color: lightblue;
+  color: $blue;
+  background-color: rgba($blue, 0.5);
+}
+
+.swap-graph {
+  color: $cyan;
+  background-color: rgba($cyan, 0.5);
 }
 
 .net-down {
-  color: lightgreen;
+  color: $green;
+  background-color: rgba($green, 0.3);
 }
 
 .net-up {
-  color: coral
+  color: $red;
+  background-color: rgba($red, 0.3);
 }
 
-.bat-graph {
-  color: purple;
+.batt-box {
+  margin: 2px 0px;
+  min-height: 30px;
+}
+
+.batt-normal {
+  color: $green;
+  background-color: rgba($green, 0.2);
+}
+
+.batt-warning {
+  color: $yellow;
+  background-color: rgba($yellow, 0.2);
+}
+
+.batt-critical {
+  color: $red;
+  background-color: rgba($red, 0.2);
+}
+
+.batt-text {
+  margin: 0;
+  padding: 0;
+  font-size: 12px;
+  font-family: "JetBrainsMono Nerd Font";
+  color: inherit;
+  font-weight: bold;
+}
+
+.batt-icon {
+  margin: 0;
+  padding: 0 0 0 2;
+  font-family: "JetBrainsMono Nerd Font";
+  color: inherit;
+  font-size: 18px;
 }
