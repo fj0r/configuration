@@ -9,7 +9,9 @@
   :stacking "fg"
   :exclusive false  ;; 不挤压其他窗口空间
   :focusable false
-  (monitor-widget))
+  (monitor-widget)
+)
+
 
 ;; 核心挂件布局
 (defwidget monitor-widget []
@@ -17,7 +19,7 @@
             :onhoverlost "eww update opac=0.5"
     (box :orientation "v"
          :space-evenly false
-         :class "main-container floating"
+         :class "floating"
          :style "opacity: ${opac};"
 
       (box :orientation "v" :space-evenly false :class "chart-box"
