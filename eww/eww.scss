@@ -10,10 +10,10 @@ $shadow_color: rgba(0, 0, 0, 0.6);
 }
 
 .floating {
-  background-color: $bg_color;
-  color: $fg_color;
-  border-radius: 20px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  /* background-color: $bg_color; */
+  /* color: $fg_color; */
+  /* border-radius: 20px; */
+  /* border: 1px solid rgba(255, 255, 255, 0.1); */
   padding: 15px 8px;
   /* box-shadow: 0px 4px 15px $shadow_color; */
   transition: all 300ms ease;
@@ -35,10 +35,6 @@ $shadow_color: rgba(0, 0, 0, 0.6);
   background-color: rgba(255, 255, 255, 0.2);
   min-height: 2px;
   margin: 10px 5px;
-}
-
-.main-container {
-  background-color: $bg_color;
 }
 
 .chart-box {
