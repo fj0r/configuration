@@ -1,6 +1,6 @@
 apps:
   rules:
-  - keys: [2, 12]
+  - keys: [1, 12]
     filter:
     - app_id =~ ghostty
     - title starts-with dev
@@ -16,7 +16,7 @@ apps:
     - app_id =~ vivaldi
     cmd:
     - vivaldi
-  - keys: 1
+  - keys: 7
     filter:
     - app_id =~ ghostty
     - not title starts-with dev
@@ -46,6 +46,16 @@ apps:
     - app_id =~ firefox
     cmd:
     - firefox
+  - keys: 2
+    filter:
+    - app_id =~ Zed
+    cmd:
+    - zed
+  - keys: 8
+    filter:
+    - app_id =~ code
+    cmd:
+    - code
 keybindings:
   - modifiers:
     - Super

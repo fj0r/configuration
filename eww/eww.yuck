@@ -1,16 +1,17 @@
 (include "./widgets/sys.yuck")
 
-(defvar opac 0.2)
+(defvar opac 0.5)
 
 (defwindow omni-tray
   :monitor 0
   :geometry (geometry :x "8px"
-                      :y "20%"
+                      :y "60%"
                       :width "50px"
-                      :anchor "bottom right")
+                      :anchor "top right")
   :stacking "fg"
   :exclusive false  ;; 不挤压其他窗口空间
-  :focusable false
+  :focusable false      ; 核心：不获取焦点
+  :wm-ignore true       ; 核心：让 WM 忽略这个窗口的交互
   (monitor-widget)
 )
 
