@@ -5,9 +5,9 @@
 (defwindow omni-tray
   :monitor 0
   :geometry (geometry :x "8px"
-                      :y "20%"
+                      :y "10%"
                       :width "50px"
-                      :anchor "bottom right")
+                      :anchor "top right")
   :stacking "fg"
   :exclusive false  ;; 不挤压其他窗口空间
   :focusable false
