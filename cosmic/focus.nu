@@ -11,28 +11,23 @@ def flt [rules] {
         } else {
             false
         }
-        let x = if $f { $r.1 } else { $r.0 }
-        let p = if $f { $r.2 } else { $r.1 }
-        let y = if $f { $r.3 } else { $r.2 }
-        let b = match $p {
+        let r = if $f { $r | skip 1 } else { $r }
+        let b = match $r.1 {
             '==' => {
-                ($n | get $x) == $y
+                ($n | get $r.0) == $r.2
             }
             '!=' => {
-                ($n | get $x) != $y
+                ($n | get $r.0) != $r.2
             }
             '=~' => {
-                ($n | get $x) =~ $y
+                ($n | get $r.0) =~ $r.2
             }
             'starts-with' => {
-                ($n | get $x) | str starts-with $y
+                ($n | get $r.0) | str starts-with $r.2
             }
         }
-        if $f {
-            $a and (not $b)
-        } else {
-            $a and $b
-        }
+        let b = if $f { not $b } else { $b }
+        $a and $b
     }
 }
 
@@ -53,7 +48,7 @@ export def main [key] {
         let a = list | where { $in | flt $r.filter }
         if ($a | is-empty) {
             let p = $r | get cmd
-            ^($p | first) ...($p | skip 1)
+            run-external ($p | first) ...($p | skip 1)
         } else {
             activate $a.0.index
         }
