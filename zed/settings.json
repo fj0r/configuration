@@ -1,0 +1,243 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run `zed: open default settings` from the
+// command palette (cmd-shift-p / ctrl-shift-p)
+{
+  "always_treat_brackets_as_autoclosed": true,
+  "completions": {
+    "words_min_length": 1
+  },
+  "allow_rewrap": "anywhere",
+  "show_wrap_guides": true,
+  "soft_wrap": "editor_width",
+  "autosave": "on_focus_change",
+  "edit_predictions": {
+    "provider": "zed"
+  },
+  "format_on_save": "off",
+  "git_panel": {
+    "tree_view": true
+  },
+  "ui_font_family": ".ZedSans",
+  "session": {
+    "trust_all_worktrees": true,
+  },
+  "inlay_hints": {
+    "show_parameter_hints": true,
+    "show_type_hints": true,
+    "show_value_hints": true,
+    "show_other_hints": true,
+    "show_background": false,
+    "enabled": true,
+  },
+  "buffer_font_weight": 300.0,
+  "buffer_font_family": "Lilex",
+  "buffer_line_height": "standard",
+  "toolbar": {
+    "quick_actions": false,
+    "breadcrumbs": false,
+  },
+  "preview_tabs": {
+    "enabled": true,
+  },
+  "proxy": "socks5h://127.0.0.1:7891",
+  "active_pane_modifiers": {
+    "inactive_opacity": 0.8,
+  },
+  "use_system_window_tabs": false,
+  "bottom_dock_layout": "contained",
+  "tab_bar": {
+    "show_pinned_tabs_in_separate_row": false,
+    "show_tab_bar_buttons": true,
+    "show_nav_history_buttons": true,
+    "show": true,
+  },
+  "title_bar": {
+    "show_branch_icon": true,
+  },
+  "status_bar": {
+    "cursor_position_button": true,
+    "active_language_button": true,
+  },
+  "project_panel": {
+    "button": true,
+  },
+  "terminal": {
+    "font_size": 11.0,
+  },
+  "agent_buffer_font_size": 11.0,
+  "helix_mode": true,
+  "base_keymap": "Emacs",
+  "ssh_connections": [
+    {
+      "host": "localhost",
+      "username": "master",
+      "port": 12222,
+      "args": [],
+      "projects": [
+        {
+          "paths": [
+            "/home/master"
+          ]
+        },
+        {
+          "paths": [
+            "/root"
+          ]
+        }
+      ],
+      "nickname": "dx",
+      "upload_binary_over_ssh": true
+    },
+    {
+      "host": "ai",
+      "args": [],
+      "projects": [
+        {
+          "paths": [
+            "/root"
+          ]
+        }
+      ],
+      "upload_binary_over_ssh": true
+    },
+    {
+      "host": "192.168.99.247",
+      "username": "a0_u266",
+      "port": 8022,
+      "args": [],
+      "projects": [
+        {
+          "paths": [
+            "/data/data/com.termux/files/home"
+          ]
+        }
+      ],
+      "nickname": "android",
+      "upload_binary_over_ssh": true
+    },
+    {
+      "host": "wg0",
+      "args": [],
+      "projects": [
+        {
+          "paths": [
+            "/root"
+          ]
+        }
+      ],
+      "upload_binary_over_ssh": true
+    }
+  ],
+  "agent": {
+    "tool_permissions": {
+      "default": "allow"
+    },
+    "favorite_models": [
+      {
+        "provider": "qwen3",
+        "model": "qwen3.5-plus"
+      }
+    ],
+    "default_model": {
+      "provider": "qwen3",
+      "model": "qwen3.5-122b-a10b",
+    },
+  },
+  "language_models": {
+    "openai_compatible": {
+      "qwen3": {
+        "api_url": "https://dashscope.aliyuncs.com/compatible-mode/v1",
+        "available_models": [
+          {
+            "name": "qwen3.5-122b-a10b",
+            "display_name": null,
+            "max_tokens": 200000,
+            "max_output_tokens": 32000,
+            "max_completion_tokens": 200000,
+            "capabilities": {
+              "tools": true,
+              "images": false,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+            },
+          },
+          {
+            "name": "qwen3.5-397b-a17b",
+            "display_name": null,
+            "max_tokens": 200000,
+            "max_output_tokens": 32000,
+            "max_completion_tokens": 200000,
+            "capabilities": {
+              "tools": true,
+              "images": false,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+            },
+          },
+          {
+            "name": "qwen3.5-flash",
+            "display_name": null,
+            "max_tokens": 200000,
+            "max_output_tokens": 32000,
+            "max_completion_tokens": 200000,
+            "capabilities": {
+              "tools": true,
+              "images": false,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+            },
+          },
+          {
+            "name": "qwen3.5-plus",
+            "display_name": null,
+            "max_tokens": 200000,
+            "max_output_tokens": 32000,
+            "max_completion_tokens": 200000,
+            "capabilities": {
+              "tools": true,
+              "images": false,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+            },
+          },
+          {
+            "name": "kimi-k2.5",
+            "display_name": null,
+            "max_tokens": 200000,
+            "max_output_tokens": 32000,
+            "max_completion_tokens": 200000,
+            "capabilities": {
+              "tools": true,
+              "images": false,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+            },
+          },
+          {
+            "name": "MiniMax-M2.5",
+            "display_name": null,
+            "max_tokens": 200000,
+            "max_output_tokens": 32000,
+            "max_completion_tokens": 200000,
+            "capabilities": {
+              "tools": true,
+              "images": false,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+            },
+          },
+        ],
+      },
+    },
+  },
+  "vim_mode": true,
+  "ui_font_size": 15.0,
+  "buffer_font_size": 14.0,
+  "theme": "Gruvbox Dark Soft",
+  "unstable.ui_density": "compact",
+}
