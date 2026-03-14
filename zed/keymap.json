@@ -41,5 +41,17 @@
     "bindings": {
       "alt-`": "terminal_panel::Toggle"
     }
+  },
+  {
+    "context": "vim_mode == insert",
+    "bindings": {
+      "alt-enter": "assistant::InlineAssist"
+    }
+  },
+  {
+    "context": "Terminal",
+    "bindings": {
+      "alt-enter": "assistant::InlineAssist"
+    }
   }
 ]

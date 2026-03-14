@@ -38,8 +38,8 @@
   "buffer_font_family": "Lilex",
   "buffer_line_height": "standard",
   "toolbar": {
-    "quick_actions": false,
-    "breadcrumbs": false,
+    "quick_actions": true,
+    "breadcrumbs": true,
   },
   "preview_tabs": {
     "enabled": true,
@@ -68,6 +68,11 @@
   },
   "terminal": {
     "font_size": 11.0,
+  },
+  "languages": {
+    "Python": {
+      "language_servers": ["pyright"] // , "pyrefly"
+    }
   },
   "agent_buffer_font_size": 11.0,
   "helix_mode": true,
@@ -145,7 +150,7 @@
     ],
     "default_model": {
       "provider": "qwen3",
-      "model": "qwen3.5-122b-a10b",
+      "model": "qwen3.5-plus",
     },
   },
   "language_models": {
@@ -219,7 +224,7 @@
             },
           },
           {
-            "name": "MiniMax-M2.5",
+            "name": "MiniMax/MiniMax-M2.7",
             "display_name": null,
             "max_tokens": 200000,
             "max_output_tokens": 32000,

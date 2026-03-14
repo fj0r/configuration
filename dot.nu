@@ -14,6 +14,9 @@ $env.NOMAD_ADDR = 'http://10.6.6.93:4646'
 
 $env.RUSTC_WRAPPER = '/usr/bin/sccache'
 $env.SCCACHE_CACHE_SIZE = '30G'
+$env.RA_TARGET_DIR = '/tmp/rust-analyzer'
+# $env.CARGO_TARGET_DIR = $env.HOME | path join .cache/cargo
+
 $env.SSLKEYLOGFILE = "/tmp/ssl_keys.log"
 
 # use resolvenv
