@@ -45,7 +45,7 @@
   "preview_tabs": {
     "enabled": true,
   },
-  "proxy": "socks5h://127.0.0.1:7891",
+  "proxy": "http://127.0.0.1:7890",
   "active_pane_modifiers": {
     "inactive_opacity": 0.8,
   },
