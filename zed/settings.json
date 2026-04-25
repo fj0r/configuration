@@ -65,7 +65,7 @@
     "show": true,
   },
   "title_bar": {
-    "show_branch_icon": true,
+    "show_branch_status_icon": true
   },
   "status_bar": {
     "cursor_position_button": true,
@@ -76,6 +76,9 @@
     "button": true,
   },
   "terminal": {
+    "shell": {
+      "program": "bash"
+    },
     "font_size": 11.0,
   },
   "languages": {
