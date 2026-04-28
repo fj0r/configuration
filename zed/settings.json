@@ -148,6 +148,19 @@
         }
       ],
       "upload_binary_over_ssh": true
+    },
+    {
+      "host": "localhost",
+      "username": "root",
+      "port": 2222,
+      "args": [],
+      "projects": [
+        {
+          "paths": [
+            "/root"
+          ]
+        }
+      ]
     }
   ],
   "agent": {
@@ -198,7 +211,7 @@
             },
           },
           {
-            "name": "qwen3.5-flash",
+            "name": "qwen3.6-27b",
             "display_name": null,
             "max_tokens": 200000,
             "max_output_tokens": 32000,

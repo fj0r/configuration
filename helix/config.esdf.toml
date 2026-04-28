@@ -1,0 +1,76 @@
+# theme = "gruvbox_light"
+# theme = "zenburn"
+theme = 'gruvbox_dark_soft'
+
+[editor]
+line-number = "relative"
+middle-click-paste = true
+mouse = true
+enable-steel = true
+trim-trailing-whitespace = true
+trim-final-newlines	= true
+popup-border = "none"
+commandline = false
+
+[editor.auto-save]
+focus-lost = true
+idle = true
+
+[editor.cursor-shape]
+insert = "bar"
+select = "underline"
+
+[editor.soft-wrap]
+enable = true
+
+[keys.insert]
+"A-;" = "normal_mode"
+
+# hjkl ↔ esdf 交换 + k=delete_selection (Emacs kill 风格)
+[keys.normal]
+# 品字形移动：e上 d下 s左 f右
+e = "move_visual_line_up"
+d = "move_visual_line_down"
+s = "move_char_left"
+f = "move_char_right"
+
+# k=删除(Emacs kill)，其余原esdf功能换到hjkl位置
+k = "delete_selection"
+h = "select_regex"
+j = "move_next_word_end"
+l = "find_next_char"
+
+# 大写同理
+E = "page_up"
+D = "page_down"
+S = "goto_line_start"
+F = "goto_line_end"
+K = "delete_selection_noyank"
+H = "split_selection"
+J = "move_next_long_word_end"
+L = "find_prev_char"
+
+# 修饰键随位置迁移
+A-e = "page_cursor_half_up"
+A-d = "page_cursor_half_down"
+A-s = "jump_backward"
+A-f = "jump_forward"
+C-d = "save_selection"
+C-j = "split_selection_on_newline"
+
+[keys.normal.space]
+space = "goto_word"
+o = [
+  ':sh rm -f /tmp/unique-file',
+  ':insert-output yazi %{buffer_name} --chooser-file=/tmp/unique-file',
+  ':insert-output echo "\x1b[?1049h\x1b[?2004h" > /dev/tty',
+  ':open %sh{cat /tmp/unique-file}',
+  ':redraw',
+]
+
+[keys.select]
+space = { space = "goto_word" }
+"A-;" = "normal_mode"
+"A-'" = "flip_selections"
+A-e = "page_cursor_half_up"
+A-d = "page_cursor_half_down"
