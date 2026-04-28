@@ -163,7 +163,7 @@
     ],
     "default_model": {
       "provider": "qwen3",
-      "model": "qwen3.6-plus",
+      "model": "qwen3.5-flash",
     },
   },
   "language_models": {
@@ -198,7 +198,7 @@
             },
           },
           {
-            "name": "qwen3.5-flash",
+            "name": "qwen3.6-27b",
             "display_name": null,
             "max_tokens": 200000,
             "max_output_tokens": 32000,

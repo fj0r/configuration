@@ -9,7 +9,7 @@ $env.PATH = $env.PATH | prepend ($env.HOME)/.moon/bin
 $env.CWD_HISTORY_BLOCK ++= ['Downloads/crawl', 'Downloads/qbittorrent']
 $env.DEFAULT_DOCKER_REGISTRY = 'registry.s'
 
-open ~/.config/OpenAI.yaml | load-env
+open ~/.secrets/OpenAI.yaml | load-env
 alias claw = ~/.cache/cargo/debug/claw --model openai/qwen3.6-plus
 
 $env.NOMAD_TOKEN = '7aa50661-099d-44b1-8e34-6a6af154b423'
@@ -40,8 +40,6 @@ $env.SSLKEYLOGFILE = "/tmp/ssl_keys.log"
 #source ~/.config/ai.config.nu
 $env.AI_TOOLS.web_search.context.proxy = 'http://localhost:7890'
 $env.AI_TOOLS.web_fetch.context.proxy = 'http://localhost:7890'
-
-do -i { open ~/.config/secrets.toml } | default {}  | load-env
 
 # $env.NVIM_LEVEL = if 'NVIM_LEVEL' in $env { $env.NVIM_LEVEL } else { 'x' }
 # $env.NVIM_REMOTE_HISTORY = $"($env.HOME)/.cache/nvim_history.sqlite"
