@@ -93,7 +93,7 @@
     {
       "host": "localhost",
       "username": "master",
-      "port": 12222,
+      "port": 2222,
       "args": [],
       "projects": [
         {
@@ -161,6 +161,24 @@
           ]
         }
       ]
+    },
+    {
+      "host": "dx",
+      "port": 2222,
+      "args": [],
+      "projects": []
+    },
+    {
+      "host": "dx",
+      "port": 2222,
+      "args": [],
+      "projects": []
+    },
+    {
+      "host": "dx",
+      "port": 2222,
+      "args": [],
+      "projects": []
     }
   ],
   "agent": {
@@ -263,7 +281,7 @@
             },
           },
           {
-            "name": "MiniMax/MiniMax-M2.7",
+            "name": "qwen3.6-max-preview",
             "display_name": null,
             "max_tokens": 200000,
             "max_output_tokens": 32000,
