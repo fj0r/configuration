@@ -15,7 +15,7 @@ alias claw = ~/.cache/cargo/debug/claw --model openai/qwen3.6-plus
 $env.NOMAD_TOKEN = '7aa50661-099d-44b1-8e34-6a6af154b423'
 $env.NOMAD_ADDR = 'http://10.6.6.93:4646'
 
-$env.RUSTC_WRAPPER = '/usr/bin/sccache'
+# $env.RUSTC_WRAPPER = '/usr/bin/sccache'
 $env.SCCACHE_CACHE_SIZE = '30G'
 $env.RA_TARGET_DIR = '/tmp/rust-analyzer'
 # $env.CARGO_TARGET_DIR = $env.HOME | path join .cache/cargo

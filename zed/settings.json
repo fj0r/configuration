@@ -7,6 +7,12 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "agent_servers": {
+    "your_agent": {
+      "type": "custom",
+      "command": "path_to_executable"
+    }
+  },
   "cli_default_open_behavior": "new_window",
   "outline_panel": {
     "dock": "left"
@@ -78,7 +84,7 @@
   },
   "terminal": {
     "shell": {
-      "program": "/bin/bash"
+      "program": "nu"
     },
     "font_size": 11.0,
   },
@@ -189,12 +195,12 @@
     "favorite_models": [
       {
         "provider": "qwen3",
-        "model": "qwen3.5-plus"
+        "model": "qwen3.7-plus"
       }
     ],
     "default_model": {
       "provider": "qwen3",
-      "model": "qwen3.6-plus",
+      "model": "qwen3.7-plus",
     },
   },
   "language_models": {
@@ -203,85 +209,43 @@
         "api_url": "https://dashscope.aliyuncs.com/compatible-mode/v1",
         "available_models": [
           {
-            "name": "qwen3.5-122b-a10b",
-            "display_name": null,
-            "max_tokens": 200000,
-            "max_output_tokens": 32000,
-            "max_completion_tokens": 200000,
+            "name": "qwen3-coder-next",
+            "display_name": "Qwen3 Coder Next (全直球战神)",
+            "max_tokens": 200000, // 【必须修改】降到 200K 以内，严防超出百炼 [1, 204800] 的网关红线
+            "max_output_tokens": 8192, // 兼顾大段代码生成与极致的显存响应速度
             "capabilities": {
               "tools": true,
               "images": false,
-              "parallel_tool_calls": false,
-              "prompt_cache_key": false,
-            },
+              "parallel_tool_calls": false, // 【必须修改】强制关闭并行工具调用
+              "prompt_cache_key": false
+            }
           },
           {
-            "name": "qwen3.5-397b-a17b",
-            "display_name": null,
-            "max_tokens": 200000,
-            "max_output_tokens": 32000,
-            "max_completion_tokens": 200000,
+            "name": "qwen3-coder-plus",
+            "display_name": "Qwen3 Coder Plus (商业级重构巨兽)",
+            "max_tokens": 204800, // 稳妥推荐值：在 Zed 场景下设为 200K 最稳，既能塞下大量代码，又绝不踩阿里 204800 的网关拦截红线
+            "max_output_tokens": 16384, // 针对 480B 巨型 MoE 的输出调优，既允许它单次重构上千行复杂 Rust 代码，又避免了显存锁死导致的首字延迟（TTFT）卡顿
             "capabilities": {
               "tools": true,
-              "images": false,
-              "parallel_tool_calls": false,
-              "prompt_cache_key": false,
-            },
+              "images": true, // 【核心】Plus 版完全原生支持多模态视觉输入（看 UI 设计图直接切代码）
+              "parallel_tool_calls": false, // 【绝对红线】必须设为 false！防止触发百炼 API 经典的 function.name missing 400 协议报错
+              "prompt_cache_key": false
+            }
           },
           {
-            "name": "qwen3.6-27b",
-            "display_name": null,
+            "name": "qwen3.7-plus",
+            "display_name": "Qwen3.7 Plus (高级商业旗舰)",
             "max_tokens": 200000,
-            "max_output_tokens": 32000,
-            "max_completion_tokens": 200000,
+            "max_output_tokens": 8192, // 压低单次输出，避免云端排队或 KV Cache 过大卡顿
             "capabilities": {
               "tools": true,
-              "images": false,
-              "parallel_tool_calls": false,
-              "prompt_cache_key": false,
-            },
-          },
-          {
-            "name": "qwen3.6-plus",
-            "display_name": null,
-            "max_tokens": 200000,
-            "max_output_tokens": 32000,
-            "max_completion_tokens": 200000,
-            "capabilities": {
-              "tools": true,
-              "images": true,
-              "parallel_tool_calls": false,
-              "prompt_cache_key": false,
-            },
-          },
-          {
-            "name": "qwen3.5-plus",
-            "display_name": null,
-            "max_tokens": 200000,
-            "max_output_tokens": 32000,
-            "max_completion_tokens": 200000,
-            "capabilities": {
-              "tools": true,
-              "images": false,
-              "parallel_tool_calls": false,
-              "prompt_cache_key": false,
-            },
+              "images": true, // 正确：Plus 商业版原生支持高精度多模态视觉输入
+              "parallel_tool_calls": true,
+              "prompt_cache_key": false
+            }
           },
           {
             "name": "kimi-k2.5",
-            "display_name": null,
-            "max_tokens": 200000,
-            "max_output_tokens": 32000,
-            "max_completion_tokens": 200000,
-            "capabilities": {
-              "tools": true,
-              "images": false,
-              "parallel_tool_calls": false,
-              "prompt_cache_key": false,
-            },
-          },
-          {
-            "name": "qwen3.6-max-preview",
             "display_name": null,
             "max_tokens": 200000,
             "max_output_tokens": 32000,
