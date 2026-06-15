@@ -20,7 +20,7 @@
   "collaboration_panel": {
     "dock": "left"
   },
-  "helix_mode": true,
+  "helix_mode": false,
   "always_treat_brackets_as_autoclosed": true,
   "completions": {
     "words_min_length": 1
@@ -261,7 +261,7 @@
       },
     },
   },
-  "vim_mode": false,
+  "vim_mode": true,
   "ui_font_size": 15.0,
   "buffer_font_size": 14.0,
   "theme": "Gruvbox Dark Soft",

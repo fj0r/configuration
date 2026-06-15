@@ -1,5 +1,4 @@
 $env.SCRATCH_BACKUP_DIR = $'($env.HOME)/Documents/scratch-backup'
-$env.PREFER_ALT = '1'
 $env.BLINK_CMP_RUST_FUZZY = '1'
 $env.LIBRETRANSLATE_HOST = 'http://localhost:5000'
 $env.OLLAMA_BASEURL = 'http://172.178.5.123:11434'
