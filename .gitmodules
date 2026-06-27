@@ -19,3 +19,6 @@
 [submodule "nixos"]
 	path = nixos
 	url = git@github.com:fj0r/nixos.git
+[submodule "emacs"]
+	path = emacs
+	url = git@github.com:fj0r/nushell.git
