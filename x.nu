@@ -48,7 +48,8 @@ export module helix {
         }
         | { completions: $in, options: { sort: false } }
     }
-    export def merge [pr:int@cmpl-pr] {
+
+    export def gh-merge [pr:int@cmpl-pr] {
         cd ~/world/helix/
         gh pr checkout $pr
     }
