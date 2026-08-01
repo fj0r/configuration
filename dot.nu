@@ -9,7 +9,8 @@ $env.CWD_HISTORY_BLOCK ++= ['Downloads/crawl', 'Downloads/qbittorrent']
 $env.DEFAULT_DOCKER_REGISTRY = 'registry.s'
 
 open ~/.secrets/OpenAI.yaml | load-env
-alias claw = ~/.cache/cargo/debug/claw --model openai/qwen3.6-plus
+open ~/.secrets/dashscope.yaml | load-env
+alias k = ^kak
 
 $env.NOMAD_TOKEN = '7aa50661-099d-44b1-8e34-6a6af154b423'
 $env.NOMAD_ADDR = 'http://10.6.6.93:4646'
