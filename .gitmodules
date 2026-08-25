@@ -13,9 +13,6 @@
 [submodule "awesome"]
 	path = awesome
 	url = git@github.com:fj0r/awesomewm.git
-[submodule "wezterm"]
-	path = wezterm
-	url = git@github.com:fj0r/wezterm.git
 [submodule "nixos"]
 	path = nixos
 	url = git@github.com:fj0r/nixos.git
